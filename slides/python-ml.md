@@ -1790,14 +1790,7 @@ Von der Rohdatei zum geprüften, bereinigten Datensatz und zu Diagrammen, die Mu
 <!-- .slide: class="smaller" -->
 ## Von der Rohdatei zur Analyse
 
-```mermaid
-flowchart LR
-    A[Einlesen] --> B[Überblick]
-    B --> C[Bereinigen]
-    C --> D[Explorieren]
-    D --> E[Visualisieren]
-    E -.-> C
-```
+![](figs/d_t04_rohdatei_analyse.png)
 
 + **Einlesen:** Datei, Trennzeichen, Kodierung, Datentypen
 + **Überblick:** Größe, Spalten, Kennzahlen, fehlende Werte
@@ -2113,15 +2106,23 @@ df.groupby("Pclass")["Survived"].mean().round(2)
 + **Whisker:** bis zum letzten Wert innerhalb von 1,5 Interquartilsabständen ab der Box
 + **Einzelne Punkte:** Werte jenseits der Whisker, Kandidaten für Ausreißer
 
+<div class="fragment">
+
 ```python
 import seaborn as sns
 sns.boxplot(x=df["Fare"])
 ```
 
 </div>
+
+</div>
 <div style="flex: 58">
 
+<div class="fragment">
+
 ![](figs/t4_box_fare.png)
+
+</div>
 
 </div>
 </div>
@@ -2227,6 +2228,8 @@ Fare           0.26
 + Kennzahlen allein können täuschen: Derselbe Mittelwert passt zu völlig verschiedenen Verteilungen
 + Ein gutes Diagramm verhindert falsche Schlüsse, ein schlechtes erzeugt sie
 
+<div class="fragment">
+
 | Frage | Diagramm |
 |-------|----------|
 | Wie ist eine Zahlenspalte verteilt, ist sie schief? | Histogramm |
@@ -2235,6 +2238,8 @@ Fare           0.26
 | Wie hängen zwei Zahlenspalten zusammen? | Scatterplot |
 | Wie hängen viele Spalten zusammen? | Heatmap der Korrelationsmatrix |
 | Wie entwickelt sich ein Wert über die Zeit? | Linienplot |
+
+</div>
 
 --
 
@@ -2325,7 +2330,11 @@ ax.set_ylabel("Anzahl")
 </div>
 <div style="flex: 56">
 
+<div class="fragment">
+
 ![](figs/t4_hist_age.png)
+
+</div>
 
 </div>
 </div>
@@ -2357,7 +2366,11 @@ ax.set_ylabel("Anzahl")
 </div>
 <div style="flex: 56">
 
+<div class="fragment">
+
 ![](figs/t4_count_sex_survived.png)
+
+</div>
 
 </div>
 </div>
@@ -2387,7 +2400,11 @@ ax.set_ylabel("Fare")
 </div>
 <div style="flex: 56">
 
+<div class="fragment">
+
 ![](figs/t4_box_fare_pclass.png)
+
+</div>
 
 </div>
 </div>
@@ -2418,7 +2435,11 @@ ax.set_ylabel("Fare")
 </div>
 <div style="flex: 56">
 
+<div class="fragment">
+
 ![](figs/t4_scatter_age_fare.png)
+
+</div>
 
 </div>
 </div>
@@ -2450,7 +2471,11 @@ ax.set_title("Korrelationsmatrix")
 </div>
 <div style="flex: 56">
 
+<div class="fragment">
+
 ![](figs/t4_heatmap_corr.png)
+
+</div>
 
 </div>
 </div>
@@ -2478,7 +2503,11 @@ sns.pairplot(
 </div>
 <div style="flex: 60">
 
+<div class="fragment">
+
 ![](figs/t4_pairplot.png)
+
+</div>
 
 </div>
 </div>
@@ -2551,17 +2580,7 @@ Künstliche Intelligenz (KI) bezeichnet Systeme oder Maschinen, die Aufgaben aus
 | **Machine Learning (ML)** | Teilgebiet der KI: Systeme lernen aus Daten, ohne dass jede Regel von Hand programmiert wird |
 | **Deep Learning** | Teilgebiet des ML, das mit künstlichen neuronalen Netzen arbeitet |
 
-```text
-+------------------------------------------------+
-| Künstliche Intelligenz                         |
-|   +----------------------------------------+   |
-|   | Machine Learning                       |   |
-|   |   +-------------------------------+    |   |
-|   |   | Deep Learning                 |    |   |
-|   |   +-------------------------------+    |   |
-|   +----------------------------------------+   |
-+------------------------------------------------+
-```
+![](figs/d_t05_ki_ml_dl.png)
 
 --
 
@@ -2621,7 +2640,11 @@ Ein ML-Modell sortiert unerwünschte E-Mails aus, indem es Muster in den Nachric
   + Anzahl der Links, Anteil an Großbuchstaben
   + Absenderadresse, Länge und Struktur der E-Mail
 
+<div class="fragment">
+
 **Schritt 2: Modell trainieren (überwachtes Lernen)**
+
+</div>
 
 + Das System wird mit vielen gelabelten E-Mails trainiert
 + Es gewichtet die Merkmale: Welche Eigenschaften deuten am stärksten auf Spam hin?
@@ -2637,7 +2660,11 @@ Ein ML-Modell sortiert unerwünschte E-Mails aus, indem es Muster in den Nachric
 + Viele spam-typische Wörter: hohe Spam-Wahrscheinlichkeit
 + Legitime Muster erkannt: die E-Mail bleibt im Posteingang
 
+<div class="fragment">
+
 **Schritt 4: Modell verbessern**
+
+</div>
 
 + **False Positive:** eine legitime E-Mail wird fälschlich als Spam markiert
 + **False Negative:** Spam wird nicht erkannt und landet im Posteingang
@@ -2702,7 +2729,11 @@ Ein ML-Modell sortiert unerwünschte E-Mails aus, indem es Muster in den Nachric
 </div>
 <div style="flex: 50">
 
+<div class="fragment">
+
 **ML lohnt sich eher nicht, wenn**
+
+</div>
 
 + es kaum Daten, aber viele Sonderfälle gibt
 + die Entscheidung fachlich noch nicht klar formuliert ist
@@ -2729,9 +2760,13 @@ Ein ML-Modell sortiert unerwünschte E-Mails aus, indem es Muster in den Nachric
 + **Zielgröße (Target, Label):** die Spalte, die das Modell vorhersagen soll. Sie heißt `y`
 + Jede Zeile ist ein Beispiel: Merkmale plus bekannte Lösung
 
+<div class="fragment">
+
 | | Pclass | Sex | Age | Fare | Survived |
 |---|---|---|---|---|---|
 | Rolle | Merkmal | Merkmal | Merkmal | Merkmal | **Zielgröße** |
+
+</div>
 
 <div class="fragment">
 
@@ -2758,6 +2793,8 @@ Ein ML-Modell sortiert unerwünschte E-Mails aus, indem es Muster in den Nachric
 + **Testdaten:** zurückgehaltene Beispiele für die neutrale Endbewertung
 + Das Modell sieht die Testdaten beim Lernen nie
 
+<div class="fragment">
+
 ```python
 from sklearn.model_selection import train_test_split
 
@@ -2766,6 +2803,8 @@ X_train, X_test, y_train, y_test = train_test_split(
 )
 # 80 % der Zeilen zum Lernen, 20 % zum Prüfen
 ```
+
+</div>
 
 <div class="fragment">
 
@@ -2795,15 +2834,7 @@ Ein Datenleck liegt vor, wenn das Modell Informationen sieht, die im echten Eins
 
 ## Der ML-Workflow in sechs Schritten
 
-```mermaid
-flowchart LR
-    A[1 Daten] --> B[2 Feature Engineering]
-    B --> C[3 Modellauswahl]
-    C --> D[4 Training]
-    D --> E[5 Evaluation]
-    E --> F[6 Einsatz]
-    E -. nachbessern .-> A
-```
+![](figs/d_t05_ml_workflow.png)
 
 Der Ablauf ist iterativ und führt oft wieder zur Datenphase zurück.
 
@@ -2924,17 +2955,7 @@ Beides ist überwachtes Lernen: Für jedes Trainingsbeispiel ist die richtige An
 
 Eine Gerade durch die Datenpunkte, die den Zusammenhang möglichst gut beschreibt.
 
-```text
- y (Zielgröße)
- |                              o    . '
- |                     o     . '
- |                  o     . '    o
- |            o     . '
- |         o   . '    o        Gerade: y = m * x + b
- |      . '  o
- |  . '   o
- +---------------------------------------> x (Merkmal)
-```
+![](figs/lineare_regression_idee.png)
 
 + einfach und gut interpretierbar
 + schnell zu trainieren
@@ -2954,9 +2975,17 @@ $$y = m \cdot x + b$$
 + $m$: Steigung der Geraden, zeigt den Einfluss von $x$ auf $y$
 + $b$: Achsenabschnitt, der Wert von $y$ bei $x = 0$
 
+<div class="fragment">
+
 Mehrere Merkmale (multiple lineare Regression):
 
+</div>
+
+<div class="fragment">
+
 $$y = b + m_1 x_1 + m_2 x_2 + \dots + m_n x_n$$
+
+</div>
 
 --
 
@@ -2970,27 +2999,24 @@ $$MSE = \frac{1}{n} \sum_{i=1}^{n} (y_i - \hat{y}_i)^2$$
 + $y_i$: tatsächlicher Wert, $\hat{y}_i$: vorhergesagter Wert, $n$: Anzahl der Datenpunkte
 + Große Abweichungen zählen durch das Quadrat besonders stark
 
+<div class="fragment">
+
 Gradientenabstieg verbessert $m$ und $b$ schrittweise, $\alpha$ ist die Lernrate:
 
+</div>
+
+<div class="fragment">
+
 $$m := m - \alpha \cdot \frac{\partial MSE}{\partial m} \qquad b := b - \alpha \cdot \frac{\partial MSE}{\partial b}$$
+
+</div>
 
 --
 
 <!-- .slide: class="smaller" -->
 ## Gradientenabstieg als Idee
 
-```text
- MSE
-  |  o  Start                          /
-  |   \                               /
-  |    o                             /
-  |     \                           /
-  |      o                        .'
-  |       `o.                  .-'
-  |          `-o._        _.-'
-  |               `-o-o-*'        * = Minimum
-  +----------------------------------------> m
-```
+![](figs/gradientenabstieg_idee.png)
 
 + Start mit zufälligen oder grob gewählten Parametern
 + Der Gradient zeigt in die Richtung des stärksten Anstiegs, also gehen wir in die Gegenrichtung
@@ -3033,11 +3059,15 @@ print(round(m, 3), round(b, 3))             # -> 2.508 0.944
 + Für die lineare Regression lässt sich das Minimum des MSE auch direkt berechnen: exakt, ohne Lernrate, schnell bei kleinen bis mittleren Datensätzen
 + Bei sehr großen Datensätzen wird die direkte Berechnung teuer. Dann rechnet man schrittweise
 
+<div class="fragment">
+
 | Methode | Gradient aus | Vorteil | Nachteil |
 |---|---|---|---|
 | **Batch Gradient Descent** | allen Datenpunkten | stabile Konvergenz | rechenintensiv bei großen Datensätzen |
 | **Stochastic Gradient Descent (SGD)** | einem zufälligen Datenpunkt pro Schritt | sehr effizient bei großen Datensätzen | schwankt stark |
 | **Mini-Batch Gradient Descent** | kleiner Gruppe (z. B. 32 oder 64 Punkte) | Kompromiss: stabil und effizient | Batch-Größe muss passen |
+
+</div>
 
 --
 
@@ -3239,14 +3269,11 @@ X_test_s = scaler.transform(X_test)         # wendet sie nur an
 + Schritt 2: die Sigmoid-Funktion macht aus dem Score eine Wahrscheinlichkeit zwischen 0 und 1
 + Schritt 3: eine Schwelle (Standard 0,5) macht aus der Wahrscheinlichkeit eine Klasse
 
-```mermaid
-flowchart LR
-    A[Merkmale x] --> B[Score z]
-    B --> C["Sigmoid: P zwischen 0 und 1"]
-    C --> D{"P >= 0,5?"}
-    D -- ja --> E[Klasse 1]
-    D -- nein --> F[Klasse 0]
-```
+<div class="fragment">
+
+![](figs/d_t06_logistische_regression.png)
+
+</div>
 
 --
 
@@ -3255,16 +3282,7 @@ flowchart LR
 
 $$\sigma(z) = \frac{1}{1 + e^{-z}}$$
 
-```text
- P(y = 1)
-  1.0 |                         ..-----------
-      |                      .'
-  0.5 |- - - - - - - - - - -+- - - - - - - - -   Schwelle 0,5
-      |                   .'|
-  0.0 |----------------'' |
-      +---------------------+----------------> z
-            Klasse 0        0      Klasse 1
-```
+![](figs/sigmoid_schwelle.png)
 
 + Stark negativer Score: Wahrscheinlichkeit nahe 0. Stark positiver Score: nahe 1
 + Bei $z = 0$ ist die Wahrscheinlichkeit genau 0,5
@@ -3325,13 +3343,7 @@ print(confusion_matrix(y_test, y_streng))
 
 ## Entscheidungsbaum: Idee
 
-```mermaid
-flowchart LR
-    A{Ist Wochenende?} -- nein --> B[zu Hause bleiben]
-    A -- ja --> C{Ist das Wetter gut?}
-    C -- ja --> D[hingehen]
-    C -- nein --> E[zu Hause bleiben]
-```
+![](figs/d_t06_entscheidungsbaum.png)
 
 + **Wurzelknoten:** Startpunkt mit allen Daten
 + **Entscheidungsknoten:** stellt eine Bedingung, z. B. „Merkmal > 5?"
@@ -3399,15 +3411,11 @@ print(round(baum.score(X_test, y_test), 3))   # -> 0.93
 + **Bagging** (Bootstrap Aggregation): viele Bäume auf unterschiedlichen Stichproben trainieren, Ergebnisse zusammenführen
 + Klassifikation: **Mehrheitsentscheid** der Bäume. Regression: Durchschnitt
 
-```mermaid
-flowchart LR
-    D[Trainingsdaten] --> S1[Stichprobe 1] --> B1[Baum 1]
-    D --> S2[Stichprobe 2] --> B2[Baum 2]
-    D --> S3[Stichprobe n] --> B3[Baum n]
-    B1 --> M[Mehrheit]
-    B2 --> M
-    B3 --> M
-```
+<div class="fragment">
+
+![](figs/d_t06_random_forest.png)
+
+</div>
 
 --
 
@@ -3453,18 +3461,7 @@ print(wichtig.sort_values(ascending=False).head(3).round(3))
 <!-- .slide: class="smaller" -->
 ## SVM: Trennlinie und Margin
 
-```text
-  x2
-   |   o   o                 Margin
-   |  o  o   o          |<----------->|
-   |    o   (o)         |      |      |
-   |                    |      |     (x)   x
-   |  o    o            |      |        x    x
-   |                    |      |      x    x
-   +--------------------+------+------+----------> x1
-                           Trennlinie
-   (o), (x) = Stützvektoren
-```
+![](figs/svm_margin.png)
 
 + Eine Support Vector Machine sucht die Trennlinie mit dem **größten Abstand** (Margin) zu beiden Klassen
 + Nur die Punkte am Rand bestimmen die Linie: die **Stützvektoren** (Support Vectors)
@@ -3481,11 +3478,15 @@ print(wichtig.sort_values(ascending=False).head(3).round(3))
 + Der Parameter `C` steuert den Kompromiss: großes `C` duldet wenige Fehler (schmale Margin), kleines `C` duldet mehr (breite Margin)
 + **Kernel:** Sind die Klassen nicht mit einer Geraden trennbar, vergleicht die SVM die Punkte über eine Ähnlichkeitsfunktion, als lägen sie in einem höherdimensionalen Raum
 
+<div class="fragment">
+
 | Kernel | Geeignet für |
 |---|---|
 | `linear` | linear trennbare Daten |
 | `poly` | gekrümmte Entscheidungsgrenzen |
 | `rbf` (Standard) | beliebig geformte Grenzen, misst die Ähnlichkeit zweier Punkte über ihren Abstand |
+
+</div>
 
 --
 
@@ -3994,6 +3995,8 @@ $MAE = \frac{1}{m} \sum_{i=1}^{m} \lvert y_i - \hat{y}_i \rvert$
 + Je kleiner, desto besser. MAE = 1000 bei Kosten in Euro heißt: Die Vorhersage liegt im Mittel 1000 Euro daneben.
 + Jeder Fehler zählt mit seinem Betrag, einzelne Ausreißer fallen wenig ins Gewicht
 
+<div class="fragment">
+
 ```python
 from sklearn.metrics import mean_absolute_error
 
@@ -4001,6 +4004,8 @@ y_true = [3, 5, 8]
 y_pred = [2, 5, 11]
 print(mean_absolute_error(y_true, y_pred))   # -> 1.33 = (1 + 0 + 3) / 3
 ```
+
+</div>
 
 --
 
@@ -4019,6 +4024,8 @@ $RMSE = \sqrt{MSE}$
 + MSE hat die quadrierte Einheit (Euro²) und ist schwer zu deuten. RMSE hat wieder die Einheit der Zielgröße.
 + RMSE deutlich größer als MAE: Es gibt einzelne große Ausreißer in den Fehlern.
 
+<div class="fragment">
+
 ```python
 import numpy as np
 from sklearn.metrics import mean_squared_error
@@ -4026,6 +4033,8 @@ from sklearn.metrics import mean_squared_error
 mse = mean_squared_error(y_true, y_pred)     # -> 3.33 = (1 + 0 + 9) / 3
 rmse = np.sqrt(mse)                          # -> 1.83
 ```
+
+</div>
 
 --
 
@@ -4232,12 +4241,16 @@ Fünf Fälle mit wahrem Label und vorhergesagter Wahrscheinlichkeit für Klasse 
 + **AUC** = Fläche unter der Kurve, 1.0 perfekt, 0.5 Raten
 + Von Hand: 0.5 · 0.33 + 0.5 · 0.67 = **0.50**
 
+<div class="fragment">
+
 ```python
 from sklearn.metrics import roc_auc_score
 y = [1, 0, 1, 0, 1]
 p = [0.95, 0.85, 0.60, 0.40, 0.20]
 print(roc_auc_score(y, p))   # -> 0.5
 ```
+
+</div>
 
 </div>
 </div>
@@ -4411,18 +4424,7 @@ Gruppen in Daten finden, wenn es keine Zielgröße gibt, und diese Gruppen fachl
 <!-- .slide: class="smaller" -->
 ## k-Means als Skizze
 
-```text
-Zentren wählen           Punkte zuordnen          Zentren neu berechnen
-
-  .  .        .  .         a  a        b  b         a  a        b  b
-   .  . A    .  .           a  a A    b  b           a A a      b B b
-  .  .     B  .  .         a  a     B  b  b         a  a        b  b
-
-A, B: Startzentren       jeder Punkt geht zum     jedes Zentrum rückt in
-(zufällig gesetzt)       näheren Zentrum          die Mitte seiner Punkte
-
-                         <----- wiederholen, bis nichts mehr wandert ---->
-```
+![](figs/kmeans_schritte.png)
 
 + Meist stehen die Zentren nach wenigen Runden still: Das Verfahren ist konvergiert
 + Ein anderer Start kann zu einem anderen Ergebnis führen. `n_init=10` startet zehnmal und behält den Lauf mit der kleinsten `inertia_`.
@@ -4489,7 +4491,11 @@ plt.show()
 </div>
 <div style="flex: 55">
 
+<div class="fragment">
+
 ![](figs/ellbogen_kurve.png)
+
+</div>
 
 </div>
 </div>
@@ -4539,10 +4545,14 @@ print(df[merkmale].describe().loc[ ["min", "max", "std"] ].round(1))
 + Quadrierter Abstand ohne Skalierung: 10² + 1000² = 100 + 1000000. Der BMI trägt 0.01 Prozent bei.
 + Nach `StandardScaler` hat jedes Merkmal Mittelwert 0 und Standardabweichung 1 und zählt gleich viel
 
+<div class="fragment">
+
 ```python
 from sklearn.preprocessing import StandardScaler
 X_scaled = StandardScaler().fit_transform(df[merkmale])
 ```
+
+</div>
 
 <div class="fragment">
 
@@ -4769,11 +4779,7 @@ Künstliche neuronale Netze sind vom Gehirn inspiriert: Milliarden von Neuronen 
 <!-- .slide: class="smaller" -->
 ## Das künstliche Neuron: Gewichte, Bias, Aktivierung
 
-```text
-x1 --w1--\
-x2 --w2---->  z = w1*x1 + w2*x2 + w3*x3 + b  ---->  a = f(z)  ---->  Ausgabe
-x3 --w3--/
-```
+![](figs/d_t09_neuron.png)
 
 + **Eingaben** `x`: die Merkmale, zum Beispiel Pixelwerte oder Spalten einer Tabelle
 + **Gewichte** `w`: wie stark eine Eingabe weitergegeben wird
@@ -4793,11 +4799,7 @@ x3 --w3--/
 <!-- .slide: class="smaller" -->
 ## Schichten: das Feed-Forward-Netz
 
-```mermaid
-flowchart LR
-    E[Eingabeschicht<br/>784 Pixelwerte] --> V[versteckte Schicht<br/>128 Neuronen]
-    V --> A[Ausgabeschicht<br/>10 Klassen]
-```
+![](figs/d_t09_feed_forward.png)
 
 + Eine **Schicht** nimmt Eingaben entgegen, verarbeitet sie und gibt das Ergebnis weiter
 + **Feed Forward**: von der Eingabe über versteckte Schichten zur Ausgabe, ohne Rückkopplung
@@ -4851,7 +4853,7 @@ flowchart LR
 
 ## Aktivierungsfunktionen im Bild
 
-![](figs/activation.png)
+![](figs/aktivierungsfunktionen.png)
 
 --
 
@@ -4873,14 +4875,7 @@ Die Verlustfunktion misst mit einer einzigen Zahl, wie schlecht die Vorhersagen 
 
 ## Training als Schleife
 
-```mermaid
-flowchart LR
-    A[Batch laden] --> B[Vorwärtslauf<br/>Vorhersage berechnen]
-    B --> C[Verlust<br/>berechnen]
-    C --> D[Rückwärtslauf<br/>Gradienten berechnen]
-    D --> E[Schritt des Optimierers<br/>Gewichte anpassen]
-    E --> A
-```
+![](figs/d_t09_training_schleife.png)
 
 + **Vorwärtslauf**: Eingaben laufen durch das Netz, am Ende steht eine Vorhersage
 + **Verlust**: Vergleich von Vorhersage und wahrem Wert
@@ -5171,9 +5166,13 @@ Bildausschnitt (3x3)     Filter (3x3)       Rechnung
 + Derselbe Filter gilt für das ganze Bild: das Muster wird an jeder Position gefunden
 + Die Filterwerte sind die Gewichte. Das Netz lernt sie im Training selbst
 
+<div class="fragment">
+
 ```python
 nn.Conv2d(1, 32, kernel_size=3, padding=1)    # 1x28x28 -> 32x28x28
 ```
+
+</div>
 
 --
 
@@ -5259,7 +5258,11 @@ loader = DataLoader(train, batch_size=64, shuffle=True)
 + Trainiert werden sie mit derselben Schleife: Vorwärtslauf, Verlust, Rückwärtslauf, Schritt des Optimierers
 + Anwendungen: Chatbots, Textassistenz, automatische Übersetzung
 
+<div class="fragment">
+
 Literatur: Vaswani et al.: Attention Is All You Need (2017). Goodfellow, Bengio, Courville: Deep Learning (MIT Press, 2016). Zhang, Lipton, Li, Smola: Dive into Deep Learning (d2l.ai).
+
+</div>
 
 --
 
@@ -5511,17 +5514,7 @@ print(y_train.mean(), y_test.mean()) # -> 0.383 0.385
 
 ## Aufbereitung je Spaltengruppe mit `ColumnTransformer`
 
-```mermaid
-flowchart LR
-    X[X_train] --> N[Zahlenspalten]
-    X --> K[Kategoriespalten]
-    N --> NI[SimpleImputer median]
-    NI --> NS[StandardScaler]
-    K --> KI[SimpleImputer most_frequent]
-    KI --> KO[OneHotEncoder]
-    NS --> Z[zusammengefügte Matrix]
-    KO --> Z
-```
+![](figs/d_t10_column_transformer.png)
 
 + Zahlen und Kategorien brauchen verschiedene Aufbereitung
 + `ColumnTransformer` wendet auf jede Spaltengruppe einen eigenen Transformer an und klebt die Ergebnisse nebeneinander
@@ -5787,17 +5780,7 @@ print(sys.version.split()[0], sklearn.__version__,
 
 ## Der Workflow im Überblick
 
-```mermaid
-flowchart LR
-    A[Daten laden] --> B[Spalten wählen]
-    B --> C[Split mit stratify]
-    C --> D[Pipeline bauen]
-    D --> E[Cross-Validation]
-    E --> F[GridSearchCV]
-    F --> G[Testset einmal]
-    G --> H[Speichern mit joblib]
-    C -. Testdaten zur Seite .-> G
-```
+![](figs/d_t10_workflow_ueberblick.png)
 
 + Alles zwischen Split und Testset läuft nur auf den Trainingsdaten
 + Die Pipeline ist das Objekt, das durch alle Schritte wandert
@@ -6394,16 +6377,7 @@ Vom Kursbeispiel zum ersten eigenen Modell mit eigenen Daten.
 <!-- .slide: class="smaller" -->
 ## Rückblick: die Landkarte des Kurses
 
-```mermaid
-flowchart LR
-    A["Umgebung<br/>conda, Git"] --> B["Python<br/>Typen, Funktionen"]
-    B --> C["pandas<br/>DataFrame, groupby"]
-    C --> D["EDA<br/>prüfen, darstellen"]
-    D --> E["Modelle<br/>überwacht, unüberwacht"]
-    E --> F["Evaluation<br/>Kennzahlen, CV"]
-    F --> G["Workflow<br/>Pipeline"]
-    G --> H["Interpretation<br/>Importances"]
-```
+![](figs/d_t12_landkarte.png)
 
 + Jeder Kasten baut auf dem vorigen auf: ohne saubere Tabelle kein brauchbares Modell.
 + Die meiste Arbeitszeit steckt in der linken Hälfte (Daten lesen, prüfen, aufbereiten).
@@ -6444,7 +6418,11 @@ flowchart LR
 </div>
 <div style="flex: 50">
 
+<div class="fragment">
+
 **ML lohnt sich eher nicht, wenn**
+
+</div>
 
 + es kaum Daten, aber viele Ausnahmen und Sonderfälle gibt,
 + die eigentliche Entscheidung fachlich noch nicht klar formuliert ist,

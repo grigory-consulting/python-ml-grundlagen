@@ -302,6 +302,5 @@
 /* Luft zwischen Codeblock und folgender Liste */
 .reveal pre + ul, .reveal pre + ol, .reveal pre + p { margin-top: 0.6em; }
 
-/* Bilder dürfen höher werden, Mermaid-Diagramme die Breite nutzen */
+/* Bilder dürfen höher werden */
 .reveal .slides section div[absolute="true"] img { max-height: 460px; }
-.reveal .mermaid svg { width: 100%; max-width: 100% !important; height: auto; max-height: 340px; }
