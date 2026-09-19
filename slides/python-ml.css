@@ -3,6 +3,7 @@
    Layout-Korrekturen für den Plugin-Wrapper wie in qskills-obsidian.css. */
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@300;400;500;600;700&family=Geist+Mono:wght@400;500&display=swap');
 
 :root {
   --gf-text: #1e293b;
@@ -304,3 +305,23 @@
 
 /* Bilder dürfen höher werden */
 .reveal .slides section div[absolute="true"] img { max-height: 460px; }
+/* Bild plus Stichpunkte auf einer Folie: Bild niedriger halten, damit nichts unten überläuft */
+.reveal .slides section:has(ul) div[absolute="true"] img,
+.reveal .slides section:has(ul) img { max-height: 300px; }
+
+/* ===== Design Seminarblau (gewählt am 19.09.2026), überschreibt die Basis oben ===== */
+:root { --gf-text:#24364d; --gf-heading:#183b66; --gf-blue:#2459a6; --gf-blue-dark:#183b66; --gf-code:#2459a6; --gf-violet:#2459a6;
+  --gf-muted:#5a6b82; --gf-light:#8593a8; --gf-bg-soft:#e8f0fb; --gf-bg-code:#ffffff; --gf-border:#b9c6d8; }
+.reveal, .reveal-viewport, body { background:#f4f7fb !important; }
+.reveal { font-family:'Geist',system-ui,sans-serif; }
+.reveal pre code, .reveal code { font-family:'Geist Mono',ui-monospace,monospace; }
+.reveal .slides section h2 { border-bottom:none; padding-bottom:0; margin-bottom:0.45em; font-weight:600; letter-spacing:-0.01em; }
+.reveal .slides section h2::after { content:""; display:block; width:72px; height:4px; background:var(--gf-blue); margin-top:0.25em; border-radius:2px; }
+.reveal .slides section.titleslide h1 { font-family:'Instrument Serif',serif; font-weight:400; font-size:2.9em; background:none; -webkit-text-fill-color:#183b66; color:#183b66; letter-spacing:-0.02em; }
+.reveal .slides section.titleslide h3 { color:#2459a6; font-weight:400; }
+.reveal .slides section[data-background-color] h1 { font-family:'Instrument Serif',serif; font-weight:400; font-size:2.6em; text-shadow:none; }
+.reveal pre { box-shadow:none; border:1px solid #b9c6d8; border-radius:8px; }
+.reveal table th { background:#e8f0fb; border-bottom:2px solid #183b66; }
+.reveal .callout[data-type="warning"] { border-left-color:#b45309 !important; }
+.reveal .callout[data-type="tip"] { border-left-color:#2459a6 !important; }
+.reveal .slides section div[absolute="true"] img { box-shadow:none !important; border-radius:8px; }

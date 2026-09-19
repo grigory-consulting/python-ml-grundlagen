@@ -5,3 +5,7 @@ __pycache__/
 *.joblib
 # Trainerfassung mit Speaker-Notes bleibt lokal
 slides/*_trainer.md
+
+# Designproben (nur lokal)
+slides/_pyml_design_*
+slides/pyml_design_*

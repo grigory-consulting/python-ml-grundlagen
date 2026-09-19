@@ -19,10 +19,10 @@ Dr.-Ing. Grigory Devadze
 
 ## Was Sie mitnehmen
 
-+ **Python** lesen und schreiben: Datentypen, Kontrollstrukturen, Funktionen
-+ Daten mit **pandas** einlesen, bereinigen, gruppieren und mit **matplotlib** und **seaborn** darstellen
-+ **Klassifikation, Regression und Clustering** mit scikit-learn trainieren und mit passenden Kennzahlen bewerten
-+ Einen vollständigen **ML-Workflow als Pipeline**, den Sie auf eigene Daten übertragen können
++ **Python** lesen und schreiben: Datentypen, Kontrollstrukturen, Funktionen <!-- .element: class="fragment" data-fragment-index="1" -->
++ Daten mit **pandas** einlesen, bereinigen, gruppieren und mit **matplotlib** und **seaborn** darstellen <!-- .element: class="fragment" data-fragment-index="2" -->
++ **Klassifikation, Regression und Clustering** mit scikit-learn trainieren und mit passenden Kennzahlen bewerten <!-- .element: class="fragment" data-fragment-index="3" -->
++ Einen vollständigen **ML-Workflow als Pipeline**, den Sie auf eigene Daten übertragen können <!-- .element: class="fragment" data-fragment-index="4" -->
 
 ---
 
@@ -31,31 +31,31 @@ Dr.-Ing. Grigory Devadze
 
 | Teil | Thema |
 |------|-------|
-| 2 | Python-Grundlagen |
-| 3 | NumPy und pandas |
-| 4 | Daten einlesen, aufbereiten, explorieren und visualisieren |
-| 5 | Grundlagen von Machine Learning und KI |
-| 6 | Überwachtes Lernen: Regression und Klassifikation |
-| 7 | Modelltraining, Feature Engineering, Hyperparameter und Evaluation |
-| 8 | Unüberwachtes Lernen: Clustering und Segmentierung |
-| 9 | Einführung in Deep Learning |
-| 10 | Der ML-Workflow mit scikit-learn |
-| 11 | Praxisbeispiele und Interpretation von Modellen |
-| 12 | Transfer in die Praxis |
+| 1 | Python-Grundlagen |
+| 2 | NumPy und pandas |
+| 3 | Daten einlesen, aufbereiten, explorieren und visualisieren |
+| 4 | Grundlagen von Machine Learning und KI |
+| 5 | Überwachtes Lernen: Regression und Klassifikation |
+| 6 | Modelltraining, Feature Engineering, Hyperparameter und Evaluation |
+| 7 | Unüberwachtes Lernen: Clustering und Segmentierung |
+| 8 | Einführung in Deep Learning |
+| 9 | Der ML-Workflow mit scikit-learn |
+| 10 | Praxisbeispiele und Interpretation von Modellen |
+| 11 | Transfer in die Praxis |
 
 ---
 
 ## Kursmaterial
 
-+ Ein öffentliches Repository enthält Folien, Notebooks, Daten und Umgebungsdateien
-+ `https://github.com/grigory-consulting/python-ml-grundlagen`
-+ Die Daten im Ordner `data/` reichen für fast alle Beispiele, ohne Download
-+ Das Repository bleibt nach dem Kurs erreichbar
++ Ein öffentliches Repository enthält Folien, Notebooks, Daten und Umgebungsdateien <!-- .element: class="fragment" data-fragment-index="1" -->
++ `https://github.com/grigory-consulting/python-ml-grundlagen` <!-- .element: class="fragment" data-fragment-index="2" -->
++ Die Daten im Ordner `data/` reichen für fast alle Beispiele, ohne Download <!-- .element: class="fragment" data-fragment-index="3" -->
++ Das Repository bleibt nach dem Kurs erreichbar <!-- .element: class="fragment" data-fragment-index="4" -->
 
 ---
 
-<!-- .slide: data-background-color="#1f3b4d" -->
-# Teil 2: Python-Grundlagen
+<!-- .slide: data-background-color="#183b66" -->
+# Teil 1: Python-Grundlagen
 
 Die Sprachbausteine, die Sie für Datenanalyse und Machine Learning brauchen: Werte, Entscheidungen, Schleifen, Sammlungen und Funktionen.
 
@@ -63,22 +63,22 @@ Die Sprachbausteine, die Sie für Datenanalyse und Machine Learning brauchen: We
 
 ## Was Sie in diesem Teil lernen
 
-+ Werte in Variablen ablegen und die Datentypen `int`, `float`, `str`, `bool`, `None` unterscheiden
-+ Mit Operatoren rechnen und Texte mit f-Strings formatieren
-+ Abläufe mit `if`, `for` und `while` steuern
-+ Daten in Listen, Tupeln, Sets und Dictionaries ablegen und wieder herausholen
-+ Eigene Funktionen schreiben, Fehlermeldungen lesen und Module importieren
++ Werte in Variablen ablegen und die Datentypen `int`, `float`, `str`, `bool`, `None` unterscheiden <!-- .element: class="fragment" data-fragment-index="1" -->
++ Mit Operatoren rechnen und Texte mit f-Strings formatieren <!-- .element: class="fragment" data-fragment-index="2" -->
++ Abläufe mit `if`, `for` und `while` steuern <!-- .element: class="fragment" data-fragment-index="3" -->
++ Daten in Listen, Tupeln, Sets und Dictionaries ablegen und wieder herausholen <!-- .element: class="fragment" data-fragment-index="4" -->
++ Eigene Funktionen schreiben, Fehlermeldungen lesen und Module importieren <!-- .element: class="fragment" data-fragment-index="5" -->
 
 --
 
 ## Python im Überblick
 
-+ Python ist eine interpretierte, universell einsetzbare Programmiersprache
-+ Ihr Code wird Anweisung für Anweisung ausgeführt, ein eigener Übersetzungsschritt (Kompilieren) entfällt
-+ Python ist dynamisch typisiert: Sie deklarieren keinen Typ, der Wert bringt ihn mit
-+ Blöcke entstehen durch Einrückung, nicht durch geschweifte Klammern
-+ Einsatzgebiete: Datenanalyse, künstliche Intelligenz, wissenschaftliches Rechnen, Automatisierung, Webentwicklung
-+ Die große Standardbibliothek und die aktive Community liefern Werkzeuge für fast jede Aufgabe
++ Python ist eine interpretierte, universell einsetzbare Programmiersprache <!-- .element: class="fragment" data-fragment-index="1" -->
++ Ihr Code wird Anweisung für Anweisung ausgeführt, ein eigener Übersetzungsschritt (Kompilieren) entfällt <!-- .element: class="fragment" data-fragment-index="2" -->
++ Python ist dynamisch typisiert: Sie deklarieren keinen Typ, der Wert bringt ihn mit <!-- .element: class="fragment" data-fragment-index="3" -->
++ Blöcke entstehen durch Einrückung, nicht durch geschweifte Klammern <!-- .element: class="fragment" data-fragment-index="4" -->
++ Einsatzgebiete: Datenanalyse, künstliche Intelligenz, wissenschaftliches Rechnen, Automatisierung, Webentwicklung <!-- .element: class="fragment" data-fragment-index="5" -->
++ Die große Standardbibliothek und die aktive Community liefern Werkzeuge für fast jede Aufgabe <!-- .element: class="fragment" data-fragment-index="6" -->
 
 --
 
@@ -96,13 +96,13 @@ print("Prüfung beendet")         # steht außerhalb, läuft immer
 # -> Prüfung beendet
 ```
 
-+ Eine Anweisung pro Zeile, kein Semikolon am Zeilenende
-+ Ein Doppelpunkt eröffnet einen Block, die Einrückung legt fest, was dazugehört
-+ Üblich sind vier Leerzeichen pro Ebene. VS Code setzt sie nach dem Doppelpunkt selbst.
-+ `#` leitet einen Kommentar ein: Python ignoriert den Rest der Zeile
-+ Groß- und Kleinschreibung zählt: `alter` und `Alter` sind zwei verschiedene Namen
++ Eine Anweisung pro Zeile, kein Semikolon am Zeilenende <!-- .element: class="fragment" data-fragment-index="1" -->
++ Ein Doppelpunkt eröffnet einen Block, die Einrückung legt fest, was dazugehört <!-- .element: class="fragment" data-fragment-index="2" -->
++ Üblich sind vier Leerzeichen pro Ebene. VS Code setzt sie nach dem Doppelpunkt selbst. <!-- .element: class="fragment" data-fragment-index="3" -->
++ `#` leitet einen Kommentar ein: Python ignoriert den Rest der Zeile <!-- .element: class="fragment" data-fragment-index="4" -->
++ Groß- und Kleinschreibung zählt: `alter` und `Alter` sind zwei verschiedene Namen <!-- .element: class="fragment" data-fragment-index="5" -->
 
-<div class="fragment">
+<div class="fragment" data-fragment-index="6">
 
 > [!warning]
 > Falsche Einrückung ist kein Schönheitsfehler. Python meldet `IndentationError` oder führt den falschen Block aus.
@@ -127,10 +127,10 @@ a = b = c = 0                     # derselbe Wert für mehrere Namen
 x, y, z = 1, 2, 3                 # mehrere Werte auf einmal
 ```
 
-+ Eine Variable ist ein Name für einen Wert. `=` heißt „weise zu", nicht „ist gleich".
-+ Der Typ muss nicht deklariert werden und darf sich ändern: `alter = "unbekannt"` ist erlaubt
-+ Namen beginnen mit Buchstabe oder Unterstrich, danach Buchstaben, Ziffern, Unterstriche
-+ Konvention in Python: Kleinbuchstaben mit Unterstrich, zum Beispiel `monatsbeitrag`
++ Eine Variable ist ein Name für einen Wert. `=` heißt „weise zu", nicht „ist gleich". <!-- .element: class="fragment" data-fragment-index="1" -->
++ Der Typ muss nicht deklariert werden und darf sich ändern: `alter = "unbekannt"` ist erlaubt <!-- .element: class="fragment" data-fragment-index="2" -->
++ Namen beginnen mit Buchstabe oder Unterstrich, danach Buchstaben, Ziffern, Unterstriche <!-- .element: class="fragment" data-fragment-index="3" -->
++ Konvention in Python: Kleinbuchstaben mit Unterstrich, zum Beispiel `monatsbeitrag` <!-- .element: class="fragment" data-fragment-index="4" -->
 
 --
 
@@ -170,9 +170,9 @@ print(int(412.99))                # -> 412   schneidet ab, rundet nicht
 print(6.0 + 7)                    # -> 13.0  int und float gemischt: float
 ```
 
-+ `int()`, `float()`, `str()` und `bool()` wandeln einen Wert in den jeweiligen Typ um
-+ `"45" + 1` führt zu einem `TypeError`: Python rät nicht, was gemeint ist
-+ `int("abc")` führt zu einem `ValueError`: der Text enthält keine Zahl
++ `int()`, `float()`, `str()` und `bool()` wandeln einen Wert in den jeweiligen Typ um <!-- .element: class="fragment" data-fragment-index="1" -->
++ `"45" + 1` führt zu einem `TypeError`: Python rät nicht, was gemeint ist <!-- .element: class="fragment" data-fragment-index="2" -->
++ `int("abc")` führt zu einem `ValueError`: der Text enthält keine Zahl <!-- .element: class="fragment" data-fragment-index="3" -->
 
 --
 
@@ -189,10 +189,10 @@ print(round(412.456, 2))   # -> 412.46
 print(abs(-5), max(5, 9), min(5, 9))   # -> 5 9 5
 ```
 
-+ Ein Ausdruck ist ein Wert oder eine Rechnung, die einen Wert ergibt
-+ Operatoren: `+`, `-`, `*`, `/`, `//`, `%`, `**`
-+ `**` bindet am stärksten, dann `*`, `/`, `//`, `%`, danach `+` und `-`
-+ Kurzformen: `summe += 10` bedeutet `summe = summe + 10`, ebenso `-=`, `*=`, `/=`
++ Ein Ausdruck ist ein Wert oder eine Rechnung, die einen Wert ergibt <!-- .element: class="fragment" data-fragment-index="1" -->
++ Operatoren: `+`, `-`, `*`, `/`, `//`, `%`, `**` <!-- .element: class="fragment" data-fragment-index="2" -->
++ `**` bindet am stärksten, dann `*`, `/`, `//`, `%`, danach `+` und `-` <!-- .element: class="fragment" data-fragment-index="3" -->
++ Kurzformen: `summe += 10` bedeutet `summe = summe + 10`, ebenso `-=`, `*=`, `/=` <!-- .element: class="fragment" data-fragment-index="4" -->
 
 --
 
@@ -211,11 +211,11 @@ print(tage // 7, "Wochen und", tage % 7, "Tage")
 # -> 6 Wochen und 3 Tage
 ```
 
-+ `/` liefert in Python 3 immer ein `float`, auch wenn die Division aufgeht
-+ `//` schneidet auf die ganze Zahl ab, `%` liefert den Rest
-+ Typische Anwendung von `%`: gerade oder ungerade prüfen mit `n % 2 == 0`
++ `/` liefert in Python 3 immer ein `float`, auch wenn die Division aufgeht <!-- .element: class="fragment" data-fragment-index="1" -->
++ `//` schneidet auf die ganze Zahl ab, `%` liefert den Rest <!-- .element: class="fragment" data-fragment-index="2" -->
++ Typische Anwendung von `%`: gerade oder ungerade prüfen mit `n % 2 == 0` <!-- .element: class="fragment" data-fragment-index="3" -->
 
-<div class="fragment">
+<div class="fragment" data-fragment-index="4">
 
 > [!warning]
 > Gleitkommazahlen sind nicht exakt: `0.1 + 0.2` ergibt `0.30000000000000004`. Geldbeträge für die Ausgabe runden.
@@ -241,9 +241,9 @@ print(name.split(" "))              # -> ['Erika', 'Muster']
 print("Erika" + " " + "Muster")     # -> Erika Muster
 ```
 
-+ Strings stehen in einfachen oder doppelten Anführungszeichen
-+ Methoden lassen sich verketten: `stadt.strip().lower().startswith("dr")`
-+ Strings sind unveränderlich: `upper` und `strip` liefern einen **neuen** String
++ Strings stehen in einfachen oder doppelten Anführungszeichen <!-- .element: class="fragment" data-fragment-index="1" -->
++ Methoden lassen sich verketten: `stadt.strip().lower().startswith("dr")` <!-- .element: class="fragment" data-fragment-index="2" -->
++ Strings sind unveränderlich: `upper` und `strip` liefern einen **neuen** String <!-- .element: class="fragment" data-fragment-index="3" -->
 
 --
 
@@ -266,9 +266,9 @@ print(f"Jahresbeitrag: {12 * beitrag:,.2f} EUR")
 print(f"Anteil: {0.256:.1%}")       # -> Anteil: 25.6%
 ```
 
-+ Ein `f` vor dem Anführungszeichen, Ausdrücke in geschweiften Klammern
-+ Nach dem Doppelpunkt steht das Format: `.2f` zwei Nachkommastellen, `,` Tausendertrenner, `.1%` Prozent
-+ Ältere Schreibweisen, die Sie in fremdem Code sehen: `"{} Jahre".format(20)` und `"%d Jahre" % 20`
++ Ein `f` vor dem Anführungszeichen, Ausdrücke in geschweiften Klammern <!-- .element: class="fragment" data-fragment-index="1" -->
++ Nach dem Doppelpunkt steht das Format: `.2f` zwei Nachkommastellen, `,` Tausendertrenner, `.1%` Prozent <!-- .element: class="fragment" data-fragment-index="2" -->
++ Ältere Schreibweisen, die Sie in fremdem Code sehen: `"{} Jahre".format(20)` und `"%d Jahre" % 20` <!-- .element: class="fragment" data-fragment-index="3" -->
 
 --
 
@@ -285,10 +285,10 @@ alter = int(input("Wie alt sind Sie? "))
 print(f"Hallo {name}, in {65 - alter} Jahren sind Sie 65.")
 ```
 
-+ `print` gibt mehrere Werte aus und setzt Leerzeichen dazwischen, `sep` und `end` ändern das
-+ `input` zeigt den Text an, wartet auf eine Eingabe und liefert sie **immer als String**
-+ Für Rechnungen die Eingabe mit `int()` oder `float()` umwandeln
-+ In VS Code erscheint das Eingabefeld von `input` oben am Fensterrand
++ `print` gibt mehrere Werte aus und setzt Leerzeichen dazwischen, `sep` und `end` ändern das <!-- .element: class="fragment" data-fragment-index="1" -->
++ `input` zeigt den Text an, wartet auf eine Eingabe und liefert sie **immer als String** <!-- .element: class="fragment" data-fragment-index="2" -->
++ Für Rechnungen die Eingabe mit `int()` oder `float()` umwandeln <!-- .element: class="fragment" data-fragment-index="3" -->
++ In VS Code erscheint das Eingabefeld von `input` oben am Fensterrand <!-- .element: class="fragment" data-fragment-index="4" -->
 
 --
 
@@ -309,9 +309,9 @@ print(not alter > 60)                      # -> True   kehrt um
 print(18 <= alter < 65)                    # -> True   Bereichsprüfung
 ```
 
-+ Vergleichsoperatoren: `==`, `!=`, `<`, `>`, `<=`, `>=`. Das Ergebnis ist immer `True` oder `False`.
-+ Logische Operatoren: `and`, `or`, `not`. Klammern machen lange Bedingungen lesbar.
-+ `=` weist zu, `==` vergleicht
++ Vergleichsoperatoren: `==`, `!=`, `<`, `>`, `<=`, `>=`. Das Ergebnis ist immer `True` oder `False`. <!-- .element: class="fragment" data-fragment-index="1" -->
++ Logische Operatoren: `and`, `or`, `not`. Klammern machen lange Bedingungen lesbar. <!-- .element: class="fragment" data-fragment-index="2" -->
++ `=` weist zu, `==` vergleicht <!-- .element: class="fragment" data-fragment-index="3" -->
 
 --
 
@@ -332,9 +332,9 @@ if alter < 18:
 # -> Mitversicherung über die Eltern prüfen
 ```
 
-+ `if` führt den eingerückten Block nur aus, wenn die Bedingung `True` ergibt
-+ `else` ist optional und fängt alle übrigen Fälle ab
-+ Bedingung, Doppelpunkt, eingerückter Block: dieselbe Form wie später bei `for`, `while` und `def`
++ `if` führt den eingerückten Block nur aus, wenn die Bedingung `True` ergibt <!-- .element: class="fragment" data-fragment-index="1" -->
++ `else` ist optional und fängt alle übrigen Fälle ab <!-- .element: class="fragment" data-fragment-index="2" -->
++ Bedingung, Doppelpunkt, eingerückter Block: dieselbe Form wie später bei `for`, `while` und `def` <!-- .element: class="fragment" data-fragment-index="3" -->
 
 --
 
@@ -356,9 +356,9 @@ else:
 print(gruppe)     # -> 40 bis 64
 ```
 
-+ Python prüft die Bedingungen von oben nach unten und nimmt den **ersten** Treffer
-+ Alle weiteren Zweige werden übersprungen, deshalb genügt `alter < 40` ohne Untergrenze
-+ Beliebig viele `elif`, höchstens ein `else` am Ende
++ Python prüft die Bedingungen von oben nach unten und nimmt den **ersten** Treffer <!-- .element: class="fragment" data-fragment-index="1" -->
++ Alle weiteren Zweige werden übersprungen, deshalb genügt `alter < 40` ohne Untergrenze <!-- .element: class="fragment" data-fragment-index="2" -->
++ Beliebig viele `elif`, höchstens ein `else` am Ende <!-- .element: class="fragment" data-fragment-index="3" -->
 
 --
 
@@ -382,9 +382,9 @@ print(bool(7), bool("x"), bool([0]))
 # -> True True True
 ```
 
-+ Als falsch gelten: `False`, `None`, `0`, `0.0`, leerer String, leere Liste, leeres Dict, leeres Set, leeres Tupel
-+ Alles andere gilt als wahr
-+ `if versicherte:` liest sich als „wenn die Liste etwas enthält"
++ Als falsch gelten: `False`, `None`, `0`, `0.0`, leerer String, leere Liste, leeres Dict, leeres Set, leeres Tupel <!-- .element: class="fragment" data-fragment-index="1" -->
++ Alles andere gilt als wahr <!-- .element: class="fragment" data-fragment-index="2" -->
++ `if versicherte:` liest sich als „wenn die Liste etwas enthält" <!-- .element: class="fragment" data-fragment-index="3" -->
 
 --
 
@@ -402,9 +402,9 @@ print(list(range(2, 6)))        # -> [2, 3, 4, 5]
 print(list(range(10, 0, -2)))   # -> [10, 8, 6, 4, 2]
 ```
 
-+ `for variable in folge:` führt den Block einmal pro Element aus
-+ `range(start, stop, step)`: `start` zählt mit, `stop` zählt **nicht** mit
-+ `range(5)` beginnt bei 0 und liefert fünf Werte
++ `for variable in folge:` führt den Block einmal pro Element aus <!-- .element: class="fragment" data-fragment-index="1" -->
++ `range(start, stop, step)`: `start` zählt mit, `stop` zählt **nicht** mit <!-- .element: class="fragment" data-fragment-index="2" -->
++ `range(5)` beginnt bei 0 und liefert fünf Werte <!-- .element: class="fragment" data-fragment-index="3" -->
 
 --
 
@@ -428,9 +428,9 @@ for nr, stadt in enumerate(staedte, start=1):
 # -> 3 Köln
 ```
 
-+ Eine `for`-Schleife läuft über alles, was Elemente hat: Listen, Strings, Tupel, Dicts, Dateien
-+ Ein Zähler von Hand (`i = i + 1`) ist fast nie nötig
-+ `enumerate` liefert Position und Wert zusammen. Ohne `start` beginnt die Zählung bei 0.
++ Eine `for`-Schleife läuft über alles, was Elemente hat: Listen, Strings, Tupel, Dicts, Dateien <!-- .element: class="fragment" data-fragment-index="1" -->
++ Ein Zähler von Hand (`i = i + 1`) ist fast nie nötig <!-- .element: class="fragment" data-fragment-index="2" -->
++ `enumerate` liefert Position und Wert zusammen. Ohne `start` beginnt die Zählung bei 0. <!-- .element: class="fragment" data-fragment-index="3" -->
 
 --
 
@@ -452,9 +452,9 @@ print("ohne Leistung:", anzahl_ohne)          # -> ohne Leistung: 2
 print("Mittel:", round(summe / len(leistungen), 2))   # -> Mittel: 222.58
 ```
 
-+ Das Muster: Startwert **vor** der Schleife setzen, in der Schleife fortschreiben, danach ausgeben
-+ Für Summen ist der Startwert 0, für Produkte 1
-+ Abkürzungen für Standardfälle: `sum(leistungen)`, `len(leistungen)`, `max(leistungen)`
++ Das Muster: Startwert **vor** der Schleife setzen, in der Schleife fortschreiben, danach ausgeben <!-- .element: class="fragment" data-fragment-index="1" -->
++ Für Summen ist der Startwert 0, für Produkte 1 <!-- .element: class="fragment" data-fragment-index="2" -->
++ Abkürzungen für Standardfälle: `sum(leistungen)`, `len(leistungen)`, `max(leistungen)` <!-- .element: class="fragment" data-fragment-index="3" -->
 
 --
 
@@ -473,12 +473,12 @@ print(monate, "Monate gedeckt, Rest:", guthaben)
 # -> 2 Monate gedeckt, Rest: 175.0
 ```
 
-+ `while` wiederholt den Block, solange die Bedingung wahr ist
-+ Geeignet, wenn vorher nicht feststeht, wie oft wiederholt wird
-+ Ist die Bedingung schon zu Beginn falsch, läuft der Block kein einziges Mal
-+ Im Block muss sich etwas ändern, das die Bedingung irgendwann falsch macht
++ `while` wiederholt den Block, solange die Bedingung wahr ist <!-- .element: class="fragment" data-fragment-index="1" -->
++ Geeignet, wenn vorher nicht feststeht, wie oft wiederholt wird <!-- .element: class="fragment" data-fragment-index="2" -->
++ Ist die Bedingung schon zu Beginn falsch, läuft der Block kein einziges Mal <!-- .element: class="fragment" data-fragment-index="3" -->
++ Im Block muss sich etwas ändern, das die Bedingung irgendwann falsch macht <!-- .element: class="fragment" data-fragment-index="4" -->
 
-<div class="fragment">
+<div class="fragment" data-fragment-index="5">
 
 > [!warning]
 > Endlosschleife im Notebook: Die Zelle zeigt dauerhaft den Laufindikator. Mit **Unterbrechen** in der Werkzeugleiste stoppen.
@@ -501,9 +501,9 @@ for plz in plz_liste:
 # -> 10115 01067 50667
 ```
 
-+ `break` beendet die Schleife vollständig
-+ `continue` springt zum nächsten Durchlauf, der Rest des Blocks entfällt
-+ Beide gelten für `for` und `while` und wirken nur auf die innerste Schleife
++ `break` beendet die Schleife vollständig <!-- .element: class="fragment" data-fragment-index="1" -->
++ `continue` springt zum nächsten Durchlauf, der Rest des Blocks entfällt <!-- .element: class="fragment" data-fragment-index="2" -->
++ Beide gelten für `for` und `while` und wirken nur auf die innerste Schleife <!-- .element: class="fragment" data-fragment-index="3" -->
 
 --
 
@@ -524,10 +524,10 @@ matrix = [[1, 2, 3],
 print(matrix[1][2])        # -> 6
 ```
 
-+ Eine Liste ist eine geordnete, veränderbare Sammlung in eckigen Klammern
-+ Die Reihenfolge bleibt erhalten, Duplikate sind erlaubt
-+ Listen gehören zu den meistverwendeten Datenstrukturen in Python
-+ Eine Spalte einer Tabelle können Sie sich vorerst als Liste vorstellen
++ Eine Liste ist eine geordnete, veränderbare Sammlung in eckigen Klammern <!-- .element: class="fragment" data-fragment-index="1" -->
++ Die Reihenfolge bleibt erhalten, Duplikate sind erlaubt <!-- .element: class="fragment" data-fragment-index="2" -->
++ Listen gehören zu den meistverwendeten Datenstrukturen in Python <!-- .element: class="fragment" data-fragment-index="3" -->
++ Eine Spalte einer Tabelle können Sie sich vorerst als Liste vorstellen <!-- .element: class="fragment" data-fragment-index="4" -->
 
 --
 
@@ -546,14 +546,13 @@ print(beitraege[::2])    # -> [310, 340, 370]  jedes zweite
 print(beitraege[::-1])   # -> [370, 355, 340, 325, 310]  umgekehrt
 ```
 
-```text
-Index      0     1     2     3     4
-        [ 310,  325,  340,  355,  370 ]
-Index     -5    -4    -3    -2    -1
-```
+| Index | 0 | 1 | 2 | 3 | 4 |
+|---|---|---|---|---|---|
+| **Wert** | 310 | 325 | 340 | 355 | 370 |
+| **negativer Index** | -5 | -4 | -3 | -2 | -1 |
 
-+ Der Index beginnt bei 0. Negative Indizes zählen vom Ende.
-+ `liste[start:stop:step]`: `stop` zählt nicht mit, das Ergebnis ist eine neue Liste
++ Der Index beginnt bei 0. Negative Indizes zählen vom Ende. <!-- .element: class="fragment" data-fragment-index="1" -->
++ `liste[start:stop:step]`: `stop` zählt nicht mit, das Ergebnis ist eine neue Liste <!-- .element: class="fragment" data-fragment-index="2" -->
 
 --
 
@@ -578,9 +577,9 @@ print(staedte + ["Kiel", "Ulm"])
 # -> ['Berlin', 'Leipzig', 'Köln', 'Kiel', 'Ulm']
 ```
 
-+ Listen sind veränderbar (mutable): Methoden wie `append` ändern die Liste selbst und geben `None` zurück
++ Listen sind veränderbar (mutable): Methoden wie `append` ändern die Liste selbst und geben `None` zurück <!-- .element: class="fragment" data-fragment-index="1" -->
 
-<div class="fragment">
+<div class="fragment" data-fragment-index="2">
 
 > [!warning]
 > `staedte = staedte.append("Kiel")` zerstört die Liste: Danach ist `staedte` gleich `None`.
@@ -629,9 +628,9 @@ print(b)     # -> [[99, 2], [3, 4]]   Änderung schlägt durch
 print(c)     # -> [[1, 2], [3, 4]]    unabhängig
 ```
 
-+ `copy()` kopiert nur die äußere Liste, die inneren Objekte bleiben gemeinsam
-+ `copy.deepcopy()` dupliziert auch alle inneren Objekte
-+ Eine Zuweisung `b = a` kopiert gar nichts: beide Namen zeigen auf dieselbe Liste
++ `copy()` kopiert nur die äußere Liste, die inneren Objekte bleiben gemeinsam <!-- .element: class="fragment" data-fragment-index="1" -->
++ `copy.deepcopy()` dupliziert auch alle inneren Objekte <!-- .element: class="fragment" data-fragment-index="2" -->
++ Eine Zuweisung `b = a` kopiert gar nichts: beide Namen zeigen auf dieselbe Liste <!-- .element: class="fragment" data-fragment-index="3" -->
 
 --
 
@@ -651,10 +650,10 @@ versicherter[1] = 46
 # -> TypeError: 'tuple' object does not support item assignment
 ```
 
-+ Ein Tupel ist eine unveränderliche Liste: runde Klammern, Elemente durch Kommas getrennt
-+ Indexing und Slicing funktionieren wie bei Listen
-+ Ändern, Anfügen und Entfernen sind nicht möglich
-+ Einsatz: feste Wertegruppen wie Koordinaten, eine Tabellenzeile, mehrere Rückgabewerte
++ Ein Tupel ist eine unveränderliche Liste: runde Klammern, Elemente durch Kommas getrennt <!-- .element: class="fragment" data-fragment-index="1" -->
++ Indexing und Slicing funktionieren wie bei Listen <!-- .element: class="fragment" data-fragment-index="2" -->
++ Ändern, Anfügen und Entfernen sind nicht möglich <!-- .element: class="fragment" data-fragment-index="3" -->
++ Einsatz: feste Wertegruppen wie Koordinaten, eine Tabellenzeile, mehrere Rückgabewerte <!-- .element: class="fragment" data-fragment-index="4" -->
 
 --
 
@@ -678,9 +677,9 @@ print(juengste, aelteste)                # -> 27 68
 print(tuple([1, 2, 3]), list((1, 2, 3)))   # -> (1, 2, 3) [1, 2, 3]
 ```
 
-+ Links so viele Namen wie rechts Werte: Python verteilt sie der Reihe nach
-+ Tupel sind als Schlüssel in einem Dict erlaubt, Listen nicht
-+ `tuple()` und `list()` wandeln ineinander um
++ Links so viele Namen wie rechts Werte: Python verteilt sie der Reihe nach <!-- .element: class="fragment" data-fragment-index="1" -->
++ Tupel sind als Schlüssel in einem Dict erlaubt, Listen nicht <!-- .element: class="fragment" data-fragment-index="2" -->
++ `tuple()` und `list()` wandeln ineinander um <!-- .element: class="fragment" data-fragment-index="3" -->
 
 --
 
@@ -700,9 +699,9 @@ eindeutig.discard("99999")   # kein Fehler, wenn der Wert fehlt
 leeres_set = set()           # {} wäre ein leeres Dict
 ```
 
-+ Ein Set ist eine ungeordnete Sammlung **eindeutiger** Elemente: keine Duplikate, kein Index, die Reihenfolge der Ausgabe ist beliebig
-+ Typische Aufgaben: Duplikate entfernen, Zugehörigkeit prüfen, Mengen vergleichen
-+ Elemente müssen unveränderlich sein: Zahlen, Strings, Tupel, aber keine Listen
++ Ein Set ist eine ungeordnete Sammlung **eindeutiger** Elemente: keine Duplikate, kein Index, die Reihenfolge der Ausgabe ist beliebig <!-- .element: class="fragment" data-fragment-index="1" -->
++ Typische Aufgaben: Duplikate entfernen, Zugehörigkeit prüfen, Mengen vergleichen <!-- .element: class="fragment" data-fragment-index="2" -->
++ Elemente müssen unveränderlich sein: Zahlen, Strings, Tupel, aber keine Listen <!-- .element: class="fragment" data-fragment-index="3" -->
 
 --
 
@@ -750,9 +749,9 @@ print(versicherter)
 #     'raucher': False, 'stadt': 'Dresden'}
 ```
 
-+ Ein Dictionary (Dict) speichert Schlüssel-Wert-Paare: Zugriff über den Schlüssel, nicht über eine Position
-+ Schlüssel sind eindeutig und unveränderlich (meist Strings), Werte dürfen alles sein
-+ Einsatz: Nachschlagen, Konfigurationen, Zählungen, eine Tabellenzeile mit benannten Feldern
++ Ein Dictionary (Dict) speichert Schlüssel-Wert-Paare: Zugriff über den Schlüssel, nicht über eine Position <!-- .element: class="fragment" data-fragment-index="1" -->
++ Schlüssel sind eindeutig und unveränderlich (meist Strings), Werte dürfen alles sein <!-- .element: class="fragment" data-fragment-index="2" -->
++ Einsatz: Nachschlagen, Konfigurationen, Zählungen, eine Tabellenzeile mit benannten Feldern <!-- .element: class="fragment" data-fragment-index="3" -->
 
 --
 
@@ -772,9 +771,9 @@ wert = beitrag.pop("01067")              # löschen und Wert zurückgeben
 print(wert, beitrag)                     # -> 412.5 {}
 ```
 
-+ `d[schluessel]` wirft einen `KeyError`, wenn der Schlüssel fehlt
-+ `d.get(schluessel, ersatz)` liefert stattdessen den Ersatzwert, ohne Angabe `None`
-+ `in` prüft Schlüssel, nicht Werte
++ `d[schluessel]` wirft einen `KeyError`, wenn der Schlüssel fehlt <!-- .element: class="fragment" data-fragment-index="1" -->
++ `d.get(schluessel, ersatz)` liefert stattdessen den Ersatzwert, ohne Angabe `None` <!-- .element: class="fragment" data-fragment-index="2" -->
++ `in` prüft Schlüssel, nicht Werte <!-- .element: class="fragment" data-fragment-index="3" -->
 
 --
 
@@ -798,9 +797,9 @@ print(list(anzahl.values()))    # -> [1200, 640, 910]
 print(sum(anzahl.values()))     # -> 2750
 ```
 
-+ `items()` liefert Tupel aus Schlüssel und Wert, das Unpacking im Schleifenkopf verteilt sie
-+ `keys()` und `values()` liefern nur die eine Seite
-+ Die Reihenfolge entspricht der Reihenfolge des Einfügens
++ `items()` liefert Tupel aus Schlüssel und Wert, das Unpacking im Schleifenkopf verteilt sie <!-- .element: class="fragment" data-fragment-index="1" -->
++ `keys()` und `values()` liefern nur die eine Seite <!-- .element: class="fragment" data-fragment-index="2" -->
++ Die Reihenfolge entspricht der Reihenfolge des Einfügens <!-- .element: class="fragment" data-fragment-index="3" -->
 
 --
 
@@ -825,8 +824,8 @@ print(in_5_jahren)                          # -> [39, 56, 32, 73, 50]
 print([x * x for x in range(1, 6)])         # -> [1, 4, 9, 16, 25]
 ```
 
-+ Form: `[ausdruck for element in folge if bedingung]`, der `if`-Teil ist optional
-+ Lesen Sie von der Mitte aus: erst `for`, dann `if`, zuletzt der Ausdruck vorn
++ Form: `[ausdruck for element in folge if bedingung]`, der `if`-Teil ist optional <!-- .element: class="fragment" data-fragment-index="1" -->
++ Lesen Sie von der Mitte aus: erst `for`, dann `if`, zuletzt der Ausdruck vorn <!-- .element: class="fragment" data-fragment-index="2" -->
 
 --
 
@@ -868,11 +867,11 @@ summe = jahresbeitrag(398.0) + jahresbeitrag(412.5)
 print(summe)                       # -> 9726.0
 ```
 
-+ `def name(parameter):` definiert die Funktion, der eingerückte Block ist ihr Rumpf
-+ `return` gibt einen Wert zurück und beendet die Funktion. Ohne `return` liefert sie `None`.
-+ Parameter stehen in der Definition, Argumente sind die Werte beim Aufruf
-+ Der Docstring in dreifachen Anführungszeichen erscheint bei `help(jahresbeitrag)`
-+ Variablen aus dem Rumpf (`ergebnis`) existieren außerhalb der Funktion nicht
++ `def name(parameter):` definiert die Funktion, der eingerückte Block ist ihr Rumpf <!-- .element: class="fragment" data-fragment-index="1" -->
++ `return` gibt einen Wert zurück und beendet die Funktion. Ohne `return` liefert sie `None`. <!-- .element: class="fragment" data-fragment-index="2" -->
++ Parameter stehen in der Definition, Argumente sind die Werte beim Aufruf <!-- .element: class="fragment" data-fragment-index="3" -->
++ Der Docstring in dreifachen Anführungszeichen erscheint bei `help(jahresbeitrag)` <!-- .element: class="fragment" data-fragment-index="4" -->
++ Variablen aus dem Rumpf (`ergebnis`) existieren außerhalb der Funktion nicht <!-- .element: class="fragment" data-fragment-index="5" -->
 
 --
 
@@ -889,11 +888,11 @@ print(beitrag(3000, zuschlag=25.0))        # -> 475.0  per Name
 print(beitrag(zuschlag=25.0, einkommen=3000, satz=0.16))   # -> 505.0
 ```
 
-+ Ein Parameter mit Defaultwert darf beim Aufruf fehlen
-+ Parameter ohne Default stehen in der Definition vor denen mit Default
-+ Keyword-Argumente (`name=wert`) sind unabhängig von der Reihenfolge und machen Aufrufe lesbar
++ Ein Parameter mit Defaultwert darf beim Aufruf fehlen <!-- .element: class="fragment" data-fragment-index="1" -->
++ Parameter ohne Default stehen in der Definition vor denen mit Default <!-- .element: class="fragment" data-fragment-index="2" -->
++ Keyword-Argumente (`name=wert`) sind unabhängig von der Reihenfolge und machen Aufrufe lesbar <!-- .element: class="fragment" data-fragment-index="3" -->
 
-<div class="fragment">
+<div class="fragment" data-fragment-index="4">
 
 > [!tip]
 > So lesen Sie später Aufrufe wie `pd.read_csv("data/titanic.csv", sep=",")`: ein Pflichtargument nach Position, der Rest per Name mit Defaults.
@@ -924,8 +923,8 @@ info_ausgeben(alter=50, stadt="Wuppertal")
 # -> alter: 50   stadt: Wuppertal   (je eine Zeile)
 ```
 
-+ Mehrere Rückgabewerte sind ein Tupel, das Sie beim Aufruf entpacken
-+ `*args` und `**kwargs` müssen Sie im Kurs nicht selbst schreiben, aber in Dokumentationen erkennen
++ Mehrere Rückgabewerte sind ein Tupel, das Sie beim Aufruf entpacken <!-- .element: class="fragment" data-fragment-index="1" -->
++ `*args` und `**kwargs` müssen Sie im Kurs nicht selbst schreiben, aber in Dokumentationen erkennen <!-- .element: class="fragment" data-fragment-index="2" -->
 
 --
 
@@ -944,10 +943,10 @@ print(jahresbeitrag("ab", 3))        # -> ababab   kein Fehler!
 print(isinstance(412.5, float))      # -> True   Typprüfung zur Laufzeit
 ```
 
-+ Type Hints geben an, welche Typen eine Funktion erwartet und zurückgibt
-+ Python prüft sie zur Laufzeit **nicht**: es sind Hinweise für Menschen, Editoren und Prüfwerkzeuge wie `mypy`
-+ VS Code nutzt sie für Autovervollständigung und Warnungen
-+ Mit `isinstance(obj, Typ)` prüfen Sie einen Typ zur Laufzeit selbst
++ Type Hints geben an, welche Typen eine Funktion erwartet und zurückgibt <!-- .element: class="fragment" data-fragment-index="1" -->
++ Python prüft sie zur Laufzeit **nicht**: es sind Hinweise für Menschen, Editoren und Prüfwerkzeuge wie `mypy` <!-- .element: class="fragment" data-fragment-index="2" -->
++ VS Code nutzt sie für Autovervollständigung und Warnungen <!-- .element: class="fragment" data-fragment-index="3" -->
++ Mit `isinstance(obj, Typ)` prüfen Sie einen Typ zur Laufzeit selbst <!-- .element: class="fragment" data-fragment-index="4" -->
 
 --
 
@@ -973,9 +972,9 @@ Traceback (most recent call last):
 TypeError: unsupported operand type(s) for +: 'float' and 'str'
 ```
 
-+ Von **unten nach oben** lesen: Die letzte Zeile nennt Fehlertyp und Ursache
-+ Darüber steht die Zeile mit dem Fehler: Zeile 4, in `jahresbeitrag`
-+ Weiter oben folgt die Aufrufkette bis zu Ihrer eigenen Zelle
++ Von **unten nach oben** lesen: Die letzte Zeile nennt Fehlertyp und Ursache <!-- .element: class="fragment" data-fragment-index="1" -->
++ Darüber steht die Zeile mit dem Fehler: Zeile 4, in `jahresbeitrag` <!-- .element: class="fragment" data-fragment-index="2" -->
++ Weiter oben folgt die Aufrufkette bis zu Ihrer eigenen Zelle <!-- .element: class="fragment" data-fragment-index="3" -->
 
 --
 
@@ -1017,10 +1016,10 @@ print(betraege)
 # -> [412.5, 398.0, 405.0]
 ```
 
-+ Python versucht den `try`-Block. Tritt der genannte Fehler auf, läuft stattdessen der `except`-Block.
-+ Das Programm läuft danach weiter, statt abzubrechen
-+ Fangen Sie den **konkreten** Fehlertyp ab, nicht pauschal alles
-+ Optional: `else` läuft nur ohne Fehler, `finally` läuft immer
++ Python versucht den `try`-Block. Tritt der genannte Fehler auf, läuft stattdessen der `except`-Block. <!-- .element: class="fragment" data-fragment-index="1" -->
++ Das Programm läuft danach weiter, statt abzubrechen <!-- .element: class="fragment" data-fragment-index="2" -->
++ Fangen Sie den **konkreten** Fehlertyp ab, nicht pauschal alles <!-- .element: class="fragment" data-fragment-index="3" -->
++ Optional: `else` läuft nur ohne Fehler, `finally` läuft immer <!-- .element: class="fragment" data-fragment-index="4" -->
 
 --
 
@@ -1046,7 +1045,7 @@ print(rd.randint(0, 9))          # ganze Zufallszahl von 0 bis 9
 | `from math import sqrt`    | `sqrt(16)`       |
 | `import pandas as pd`      | `pd.read_csv(...)` |
 
-+ Ein Modul ist eine Datei mit fertigen Funktionen. Die Standardbibliothek ist installiert, Pakete wie pandas kommen über `pip` dazu.
++ Ein Modul ist eine Datei mit fertigen Funktionen. Die Standardbibliothek ist installiert, Pakete wie pandas kommen über `pip` dazu. <!-- .element: class="fragment" data-fragment-index="1" -->
 
 --
 
@@ -1067,12 +1066,12 @@ df.head()                      # Methode: die ersten fünf Zeilen
 df.shape                       # Attribut ohne Klammern: (Zeilen, Spalten)
 ```
 
-+ In Python ist jeder Wert ein Objekt mit einem Typ (einer Klasse)
-+ Eine **Methode** ist eine Funktion, die zum Objekt gehört: `objekt.methode(argumente)`
-+ Ein **Attribut** ist ein Datenwert des Objekts: `objekt.attribut`, ohne Klammern
-+ Der Typ bestimmt, welche Methoden es gibt: `str` hat `title`, `list` hat `append`, `DataFrame` hat `head`
++ In Python ist jeder Wert ein Objekt mit einem Typ (einer Klasse) <!-- .element: class="fragment" data-fragment-index="1" -->
++ Eine **Methode** ist eine Funktion, die zum Objekt gehört: `objekt.methode(argumente)` <!-- .element: class="fragment" data-fragment-index="2" -->
++ Ein **Attribut** ist ein Datenwert des Objekts: `objekt.attribut`, ohne Klammern <!-- .element: class="fragment" data-fragment-index="3" -->
++ Der Typ bestimmt, welche Methoden es gibt: `str` hat `title`, `list` hat `append`, `DataFrame` hat `head` <!-- .element: class="fragment" data-fragment-index="4" -->
 
-<div class="fragment">
+<div class="fragment" data-fragment-index="5">
 
 > [!tip]
 > `df.head()` heißt: „Objekt `df`, führe deine Methode `head` aus." Welche Methoden ein Objekt hat, zeigt `Tab` nach dem Punkt.
@@ -1083,16 +1082,16 @@ df.shape                       # Attribut ohne Klammern: (Zeilen, Spalten)
 
 ## Zusammenfassung
 
-+ Fünf Grundtypen: `int`, `float`, `str`, `bool`, `None`. `/` liefert immer `float`, `//` und `%` rechnen ganzzahlig.
-+ Einrückung bildet Blöcke: `if`/`elif`/`else` entscheidet, `for` läuft über Elemente, `while` läuft bis zu einer Bedingung
-+ Vier Sammlungen: Liste (geordnet, veränderbar), Tupel (unveränderlich), Set (eindeutig), Dict (Schlüssel und Wert, sicherer Zugriff mit `get`)
-+ Funktionen mit `def`, `return`, Defaultwerten und Keyword-Argumenten: so sind auch pandas und scikit-learn aufgebaut
-+ Fehlermeldungen von unten nach oben lesen, Module mit `import` einbinden, Methoden mit `objekt.methode()` aufrufen
++ Fünf Grundtypen: `int`, `float`, `str`, `bool`, `None`. `/` liefert immer `float`, `//` und `%` rechnen ganzzahlig. <!-- .element: class="fragment" data-fragment-index="1" -->
++ Einrückung bildet Blöcke: `if`/`elif`/`else` entscheidet, `for` läuft über Elemente, `while` läuft bis zu einer Bedingung <!-- .element: class="fragment" data-fragment-index="2" -->
++ Vier Sammlungen: Liste (geordnet, veränderbar), Tupel (unveränderlich), Set (eindeutig), Dict (Schlüssel und Wert, sicherer Zugriff mit `get`) <!-- .element: class="fragment" data-fragment-index="3" -->
++ Funktionen mit `def`, `return`, Defaultwerten und Keyword-Argumenten: so sind auch pandas und scikit-learn aufgebaut <!-- .element: class="fragment" data-fragment-index="4" -->
++ Fehlermeldungen von unten nach oben lesen, Module mit `import` einbinden, Methoden mit `objekt.methode()` aufrufen <!-- .element: class="fragment" data-fragment-index="5" -->
 
 ---
 
-<!-- .slide: data-background-color="#1f3b4d" -->
-# Teil 3: NumPy und pandas
+<!-- .slide: data-background-color="#183b66" -->
+# Teil 2: NumPy und pandas
 
 Mit Arrays rechnen und Tabellen auswerten: die beiden Bibliotheken, auf denen Datenanalyse in Python meist aufbaut.
 
@@ -1161,9 +1160,9 @@ a * b        # -> [ 4 10 18]   elementweise, kein Matrixprodukt
 np.sqrt(b)   # -> [2.   2.236 2.449]
 ```
 
-+ Operatoren wirken **elementweise** auf das ganze Array
-+ NumPy-Funktionen wie `np.sqrt`, `np.log`, `np.round` ebenfalls
-+ Mit Listen geht das nicht: `[1, 2, 3] * 2` ergibt `[1, 2, 3, 1, 2, 3]`
++ Operatoren wirken **elementweise** auf das ganze Array <!-- .element: class="fragment" data-fragment-index="1" -->
++ NumPy-Funktionen wie `np.sqrt`, `np.log`, `np.round` ebenfalls <!-- .element: class="fragment" data-fragment-index="2" -->
++ Mit Listen geht das nicht: `[1, 2, 3] * 2` ergibt `[1, 2, 3, 1, 2, 3]` <!-- .element: class="fragment" data-fragment-index="3" -->
 
 --
 
@@ -1246,9 +1245,9 @@ data[1:3, :2]    # -> [[4 5]
                  #     [7 8]]     Zeilen 1 bis 2, Spalten 0 bis 1
 ```
 
-+ Schreibweise bei zwei Dimensionen: `[Zeile, Spalte]`, Zählung ab 0
-+ `:` allein heißt „alles in dieser Richtung"
-+ Wie bei Listen: Der Endindex eines Slice gehört nicht mehr dazu
++ Schreibweise bei zwei Dimensionen: `[Zeile, Spalte]`, Zählung ab 0 <!-- .element: class="fragment" data-fragment-index="1" -->
++ `:` allein heißt „alles in dieser Richtung" <!-- .element: class="fragment" data-fragment-index="2" -->
++ Wie bei Listen: Der Endindex eines Slice gehört nicht mehr dazu <!-- .element: class="fragment" data-fragment-index="3" -->
 
 --
 
@@ -1311,8 +1310,8 @@ summen = wuerfe.sum(axis=1)
 (summen == 7).mean()                  # -> ca. 0.167 (Theorie: 1/6)
 ```
 
-+ Derselbe Startwert liefert bei jedem Lauf dieselben Zahlen: Ergebnisse bleiben **reproduzierbar**
-+ In diesem Kurs ist der Startwert immer `42`, bei scikit-learn heißt der Parameter `random_state=42`
++ Derselbe Startwert liefert bei jedem Lauf dieselben Zahlen: Ergebnisse bleiben **reproduzierbar** <!-- .element: class="fragment" data-fragment-index="1" -->
++ In diesem Kurs ist der Startwert bei NumPy immer `42`, bei scikit-learn heißt der Parameter `random_state` und steht immer auf `1` <!-- .element: class="fragment" data-fragment-index="2" -->
 
 --
 
@@ -1373,10 +1372,10 @@ df = pd.DataFrame({
 2     Cem     30          64
 ```
 
-+ Links steht der **Index** (Zeilenbeschriftung)
-+ Jede Spalte hat **einen** Datentyp
-+ `df["alter"]` ist eine Series, `df["alter"].to_numpy()` ein NumPy-Array
-+ Von den NumPy-Folien gilt weiter: Rechnen, Masken, `mean`, `sum`
++ Links steht der **Index** (Zeilenbeschriftung) <!-- .element: class="fragment" data-fragment-index="1" -->
++ Jede Spalte hat **einen** Datentyp <!-- .element: class="fragment" data-fragment-index="2" -->
++ `df["alter"]` ist eine Series, `df["alter"].to_numpy()` ein NumPy-Array <!-- .element: class="fragment" data-fragment-index="3" -->
++ Von den NumPy-Folien gilt weiter: Rechnen, Masken, `mean`, `sum` <!-- .element: class="fragment" data-fragment-index="4" -->
 
 </div>
 </div>
@@ -1393,12 +1392,12 @@ df = pd.read_csv("data/versicherte.csv")
 df.shape        # -> (5025, 18)
 df.head()       # die ersten 5 Zeilen
 df.tail(10)     # die letzten 10 Zeilen
-df.sample(5, random_state=42)   # 5 zufällige Zeilen
+df.sample(5, random_state=1)   # 5 zufällige Zeilen
 ```
 
-+ Der Pfad ist relativ zum aktuellen Arbeitsverzeichnis
-+ `head()` und `tail()` nach jedem Einlesen: Stimmen Spaltennamen und Werte?
-+ Der Datensatz ist **synthetisch**: rund 5000 erfundene Versicherte, keine echten Personen
++ Der Pfad ist relativ zum aktuellen Arbeitsverzeichnis <!-- .element: class="fragment" data-fragment-index="1" -->
++ `head()` und `tail()` nach jedem Einlesen: Stimmen Spaltennamen und Werte? <!-- .element: class="fragment" data-fragment-index="2" -->
++ Der Datensatz ist **synthetisch**: rund 5000 erfundene Versicherte, keine echten Personen <!-- .element: class="fragment" data-fragment-index="3" -->
 
 --
 
@@ -1424,8 +1423,8 @@ df["leistungsausgaben_eur"].describe()
 df.describe(include="all").T   # auch Textspalten, gedreht
 ```
 
-+ `info()`: Spaltennamen, Datentyp, Anzahl vorhandener Werte
-+ `describe()`: Anzahl, Mittelwert, Standardabweichung, Minimum, Quartile (25 %, 50 % = Median, 75 %), Maximum
++ `info()`: Spaltennamen, Datentyp, Anzahl vorhandener Werte <!-- .element: class="fragment" data-fragment-index="1" -->
++ `describe()`: Anzahl, Mittelwert, Standardabweichung, Minimum, Quartile (25 %, 50 % = Median, 75 %), Maximum <!-- .element: class="fragment" data-fragment-index="2" -->
 
 --
 
@@ -1441,9 +1440,9 @@ df["bmi"].max()
 klein = df[ ["vorname", "nachname", "geburtsdatum"] ].copy()
 ```
 
-+ Einfache Klammer mit Name: **Series**. Doppelte Klammer mit Liste: **DataFrame**.
-+ `df.bmi` funktioniert auch, aber nicht bei Leerzeichen im Namen und nicht beim Anlegen neuer Spalten. Bleiben Sie bei `df["bmi"]`.
-+ `.copy()` erzeugt eine unabhängige Kopie, die Sie gefahrlos verändern können
++ Einfache Klammer mit Name: **Series**. Doppelte Klammer mit Liste: **DataFrame**. <!-- .element: class="fragment" data-fragment-index="1" -->
++ `df.bmi` funktioniert auch, aber nicht bei Leerzeichen im Namen und nicht beim Anlegen neuer Spalten. Bleiben Sie bei `df["bmi"]`. <!-- .element: class="fragment" data-fragment-index="2" -->
++ `.copy()` erzeugt eine unabhängige Kopie, die Sie gefahrlos verändern können <!-- .element: class="fragment" data-fragment-index="3" -->
 
 --
 
@@ -1529,11 +1528,11 @@ df.query("leistungsausgaben_eur > @grenze")
 df.query("bundesland in ['Berlin', 'Hamburg', 'Bremen']")
 ```
 
-+ Die Bedingung steht als Text da, Spaltennamen ohne `df[...]`
-+ Hier sind `and`, `or`, `not` erlaubt
-+ Python-Variablen sprechen Sie mit `@name` an
++ Die Bedingung steht als Text da, Spaltennamen ohne `df[...]` <!-- .element: class="fragment" data-fragment-index="1" -->
++ Hier sind `and`, `or`, `not` erlaubt <!-- .element: class="fragment" data-fragment-index="2" -->
++ Python-Variablen sprechen Sie mit `@name` an <!-- .element: class="fragment" data-fragment-index="3" -->
 
-<div class="fragment">
+<div class="fragment" data-fragment-index="4">
 
 > [!tip]
 > Maske und `query` liefern dasselbe Ergebnis. Nehmen Sie, was Sie in drei Wochen noch lesen können.
@@ -1560,8 +1559,8 @@ df["ausgaben_je_besuch"] = (
 df["senior"] = df["alter"] >= 65
 ```
 
-+ Die Rechnung läuft vektorisiert über alle 5025 Zeilen, ohne Schleife
-+ Zuweisung an einen neuen Spaltennamen legt die Spalte an, an einen vorhandenen überschreibt sie
++ Die Rechnung läuft vektorisiert über alle 5025 Zeilen, ohne Schleife <!-- .element: class="fragment" data-fragment-index="1" -->
++ Zuweisung an einen neuen Spaltennamen legt die Spalte an, an einen vorhandenen überschreibt sie <!-- .element: class="fragment" data-fragment-index="2" -->
 
 --
 
@@ -1578,9 +1577,9 @@ df["altersgruppe"] = pd.cut(
 df["altersgruppe"].value_counts()
 ```
 
-+ `bins` sind die Grenzen, `labels` die Namen der Klassen dazwischen (eine weniger als Grenzen)
-+ `right=False`: Die linke Grenze gehört dazu, die rechte nicht. Ein Alter von 18 fällt in „Erwachsen", 65 in „Senior".
-+ Das Ergebnis hat den Typ `category` mit fester Reihenfolge
++ `bins` sind die Grenzen, `labels` die Namen der Klassen dazwischen (eine weniger als Grenzen) <!-- .element: class="fragment" data-fragment-index="1" -->
++ `right=False`: Die linke Grenze gehört dazu, die rechte nicht. Ein Alter von 18 fällt in „Erwachsen", 65 in „Senior". <!-- .element: class="fragment" data-fragment-index="2" -->
++ Das Ergebnis hat den Typ `category` mit fester Reihenfolge <!-- .element: class="fragment" data-fragment-index="3" -->
 
 --
 
@@ -1603,10 +1602,10 @@ def bmi_klasse(bmi):
 df["bmi_klasse"] = df["bmi"].apply(bmi_klasse)
 ```
 
-+ `apply` ruft die Funktion für **jeden Wert einzeln** auf: bequem, aber eine versteckte Python-Schleife
-+ Dasselbe vektorisiert: `pd.cut(df["bmi"], bins=[0, 18.5, 25, 30, 100], labels=[...], right=False)`
++ `apply` ruft die Funktion für **jeden Wert einzeln** auf: bequem, aber eine versteckte Python-Schleife <!-- .element: class="fragment" data-fragment-index="1" -->
++ Dasselbe vektorisiert: `pd.cut(df["bmi"], bins=[0, 18.5, 25, 30, 100], labels=[...], right=False)` <!-- .element: class="fragment" data-fragment-index="2" -->
 
-<div class="fragment">
+<div class="fragment" data-fragment-index="3">
 
 > [!tip]
 > Reihenfolge der Wahl: Spaltenarithmetik, dann pandas-Funktionen (`pd.cut`, `.str`, `.dt`, `map`), erst zuletzt `apply`.
@@ -1633,8 +1632,8 @@ df["blutgruppe"].value_counts(normalize=True).round(3)   # Anteile
 df["beruf"].nunique()                       # Anzahl verschiedener Werte
 ```
 
-+ `sort_values` gibt eine **neue**, sortierte Tabelle zurück. `df` selbst bleibt unverändert.
-+ `value_counts` ist die schnellste Antwort auf „Welche Werte kommen wie oft vor?"
++ `sort_values` gibt eine **neue**, sortierte Tabelle zurück. `df` selbst bleibt unverändert. <!-- .element: class="fragment" data-fragment-index="1" -->
++ `value_counts` ist die schnellste Antwort auf „Welche Werte kommen wie oft vor?" <!-- .element: class="fragment" data-fragment-index="2" -->
 
 --
 
@@ -1693,12 +1692,12 @@ je_land[je_land > 3000]
 # zweite Tabelle: 20 % der Versicherten nehmen an einem Programm teil
 teilnahme = (
     df[ ["versicherten_nr"] ].drop_duplicates()
-    .sample(frac=0.2, random_state=42)
+    .sample(frac=0.2, random_state=1)
     .assign(programm=True)
 )
 
 gesamt = pd.merge(df, teilnahme, on="versicherten_nr", how="left")
-gesamt["programm"].isna().sum()      # -> 4020 ohne Teilnahme
+gesamt["programm"].isna().sum()      # -> 4021 ohne Teilnahme
 ```
 
 | `how=` | Ergebnis |
@@ -1730,8 +1729,8 @@ df["alter_neu"] = heute.year - df["geburtsjahr"]
 (heute - df["geburtsdatum"]).dt.days
 ```
 
-+ Nach `read_csv` ist ein Datum zunächst Text. Erst `pd.to_datetime` macht daraus ein Datum.
-+ Über `.dt` erreichen Sie Jahr, Monat, Tag, Wochentag
++ Nach `read_csv` ist ein Datum zunächst Text. Erst `pd.to_datetime` macht daraus ein Datum. <!-- .element: class="fragment" data-fragment-index="1" -->
++ Über `.dt` erreichen Sie Jahr, Monat, Tag, Wochentag <!-- .element: class="fragment" data-fragment-index="2" -->
 
 --
 
@@ -1753,9 +1752,9 @@ auswertung.to_csv("auswertung_excel.csv", index=False,
                   sep=";", decimal=",", encoding="utf-8-sig")
 ```
 
-+ `index=False` lässt die Zeilennummern weg
-+ `reset_index()` macht aus den Gruppierungsschlüsseln wieder normale Spalten
-+ `to_excel("auswertung.xlsx")` schreibt direkt eine Excel-Datei, braucht aber das Zusatzpaket `openpyxl`
++ `index=False` lässt die Zeilennummern weg <!-- .element: class="fragment" data-fragment-index="1" -->
++ `reset_index()` macht aus den Gruppierungsschlüsseln wieder normale Spalten <!-- .element: class="fragment" data-fragment-index="2" -->
++ `to_excel("auswertung.xlsx")` schreibt direkt eine Excel-Datei, braucht aber das Zusatzpaket `openpyxl` <!-- .element: class="fragment" data-fragment-index="3" -->
 
 --
 
@@ -1770,8 +1769,8 @@ auswertung.to_csv("auswertung_excel.csv", index=False,
 
 ---
 
-<!-- .slide: data-background-color="#1f3b4d" -->
-# Teil 4: Daten einlesen, aufbereiten, explorieren und visualisieren
+<!-- .slide: data-background-color="#183b66" -->
+# Teil 3: Daten einlesen, aufbereiten, explorieren und visualisieren
 
 Von der Rohdatei zum geprüften, bereinigten Datensatz und zu Diagrammen, die Muster sichtbar machen.
 
@@ -1792,12 +1791,12 @@ Von der Rohdatei zum geprüften, bereinigten Datensatz und zu Diagrammen, die Mu
 
 ![](figs/d_t04_rohdatei_analyse.png)
 
-+ **Einlesen:** Datei, Trennzeichen, Kodierung, Datentypen
-+ **Überblick:** Größe, Spalten, Kennzahlen, fehlende Werte
-+ **Bereinigen:** fehlende Werte, Duplikate, Typen, Ausreißer
-+ **Explorieren und Visualisieren:** Verteilungen, Gruppen, Zusammenhänge
++ **Einlesen:** Datei, Trennzeichen, Kodierung, Datentypen <!-- .element: class="fragment" data-fragment-index="1" -->
++ **Überblick:** Größe, Spalten, Kennzahlen, fehlende Werte <!-- .element: class="fragment" data-fragment-index="2" -->
++ **Bereinigen:** fehlende Werte, Duplikate, Typen, Ausreißer <!-- .element: class="fragment" data-fragment-index="3" -->
++ **Explorieren und Visualisieren:** Verteilungen, Gruppen, Zusammenhänge <!-- .element: class="fragment" data-fragment-index="4" -->
 
-<div class="fragment">
+<div class="fragment" data-fragment-index="5">
 
 > [!important]
 > Viele Probleme zeigen sich schon vor dem ersten Modell: Schiefe, Ausreißer, fehlende Werte. Wer sie hier findet, spart später viele Durchläufe in der Modellphase.
@@ -1941,10 +1940,10 @@ max     80.00  512.33
 </div>
 <div style="flex: 64">
 
-+ **Mittelwert** (`mean`) reagiert empfindlich auf Ausreißer, der **Median** (`50%`) ist robust
-+ Bei `Age` liegen beide nah beieinander
-+ Bei `Fare` ist der Mittelwert mehr als doppelt so hoch wie der Median: Die Verteilung ist **schief**, wenige sehr teure Tickets ziehen den Mittelwert nach oben
-+ **Streuung:** `std` und der Abstand zwischen `25%` und `75%` (Interquartilsabstand)
++ **Mittelwert** (`mean`) reagiert empfindlich auf Ausreißer, der **Median** (`50%`) ist robust <!-- .element: class="fragment" data-fragment-index="1" -->
++ Bei `Age` liegen beide nah beieinander <!-- .element: class="fragment" data-fragment-index="2" -->
++ Bei `Fare` ist der Mittelwert mehr als doppelt so hoch wie der Median: Die Verteilung ist **schief**, wenige sehr teure Tickets ziehen den Mittelwert nach oben <!-- .element: class="fragment" data-fragment-index="3" -->
++ **Streuung:** `std` und der Abstand zwischen `25%` und `75%` (Interquartilsabstand) <!-- .element: class="fragment" data-fragment-index="4" -->
 
 </div>
 </div>
@@ -1987,10 +1986,10 @@ Embarked     0.22
 | **Auffüllen** (Imputation) | `df["Age"].fillna(median)` | die Spalte wichtig ist und ein plausibler Ersatzwert existiert |
 | **Markieren** (Flag) | `df["Age"].isna()` als neue Spalte | das Fehlen selbst eine Information sein kann |
 
-+ Eine Spalte wie `Cabin` mit 77 % Lücken lässt sich nicht sinnvoll auffüllen: weglassen oder nur „Kabine bekannt ja/nein" behalten
-+ Auffüllen und Markieren lassen sich kombinieren
++ Eine Spalte wie `Cabin` mit 77 % Lücken lässt sich nicht sinnvoll auffüllen: weglassen oder nur „Kabine bekannt ja/nein" behalten <!-- .element: class="fragment" data-fragment-index="1" -->
++ Auffüllen und Markieren lassen sich kombinieren <!-- .element: class="fragment" data-fragment-index="2" -->
 
-<div class="fragment">
+<div class="fragment" data-fragment-index="3">
 
 > [!warning]
 > Löschen Sie nie blind. `df.dropna()` ohne Parameter lässt bei Titanic von 891 Zeilen nur 183 übrig, weil `Cabin` fast überall fehlt.
@@ -2045,8 +2044,8 @@ df.duplicated().sum()                        # Titanic: -> 0
 df["PassengerId"].is_unique                  # -> True
 ```
 
-+ Exakte Duplikate können Sie entfernen. Bei `subset` entscheiden **Sie**, welche Spalten eine Zeile eindeutig machen
-+ Duplikate verzerren Kennzahlen und Modelle
++ Exakte Duplikate können Sie entfernen. Bei `subset` entscheiden **Sie**, welche Spalten eine Zeile eindeutig machen <!-- .element: class="fragment" data-fragment-index="1" -->
++ Duplikate verzerren Kennzahlen und Modelle <!-- .element: class="fragment" data-fragment-index="2" -->
 
 --
 
@@ -2067,9 +2066,9 @@ pd.to_numeric(pd.Series(["12.5", "7", "k. A."]), errors="coerce")
 # -> 12.5, 7.0, NaN
 ```
 
-+ `category` für Spalten mit wenigen, wiederkehrenden Werten: spart Speicher und dokumentiert die erlaubten Werte
-+ Kennungen (`PassengerId`, Versichertennummer, PLZ) sind **keine** Rechengrößen, auch wenn sie aus Ziffern bestehen
-+ Datum: `pd.to_datetime`, bekannt aus dem vorigen Teil
++ `category` für Spalten mit wenigen, wiederkehrenden Werten: spart Speicher und dokumentiert die erlaubten Werte <!-- .element: class="fragment" data-fragment-index="1" -->
++ Kennungen (`PassengerId`, Versichertennummer, PLZ) sind **keine** Rechengrößen, auch wenn sie aus Ziffern bestehen <!-- .element: class="fragment" data-fragment-index="2" -->
++ Datum: `pd.to_datetime`, bekannt aus dem vorigen Teil <!-- .element: class="fragment" data-fragment-index="3" -->
 
 --
 
@@ -2101,12 +2100,12 @@ df.groupby("Pclass")["Survived"].mean().round(2)
 <div class="two-col">
 <div style="flex: 42">
 
-+ **Box:** vom 25-%-Quantil (Q1) bis zum 75-%-Quantil (Q3), darin liegt die mittlere Hälfte der Werte
-+ **Strich in der Box:** Median
-+ **Whisker:** bis zum letzten Wert innerhalb von 1,5 Interquartilsabständen ab der Box
-+ **Einzelne Punkte:** Werte jenseits der Whisker, Kandidaten für Ausreißer
++ **Box:** vom 25-%-Quantil (Q1) bis zum 75-%-Quantil (Q3), darin liegt die mittlere Hälfte der Werte <!-- .element: class="fragment" data-fragment-index="1" -->
++ **Strich in der Box:** Median <!-- .element: class="fragment" data-fragment-index="2" -->
++ **Whisker:** bis zum letzten Wert innerhalb von 1,5 Interquartilsabständen ab der Box <!-- .element: class="fragment" data-fragment-index="3" -->
++ **Einzelne Punkte:** Werte jenseits der Whisker, Kandidaten für Ausreißer <!-- .element: class="fragment" data-fragment-index="4" -->
 
-<div class="fragment">
+<div class="fragment" data-fragment-index="5">
 
 ```python
 import seaborn as sns
@@ -2118,7 +2117,7 @@ sns.boxplot(x=df["Fare"])
 </div>
 <div style="flex: 58">
 
-<div class="fragment">
+<div class="fragment" data-fragment-index="6">
 
 ![](figs/t4_box_fare.png)
 
@@ -2145,10 +2144,10 @@ maske.sum()                             # -> 116 Tickets
 df[maske].sort_values("Fare", ascending=False).head()
 ```
 
-+ Die Regel markiert 116 von 891 Tickets, also 13 %
-+ 104 davon sind teure Tickets der ersten Klasse, keine Messfehler
++ Die Regel markiert 116 von 891 Tickets, also 13 % <!-- .element: class="fragment" data-fragment-index="1" -->
++ 104 davon sind teure Tickets der ersten Klasse, keine Messfehler <!-- .element: class="fragment" data-fragment-index="2" -->
 
-<div class="fragment">
+<div class="fragment" data-fragment-index="3">
 
 > [!warning]
 > Die IQR-Regel liefert **Kandidaten**, keine Urteile. Erst ansehen, dann die Ursache verstehen, dann entscheiden.
@@ -2175,8 +2174,8 @@ df = df[df["Age"].between(0, 110) | df["Age"].isna()]
 df["Fare_hoch"] = df["Fare"] > obergrenze
 ```
 
-+ `clip` setzt Werte außerhalb der Grenzen **auf** die Grenze. Die Zeile bleibt erhalten
-+ Schreiben Sie das Ergebnis in eine **neue Spalte**, dann bleibt das Original zum Vergleich
++ `clip` setzt Werte außerhalb der Grenzen **auf** die Grenze. Die Zeile bleibt erhalten <!-- .element: class="fragment" data-fragment-index="1" -->
++ Schreiben Sie das Ergebnis in eine **neue Spalte**, dann bleibt das Original zum Vergleich <!-- .element: class="fragment" data-fragment-index="2" -->
 
 --
 
@@ -2197,22 +2196,22 @@ Parch          0.08
 Fare           0.26
 ```
 
-+ Der Korrelationskoeffizient liegt zwischen -1 und +1. Nahe 0: kein **linearer** Zusammenhang
-+ `Pclass` -0,34: höhere Klassennummer (dritte Klasse), geringere Überlebensrate
-+ `Fare` +0,26: teurere Tickets, höhere Überlebensrate
-+ `numeric_only=True` lässt Textspalten aus. `Sex` fehlt deshalb hier, obwohl es das stärkste Merkmal ist
++ Der Korrelationskoeffizient liegt zwischen -1 und +1. Nahe 0: kein **linearer** Zusammenhang <!-- .element: class="fragment" data-fragment-index="1" -->
++ `Pclass` -0,34: höhere Klassennummer (dritte Klasse), geringere Überlebensrate <!-- .element: class="fragment" data-fragment-index="2" -->
++ `Fare` +0,26: teurere Tickets, höhere Überlebensrate <!-- .element: class="fragment" data-fragment-index="3" -->
++ `numeric_only=True` lässt Textspalten aus. `Sex` fehlt deshalb hier, obwohl es das stärkste Merkmal ist <!-- .element: class="fragment" data-fragment-index="4" -->
 
 --
 
 <!-- .slide: class="smaller" -->
 ## Korrelation ist keine Kausalität
 
-+ Korrelation misst einen Zusammenhang, keine Ursache
-+ Zwei Größen können gemeinsam schwanken, weil beide von einer **dritten** Größe abhängen
-+ Titanic: `Fare` und `Survived` korrelieren mit +0,26. Der Ticketpreis hat aber niemanden gerettet. Dahinter steht die Passagierklasse: `Fare` und `Pclass` korrelieren mit -0,55
-+ Gedankenbeispiel: Gehen im Winter mehr Handschuhe verloren und steigt zugleich der Dieselpreis, laufen beide Kurven parallel. Die gemeinsame Ursache ist die Jahreszeit
++ Korrelation misst einen Zusammenhang, keine Ursache <!-- .element: class="fragment" data-fragment-index="1" -->
++ Zwei Größen können gemeinsam schwanken, weil beide von einer **dritten** Größe abhängen <!-- .element: class="fragment" data-fragment-index="2" -->
++ Titanic: `Fare` und `Survived` korrelieren mit +0,26. Der Ticketpreis hat aber niemanden gerettet. Dahinter steht die Passagierklasse: `Fare` und `Pclass` korrelieren mit -0,55 <!-- .element: class="fragment" data-fragment-index="3" -->
++ Gedankenbeispiel: Gehen im Winter mehr Handschuhe verloren und steigt zugleich der Dieselpreis, laufen beide Kurven parallel. Die gemeinsame Ursache ist die Jahreszeit <!-- .element: class="fragment" data-fragment-index="4" -->
 
-<div class="fragment">
+<div class="fragment" data-fragment-index="5">
 
 > [!important]
 > Korrelationen sind gute Ausgangspunkte für Hypothesen, aber kein Beweis. Für „A verursacht B" brauchen Sie Fachwissen oder ein Experiment.
@@ -2224,11 +2223,11 @@ Fare           0.26
 <!-- .slide: class="smaller" -->
 ## Warum visualisieren?
 
-+ Ein Diagramm macht sichtbar, was eine Tabelle mit 891 Zeilen versteckt: Trends, Ausreißer, Gruppenunterschiede
-+ Kennzahlen allein können täuschen: Derselbe Mittelwert passt zu völlig verschiedenen Verteilungen
-+ Ein gutes Diagramm verhindert falsche Schlüsse, ein schlechtes erzeugt sie
++ Ein Diagramm macht sichtbar, was eine Tabelle mit 891 Zeilen versteckt: Trends, Ausreißer, Gruppenunterschiede <!-- .element: class="fragment" data-fragment-index="1" -->
++ Kennzahlen allein können täuschen: Derselbe Mittelwert passt zu völlig verschiedenen Verteilungen <!-- .element: class="fragment" data-fragment-index="2" -->
++ Ein gutes Diagramm verhindert falsche Schlüsse, ein schlechtes erzeugt sie <!-- .element: class="fragment" data-fragment-index="3" -->
 
-<div class="fragment">
+<div class="fragment" data-fragment-index="4">
 
 | Frage | Diagramm |
 |-------|----------|
@@ -2262,9 +2261,9 @@ fig.savefig("alter_histogramm.png", dpi=150)
 plt.show()
 ```
 
-+ `fig` ist das ganze Bild, `ax` ein einzelnes Koordinatensystem darin
-+ Alles, was Sie beschriften oder zeichnen, läuft über `ax`
-+ `savefig` vor `plt.show()` aufrufen
++ `fig` ist das ganze Bild, `ax` ein einzelnes Koordinatensystem darin <!-- .element: class="fragment" data-fragment-index="1" -->
++ Alles, was Sie beschriften oder zeichnen, läuft über `ax` <!-- .element: class="fragment" data-fragment-index="2" -->
++ `savefig` vor `plt.show()` aufrufen <!-- .element: class="fragment" data-fragment-index="3" -->
 
 --
 
@@ -2323,14 +2322,14 @@ ax.set_xlabel("Alter in Jahren")
 ax.set_ylabel("Anzahl")
 ```
 
-+ `data=` nimmt den DataFrame, `x=` den Spaltennamen
-+ `kde=True` legt eine geglättete Dichtekurve über die Balken
-+ `ax=ax` zeichnet in unser matplotlib-Gerüst
++ `data=` nimmt den DataFrame, `x=` den Spaltennamen <!-- .element: class="fragment" data-fragment-index="1" -->
++ `kde=True` legt eine geglättete Dichtekurve über die Balken <!-- .element: class="fragment" data-fragment-index="2" -->
++ `ax=ax` zeichnet in unser matplotlib-Gerüst <!-- .element: class="fragment" data-fragment-index="3" -->
 
 </div>
 <div style="flex: 56">
 
-<div class="fragment">
+<div class="fragment" data-fragment-index="4">
 
 ![](figs/t4_hist_age.png)
 
@@ -2360,13 +2359,13 @@ ax.set_xlabel("Geschlecht")
 ax.set_ylabel("Anzahl")
 ```
 
-+ `countplot` zählt selbst, ein `value_counts` vorab ist nicht nötig
-+ `hue=` teilt jeden Balken nach einer zweiten Spalte auf und erzeugt die Legende
++ `countplot` zählt selbst, ein `value_counts` vorab ist nicht nötig <!-- .element: class="fragment" data-fragment-index="1" -->
++ `hue=` teilt jeden Balken nach einer zweiten Spalte auf und erzeugt die Legende <!-- .element: class="fragment" data-fragment-index="2" -->
 
 </div>
 <div style="flex: 56">
 
-<div class="fragment">
+<div class="fragment" data-fragment-index="3">
 
 ![](figs/t4_count_sex_survived.png)
 
@@ -2393,14 +2392,14 @@ ax.set_xlabel("Passagierklasse")
 ax.set_ylabel("Fare")
 ```
 
-+ `x=` Kategorie, `y=` Zahlenspalte: ein Boxplot je Gruppe
-+ Median, Streuung und Ausreißer aller Gruppen stehen direkt nebeneinander
-+ 104 der 116 IQR-Ausreißer gehören zur ersten Klasse
++ `x=` Kategorie, `y=` Zahlenspalte: ein Boxplot je Gruppe <!-- .element: class="fragment" data-fragment-index="1" -->
++ Median, Streuung und Ausreißer aller Gruppen stehen direkt nebeneinander <!-- .element: class="fragment" data-fragment-index="2" -->
++ 104 der 116 IQR-Ausreißer gehören zur ersten Klasse <!-- .element: class="fragment" data-fragment-index="3" -->
 
 </div>
 <div style="flex: 56">
 
-<div class="fragment">
+<div class="fragment" data-fragment-index="4">
 
 ![](figs/t4_box_fare_pclass.png)
 
@@ -2428,14 +2427,14 @@ ax.set_xlabel("Alter in Jahren")
 ax.set_ylabel("Fare")
 ```
 
-+ Ein Punkt je Passagier
-+ `hue=` färbt nach einer dritten Spalte
-+ `alpha=0.7` macht Punkte durchscheinend, damit Häufungen sichtbar bleiben
++ Ein Punkt je Passagier <!-- .element: class="fragment" data-fragment-index="1" -->
++ `hue=` färbt nach einer dritten Spalte <!-- .element: class="fragment" data-fragment-index="2" -->
++ `alpha=0.7` macht Punkte durchscheinend, damit Häufungen sichtbar bleiben <!-- .element: class="fragment" data-fragment-index="3" -->
 
 </div>
 <div style="flex: 56">
 
-<div class="fragment">
+<div class="fragment" data-fragment-index="4">
 
 ![](figs/t4_scatter_age_fare.png)
 
@@ -2465,13 +2464,13 @@ sns.heatmap(corr, annot=True,
 ax.set_title("Korrelationsmatrix")
 ```
 
-+ `annot=True` schreibt die Werte in die Felder, `fmt=".2f"` rundet auf zwei Stellen
-+ `vmin=-1, vmax=1` verankert die Farbskala: Weiß bedeutet 0
++ `annot=True` schreibt die Werte in die Felder, `fmt=".2f"` rundet auf zwei Stellen <!-- .element: class="fragment" data-fragment-index="1" -->
++ `vmin=-1, vmax=1` verankert die Farbskala: Weiß bedeutet 0 <!-- .element: class="fragment" data-fragment-index="2" -->
 
 </div>
 <div style="flex: 56">
 
-<div class="fragment">
+<div class="fragment" data-fragment-index="3">
 
 ![](figs/t4_heatmap_corr.png)
 
@@ -2496,14 +2495,14 @@ sns.pairplot(
 )
 ```
 
-+ Jede Zahlenspalte gegen jede: Scatterplots außerhalb, Verteilungen auf der Diagonale
-+ Guter erster Blick auf einen neuen Datensatz
-+ Bei mehr als fünf, sechs Spalten wird das Raster unlesbar und langsam: Spalten mit `vars=` auswählen
++ Jede Zahlenspalte gegen jede: Scatterplots außerhalb, Verteilungen auf der Diagonale <!-- .element: class="fragment" data-fragment-index="1" -->
++ Guter erster Blick auf einen neuen Datensatz <!-- .element: class="fragment" data-fragment-index="2" -->
++ Bei mehr als fünf, sechs Spalten wird das Raster unlesbar und langsam: Spalten mit `vars=` auswählen <!-- .element: class="fragment" data-fragment-index="3" -->
 
 </div>
 <div style="flex: 60">
 
-<div class="fragment">
+<div class="fragment" data-fragment-index="4">
 
 ![](figs/t4_pairplot.png)
 
@@ -2517,14 +2516,14 @@ sns.pairplot(
 <!-- .slide: class="smaller" -->
 ## Regeln für gute Diagramme
 
-+ **Eine Aussage je Diagramm.** Formulieren Sie die Aussage vorher als Satz und schreiben Sie sie in den Titel
-+ **Diagrammtyp nach Frage wählen:** Verteilung, Vergleich, Zusammenhang oder Verlauf
-+ **Achsen beschriften**, mit Einheit. Spaltennamen wie `Fare` sind keine Beschriftung für Dritte
-+ **Farbe nur mit Bedeutung:** Farbe kodiert eine Gruppe oder einen Wert, keine Dekoration
-+ **Achsen ehrlich wählen:** Balkendiagramme beginnen bei 0
-+ **Lesbarkeit prüfen:** Schriftgröße, gedrehte Achsenbeschriftungen bei langen Kategorien (`ax.tick_params(axis="x", rotation=45)`)
++ **Eine Aussage je Diagramm.** Formulieren Sie die Aussage vorher als Satz und schreiben Sie sie in den Titel <!-- .element: class="fragment" data-fragment-index="1" -->
++ **Diagrammtyp nach Frage wählen:** Verteilung, Vergleich, Zusammenhang oder Verlauf <!-- .element: class="fragment" data-fragment-index="2" -->
++ **Achsen beschriften**, mit Einheit. Spaltennamen wie `Fare` sind keine Beschriftung für Dritte <!-- .element: class="fragment" data-fragment-index="3" -->
++ **Farbe nur mit Bedeutung:** Farbe kodiert eine Gruppe oder einen Wert, keine Dekoration <!-- .element: class="fragment" data-fragment-index="4" -->
++ **Achsen ehrlich wählen:** Balkendiagramme beginnen bei 0 <!-- .element: class="fragment" data-fragment-index="5" -->
++ **Lesbarkeit prüfen:** Schriftgröße, gedrehte Achsenbeschriftungen bei langen Kategorien (`ax.tick_params(axis="x", rotation=45)`) <!-- .element: class="fragment" data-fragment-index="6" -->
 
-<div class="fragment">
+<div class="fragment" data-fragment-index="7">
 
 > [!tip]
 > Test vor dem Weitergeben: Versteht eine Kollegin das Diagramm auf den ersten Blick, ohne Ihre Erklärung?
@@ -2544,8 +2543,8 @@ sns.pairplot(
 
 ---
 
-<!-- .slide: data-background-color="#1f3b4d" -->
-# Teil 5: Grundlagen von Machine Learning und KI
+<!-- .slide: data-background-color="#183b66" -->
+# Teil 4: Grundlagen von Machine Learning und KI
 
 Was KI und Machine Learning sind, wie ein Modell aus Daten lernt und wie Sie Ihr erstes Modell trainieren.
 
@@ -2565,10 +2564,10 @@ Was KI und Machine Learning sind, wie ein Modell aus Daten lernt und wie Sie Ihr
 
 Künstliche Intelligenz (KI) bezeichnet Systeme oder Maschinen, die Aufgaben ausführen, für die normalerweise menschliche Intelligenz erforderlich ist.
 
-+ **Lernen:** aus Beispielen besser werden
-+ **Problemlösen:** einen Weg zu einem Ziel finden
-+ **Wahrnehmung:** Bilder und Signale auswerten
-+ **Sprachverstehen:** Texte lesen und erzeugen
++ **Lernen:** aus Beispielen besser werden <!-- .element: class="fragment" data-fragment-index="1" -->
++ **Problemlösen:** einen Weg zu einem Ziel finden <!-- .element: class="fragment" data-fragment-index="2" -->
++ **Wahrnehmung:** Bilder und Signale auswerten <!-- .element: class="fragment" data-fragment-index="3" -->
++ **Sprachverstehen:** Texte lesen und erzeugen <!-- .element: class="fragment" data-fragment-index="4" -->
 
 --
 
@@ -2600,12 +2599,12 @@ Künstliche Intelligenz (KI) bezeichnet Systeme oder Maschinen, die Aufgaben aus
 
 ## Wie lernt ein Modell aus Daten?
 
-+ Ein Algorithmus sucht **Muster** in vielen Beispielen
-+ Das Modell lernt Zusammenhänge aus Beispieldaten, statt nur fest programmierte Regeln auszuführen
-+ Ziel ist **Generalisierung**: Das Modell soll auf neuen Daten funktionieren, bekannte Fälle nachzurechnen genügt nicht
-+ In der Praxis: aus Vergangenheitsdaten Vorhersagen für neue Fälle ableiten
++ Ein Algorithmus sucht **Muster** in vielen Beispielen <!-- .element: class="fragment" data-fragment-index="1" -->
++ Das Modell lernt Zusammenhänge aus Beispieldaten, statt nur fest programmierte Regeln auszuführen <!-- .element: class="fragment" data-fragment-index="2" -->
++ Ziel ist **Generalisierung**: Das Modell soll auf neuen Daten funktionieren, bekannte Fälle nachzurechnen genügt nicht <!-- .element: class="fragment" data-fragment-index="3" -->
++ In der Praxis: aus Vergangenheitsdaten Vorhersagen für neue Fälle ableiten <!-- .element: class="fragment" data-fragment-index="4" -->
 
-<div class="fragment">
+<div class="fragment" data-fragment-index="5">
 
 > [!important]
 > Ein Modell ist nur dann gut, wenn es auf Daten funktioniert, die es beim Lernen nicht gesehen hat.
@@ -2622,8 +2621,8 @@ Künstliche Intelligenz (KI) bezeichnet Systeme oder Maschinen, die Aufgaben aus
 | **Unüberwachtes Lernen** | Beispiele ohne Lösung, das Verfahren sucht Strukturen | Kundensegmentierung |
 | **Bestärkendes Lernen** | Belohnung und Bestrafung für Aktionen | AlphaGo |
 
-+ Überwacht mit Zahl als Ziel: **Regression**. Mit Klasse als Ziel: **Klassifikation**
-+ Unüberwacht: **Clustering** gruppiert ähnliche Datenpunkte
++ Überwacht mit Zahl als Ziel: **Regression**. Mit Klasse als Ziel: **Klassifikation** <!-- .element: class="fragment" data-fragment-index="1" -->
++ Unüberwacht: **Clustering** gruppiert ähnliche Datenpunkte <!-- .element: class="fragment" data-fragment-index="2" -->
 
 --
 
@@ -2634,20 +2633,20 @@ Ein ML-Modell sortiert unerwünschte E-Mails aus, indem es Muster in den Nachric
 
 **Schritt 1: Daten sammeln und vorbereiten**
 
-+ Datenquelle: E-Mails mit dem Label „Spam" oder „Kein Spam"
-+ Merkmale, die das Modell zu sehen bekommt:
++ Datenquelle: E-Mails mit dem Label „Spam" oder „Kein Spam" <!-- .element: class="fragment" data-fragment-index="1" -->
++ Merkmale, die das Modell zu sehen bekommt: <!-- .element: class="fragment" data-fragment-index="2" -->
   + bestimmte Wörter („Won", „Free", „Quick money")
   + Anzahl der Links, Anteil an Großbuchstaben
   + Absenderadresse, Länge und Struktur der E-Mail
 
-<div class="fragment">
+<div class="fragment" data-fragment-index="3">
 
 **Schritt 2: Modell trainieren (überwachtes Lernen)**
 
 </div>
 
-+ Das System wird mit vielen gelabelten E-Mails trainiert
-+ Es gewichtet die Merkmale: Welche Eigenschaften deuten am stärksten auf Spam hin?
++ Das System wird mit vielen gelabelten E-Mails trainiert <!-- .element: class="fragment" data-fragment-index="4" -->
++ Es gewichtet die Merkmale: Welche Eigenschaften deuten am stärksten auf Spam hin? <!-- .element: class="fragment" data-fragment-index="5" -->
 
 --
 
@@ -2656,19 +2655,19 @@ Ein ML-Modell sortiert unerwünschte E-Mails aus, indem es Muster in den Nachric
 
 **Schritt 3: neue E-Mails klassifizieren**
 
-+ Eine neue E-Mail trifft ein, das Modell wertet die Merkmale aus und entscheidet: Spam oder nicht
-+ Viele spam-typische Wörter: hohe Spam-Wahrscheinlichkeit
-+ Legitime Muster erkannt: die E-Mail bleibt im Posteingang
++ Eine neue E-Mail trifft ein, das Modell wertet die Merkmale aus und entscheidet: Spam oder nicht <!-- .element: class="fragment" data-fragment-index="1" -->
++ Viele spam-typische Wörter: hohe Spam-Wahrscheinlichkeit <!-- .element: class="fragment" data-fragment-index="2" -->
++ Legitime Muster erkannt: die E-Mail bleibt im Posteingang <!-- .element: class="fragment" data-fragment-index="3" -->
 
-<div class="fragment">
+<div class="fragment" data-fragment-index="4">
 
 **Schritt 4: Modell verbessern**
 
 </div>
 
-+ **False Positive:** eine legitime E-Mail wird fälschlich als Spam markiert
-+ **False Negative:** Spam wird nicht erkannt und landet im Posteingang
-+ Rückmeldungen der Nutzer („Kein Spam", „Spam melden") fließen als neue Trainingsdaten ein
++ **False Positive:** eine legitime E-Mail wird fälschlich als Spam markiert <!-- .element: class="fragment" data-fragment-index="5" -->
++ **False Negative:** Spam wird nicht erkannt und landet im Posteingang <!-- .element: class="fragment" data-fragment-index="6" -->
++ Rückmeldungen der Nutzer („Kein Spam", „Spam melden") fließen als neue Trainingsdaten ein <!-- .element: class="fragment" data-fragment-index="7" -->
 
 --
 
@@ -2721,24 +2720,24 @@ Ein ML-Modell sortiert unerwünschte E-Mails aus, indem es Muster in den Nachric
 
 **ML lohnt sich, wenn**
 
-+ ausreichend historische Daten vorliegen
-+ eine wiederkehrende Vorhersage oder Klassifikation Nutzen stiftet
-+ einfache Heuristiken die Zusammenhänge nicht mehr sauber beschreiben
-+ Fehlentscheidungen messbar bewertet werden können
++ ausreichend historische Daten vorliegen <!-- .element: class="fragment" data-fragment-index="1" -->
++ eine wiederkehrende Vorhersage oder Klassifikation Nutzen stiftet <!-- .element: class="fragment" data-fragment-index="2" -->
++ einfache Heuristiken die Zusammenhänge nicht mehr sauber beschreiben <!-- .element: class="fragment" data-fragment-index="3" -->
++ Fehlentscheidungen messbar bewertet werden können <!-- .element: class="fragment" data-fragment-index="4" -->
 
 </div>
 <div style="flex: 50">
 
-<div class="fragment">
+<div class="fragment" data-fragment-index="5">
 
 **ML lohnt sich eher nicht, wenn**
 
 </div>
 
-+ es kaum Daten, aber viele Sonderfälle gibt
-+ die Entscheidung fachlich noch nicht klar formuliert ist
-+ eine bekannte Regel das Problem bereits zuverlässig löst
-+ weder Nutzen noch Fehlerkosten bewertet werden können
++ es kaum Daten, aber viele Sonderfälle gibt <!-- .element: class="fragment" data-fragment-index="6" -->
++ die Entscheidung fachlich noch nicht klar formuliert ist <!-- .element: class="fragment" data-fragment-index="7" -->
++ eine bekannte Regel das Problem bereits zuverlässig löst <!-- .element: class="fragment" data-fragment-index="8" -->
++ weder Nutzen noch Fehlerkosten bewertet werden können <!-- .element: class="fragment" data-fragment-index="9" -->
 
 </div>
 </div>
@@ -2748,19 +2747,19 @@ Ein ML-Modell sortiert unerwünschte E-Mails aus, indem es Muster in den Nachric
 <!-- .slide: class="smaller" -->
 ## Grenzen von ML
 
-+ **Die Vergangenheit sagt die Zukunft nicht immer voraus.** Historische Daten setzen stabile Bedingungen voraus. Sind Menschen Teil des Systems, gilt das oft nicht. Beispiel: Finanzkrisen lassen sich nicht allein aus historischen Daten vorhersagen.
-+ **Unbekannte Merkmale.** Wer Daten erhebt, legt vorher fest, welche Variablen gesammelt werden. Kritische Größen können fehlen. Beispiel Medizin: unbekannte genetische Faktoren oder Umweltbedingungen beeinflussen den Behandlungserfolg, stehen aber nicht in den Daten.
-+ **Ein bekanntes Verfahren wird ausgenutzt.** Wird ein Algorithmus zum Standard, können Beteiligte die Eingaben gezielt manipulieren. Beispiel: CDO-Ratings vor der Finanzkrise 2008.
++ **Die Vergangenheit sagt die Zukunft nicht immer voraus.** Historische Daten setzen stabile Bedingungen voraus. Sind Menschen Teil des Systems, gilt das oft nicht. Beispiel: Finanzkrisen lassen sich nicht allein aus historischen Daten vorhersagen. <!-- .element: class="fragment" data-fragment-index="1" -->
++ **Unbekannte Merkmale.** Wer Daten erhebt, legt vorher fest, welche Variablen gesammelt werden. Kritische Größen können fehlen. Beispiel Medizin: unbekannte genetische Faktoren oder Umweltbedingungen beeinflussen den Behandlungserfolg, stehen aber nicht in den Daten. <!-- .element: class="fragment" data-fragment-index="2" -->
++ **Ein bekanntes Verfahren wird ausgenutzt.** Wird ein Algorithmus zum Standard, können Beteiligte die Eingaben gezielt manipulieren. Beispiel: CDO-Ratings vor der Finanzkrise 2008. <!-- .element: class="fragment" data-fragment-index="3" -->
 
 --
 
 ## Merkmale und Zielgröße
 
-+ **Merkmal (engl. Feature):** eine Eingabespalte, aus der das Modell lernt. Alle Merkmale zusammen bilden `X`
-+ **Zielgröße (Target, Label):** die Spalte, die das Modell vorhersagen soll. Sie heißt `y`
-+ Jede Zeile ist ein Beispiel: Merkmale plus bekannte Lösung
++ **Merkmal (engl. Feature):** eine Eingabespalte, aus der das Modell lernt. Alle Merkmale zusammen bilden `X` <!-- .element: class="fragment" data-fragment-index="1" -->
++ **Zielgröße (Target, Label):** die Spalte, die das Modell vorhersagen soll. Sie heißt `y` <!-- .element: class="fragment" data-fragment-index="2" -->
++ Jede Zeile ist ein Beispiel: Merkmale plus bekannte Lösung <!-- .element: class="fragment" data-fragment-index="3" -->
 
-<div class="fragment">
+<div class="fragment" data-fragment-index="4">
 
 | | Pclass | Sex | Age | Fare | Survived |
 |---|---|---|---|---|---|
@@ -2768,7 +2767,7 @@ Ein ML-Modell sortiert unerwünschte E-Mails aus, indem es Muster in den Nachric
 
 </div>
 
-<div class="fragment">
+<div class="fragment" data-fragment-index="5">
 
 > [!important]
 > Ohne klar definierte Zielgröße gibt es kein sauberes ML-Problem. Eine unscharfe Zielgröße ergibt meist ein unscharfes Modell.
@@ -2779,34 +2778,36 @@ Ein ML-Modell sortiert unerwünschte E-Mails aus, indem es Muster in den Nachric
 
 ## Was ein gutes Merkmal ausmacht
 
-+ fachlich plausibel
-+ zum Zeitpunkt der Vorhersage **rechtzeitig verfügbar**
-+ stabil und reproduzierbar berechenbar
-+ nicht aus der Zielgröße abgeleitet
-+ verständlich genug, um es mit dem Fachbereich zu besprechen
++ fachlich plausibel <!-- .element: class="fragment" data-fragment-index="1" -->
++ zum Zeitpunkt der Vorhersage **rechtzeitig verfügbar** <!-- .element: class="fragment" data-fragment-index="2" -->
++ stabil und reproduzierbar berechenbar <!-- .element: class="fragment" data-fragment-index="3" -->
++ nicht aus der Zielgröße abgeleitet <!-- .element: class="fragment" data-fragment-index="4" -->
++ verständlich genug, um es mit dem Fachbereich zu besprechen <!-- .element: class="fragment" data-fragment-index="5" -->
 
 --
 
 ## Trainings- und Testdaten
 
-+ **Trainingsdaten:** daraus lernt das Modell seine Parameter
-+ **Testdaten:** zurückgehaltene Beispiele für die neutrale Endbewertung
-+ Das Modell sieht die Testdaten beim Lernen nie
++ **Trainingsdaten:** daraus lernt das Modell seine Parameter <!-- .element: class="fragment" data-fragment-index="1" -->
++ **Testdaten:** zurückgehaltene Beispiele für die neutrale Endbewertung <!-- .element: class="fragment" data-fragment-index="2" -->
++ Das Modell sieht die Testdaten beim Lernen nie <!-- .element: class="fragment" data-fragment-index="3" -->
 
-<div class="fragment">
+<div class="fragment" data-fragment-index="4">
 
 ```python
+from sklearn.datasets import load_iris
 from sklearn.model_selection import train_test_split
 
+X, y = load_iris(return_X_y=True)
 X_train, X_test, y_train, y_test = train_test_split(
-    X, y, test_size=0.2, random_state=42
+    X, y, test_size=0.2, random_state=1
 )
 # 80 % der Zeilen zum Lernen, 20 % zum Prüfen
 ```
 
 </div>
 
-<div class="fragment">
+<div class="fragment" data-fragment-index="5">
 
 > [!warning]
 > Wer auf den Trainingsdaten bewertet, misst Auswendiglernen. Nur die Testdaten zeigen, ob das Modell generalisiert.
@@ -2819,11 +2820,11 @@ X_train, X_test, y_train, y_test = train_test_split(
 
 Ein Datenleck liegt vor, wenn das Modell Informationen sieht, die im echten Einsatz zum Zeitpunkt der Vorhersage nicht verfügbar sind.
 
-+ Beispiel: Ein Modell soll einen Geräteausfall vorhersagen und bekommt als Merkmal den Reparaturcode, der erst nach dem Ausfall vergeben wird
-+ Zweites Beispiel: Die Skalierung wird auf allen Daten berechnet, bevor Trainings- und Testdaten getrennt werden
-+ Folge: unrealistisch gute Ergebnisse im Test, schlechtes Modell im Einsatz
++ Beispiel: Ein Modell soll einen Geräteausfall vorhersagen und bekommt als Merkmal den Reparaturcode, der erst nach dem Ausfall vergeben wird <!-- .element: class="fragment" data-fragment-index="1" -->
++ Zweites Beispiel: Die Skalierung wird auf allen Daten berechnet, bevor Trainings- und Testdaten getrennt werden <!-- .element: class="fragment" data-fragment-index="2" -->
++ Folge: unrealistisch gute Ergebnisse im Test, schlechtes Modell im Einsatz <!-- .element: class="fragment" data-fragment-index="3" -->
 
-<div class="fragment">
+<div class="fragment" data-fragment-index="4">
 
 > [!tip]
 > Bewerten Sie jedes Merkmal aus Sicht des Einsatzzeitpunkts: Liegt dieser Wert dann schon vor?
@@ -2866,12 +2867,12 @@ from sklearn.neighbors import KNeighborsClassifier
 
 X, y = load_iris(return_X_y=True)          # 150 Blüten, 4 Merkmale
 X_train, X_test, y_train, y_test = train_test_split(
-    X, y, test_size=0.2, random_state=42
+    X, y, test_size=0.2, random_state=1
 )
 model = KNeighborsClassifier(n_neighbors=5)
 model.fit(X_train, y_train)                # lernen
-print(model.predict(X_test[:5]))           # -> [1 0 2 1 1]
-print(y_test[:5])                          # -> [1 0 2 1 1]
+print(model.predict(X_test[:5]))           # -> [0 1 1 0 2]
+print(y_test[:5])                          # -> [0 1 1 0 2]
 print(model.score(X_test, y_test))         # -> 1.0
 ```
 
@@ -2893,7 +2894,7 @@ from sklearn.linear_model import LogisticRegression
 
 model = LogisticRegression(max_iter=1000)  # nur diese Zeile ändert sich
 model.fit(X_train, y_train)
-print(model.score(X_test, y_test))         # -> 1.0
+print(model.score(X_test, y_test))         # -> 0.9666...
 ```
 
 --
@@ -2921,8 +2922,8 @@ print(model.score(X_test, y_test))         # -> 1.0
 
 ---
 
-<!-- .slide: data-background-color="#1f3b4d" -->
-# Teil 6: Überwachtes Lernen: Regression und Klassifikation
+<!-- .slide: data-background-color="#183b66" -->
+# Teil 5: Überwachtes Lernen: Regression und Klassifikation
 
 Zahlen vorhersagen mit linearer Regression, Klassen vorhersagen mit logistischer Regression, Bäumen, Random Forest, SVM und k-nächsten Nachbarn.
 
@@ -2957,9 +2958,9 @@ Eine Gerade durch die Datenpunkte, die den Zusammenhang möglichst gut beschreib
 
 ![](figs/lineare_regression_idee.png)
 
-+ einfach und gut interpretierbar
-+ schnell zu trainieren
-+ Grundlage für komplexere Modelle
++ einfach und gut interpretierbar <!-- .element: class="fragment" data-fragment-index="1" -->
++ schnell zu trainieren <!-- .element: class="fragment" data-fragment-index="2" -->
++ Grundlage für komplexere Modelle <!-- .element: class="fragment" data-fragment-index="3" -->
 
 --
 
@@ -2970,18 +2971,18 @@ Ein Merkmal:
 
 $$y = m \cdot x + b$$
 
-+ $x$: Eingangsvariable, z. B. Werbebudget
-+ $y$: vorhergesagte Zielgröße, z. B. Umsatz
-+ $m$: Steigung der Geraden, zeigt den Einfluss von $x$ auf $y$
-+ $b$: Achsenabschnitt, der Wert von $y$ bei $x = 0$
++ $x$: Eingangsvariable, z. B. Werbebudget <!-- .element: class="fragment" data-fragment-index="1" -->
++ $y$: vorhergesagte Zielgröße, z. B. Umsatz <!-- .element: class="fragment" data-fragment-index="2" -->
++ $m$: Steigung der Geraden, zeigt den Einfluss von $x$ auf $y$ <!-- .element: class="fragment" data-fragment-index="3" -->
++ $b$: Achsenabschnitt, der Wert von $y$ bei $x = 0$ <!-- .element: class="fragment" data-fragment-index="4" -->
 
-<div class="fragment">
+<div class="fragment" data-fragment-index="5">
 
 Mehrere Merkmale (multiple lineare Regression):
 
 </div>
 
-<div class="fragment">
+<div class="fragment" data-fragment-index="6">
 
 $$y = b + m_1 x_1 + m_2 x_2 + \dots + m_n x_n$$
 
@@ -2996,16 +2997,16 @@ Gesucht sind die Werte für $m$ und $b$ mit dem kleinsten mittleren quadratische
 
 $$MSE = \frac{1}{n} \sum_{i=1}^{n} (y_i - \hat{y}_i)^2$$
 
-+ $y_i$: tatsächlicher Wert, $\hat{y}_i$: vorhergesagter Wert, $n$: Anzahl der Datenpunkte
-+ Große Abweichungen zählen durch das Quadrat besonders stark
++ $y_i$: tatsächlicher Wert, $\hat{y}_i$: vorhergesagter Wert, $n$: Anzahl der Datenpunkte <!-- .element: class="fragment" data-fragment-index="1" -->
++ Große Abweichungen zählen durch das Quadrat besonders stark <!-- .element: class="fragment" data-fragment-index="2" -->
 
-<div class="fragment">
+<div class="fragment" data-fragment-index="3">
 
 Gradientenabstieg verbessert $m$ und $b$ schrittweise, $\alpha$ ist die Lernrate:
 
 </div>
 
-<div class="fragment">
+<div class="fragment" data-fragment-index="4">
 
 $$m := m - \alpha \cdot \frac{\partial MSE}{\partial m} \qquad b := b - \alpha \cdot \frac{\partial MSE}{\partial b}$$
 
@@ -3018,10 +3019,22 @@ $$m := m - \alpha \cdot \frac{\partial MSE}{\partial m} \qquad b := b - \alpha \
 
 ![](figs/gradientenabstieg_idee.png)
 
-+ Start mit zufälligen oder grob gewählten Parametern
-+ Der Gradient zeigt in die Richtung des stärksten Anstiegs, also gehen wir in die Gegenrichtung
-+ Lernrate zu groß: die Schritte springen über das Minimum. Zu klein: das Lernen dauert sehr lange
-+ Wiederholen, bis sich kaum noch etwas ändert (Konvergenz)
++ Start mit zufälligen oder grob gewählten Parametern <!-- .element: class="fragment" data-fragment-index="1" -->
++ Der Gradient zeigt in die Richtung des stärksten Anstiegs, also gehen wir in die Gegenrichtung <!-- .element: class="fragment" data-fragment-index="2" -->
++ Lernrate zu groß: die Schritte springen über das Minimum. Zu klein: das Lernen dauert sehr lange <!-- .element: class="fragment" data-fragment-index="3" -->
++ Wiederholen, bis sich kaum noch etwas ändert (Konvergenz) <!-- .element: class="fragment" data-fragment-index="4" -->
+
+--
+
+## Lernrate: zu klein und zu groß
+
+![](figs/gd_lernrate.png)
+
+--
+
+## Lokales Minimum und Plateau
+
+![](figs/gd_fallen.png)
 
 --
 
@@ -3053,13 +3066,19 @@ print(round(m, 3), round(b, 3))             # -> 2.508 0.944
 
 --
 
+## Lernraten im Vergleich
+
+![](figs/gd_lernraten_vergleich.png)
+
+--
+
 <!-- .slide: class="smaller" -->
 ## Exakte Lösung und Varianten des Gradientenabstiegs
 
-+ Für die lineare Regression lässt sich das Minimum des MSE auch direkt berechnen: exakt, ohne Lernrate, schnell bei kleinen bis mittleren Datensätzen
-+ Bei sehr großen Datensätzen wird die direkte Berechnung teuer. Dann rechnet man schrittweise
++ Für die lineare Regression lässt sich das Minimum des MSE auch direkt berechnen: exakt, ohne Lernrate, schnell bei kleinen bis mittleren Datensätzen <!-- .element: class="fragment" data-fragment-index="1" -->
++ Bei sehr großen Datensätzen wird die direkte Berechnung teuer. Dann rechnet man schrittweise <!-- .element: class="fragment" data-fragment-index="2" -->
 
-<div class="fragment">
+<div class="fragment" data-fragment-index="3">
 
 | Methode | Gradient aus | Vorteil | Nachteil |
 |---|---|---|---|
@@ -3068,6 +3087,18 @@ print(round(m, 3), round(b, 3))             # -> 2.508 0.944
 | **Mini-Batch Gradient Descent** | kleiner Gruppe (z. B. 32 oder 64 Punkte) | Kompromiss: stabil und effizient | Batch-Größe muss passen |
 
 </div>
+
+--
+
+## SGD: die ersten Schritte
+
+![](figs/gd_sgd_schritte.png)
+
+--
+
+## Batch, Mini-Batch und SGD im Parameterraum
+
+![](figs/gd_pfade.png)
 
 --
 
@@ -3101,16 +3132,16 @@ from sklearn.linear_model import LinearRegression
 from sklearn.metrics import mean_squared_error, r2_score
 
 X_train, X_test, y_train, y_test = train_test_split(
-    X, y, test_size=0.2, random_state=42
+    X, y, test_size=0.2, random_state=1
 )
 model = LinearRegression()
 model.fit(X_train, y_train)
 y_pred = model.predict(X_test)
 
-print(y_pred[:3].round(2))                         # -> [0.72 1.76 2.71]
-print(y_test[:3].values)                 # -> [0.477   0.458   5.00001]
-print(round(mean_squared_error(y_test, y_pred), 3))  # -> 0.556
-print(round(r2_score(y_test, y_pred), 3))            # -> 0.576
+print(y_pred[:3].round(2))                         # -> [2.13 0.94 2.71]
+print(y_test[:3].values)                 # -> [3.55  0.707 2.294]
+print(round(mean_squared_error(y_test, y_pred), 3))  # -> 0.529
+print(round(r2_score(y_test, y_pred), 3))            # -> 0.597
 ```
 
 --
@@ -3121,24 +3152,24 @@ print(round(r2_score(y_test, y_pred), 3))            # -> 0.576
 ```python
 koef = pd.Series(model.coef_, index=X.columns).round(3)
 print(koef)
-print(round(model.intercept_, 2))      # -> -37.02
+print(round(model.intercept_, 2))      # -> -37.52
 ```
 
 ```text
-MedInc        0.449
+MedInc        0.439
 HouseAge      0.010
-AveRooms     -0.123
-AveBedrms     0.783
+AveRooms     -0.105
+AveBedrms     0.632
 Population   -0.000
-AveOccup     -0.004
-Latitude     -0.420
-Longitude    -0.434
+AveOccup     -0.003
+Latitude     -0.426
+Longitude    -0.441
 ```
 
-+ `MedInc` = 0.449: Steigt das mittlere Einkommen um eine Einheit (10.000 USD), steigt der vorhergesagte Hauswert um 0.449 Einheiten (rund 45.000 USD), wenn alle anderen Merkmale gleich bleiben
-+ Das Vorzeichen zeigt die Richtung, der Betrag die Stärke pro Einheit des Merkmals
++ `MedInc` = 0.439: Steigt das mittlere Einkommen um eine Einheit (10.000 USD), steigt der vorhergesagte Hauswert um 0.439 Einheiten (rund 44.000 USD), wenn alle anderen Merkmale gleich bleiben <!-- .element: class="fragment" data-fragment-index="1" -->
++ Das Vorzeichen zeigt die Richtung, der Betrag die Stärke pro Einheit des Merkmals <!-- .element: class="fragment" data-fragment-index="2" -->
 
-<div class="fragment">
+<div class="fragment" data-fragment-index="3">
 
 > [!warning]
 > Koeffizienten verschiedener Merkmale sind nur vergleichbar, wenn die Merkmale dieselbe Skala haben. `Population` (Tausende) und `AveBedrms` (um 1) haben sie nicht.
@@ -3149,11 +3180,11 @@ Longitude    -0.434
 
 ## Regularisierung als Idee
 
-+ Ein Modell mit vielen Merkmalen kann sich zu stark an die Trainingsdaten anpassen
-+ **Regularisierung** bestraft große Koeffizienten: Das Training minimiert den MSE plus eine Strafe
-+ **Lasso:** Strafe = `alpha` mal die Summe der Beträge aller Koeffizienten
-+ Wirkung: Koeffizienten unwichtiger Merkmale werden **genau null**. Lasso wählt damit Merkmale aus
-+ `alpha` ist ein Hyperparameter: `alpha = 0` ist die normale lineare Regression, großes `alpha` lässt kaum Merkmale übrig
++ Ein Modell mit vielen Merkmalen kann sich zu stark an die Trainingsdaten anpassen <!-- .element: class="fragment" data-fragment-index="1" -->
++ **Regularisierung** bestraft große Koeffizienten: Das Training minimiert den MSE plus eine Strafe <!-- .element: class="fragment" data-fragment-index="2" -->
++ **Lasso:** Strafe = `alpha` mal die Summe der Beträge aller Koeffizienten <!-- .element: class="fragment" data-fragment-index="3" -->
++ Wirkung: Koeffizienten unwichtiger Merkmale werden **genau null**. Lasso wählt damit Merkmale aus <!-- .element: class="fragment" data-fragment-index="4" -->
++ `alpha` ist ein Hyperparameter: `alpha = 0` ist die normale lineare Regression, großes `alpha` lässt kaum Merkmale übrig <!-- .element: class="fragment" data-fragment-index="5" -->
 
 --
 
@@ -3173,37 +3204,37 @@ koef = pd.Series(lasso.coef_, index=X.columns)
 print(koef.round(3))
 print((koef != 0).sum())      # -> 6
 print(round(lasso.score(X_test, y_test), 3))
-# -> 0.532
+# -> 0.542
 ```
 
 </div>
 <div style="flex: 42">
 
 ```text
-MedInc        0.393
+MedInc        0.394
 HouseAge      0.015
 AveRooms     -0.000
 AveBedrms     0.000
 Population    0.000
 AveOccup     -0.003
 Latitude     -0.114
-Longitude    -0.099
+Longitude    -0.101
 ```
 
 </div>
 </div>
 
-+ `AveRooms` und `AveBedrms` sind genau null und fallen heraus. `Population` ist nur gerundet null (0.000016)
-+ R² sinkt leicht von 0.576 auf 0.532, dafür ist das Modell einfacher
++ `AveRooms` und `AveBedrms` sind genau null und fallen heraus. `Population` ist nur gerundet null (0.000018) <!-- .element: class="fragment" data-fragment-index="1" -->
++ R² sinkt leicht von 0.597 auf 0.542, dafür ist das Modell einfacher <!-- .element: class="fragment" data-fragment-index="2" -->
 
 --
 
 ## Klassifikation: Problemstellung
 
-+ Gegeben: Trainingsbeispiele mit Merkmalsvektor $\mathbf{x}$ und bekannter Klasse $y$
-+ Gesucht: eine Funktion, die neue Eingaben einer von $k$ vordefinierten Klassen zuordnet
-+ Viele Modelle schätzen dazu eine Wahrscheinlichkeit je Klasse, $P(y = C_k \mid \mathbf{x})$, und geben die Klasse mit der höchsten Wahrscheinlichkeit aus
-+ Zwei Klassen: **binäre** Klassifikation (Spam oder nicht, gutartig oder bösartig)
++ Gegeben: Trainingsbeispiele mit Merkmalsvektor $\mathbf{x}$ und bekannter Klasse $y$ <!-- .element: class="fragment" data-fragment-index="1" -->
++ Gesucht: eine Funktion, die neue Eingaben einer von $k$ vordefinierten Klassen zuordnet <!-- .element: class="fragment" data-fragment-index="2" -->
++ Viele Modelle schätzen dazu eine Wahrscheinlichkeit je Klasse, $P(y = C_k \mid \mathbf{x})$, und geben die Klasse mit der höchsten Wahrscheinlichkeit aus <!-- .element: class="fragment" data-fragment-index="3" -->
++ Zwei Klassen: **binäre** Klassifikation (Spam oder nicht, gutartig oder bösartig) <!-- .element: class="fragment" data-fragment-index="4" -->
 
 --
 
@@ -3222,10 +3253,10 @@ print(data.target_names)     # -> ['malignant' 'benign']
 print(np.bincount(y))        # -> [212 357]
 ```
 
-+ 569 Gewebeproben, 30 Messwerte je Probe (Radius, Textur, Fläche, Konkavität der Zellkerne)
-+ Zielgröße: `0` = bösartig (malignant), `1` = gutartig (benign)
++ 569 Gewebeproben, 30 Messwerte je Probe (Radius, Textur, Fläche, Konkavität der Zellkerne) <!-- .element: class="fragment" data-fragment-index="1" -->
++ Zielgröße: `0` = bösartig (malignant), `1` = gutartig (benign) <!-- .element: class="fragment" data-fragment-index="2" -->
 
-<div class="fragment">
+<div class="fragment" data-fragment-index="3">
 
 > [!warning]
 > Die Kodierung ist andersherum, als man erwartet: Die `1` steht hier für gutartig. Prüfen Sie immer `target_names`.
@@ -3242,17 +3273,17 @@ from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler
 
 X_train, X_test, y_train, y_test = train_test_split(
-    X, y, test_size=0.2, random_state=42
+    X, y, test_size=0.2, random_state=1
 )
 scaler = StandardScaler()
 X_train_s = scaler.fit_transform(X_train)   # lernt Mittelwert und Streuung
 X_test_s = scaler.transform(X_test)         # wendet sie nur an
 ```
 
-+ `StandardScaler` bringt jedes Merkmal auf Mittelwert 0 und Standardabweichung 1
-+ Logistische Regression, SVM und k-nächste Nachbarn reagieren empfindlich auf unterschiedliche Skalen
++ `StandardScaler` bringt jedes Merkmal auf Mittelwert 0 und Standardabweichung 1 <!-- .element: class="fragment" data-fragment-index="1" -->
++ Logistische Regression, SVM und k-nächste Nachbarn reagieren empfindlich auf unterschiedliche Skalen <!-- .element: class="fragment" data-fragment-index="2" -->
 
-<div class="fragment">
+<div class="fragment" data-fragment-index="3">
 
 > [!warning]
 > `fit_transform` nur auf den Trainingsdaten. Wer vor dem Split skaliert, lässt Information aus den Testdaten ins Training: ein Datenleck.
@@ -3264,12 +3295,12 @@ X_test_s = scaler.transform(X_test)         # wendet sie nur an
 <!-- .slide: class="smaller" -->
 ## Logistische Regression: Idee
 
-+ Trotz des Namens ein Verfahren für **Klassifikation**
-+ Schritt 1: ein linearer Score wie bei der Regression, $z = \mathbf{w}^\top \mathbf{x} + b$
-+ Schritt 2: die Sigmoid-Funktion macht aus dem Score eine Wahrscheinlichkeit zwischen 0 und 1
-+ Schritt 3: eine Schwelle (Standard 0,5) macht aus der Wahrscheinlichkeit eine Klasse
++ Trotz des Namens ein Verfahren für **Klassifikation** <!-- .element: class="fragment" data-fragment-index="1" -->
++ Schritt 1: ein linearer Score wie bei der Regression, $z = \mathbf{w}^\top \mathbf{x} + b$ <!-- .element: class="fragment" data-fragment-index="2" -->
++ Schritt 2: die Sigmoid-Funktion macht aus dem Score eine Wahrscheinlichkeit zwischen 0 und 1 <!-- .element: class="fragment" data-fragment-index="3" -->
++ Schritt 3: eine Schwelle (Standard 0,5) macht aus der Wahrscheinlichkeit eine Klasse <!-- .element: class="fragment" data-fragment-index="4" -->
 
-<div class="fragment">
+<div class="fragment" data-fragment-index="5">
 
 ![](figs/d_t06_logistische_regression.png)
 
@@ -3284,8 +3315,8 @@ $$\sigma(z) = \frac{1}{1 + e^{-z}}$$
 
 ![](figs/sigmoid_schwelle.png)
 
-+ Stark negativer Score: Wahrscheinlichkeit nahe 0. Stark positiver Score: nahe 1
-+ Bei $z = 0$ ist die Wahrscheinlichkeit genau 0,5
++ Stark negativer Score: Wahrscheinlichkeit nahe 0. Stark positiver Score: nahe 1 <!-- .element: class="fragment" data-fragment-index="1" -->
++ Bei $z = 0$ ist die Wahrscheinlichkeit genau 0,5 <!-- .element: class="fragment" data-fragment-index="2" -->
 
 --
 
@@ -3306,8 +3337,8 @@ print(classification_report(y_test, y_pred,
 ```text
               precision    recall  f1-score   support
 
-   malignant       0.98      0.95      0.96        43
-      benign       0.97      0.99      0.98        71
+   malignant       0.98      0.95      0.96        42
+      benign       0.97      0.99      0.98        72
 
     accuracy                           0.97       114
 ```
@@ -3321,19 +3352,19 @@ print(classification_report(y_test, y_pred,
 from sklearn.metrics import confusion_matrix
 
 proba = logreg.predict_proba(X_test_s)[:, 1]    # P(gutartig)
-print(proba[:4].round(3))              # -> [0.886 0.    0.003 0.999]
+print(proba[:4].round(3))              # -> [0.862 0.01  0.99  0.006]
 
 y_streng = (proba >= 0.7).astype(int)           # gutartig erst ab 70 %
 print(confusion_matrix(y_test, y_streng))
-# -> [ [42  1]
-#      [ 4 67] ]
+# -> [ [40  2]
+#      [ 1 71] ]
 ```
 
 | Schwelle für „gutartig" | bösartig übersehen | gutartig fälschlich als bösartig |
 |---|---|---|
-| 0,3 | 2 | 0 |
+| 0,3 | 3 | 0 |
 | 0,5 (Standard) | 2 | 1 |
-| 0,7 | 1 | 4 |
+| 0,7 | 2 | 1 |
 | 0,9 | 1 | 7 |
 
 > [!tip]
@@ -3345,10 +3376,10 @@ print(confusion_matrix(y_test, y_streng))
 
 ![](figs/d_t06_entscheidungsbaum.png)
 
-+ **Wurzelknoten:** Startpunkt mit allen Daten
-+ **Entscheidungsknoten:** stellt eine Bedingung, z. B. „Merkmal > 5?"
-+ **Blatt:** Endpunkt, gibt eine Klasse aus
-+ Training: am besten Split-Punkt teilen, dann für jede Teilmenge wiederholen
++ **Wurzelknoten:** Startpunkt mit allen Daten <!-- .element: class="fragment" data-fragment-index="1" -->
++ **Entscheidungsknoten:** stellt eine Bedingung, z. B. „Merkmal > 5?" <!-- .element: class="fragment" data-fragment-index="2" -->
++ **Blatt:** Endpunkt, gibt eine Klasse aus <!-- .element: class="fragment" data-fragment-index="3" -->
++ Training: am besten Split-Punkt teilen, dann für jede Teilmenge wiederholen <!-- .element: class="fragment" data-fragment-index="4" -->
 
 --
 
@@ -3358,22 +3389,22 @@ print(confusion_matrix(y_test, y_streng))
 ```python
 from sklearn.tree import DecisionTreeClassifier, export_text
 
-baum = DecisionTreeClassifier(max_depth=2, random_state=42)
+baum = DecisionTreeClassifier(max_depth=2, random_state=1)
 baum.fit(X_train, y_train)               # Bäume brauchen keine Skalierung
 print(export_text(baum, feature_names=list(X.columns)))
-print(round(baum.score(X_test, y_test), 3))   # -> 0.93
+print(round(baum.score(X_test, y_test), 3))   # -> 0.886
 ```
 
 ```text
-|--- mean concave points <= 0.05
-|   |--- worst radius <= 16.83
+|--- worst perimeter <= 106.05
+|   |--- worst concave points <= 0.16
 |   |   |--- class: 1
-|   |--- worst radius >  16.83
+|   |--- worst concave points >  0.16
 |   |   |--- class: 0
-|--- mean concave points >  0.05
-|   |--- worst concave points <= 0.15
+|--- worst perimeter >  106.05
+|   |--- worst texture <= 20.65
 |   |   |--- class: 1
-|   |--- worst concave points >  0.15
+|   |--- worst texture >  20.65
 |   |   |--- class: 0
 ```
 
@@ -3384,17 +3415,17 @@ print(round(baum.score(X_test, y_test), 3))   # -> 0.93
 
 | `max_depth` | Accuracy Training | Accuracy Test |
 |---|---|---|
-| 1 | 0.921 | 0.895 |
-| 2 | 0.930 | 0.930 |
-| 3 | 0.978 | 0.947 |
-| 5 | 0.996 | 0.947 |
-| ohne Grenze (Tiefe 7) | 1.000 | 0.947 |
+| 1 | 0.930 | 0.877 |
+| 2 | 0.958 | 0.886 |
+| 3 | 0.969 | 0.912 |
+| 5 | 1.000 | 0.947 |
+| ohne Grenze (Tiefe 5) | 1.000 | 0.947 |
 
-+ Ein tiefer Baum lernt die Trainingsdaten auswendig: 100 % im Training
-+ Auf den Testdaten bringt die zusätzliche Tiefe ab 3 nichts mehr
-+ `max_depth` ist der wichtigste Hyperparameter eines Baums
++ Ein tiefer Baum lernt die Trainingsdaten auswendig: 100 % im Training <!-- .element: class="fragment" data-fragment-index="1" -->
++ Auf den Testdaten bleibt derselbe Baum bei 0.947 stehen <!-- .element: class="fragment" data-fragment-index="2" -->
++ `max_depth` ist der wichtigste Hyperparameter eines Baums <!-- .element: class="fragment" data-fragment-index="3" -->
 
-<div class="fragment">
+<div class="fragment" data-fragment-index="4">
 
 > [!warning]
 > Einzelne Entscheidungsbäume neigen zu Overfitting. Begrenzen Sie die Tiefe oder kombinieren Sie viele Bäume.
@@ -3406,12 +3437,12 @@ print(round(baum.score(X_test, y_test), 3))   # -> 0.93
 <!-- .slide: class="smaller" -->
 ## Random Forest: Idee
 
-+ **Ensemble-Verfahren:** kombiniert viele Entscheidungsbäume
-+ **Bootstrapping:** jeder Baum bekommt eine eigene Zufallsstichprobe der Trainingsdaten, gezogen mit Zurücklegen
-+ **Bagging** (Bootstrap Aggregation): viele Bäume auf unterschiedlichen Stichproben trainieren, Ergebnisse zusammenführen
-+ Klassifikation: **Mehrheitsentscheid** der Bäume. Regression: Durchschnitt
++ **Ensemble-Verfahren:** kombiniert viele Entscheidungsbäume <!-- .element: class="fragment" data-fragment-index="1" -->
++ **Bootstrapping:** jeder Baum bekommt eine eigene Zufallsstichprobe der Trainingsdaten, gezogen mit Zurücklegen <!-- .element: class="fragment" data-fragment-index="2" -->
++ **Bagging** (Bootstrap Aggregation): viele Bäume auf unterschiedlichen Stichproben trainieren, Ergebnisse zusammenführen <!-- .element: class="fragment" data-fragment-index="3" -->
++ Klassifikation: **Mehrheitsentscheid** der Bäume. Regression: Durchschnitt <!-- .element: class="fragment" data-fragment-index="4" -->
 
-<div class="fragment">
+<div class="fragment" data-fragment-index="5">
 
 ![](figs/d_t06_random_forest.png)
 
@@ -3425,14 +3456,14 @@ print(round(baum.score(X_test, y_test), 3))   # -> 0.93
 ```python
 from sklearn.ensemble import RandomForestClassifier
 
-rf = RandomForestClassifier(n_estimators=100, random_state=42)
+rf = RandomForestClassifier(n_estimators=100, random_state=1)
 rf.fit(X_train_s, y_train)
-print(round(rf.score(X_test_s, y_test), 3))        # -> 0.965
+print(round(rf.score(X_test_s, y_test), 3))        # -> 0.956
 
 wichtig = pd.Series(rf.feature_importances_, index=X.columns)
 print(wichtig.sort_values(ascending=False).head(3).round(3))
-# -> worst area 0.154, worst concave points 0.145,
-#    mean concave points 0.106
+# -> worst perimeter 0.131, worst concave points 0.130,
+#    worst area 0.118
 ```
 
 <div class="two-col">
@@ -3463,22 +3494,22 @@ print(wichtig.sort_values(ascending=False).head(3).round(3))
 
 ![](figs/svm_margin.png)
 
-+ Eine Support Vector Machine sucht die Trennlinie mit dem **größten Abstand** (Margin) zu beiden Klassen
-+ Nur die Punkte am Rand bestimmen die Linie: die **Stützvektoren** (Support Vectors)
-+ Bei mehr als zwei Merkmalen wird aus der Linie eine Hyperebene
-+ Eignet sich auch für kleine Datensätze mit vielen Merkmalen
++ Eine Support Vector Machine sucht die Trennlinie mit dem **größten Abstand** (Margin) zu beiden Klassen <!-- .element: class="fragment" data-fragment-index="1" -->
++ Nur die Punkte am Rand bestimmen die Linie: die **Stützvektoren** (Support Vectors) <!-- .element: class="fragment" data-fragment-index="2" -->
++ Bei mehr als zwei Merkmalen wird aus der Linie eine Hyperebene <!-- .element: class="fragment" data-fragment-index="3" -->
++ Eignet sich auch für kleine Datensätze mit vielen Merkmalen <!-- .element: class="fragment" data-fragment-index="4" -->
 
 --
 
 <!-- .slide: class="smaller" -->
 ## SVM: Soft Margin und Kernel
 
-+ **Hard Margin:** perfekte Trennung ohne Fehler. Funktioniert nur bei sauber trennbaren Daten und neigt zu Overfitting
-+ **Soft Margin:** lässt einzelne falsch liegende Punkte zu und generalisiert besser
-+ Der Parameter `C` steuert den Kompromiss: großes `C` duldet wenige Fehler (schmale Margin), kleines `C` duldet mehr (breite Margin)
-+ **Kernel:** Sind die Klassen nicht mit einer Geraden trennbar, vergleicht die SVM die Punkte über eine Ähnlichkeitsfunktion, als lägen sie in einem höherdimensionalen Raum
++ **Hard Margin:** perfekte Trennung ohne Fehler. Funktioniert nur bei sauber trennbaren Daten und neigt zu Overfitting <!-- .element: class="fragment" data-fragment-index="1" -->
++ **Soft Margin:** lässt einzelne falsch liegende Punkte zu und generalisiert besser <!-- .element: class="fragment" data-fragment-index="2" -->
++ Der Parameter `C` steuert den Kompromiss: großes `C` duldet wenige Fehler (schmale Margin), kleines `C` duldet mehr (breite Margin) <!-- .element: class="fragment" data-fragment-index="3" -->
++ **Kernel:** Sind die Klassen nicht mit einer Geraden trennbar, vergleicht die SVM die Punkte über eine Ähnlichkeitsfunktion, als lägen sie in einem höherdimensionalen Raum <!-- .element: class="fragment" data-fragment-index="4" -->
 
-<div class="fragment">
+<div class="fragment" data-fragment-index="5">
 
 | Kernel | Geeignet für |
 |---|---|
@@ -3504,7 +3535,7 @@ from sklearn.svm import SVC
 svm = SVC(kernel="rbf", C=1.0, gamma="scale")
 svm.fit(X_train_s, y_train)
 print(round(svm.score(X_test_s, y_test), 3))
-# -> 0.982
+# -> 0.974
 ```
 
 </div>
@@ -3518,15 +3549,15 @@ from sklearn.neighbors import KNeighborsClassifier
 knn = KNeighborsClassifier(n_neighbors=5)
 knn.fit(X_train_s, y_train)
 print(round(knn.score(X_test_s, y_test), 3))
-# -> 0.947
+# -> 0.956
 ```
 
 </div>
 </div>
 
-+ kNN sucht zu einem neuen Punkt die `k` ähnlichsten Trainingspunkte und nimmt deren häufigste Klasse
-+ kNN lernt beim `fit` nichts: Es merkt sich die Trainingsdaten und rechnet erst bei `predict`
-+ Beide Verfahren rechnen mit Abständen. Ohne Skalierung dominiert das Merkmal mit den größten Zahlen
++ kNN sucht zu einem neuen Punkt die `k` ähnlichsten Trainingspunkte und nimmt deren häufigste Klasse <!-- .element: class="fragment" data-fragment-index="1" -->
++ kNN lernt beim `fit` nichts: Es merkt sich die Trainingsdaten und rechnet erst bei `predict` <!-- .element: class="fragment" data-fragment-index="2" -->
++ Beide Verfahren rechnen mit Abständen. Ohne Skalierung dominiert das Merkmal mit den größten Zahlen <!-- .element: class="fragment" data-fragment-index="3" -->
 
 --
 
@@ -3539,9 +3570,9 @@ from sklearn.metrics import accuracy_score
 modelle = {
     "Logistische Regression": LogisticRegression(max_iter=1000),
     "Entscheidungsbaum": DecisionTreeClassifier(max_depth=3,
-                                                random_state=42),
+                                                random_state=1),
     "Random Forest": RandomForestClassifier(n_estimators=100,
-                                            random_state=42),
+                                            random_state=1),
     "SVM (RBF)": SVC(kernel="rbf", C=1.0, gamma="scale"),
     "kNN (k=5)": KNeighborsClassifier(n_neighbors=5),
 }
@@ -3559,11 +3590,11 @@ for name, modell in modelle.items():
 
 | Verfahren | Accuracy Training | Accuracy Test | Skalierung nötig | Nachvollziehbar | Wichtigste Stellschraube |
 |---|---|---|---|---|---|
-| Logistische Regression | 0.987 | 0.974 | ja | gut (Koeffizienten) | `C` |
-| Entscheidungsbaum (Tiefe 3) | 0.978 | 0.947 | nein | sehr gut (vorlesbar) | `max_depth` |
-| Random Forest (100 Bäume) | 1.000 | 0.965 | nein | mittel (Merkmalswichtigkeit) | `n_estimators`, `max_depth` |
-| SVM (RBF) | 0.989 | 0.982 | ja | gering | `C`, `gamma`, `kernel` |
-| kNN (k = 5) | 0.980 | 0.947 | ja | mittel (Nachbarn zeigen) | `n_neighbors` |
+| Logistische Regression | 0.991 | 0.974 | ja | gut (Koeffizienten) | `C` |
+| Entscheidungsbaum (Tiefe 3) | 0.969 | 0.912 | nein | sehr gut (vorlesbar) | `max_depth` |
+| Random Forest (100 Bäume) | 1.000 | 0.956 | nein | mittel (Merkmalswichtigkeit) | `n_estimators`, `max_depth` |
+| SVM (RBF) | 0.987 | 0.974 | ja | gering | `C`, `gamma`, `kernel` |
+| kNN (k = 5) | 0.982 | 0.956 | ja | mittel (Nachbarn zeigen) | `n_neighbors` |
 
 > [!important]
 > 114 Testfälle: Ein einziger Fall macht knapp einen Prozentpunkt aus. Aus dieser Tabelle folgt keine Rangliste.
@@ -3580,8 +3611,8 @@ for name, modell in modelle.items():
 
 ---
 
-<!-- .slide: data-background-color="#1f3b4d" -->
-# Teil 7: Modelltraining, Feature Engineering, Hyperparameter und Evaluation
+<!-- .slide: data-background-color="#183b66" -->
+# Teil 6: Modelltraining, Feature Engineering, Hyperparameter und Evaluation
 
 Wie Sie Merkmale aufbereiten, Modelle ehrlich prüfen, Einstellungen systematisch suchen und Ergebnisse mit den passenden Kennzahlen bewerten.
 
@@ -3589,11 +3620,11 @@ Wie Sie Merkmale aufbereiten, Modelle ehrlich prüfen, Einstellungen systematisc
 
 ## Was Sie in diesem Teil lernen
 
-+ Merkmale skalieren, kodieren, transformieren und neue Merkmale aus vorhandenen bilden
-+ Overfitting und Underfitting erkennen und mit Cross-Validation ehrlich messen
-+ Hyperparameter mit `GridSearchCV` systematisch suchen
-+ Regressionsmodelle mit MAE, MSE, RMSE und R² bewerten
-+ Klassifikationsmodelle mit Konfusionsmatrix, Precision, Recall, F1 und ROC bewerten, auch bei ungleichen Klassen
++ Merkmale skalieren, kodieren, transformieren und neue Merkmale aus vorhandenen bilden <!-- .element: class="fragment" data-fragment-index="1" -->
++ Overfitting und Underfitting erkennen und mit Cross-Validation ehrlich messen <!-- .element: class="fragment" data-fragment-index="2" -->
++ Hyperparameter mit `GridSearchCV` systematisch suchen <!-- .element: class="fragment" data-fragment-index="3" -->
++ Regressionsmodelle mit MAE, MSE, RMSE und R² bewerten <!-- .element: class="fragment" data-fragment-index="4" -->
++ Klassifikationsmodelle mit Konfusionsmatrix, Precision, Recall, F1 und ROC bewerten, auch bei ungleichen Klassen <!-- .element: class="fragment" data-fragment-index="5" -->
 
 --
 
@@ -3643,7 +3674,7 @@ from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler
 
 X_train, X_test, y_train, y_test = train_test_split(
-    X, y, test_size=0.2, random_state=42)
+    X, y, test_size=0.2, random_state=1)
 
 scaler = StandardScaler()
 X_train_scaled = scaler.fit_transform(X_train)  # lernt Mittelwert, Streuung
@@ -3685,8 +3716,8 @@ X_test_scaled = scaler.transform(X_test)        # wendet sie nur an
 </div>
 </div>
 
-+ Label-Encoding behauptet eine Reihenfolge: Blau (0) kleiner als Grün (1) kleiner als Rot (2). Bei Farben ist das falsch.
-+ Für Kategorien ohne Rangfolge: One-Hot. Für echte Rangfolgen (Schulnote, Pflegegrad): Zahlen in der richtigen Reihenfolge.
++ Label-Encoding behauptet eine Reihenfolge: Blau (0) kleiner als Grün (1) kleiner als Rot (2). Bei Farben ist das falsch. <!-- .element: class="fragment" data-fragment-index="1" -->
++ Für Kategorien ohne Rangfolge: One-Hot. Für echte Rangfolgen (Schulnote, Pflegegrad): Zahlen in der richtigen Reihenfolge. <!-- .element: class="fragment" data-fragment-index="2" -->
 
 --
 
@@ -3712,8 +3743,8 @@ df["Sex_label"] = LabelEncoder().fit_transform(df["Sex"])
 print(df[ ["Sex", "Sex_label"] ].head(3))   # female -> 0, male -> 1
 ```
 
-+ `drop_first=True` lässt eine Spalte weg: aus `Sex_female = 0` folgt `Sex_male = 1`
-+ `handle_unknown="ignore"`: eine unbekannte Kategorie in neuen Daten führt nicht zum Abbruch
++ `drop_first=True` lässt eine Spalte weg: aus `Sex_female = 0` folgt `Sex_male = 1` <!-- .element: class="fragment" data-fragment-index="1" -->
++ `handle_unknown="ignore"`: eine unbekannte Kategorie in neuen Daten führt nicht zum Abbruch <!-- .element: class="fragment" data-fragment-index="2" -->
 
 --
 
@@ -3727,8 +3758,8 @@ import numpy as np
 df["Fare_log"] = np.log1p(df["Fare"])   # log(1 + x), verträgt auch Fare = 0
 ```
 
-+ Wenige sehr teure Tickets ziehen die Verteilung nach rechts. Der Logarithmus staucht große Werte stärker als kleine.
-+ Typische Kandidaten: Preise, Einkommen, Kosten, Wartezeiten
++ Wenige sehr teure Tickets ziehen die Verteilung nach rechts. Der Logarithmus staucht große Werte stärker als kleine. <!-- .element: class="fragment" data-fragment-index="1" -->
++ Typische Kandidaten: Preise, Einkommen, Kosten, Wartezeiten <!-- .element: class="fragment" data-fragment-index="2" -->
 
 --
 
@@ -3749,10 +3780,10 @@ print(df.groupby("Altersgruppe", observed=True)["Survived"].mean().round(2))
 print(df.groupby("Familiengroesse")["Survived"].mean().round(2))
 ```
 
-+ Fachwissen steckt im Merkmal: nicht `SibSp` und `Parch` einzeln zählen, sondern „reist allein oder mit Familie"
-+ Weitere Muster: Wochentag oder Monat aus einem Datum, Verhältnisse (Kosten je Arztbesuch), Summen je Gruppe
++ Fachwissen steckt im Merkmal: nicht `SibSp` und `Parch` einzeln zählen, sondern „reist allein oder mit Familie" <!-- .element: class="fragment" data-fragment-index="1" -->
++ Weitere Muster: Wochentag oder Monat aus einem Datum, Verhältnisse (Kosten je Arztbesuch), Summen je Gruppe <!-- .element: class="fragment" data-fragment-index="2" -->
 
-<div class="fragment">
+<div class="fragment" data-fragment-index="3">
 
 > [!warning]
 > Ein neues Merkmal darf nur Informationen nutzen, die zum Zeitpunkt der Vorhersage bekannt sind.
@@ -3775,9 +3806,9 @@ from sklearn.model_selection import train_test_split
 
 # 1. Testteil abspalten (20 Prozent), 2. Rest in Training und Validierung
 X_rest, X_test, y_rest, y_test = train_test_split(
-    X, y, test_size=0.2, random_state=42, stratify=y)
+    X, y, test_size=0.2, random_state=1, stratify=y)
 X_train, X_val, y_train, y_val = train_test_split(
-    X_rest, y_rest, test_size=0.25, random_state=42, stratify=y_rest)
+    X_rest, y_rest, test_size=0.25, random_state=1, stratify=y_rest)
 # Ergebnis: 60 Prozent Training, 20 Prozent Validierung, 20 Prozent Test
 ```
 
@@ -3788,10 +3819,10 @@ X_train, X_val, y_train, y_val = train_test_split(
 
 ## Overfitting und Underfitting
 
-+ **Underfitting:** Das Modell ist zu einfach und verpasst das Muster. Schlecht auf Trainings- und auf neuen Daten.
-+ **Overfitting:** Das Modell ist zu flexibel und lernt das Rauschen der Trainingsdaten auswendig. Sehr gut im Training, schlecht auf neuen Daten.
-+ **Generalisierung:** Ziel ist ein niedriger Fehler auf Daten, die das Modell nie gesehen hat.
-+ Stellschrauben: Modellkomplexität (Kapazität), mehr Daten, bessere Merkmale, Regularisierung
++ **Underfitting:** Das Modell ist zu einfach und verpasst das Muster. Schlecht auf Trainings- und auf neuen Daten. <!-- .element: class="fragment" data-fragment-index="1" -->
++ **Overfitting:** Das Modell ist zu flexibel und lernt das Rauschen der Trainingsdaten auswendig. Sehr gut im Training, schlecht auf neuen Daten. <!-- .element: class="fragment" data-fragment-index="2" -->
++ **Generalisierung:** Ziel ist ein niedriger Fehler auf Daten, die das Modell nie gesehen hat. <!-- .element: class="fragment" data-fragment-index="3" -->
++ Stellschrauben: Modellkomplexität (Kapazität), mehr Daten, bessere Merkmale, Regularisierung <!-- .element: class="fragment" data-fragment-index="4" -->
 
 --
 
@@ -3842,8 +3873,8 @@ Grad 11: Training 0.000, neu 0.111
 | Im Polynombeispiel | Grad 1 | Grad 11 |
 | Abhilfe | flexibleres Modell, bessere Merkmale | einfacheres Modell, mehr Daten, Regularisierung |
 
-+ Mehr Komplexität senkt den Bias und erhöht die Varianz. Gesucht ist die Mitte.
-+ Diagnose: Trainings- und Validierungswert nebeneinander über die Modellkomplexität auftragen (zum Beispiel über `max_depth`)
++ Mehr Komplexität senkt den Bias und erhöht die Varianz. Gesucht ist die Mitte. <!-- .element: class="fragment" data-fragment-index="1" -->
++ Diagnose: Trainings- und Validierungswert nebeneinander über die Modellkomplexität auftragen (zum Beispiel über `max_depth`) <!-- .element: class="fragment" data-fragment-index="2" -->
 
 --
 
@@ -3852,19 +3883,13 @@ Grad 11: Training 0.000, neu 0.111
 
 Ein einzelner Split hängt vom Zufall ab. Cross-Validation teilt die Daten in k Blöcke (Folds) und lässt jeden Block einmal Prüfdaten sein.
 
-```text
-Durchlauf 1:  [PRÜFEN] [ train ] [ train ] [ train ] [ train ]  -> Score 1
-Durchlauf 2:  [ train ] [PRÜFEN] [ train ] [ train ] [ train ]  -> Score 2
-Durchlauf 3:  [ train ] [ train ] [PRÜFEN] [ train ] [ train ]  -> Score 3
-Durchlauf 4:  [ train ] [ train ] [ train ] [PRÜFEN] [ train ]  -> Score 4
-Durchlauf 5:  [ train ] [ train ] [ train ] [ train ] [PRÜFEN]  -> Score 5
+![](figs/d_t06_cross_validation.png)
 
 Ergebnis: Mittelwert und Streuung der 5 Scores
-```
 
-+ Jede Datenzeile wird genau einmal zum Prüfen benutzt, alle Daten werden genutzt
-+ Die Streuung zeigt, wie stabil das Ergebnis ist
-+ Preis: k Trainingsläufe statt einem
++ Jede Datenzeile wird genau einmal zum Prüfen benutzt, alle Daten werden genutzt <!-- .element: class="fragment" data-fragment-index="1" -->
++ Die Streuung zeigt, wie stabil das Ergebnis ist <!-- .element: class="fragment" data-fragment-index="2" -->
++ Preis: k Trainingsläufe statt einem <!-- .element: class="fragment" data-fragment-index="3" -->
 
 --
 
@@ -3877,19 +3902,19 @@ from sklearn.ensemble import RandomForestClassifier
 from sklearn.model_selection import StratifiedKFold, cross_val_score
 
 X, y = load_breast_cancer(return_X_y=True)
-model = RandomForestClassifier(random_state=42)
+model = RandomForestClassifier(random_state=1)
 
-cv = StratifiedKFold(n_splits=5, shuffle=True, random_state=42)
+cv = StratifiedKFold(n_splits=5, shuffle=True, random_state=1)
 scores = cross_val_score(model, X, y, cv=cv, scoring="roc_auc")
 
 print(scores.round(3))
 print(f"Mittel: {scores.mean():.3f}, Streuung: {scores.std():.3f}")
-# -> [0.998 0.979 0.979 0.995 0.992]
-# -> Mittel: 0.989, Streuung: 0.008
+# -> [0.994 0.999 0.987 0.989 0.986]
+# -> Mittel: 0.991, Streuung: 0.005
 ```
 
-+ `StratifiedKFold` hält in jedem Fold das Klassenverhältnis des Gesamtdatensatzes. Ohne das kann ein Fold zufällig kaum Fälle der seltenen Klasse enthalten.
-+ `scoring` wählt die Kennzahl: `"accuracy"`, `"f1"`, `"roc_auc"`, bei Regression `"r2"` oder `"neg_mean_absolute_error"`
++ `StratifiedKFold` hält in jedem Fold das Klassenverhältnis des Gesamtdatensatzes. Ohne das kann ein Fold zufällig kaum Fälle der seltenen Klasse enthalten. <!-- .element: class="fragment" data-fragment-index="1" -->
++ `scoring` wählt die Kennzahl: `"accuracy"`, `"f1"`, `"roc_auc"`, bei Regression `"r2"` oder `"neg_mean_absolute_error"` <!-- .element: class="fragment" data-fragment-index="2" -->
 
 --
 
@@ -3903,8 +3928,8 @@ print(f"Mittel: {scores.mean():.3f}, Streuung: {scores.std():.3f}")
 | Beispiele | Koeffizienten `coef_` und `intercept_` der Regression, Schwellen im Baum | `alpha` bei Lasso, `max_depth` beim Baum, `n_estimators` beim Random Forest, `k` bei k-NN |
 | Wo im Code? | Attribute mit Unterstrich nach `fit` | Argumente im Konstruktor |
 
-+ Schlecht gewählte Hyperparameter führen zu Underfitting oder Overfitting
-+ Hyperparameter werden auf Validierungsdaten oder per Cross-Validation verglichen, nie auf dem Testteil
++ Schlecht gewählte Hyperparameter führen zu Underfitting oder Overfitting <!-- .element: class="fragment" data-fragment-index="1" -->
++ Hyperparameter werden auf Validierungsdaten oder per Cross-Validation verglichen, nie auf dem Testteil <!-- .element: class="fragment" data-fragment-index="2" -->
 
 --
 
@@ -3920,7 +3945,7 @@ from sklearn.model_selection import GridSearchCV, train_test_split
 df = pd.read_csv("data/california_housing.csv")
 X, y = df.drop(columns="MedHouseVal"), df["MedHouseVal"]
 X_train, X_test, y_train, y_test = train_test_split(
-    X, y, test_size=0.2, random_state=42)
+    X, y, test_size=0.2, random_state=1)
 
 alphas = np.logspace(-4, 1, 10)          # 10 Werte von 0.0001 bis 10
 search = GridSearchCV(Lasso(), {"alpha": alphas}, cv=5, scoring="r2")
@@ -3930,8 +3955,8 @@ print(search.best_params_, round(search.best_score_, 3))
 print(f"R² auf dem Testteil: {search.score(X_test, y_test):.2f}")
 ```
 
-+ `np.logspace(-4, 1, 10)`: Werte gleichmäßig über Zehnerpotenzen verteilt, passend für Regularisierungsstärken
-+ 10 Kandidaten mal 5 Folds: 50 Trainingsläufe. Danach trainiert `GridSearchCV` das beste Modell auf allen Trainingsdaten neu.
++ `np.logspace(-4, 1, 10)`: Werte gleichmäßig über Zehnerpotenzen verteilt, passend für Regularisierungsstärken <!-- .element: class="fragment" data-fragment-index="1" -->
++ 10 Kandidaten mal 5 Folds: 50 Trainingsläufe. Danach trainiert `GridSearchCV` das beste Modell auf allen Trainingsdaten neu. <!-- .element: class="fragment" data-fragment-index="2" -->
 
 --
 
@@ -3942,21 +3967,21 @@ print(f"R² auf dem Testteil: {search.score(X_test, y_test):.2f}")
 from sklearn.metrics import f1_score
 X, y = load_breast_cancer(return_X_y=True)
 X_train, X_test, y_train, y_test = train_test_split(
-    X, y, test_size=0.2, stratify=y, random_state=42)
+    X, y, test_size=0.2, stratify=y, random_state=1)
 
 param_grid = {"max_depth": [2, 3, 4, 5, 10, 20, None],  # None: unbegrenzt
               "n_estimators": [50, 100, 200]}
-search = GridSearchCV(RandomForestClassifier(random_state=42),
+search = GridSearchCV(RandomForestClassifier(random_state=1),
                       param_grid, cv=cv, scoring="f1", n_jobs=-1)
 search.fit(X_train, y_train)
 
 print(search.best_params_, round(search.best_score_, 3))
 print(f"F1 auf dem Testteil: {f1_score(y_test, search.predict(X_test)):.3f}")
-# -> {'max_depth': 10, 'n_estimators': 200} 0.97
+# -> {'max_depth': 10, 'n_estimators': 100} 0.965
 # -> F1 auf dem Testteil: 0.966
 ```
 
-+ 7 mal 3 Kombinationen mal 5 Folds: 105 Trainingsläufe. Jeder weitere Hyperparameter vervielfacht den Aufwand.
++ 7 mal 3 Kombinationen mal 5 Folds: 105 Trainingsläufe. Jeder weitere Hyperparameter vervielfacht den Aufwand. <!-- .element: class="fragment" data-fragment-index="1" -->
 
 --
 
@@ -3973,14 +3998,14 @@ print(f"F1 auf dem Testteil: {f1_score(y_test, search.predict(X_test)):.3f}")
 from sklearn.model_selection import RandomizedSearchCV
 
 search = RandomizedSearchCV(
-    RandomForestClassifier(random_state=42), param_distributions=param_grid,
-    n_iter=8, cv=cv, scoring="f1", random_state=42, n_jobs=-1)
+    RandomForestClassifier(random_state=1), param_distributions=param_grid,
+    n_iter=8, cv=cv, scoring="f1", random_state=1, n_jobs=-1)
 search.fit(X_train, y_train)
 print(search.best_params_, round(search.best_score_, 3))
-# -> {'n_estimators': 200, 'max_depth': 20} 0.97
+# -> {'n_estimators': 100, 'max_depth': 20} 0.965
 ```
 
-+ 8 statt 21 Kombinationen, derselbe Wert: in diesem Beispiel reicht die Zufallssuche
++ 8 statt 21 Kombinationen, derselbe Wert: in diesem Beispiel reicht die Zufallssuche <!-- .element: class="fragment" data-fragment-index="1" -->
 
 --
 
@@ -3991,11 +4016,11 @@ print(search.best_params_, round(search.best_score_, 3))
 
 $MAE = \frac{1}{m} \sum_{i=1}^{m} \lvert y_i - \hat{y}_i \rvert$
 
-+ Durchschnittlicher Abstand zwischen Vorhersage $\hat{y}$ und wahrem Wert $y$, in der Einheit der Zielgröße
-+ Je kleiner, desto besser. MAE = 1000 bei Kosten in Euro heißt: Die Vorhersage liegt im Mittel 1000 Euro daneben.
-+ Jeder Fehler zählt mit seinem Betrag, einzelne Ausreißer fallen wenig ins Gewicht
++ Durchschnittlicher Abstand zwischen Vorhersage $\hat{y}$ und wahrem Wert $y$, in der Einheit der Zielgröße <!-- .element: class="fragment" data-fragment-index="1" -->
++ Je kleiner, desto besser. MAE = 1000 bei Kosten in Euro heißt: Die Vorhersage liegt im Mittel 1000 Euro daneben. <!-- .element: class="fragment" data-fragment-index="2" -->
++ Jeder Fehler zählt mit seinem Betrag, einzelne Ausreißer fallen wenig ins Gewicht <!-- .element: class="fragment" data-fragment-index="3" -->
 
-<div class="fragment">
+<div class="fragment" data-fragment-index="4">
 
 ```python
 from sklearn.metrics import mean_absolute_error
@@ -4020,11 +4045,11 @@ $MSE = \frac{1}{m} \sum_{i=1}^{m} (y_i - \hat{y}_i)^2$
 
 $RMSE = \sqrt{MSE}$
 
-+ Das Quadrat bestraft große Fehler stärker: ein Fehler von 3 zählt neunfach, nicht dreifach
-+ MSE hat die quadrierte Einheit (Euro²) und ist schwer zu deuten. RMSE hat wieder die Einheit der Zielgröße.
-+ RMSE deutlich größer als MAE: Es gibt einzelne große Ausreißer in den Fehlern.
++ Das Quadrat bestraft große Fehler stärker: ein Fehler von 3 zählt neunfach, nicht dreifach <!-- .element: class="fragment" data-fragment-index="1" -->
++ MSE hat die quadrierte Einheit (Euro²) und ist schwer zu deuten. RMSE hat wieder die Einheit der Zielgröße. <!-- .element: class="fragment" data-fragment-index="2" -->
++ RMSE deutlich größer als MAE: Es gibt einzelne große Ausreißer in den Fehlern. <!-- .element: class="fragment" data-fragment-index="3" -->
 
-<div class="fragment">
+<div class="fragment" data-fragment-index="4">
 
 ```python
 import numpy as np
@@ -4074,14 +4099,14 @@ y_pred = model.predict(X_test)
 mae = mean_absolute_error(y_test, y_pred)
 mse = mean_squared_error(y_test, y_pred)
 print(f"MAE:  {mae:.2f}")                 # -> 0.53
-print(f"MSE:  {mse:.2f}")                 # -> 0.56
-print(f"RMSE: {np.sqrt(mse):.2f}")        # -> 0.75
-print(f"R²:   {r2_score(y_test, y_pred):.2f}")  # -> 0.58
+print(f"MSE:  {mse:.2f}")                 # -> 0.53
+print(f"RMSE: {np.sqrt(mse):.2f}")        # -> 0.73
+print(f"R²:   {r2_score(y_test, y_pred):.2f}")  # -> 0.60
 ```
 
-+ Zielgröße `MedHouseVal` zählt in 100.000 Dollar: MAE 0.53 heißt rund 53.000 Dollar mittlerer Fehler
-+ Lesen Sie mehrere Kennzahlen nebeneinander: MAE für den typischen Fehler, RMSE für Ausreißer, R² für den Vergleich mit dem Mittelwert
-+ Ein sehr hohes R² im Training und ein niedriges auf neuen Daten zeigt Overfitting
++ Zielgröße `MedHouseVal` zählt in 100.000 Dollar: MAE 0.53 heißt rund 53.000 Dollar mittlerer Fehler <!-- .element: class="fragment" data-fragment-index="1" -->
++ Lesen Sie mehrere Kennzahlen nebeneinander: MAE für den typischen Fehler, RMSE für Ausreißer, R² für den Vergleich mit dem Mittelwert <!-- .element: class="fragment" data-fragment-index="2" -->
++ Ein sehr hohes R² im Training und ein niedriges auf neuen Daten zeigt Overfitting <!-- .element: class="fragment" data-fragment-index="3" -->
 
 --
 
@@ -4100,8 +4125,8 @@ y_pred = [0, 1, 1, 1, 0, 1, 0, 1, 1, 0]   # Vorhersage des Modells
 | **wirklich 0 (gesund)** | **TN = 3** richtig entwarnt | **FP = 2** Fehlalarm |
 | **wirklich 1 (krank)** | **FN = 1** übersehen | **TP = 4** richtig erkannt |
 
-+ **T**rue/**F**alse: Lag das Modell richtig? **P**ositive/**N**egative: Was hat es vorhergesagt?
-+ Die Diagonale (TN und TP) zählt die richtigen Vorhersagen: 7 von 10
++ **T**rue/**F**alse: Lag das Modell richtig? **P**ositive/**N**egative: Was hat es vorhergesagt? <!-- .element: class="fragment" data-fragment-index="1" -->
++ Die Diagonale (TN und TP) zählt die richtigen Vorhersagen: 7 von 10 <!-- .element: class="fragment" data-fragment-index="2" -->
 
 --
 
@@ -4117,8 +4142,8 @@ Aus der Matrix: TP = 4, FP = 2, FN = 1, TN = 3
 | **Recall** | Wie viele Kranke werden gefunden? | $\frac{TP}{TP + FN}$ | 4 / 5 = **0.80** |
 | **F1** | Mittel aus Precision und Recall | $2 \cdot \frac{Precision \cdot Recall}{Precision + Recall}$ | 2 · 0.67 · 0.80 / 1.47 = **0.73** |
 
-+ Precision schaut auf die Spalte „vorhergesagt 1", Recall auf die Zeile „wirklich 1"
-+ F1 ist das harmonische Mittel: Es wird nur hoch, wenn beide Werte hoch sind
++ Precision schaut auf die Spalte „vorhergesagt 1", Recall auf die Zeile „wirklich 1" <!-- .element: class="fragment" data-fragment-index="1" -->
++ F1 ist das harmonische Mittel: Es wird nur hoch, wenn beide Werte hoch sind <!-- .element: class="fragment" data-fragment-index="2" -->
 
 --
 
@@ -4141,8 +4166,8 @@ print(round(recall_score(y_true, y_pred), 2))      # -> 0.8
 print(round(f1_score(y_true, y_pred), 2))          # -> 0.73
 ```
 
-+ Reihenfolge der Argumente: erst die Wahrheit, dann die Vorhersage
-+ Als Bild: `ConfusionMatrixDisplay.from_predictions(y_true, y_pred)`
++ Reihenfolge der Argumente: erst die Wahrheit, dann die Vorhersage <!-- .element: class="fragment" data-fragment-index="1" -->
++ Als Bild: `ConfusionMatrixDisplay.from_predictions(y_true, y_pred)` <!-- .element: class="fragment" data-fragment-index="2" -->
 
 --
 
@@ -4155,9 +4180,9 @@ print(round(f1_score(y_true, y_pred), 2))          # -> 0.73
 | **Betrugserkennung** | korrekte Abrechnung wird geprüft, Aufwand und Ärger | Betrug wird ausgezahlt | meist FN, aber zu viele FP legen die Prüfstelle lahm |
 | **Spamfilter** | wichtige Mail landet im Spamordner | Spam landet im Posteingang | meist FP |
 
-+ FN teuer: auf **Recall** achten. FP teuer: auf **Precision** achten.
-+ Beide Fehler lassen sich kaum gleichzeitig auf null bringen. Wer mehr findet, löst mehr Fehlalarme aus.
-+ Die Gewichtung ist eine fachliche Entscheidung, keine technische
++ FN teuer: auf **Recall** achten. FP teuer: auf **Precision** achten. <!-- .element: class="fragment" data-fragment-index="1" -->
++ Beide Fehler lassen sich kaum gleichzeitig auf null bringen. Wer mehr findet, löst mehr Fehlalarme aus. <!-- .element: class="fragment" data-fragment-index="2" -->
++ Die Gewichtung ist eine fachliche Entscheidung, keine technische <!-- .element: class="fragment" data-fragment-index="3" -->
 
 --
 
@@ -4200,9 +4225,9 @@ Fünf Fälle mit wahrem Label und vorhergesagter Wahrscheinlichkeit für Klasse 
 | D | 0 | 0.40 |
 | E | 1 | 0.20 |
 
-+ 3 positive Fälle (A, C, E), 2 negative Fälle (B, D)
-+ Regel: Für eine Schwelle t gilt ein Fall als positiv, wenn p ≥ t
-+ Für jede Schwelle zählen wir TP, FP, FN, TN und rechnen daraus zwei Raten
++ 3 positive Fälle (A, C, E), 2 negative Fälle (B, D) <!-- .element: class="fragment" data-fragment-index="1" -->
++ Regel: Für eine Schwelle t gilt ein Fall als positiv, wenn p ≥ t <!-- .element: class="fragment" data-fragment-index="2" -->
++ Für jede Schwelle zählen wir TP, FP, FN, TN und rechnen daraus zwei Raten <!-- .element: class="fragment" data-fragment-index="3" -->
 
 --
 
@@ -4218,9 +4243,9 @@ Fünf Fälle mit wahrem Label und vorhergesagter Wahrscheinlichkeit für Klasse 
 | ≥ 0.40 | A, B, C, D | 2 | 2 | 1 | 0 | 0.67 | 1.00 |
 | ≥ 0.20 | A, B, C, D, E | 3 | 2 | 0 | 0 | 1.00 | 1.00 |
 
-+ **TPR** (True Positive Rate) ist der Recall: Anteil der gefundenen Positiven
-+ **FPR** (False Positive Rate): Anteil der Negativen, die fälschlich Alarm auslösen
-+ Jede Zeile ergibt einen Punkt (FPR, TPR) der ROC-Kurve
++ **TPR** (True Positive Rate) ist der Recall: Anteil der gefundenen Positiven <!-- .element: class="fragment" data-fragment-index="1" -->
++ **FPR** (False Positive Rate): Anteil der Negativen, die fälschlich Alarm auslösen <!-- .element: class="fragment" data-fragment-index="2" -->
++ Jede Zeile ergibt einen Punkt (FPR, TPR) der ROC-Kurve <!-- .element: class="fragment" data-fragment-index="3" -->
 
 --
 
@@ -4235,13 +4260,13 @@ Fünf Fälle mit wahrem Label und vorhergesagter Wahrscheinlichkeit für Klasse 
 </div>
 <div style="flex: 42">
 
-+ x-Achse: FPR, y-Achse: TPR, ein Punkt je Schwelle
-+ Ideal: links oben (alle gefunden, kein Fehlalarm)
-+ Diagonale: Raten
-+ **AUC** = Fläche unter der Kurve, 1.0 perfekt, 0.5 Raten
-+ Von Hand: 0.5 · 0.33 + 0.5 · 0.67 = **0.50**
++ x-Achse: FPR, y-Achse: TPR, ein Punkt je Schwelle <!-- .element: class="fragment" data-fragment-index="1" -->
++ Ideal: links oben (alle gefunden, kein Fehlalarm) <!-- .element: class="fragment" data-fragment-index="2" -->
++ Diagonale: Raten <!-- .element: class="fragment" data-fragment-index="3" -->
++ **AUC** = Fläche unter der Kurve, 1.0 perfekt, 0.5 Raten <!-- .element: class="fragment" data-fragment-index="4" -->
++ Von Hand: 0.5 · 0.33 + 0.5 · 0.67 = **0.50** <!-- .element: class="fragment" data-fragment-index="5" -->
 
-<div class="fragment">
+<div class="fragment" data-fragment-index="6">
 
 ```python
 from sklearn.metrics import roc_auc_score
@@ -4267,11 +4292,11 @@ print(roc_auc_score(y, p))   # -> 0.5
 | **wirklich gesund** | TN = 950 | FP = 0 |
 | **wirklich krank** | FN = 50 | TP = 0 |
 
-+ Accuracy = 950 / 1000 = **95 Prozent**
-+ Recall = 0 / 50 = **0**: Kein einziger Kranker wird gefunden
-+ F1 = 0
++ Accuracy = 950 / 1000 = **95 Prozent** <!-- .element: class="fragment" data-fragment-index="1" -->
++ Recall = 0 / 50 = **0**: Kein einziger Kranker wird gefunden <!-- .element: class="fragment" data-fragment-index="2" -->
++ F1 = 0 <!-- .element: class="fragment" data-fragment-index="3" -->
 
-<div class="fragment">
+<div class="fragment" data-fragment-index="4">
 
 > [!warning]
 > Bei 95 Prozent Mehrheitsklasse ist eine Accuracy von 95 Prozent der Wert eines Modells, das nichts gelernt hat. Vergleichen Sie jede Accuracy zuerst mit dem Anteil der häufigsten Klasse.
@@ -4288,10 +4313,10 @@ from sklearn.datasets import make_classification
 from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import classification_report
 X, y = make_classification(n_samples=2000, weights=[0.95, 0.05],
-                           random_state=42)
+                           random_state=1)
 # 1. stratifizieren
 X_train, X_test, y_train, y_test = train_test_split(
-    X, y, test_size=0.2, stratify=y, random_state=42)
+    X, y, test_size=0.2, stratify=y, random_state=1)
 # 2. gewichten
 model = LogisticRegression(class_weight="balanced", max_iter=1000)
 model.fit(X_train, y_train)
@@ -4301,11 +4326,11 @@ print(classification_report(y_test, model.predict(X_test)))
 
 | Modell | Accuracy | Recall Klasse 1 |
 |--------|----------|-----------------|
-| ohne `class_weight` | 0.97 | 0.48 |
-| mit `class_weight="balanced"` | 0.89 | 0.86 |
+| ohne `class_weight` | 0.98 | 0.73 |
+| mit `class_weight="balanced"` | 0.92 | 0.95 |
 
-+ `class_weight="balanced"` gewichtet Fehler der seltenen Klasse stärker: Accuracy sinkt, Recall verdoppelt sich fast
-+ Dazu: Schwelle anpassen und mit Recall, F1 oder ROC-AUC statt Accuracy vergleichen
++ `class_weight="balanced"` gewichtet Fehler der seltenen Klasse stärker: Accuracy sinkt, Recall steigt von 0.73 auf 0.95 <!-- .element: class="fragment" data-fragment-index="1" -->
++ Dazu: Schwelle anpassen und mit Recall, F1 oder ROC-AUC statt Accuracy vergleichen <!-- .element: class="fragment" data-fragment-index="2" -->
 
 --
 
@@ -4327,10 +4352,10 @@ print(classification_report(y_true, y_pred))   # Zehn-Fälle-Beispiel
 weighted avg       0.71      0.70      0.70        10
 ```
 
-+ Eine Zeile je Klasse: Precision, Recall und F1 aus Sicht dieser Klasse. `support` ist die Anzahl der wahren Fälle.
-+ Zeile `1` enthält die von Hand gerechneten Werte: 0.67, 0.80, 0.73
-+ `macro avg`: einfacher Mittelwert über die Klassen, jede Klasse zählt gleich. `weighted avg`: nach `support` gewichtet.
-+ Bei ungleichen Klassen zuerst die Zeile der seltenen Klasse und `macro avg` lesen
++ Eine Zeile je Klasse: Precision, Recall und F1 aus Sicht dieser Klasse. `support` ist die Anzahl der wahren Fälle. <!-- .element: class="fragment" data-fragment-index="1" -->
++ Zeile `1` enthält die von Hand gerechneten Werte: 0.67, 0.80, 0.73 <!-- .element: class="fragment" data-fragment-index="2" -->
++ `macro avg`: einfacher Mittelwert über die Klassen, jede Klasse zählt gleich. `weighted avg`: nach `support` gewichtet. <!-- .element: class="fragment" data-fragment-index="3" -->
++ Bei ungleichen Klassen zuerst die Zeile der seltenen Klasse und `macro avg` lesen <!-- .element: class="fragment" data-fragment-index="4" -->
 
 --
 
@@ -4352,16 +4377,16 @@ Eine gute Kennzahl reicht im Betrieb nicht. Ein Modell muss auch diese Fragen be
 
 ## Zusammenfassung
 
-+ Skalieren für abstands- und gradientenbasierte Verfahren, One-Hot für Kategorien ohne Rangfolge, `np.log1p` für schiefe Größen, neue Merkmale aus Fachwissen
-+ Erst teilen, dann `fit` nur auf den Trainingsdaten. Der Testteil wird genau einmal benutzt.
-+ Overfitting zeigt sich am Abstand zwischen Trainings- und Validierungswert. `cross_val_score` mit `StratifiedKFold` liefert Mittelwert und Streuung.
-+ `GridSearchCV` probiert jede Kombination per Cross-Validation, `RandomizedSearchCV` nur eine Stichprobe
-+ Regression: MAE, RMSE und R² zusammen lesen. Klassifikation: Konfusionsmatrix zuerst, dann Precision, Recall, F1 und AUC. Accuracy mit dem Anteil der häufigsten Klasse vergleichen.
++ Skalieren für abstands- und gradientenbasierte Verfahren, One-Hot für Kategorien ohne Rangfolge, `np.log1p` für schiefe Größen, neue Merkmale aus Fachwissen <!-- .element: class="fragment" data-fragment-index="1" -->
++ Erst teilen, dann `fit` nur auf den Trainingsdaten. Der Testteil wird genau einmal benutzt. <!-- .element: class="fragment" data-fragment-index="2" -->
++ Overfitting zeigt sich am Abstand zwischen Trainings- und Validierungswert. `cross_val_score` mit `StratifiedKFold` liefert Mittelwert und Streuung. <!-- .element: class="fragment" data-fragment-index="3" -->
++ `GridSearchCV` probiert jede Kombination per Cross-Validation, `RandomizedSearchCV` nur eine Stichprobe <!-- .element: class="fragment" data-fragment-index="4" -->
++ Regression: MAE, RMSE und R² zusammen lesen. Klassifikation: Konfusionsmatrix zuerst, dann Precision, Recall, F1 und AUC. Accuracy mit dem Anteil der häufigsten Klasse vergleichen. <!-- .element: class="fragment" data-fragment-index="5" -->
 
 ---
 
-<!-- .slide: data-background-color="#1f3b4d" -->
-# Teil 8: Unüberwachtes Lernen: Clustering und Segmentierung
+<!-- .slide: data-background-color="#183b66" -->
+# Teil 7: Unüberwachtes Lernen: Clustering und Segmentierung
 
 Gruppen in Daten finden, wenn es keine Zielgröße gibt, und diese Gruppen fachlich beschreiben.
 
@@ -4369,21 +4394,21 @@ Gruppen in Daten finden, wenn es keine Zielgröße gibt, und diese Gruppen fachl
 
 ## Was Sie in diesem Teil lernen
 
-+ Wofür unüberwachtes Lernen da ist und worin es sich von Klassifikation unterscheidet
-+ Wie k-Means Schritt für Schritt arbeitet und wie Sie es mit scikit-learn einsetzen
-+ Wie Sie die Zahl der Cluster mit Ellbogen-Kurve und Silhouetten-Wert wählen
-+ Wie Sie Versichertendaten segmentieren, Profile je Segment bilden und Segmente benennen
-+ Wo k-Means an Grenzen stößt und wie PCA viele Merkmale in zwei Dimensionen darstellt
++ Wofür unüberwachtes Lernen da ist und worin es sich von Klassifikation unterscheidet <!-- .element: class="fragment" data-fragment-index="1" -->
++ Wie k-Means Schritt für Schritt arbeitet und wie Sie es mit scikit-learn einsetzen <!-- .element: class="fragment" data-fragment-index="2" -->
++ Wie Sie die Zahl der Cluster mit Ellbogen-Kurve und Silhouetten-Wert wählen <!-- .element: class="fragment" data-fragment-index="3" -->
++ Wie Sie Versichertendaten segmentieren, Profile je Segment bilden und Segmente benennen <!-- .element: class="fragment" data-fragment-index="4" -->
++ Wo k-Means an Grenzen stößt und wie PCA viele Merkmale in zwei Dimensionen darstellt <!-- .element: class="fragment" data-fragment-index="5" -->
 
 --
 
 ## Unüberwachtes Lernen: wofür
 
-+ Es gibt keine Zielgröße $y$, nur Eingabedaten $X$. Das Verfahren sucht selbst nach Struktur.
-+ **Clustering:** ähnliche Datenpunkte zu Gruppen zusammenfassen
-+ **Dimensionsreduktion:** viele Merkmale auf wenige verdichten, zum Beispiel für ein Diagramm
-+ **Anomalieerkennung:** Punkte finden, die zu keiner Gruppe passen
-+ Typische Anwendungen: Kunden- oder Versichertensegmente, Gruppen ähnlicher Krankheitsverläufe, Produktempfehlungen, auffällige Abrechnungen
++ Es gibt keine Zielgröße $y$, nur Eingabedaten $X$. Das Verfahren sucht selbst nach Struktur. <!-- .element: class="fragment" data-fragment-index="1" -->
++ **Clustering:** ähnliche Datenpunkte zu Gruppen zusammenfassen <!-- .element: class="fragment" data-fragment-index="2" -->
++ **Dimensionsreduktion:** viele Merkmale auf wenige verdichten, zum Beispiel für ein Diagramm <!-- .element: class="fragment" data-fragment-index="3" -->
++ **Anomalieerkennung:** Punkte finden, die zu keiner Gruppe passen <!-- .element: class="fragment" data-fragment-index="4" -->
++ Typische Anwendungen: Kunden- oder Versichertensegmente, Gruppen ähnlicher Krankheitsverläufe, Produktempfehlungen, auffällige Abrechnungen <!-- .element: class="fragment" data-fragment-index="5" -->
 
 --
 
@@ -4406,13 +4431,13 @@ Gruppen in Daten finden, wenn es keine Zielgröße gibt, und diese Gruppen fachl
 
 ## k-Means Schritt für Schritt
 
-+ **1. k festlegen:** Sie geben die Zahl der Cluster vor
-+ **2. Zentren wählen:** k Startpunkte als Clusterzentren setzen (zufällig)
-+ **3. Zuordnen:** jeder Punkt kommt zum nächstgelegenen Zentrum
-+ **4. Neu berechnen:** jedes Zentrum wandert in den Mittelwert seiner Punkte
-+ **5. Wiederholen:** Schritte 3 und 4, bis sich die Zentren nicht mehr ändern
++ **1. k festlegen:** Sie geben die Zahl der Cluster vor <!-- .element: class="fragment" data-fragment-index="1" -->
++ **2. Zentren wählen:** k Startpunkte als Clusterzentren setzen (zufällig) <!-- .element: class="fragment" data-fragment-index="2" -->
++ **3. Zuordnen:** jeder Punkt kommt zum nächstgelegenen Zentrum <!-- .element: class="fragment" data-fragment-index="3" -->
++ **4. Neu berechnen:** jedes Zentrum wandert in den Mittelwert seiner Punkte <!-- .element: class="fragment" data-fragment-index="4" -->
++ **5. Wiederholen:** Schritte 3 und 4, bis sich die Zentren nicht mehr ändern <!-- .element: class="fragment" data-fragment-index="5" -->
 
-<div class="fragment">
+<div class="fragment" data-fragment-index="6">
 
 > [!tip]
 > k-Means verkleinert die Summe der quadrierten Abstände aller Punkte zu ihrem Zentrum. scikit-learn nennt diesen Wert `inertia_`.
@@ -4426,8 +4451,8 @@ Gruppen in Daten finden, wenn es keine Zielgröße gibt, und diese Gruppen fachl
 
 ![](figs/kmeans_schritte.png)
 
-+ Meist stehen die Zentren nach wenigen Runden still: Das Verfahren ist konvergiert
-+ Ein anderer Start kann zu einem anderen Ergebnis führen. `n_init=10` startet zehnmal und behält den Lauf mit der kleinsten `inertia_`.
++ Meist stehen die Zentren nach wenigen Runden still: Das Verfahren ist konvergiert <!-- .element: class="fragment" data-fragment-index="1" -->
++ Ein anderer Start kann zu einem anderen Ergebnis führen. `n_init=10` startet zehnmal und behält den Lauf mit der kleinsten `inertia_`. <!-- .element: class="fragment" data-fragment-index="2" -->
 
 --
 
@@ -4440,12 +4465,13 @@ from sklearn.cluster import KMeans
 from sklearn.datasets import make_blobs
 
 # zweiter Rückgabewert (die wahren Gruppen) wird verworfen
-X, _ = make_blobs(n_samples=600, centers=4, random_state=42)
+X, _ = make_blobs(n_samples=600, random_state=1,
+                  centers=[(-5, 7), (3, 3), (9, 0), (-9, -6)])
 
-kmeans = KMeans(n_clusters=4, n_init=10, random_state=42)
+kmeans = KMeans(n_clusters=4, n_init=10, random_state=1)
 labels = kmeans.fit_predict(X)            # Clusternummer je Punkt
 print(kmeans.cluster_centers_.round(1))   # Koordinaten der 4 Zentren
-print(round(kmeans.inertia_, 1))          # -> 1160.3
+print(round(kmeans.inertia_, 1))          # -> 1161.0
 
 plt.scatter(X[:, 0], X[:, 1], c=labels, s=15)
 plt.scatter(kmeans.cluster_centers_[:, 0], kmeans.cluster_centers_[:, 1],
@@ -4453,8 +4479,8 @@ plt.scatter(kmeans.cluster_centers_[:, 0], kmeans.cluster_centers_[:, 1],
 plt.show()
 ```
 
-+ `make_blobs` erzeugt Punktwolken zum Ausprobieren
-+ `fit_predict(X)`: kein `y`, kein Train/Test-Split
++ `make_blobs` erzeugt Punktwolken zum Ausprobieren, hier um vier fest vorgegebene Zentren <!-- .element: class="fragment" data-fragment-index="1" -->
++ `fit_predict(X)`: kein `y`, kein Train/Test-Split <!-- .element: class="fragment" data-fragment-index="2" -->
 
 --
 
@@ -4475,7 +4501,7 @@ ks = range(1, 11)
 inertias = []
 for k in ks:
     km = KMeans(n_clusters=k, n_init=10,
-                random_state=42)
+                random_state=1)
     km.fit(X)
     inertias.append(km.inertia_)
 
@@ -4485,13 +4511,13 @@ plt.ylabel("inertia_")
 plt.show()
 ```
 
-+ `inertia_` sinkt mit jedem weiteren Cluster, bei k = Anzahl der Punkte wäre sie 0
-+ Gesucht ist der Knick: ab dort bringt ein weiteres Cluster nur noch wenig
++ `inertia_` sinkt mit jedem weiteren Cluster, bei k = Anzahl der Punkte wäre sie 0 <!-- .element: class="fragment" data-fragment-index="1" -->
++ Gesucht ist der Knick: ab dort bringt ein weiteres Cluster nur noch wenig <!-- .element: class="fragment" data-fragment-index="2" -->
 
 </div>
 <div style="flex: 55">
 
-<div class="fragment">
+<div class="fragment" data-fragment-index="3">
 
 ![](figs/ellbogen_kurve.png)
 
@@ -4519,12 +4545,12 @@ $s = \frac{b - a}{\max(a, b)}$
 from sklearn.metrics import silhouette_score
 
 for k in range(2, 7):
-    labels = KMeans(n_clusters=k, n_init=10, random_state=42).fit_predict(X)
+    labels = KMeans(n_clusters=k, n_init=10, random_state=1).fit_predict(X)
     print(k, round(silhouette_score(X, labels), 2))
-# -> 2 0.59 | 3 0.76 | 4 0.79 | 5 0.69 | 6 0.56
+# -> 2 0.57 | 3 0.74 | 4 0.79 | 5 0.68 | 6 0.54
 ```
 
-+ `silhouette_score` mittelt über alle Punkte. Der höchste Wert spricht für k = 4, passend zum Ellbogen.
++ `silhouette_score` mittelt über alle Punkte. Der höchste Wert spricht für k = 4, passend zum Ellbogen. <!-- .element: class="fragment" data-fragment-index="1" -->
 
 --
 
@@ -4541,11 +4567,11 @@ df = df.drop_duplicates().dropna(subset=merkmale)   # kein NaN erlaubt
 print(df[merkmale].describe().loc[ ["min", "max", "std"] ].round(1))
 ```
 
-+ Zwei Versicherte unterscheiden sich um 10 BMI-Punkte und um 1000 Euro Leistungsausgaben
-+ Quadrierter Abstand ohne Skalierung: 10² + 1000² = 100 + 1000000. Der BMI trägt 0.01 Prozent bei.
-+ Nach `StandardScaler` hat jedes Merkmal Mittelwert 0 und Standardabweichung 1 und zählt gleich viel
++ Zwei Versicherte unterscheiden sich um 10 BMI-Punkte und um 1000 Euro Leistungsausgaben <!-- .element: class="fragment" data-fragment-index="1" -->
++ Quadrierter Abstand ohne Skalierung: 10² + 1000² = 100 + 1000000. Der BMI trägt 0.01 Prozent bei. <!-- .element: class="fragment" data-fragment-index="2" -->
++ Nach `StandardScaler` hat jedes Merkmal Mittelwert 0 und Standardabweichung 1 und zählt gleich viel <!-- .element: class="fragment" data-fragment-index="3" -->
 
-<div class="fragment">
+<div class="fragment" data-fragment-index="4">
 
 ```python
 from sklearn.preprocessing import StandardScaler
@@ -4554,7 +4580,7 @@ X_scaled = StandardScaler().fit_transform(df[merkmale])
 
 </div>
 
-<div class="fragment">
+<div class="fragment" data-fragment-index="5">
 
 > [!warning]
 > Ohne Skalierung segmentiert k-Means die Versicherten praktisch nur nach `leistungsausgaben_eur`.
@@ -4571,19 +4597,19 @@ from sklearn.cluster import KMeans
 
 # 1. k prüfen: Ellbogen-Kurve auf den skalierten Daten
 for k in range(2, 9):
-    km = KMeans(n_clusters=k, n_init=10, random_state=42).fit(X_scaled)
+    km = KMeans(n_clusters=k, n_init=10, random_state=1).fit(X_scaled)
     print(k, round(km.inertia_))
 
 # 2. Mit dem gewählten k clustern und die Nummer in die Tabelle schreiben
-kmeans = KMeans(n_clusters=4, n_init=10, random_state=42)
+kmeans = KMeans(n_clusters=4, n_init=10, random_state=1)
 df["segment"] = kmeans.fit_predict(X_scaled)
 
 # 3. Wie groß sind die Segmente?
 print(df["segment"].value_counts().sort_index())
 ```
 
-+ Geclustert wird auf `X_scaled`, beschrieben wird später auf den Originalwerten in `df`
-+ Nur Merkmale verwenden, die für die Fragestellung zählen. Eine Versichertennummer oder Postleitzahl hat im Abstand nichts verloren.
++ Geclustert wird auf `X_scaled`, beschrieben wird später auf den Originalwerten in `df` <!-- .element: class="fragment" data-fragment-index="1" -->
++ Nur Merkmale verwenden, die für die Fragestellung zählen. Eine Versichertennummer oder Postleitzahl hat im Abstand nichts verloren. <!-- .element: class="fragment" data-fragment-index="2" -->
 
 --
 
@@ -4605,9 +4631,9 @@ print(pd.crosstab(df["segment"], df["zusatzversicherung"],
                   normalize="index").round(2))
 ```
 
-+ Lesen Sie die Profiltabelle zeilenweise: Worin weicht ein Segment am stärksten vom Gesamtdurchschnitt ab?
-+ Ein Segment mit sehr wenigen Mitgliedern besteht oft aus Ausreißern
-+ Auch `median()` ansehen: Einzelne sehr hohe Leistungsausgaben verzerren den Mittelwert
++ Lesen Sie die Profiltabelle zeilenweise: Worin weicht ein Segment am stärksten vom Gesamtdurchschnitt ab? <!-- .element: class="fragment" data-fragment-index="1" -->
++ Ein Segment mit sehr wenigen Mitgliedern besteht oft aus Ausreißern <!-- .element: class="fragment" data-fragment-index="2" -->
++ Auch `median()` ansehen: Einzelne sehr hohe Leistungsausgaben verzerren den Mittelwert <!-- .element: class="fragment" data-fragment-index="3" -->
 
 --
 
@@ -4627,11 +4653,11 @@ df["segment_name"] = df["segment"].map(namen)
 print(df["segment_name"].value_counts())
 ```
 
-+ Ein guter Name nennt die zwei oder drei Merkmale, in denen sich das Segment vom Durchschnitt abhebt
-+ Beschreibend bleiben, nicht wertend: „viele Arztbesuche" statt „Problemfälle"
-+ Prüfen Sie den Namen an Einzelfällen: `df[df["segment"] == 2].sample(5, random_state=42)`
++ Ein guter Name nennt die zwei oder drei Merkmale, in denen sich das Segment vom Durchschnitt abhebt <!-- .element: class="fragment" data-fragment-index="1" -->
++ Beschreibend bleiben, nicht wertend: „viele Arztbesuche" statt „Problemfälle" <!-- .element: class="fragment" data-fragment-index="2" -->
++ Prüfen Sie den Namen an Einzelfällen: `df[df["segment"] == 2].sample(5, random_state=1)` <!-- .element: class="fragment" data-fragment-index="3" -->
 
-<div class="fragment">
+<div class="fragment" data-fragment-index="4">
 
 > [!warning]
 > Die Namen im Code sind Platzhalter. Welche Nummer zu welchem Profil gehört, zeigt erst Ihre Profiltabelle.
@@ -4664,7 +4690,7 @@ from sklearn.cluster import DBSCAN
 X_blobs = StandardScaler().fit_transform(X)     # Blobs von vorhin, skaliert
 labels = DBSCAN(eps=0.2, min_samples=5).fit_predict(X_blobs)
 print(pd.Series(labels).value_counts().sort_index())
-# -> -1: 3 | 0: 150 | 1: 149 | 2: 148 | 3: 150     (-1 = Rauschen)
+# -> -1: 2 | 0: 150 | 1: 149 | 2: 150 | 3: 149     (-1 = Rauschen)
 ```
 
 | | k-Means | DBSCAN |
@@ -4674,7 +4700,7 @@ print(pd.Series(labels).value_counts().sort_index())
 | Ausreißer | werden einem Cluster zugeschlagen | bekommen das Label `-1` |
 | Stellschrauben | `n_clusters` | `eps` (Radius der Nachbarschaft), `min_samples` |
 
-+ Empfindlich gegenüber `eps`: mit `eps=0.3` verschmelzen hier zwei Wolken zu einem Cluster
++ Empfindlich gegenüber `eps`: mit `eps=0.3` verschmelzen hier zwei Wolken zu einem Cluster <!-- .element: class="fragment" data-fragment-index="1" -->
 
 --
 
@@ -4686,7 +4712,7 @@ Vier Merkmale lassen sich nicht in ein Streudiagramm zeichnen. PCA (Hauptkompone
 ```python
 from sklearn.decomposition import PCA
 
-pca = PCA(n_components=2, random_state=42)
+pca = PCA(n_components=2, random_state=1)
 X_pca = pca.fit_transform(X_scaled)               # 4 Spalten -> 2 Spalten
 
 anteil = pca.explained_variance_ratio_
@@ -4698,8 +4724,8 @@ plt.ylabel(f"Hauptkomponente 2 ({anteil[1]:.0%})")
 plt.show()
 ```
 
-+ `explained_variance_ratio_`: Anteil der Gesamtstreuung je Hauptkomponente. Die Summe sagt, wie viel Information das 2D-Bild behält.
-+ Die Hauptkomponenten sind Mischungen der Originalmerkmale und unkorreliert. Vor der PCA die Merkmale standardisieren.
++ `explained_variance_ratio_`: Anteil der Gesamtstreuung je Hauptkomponente. Die Summe sagt, wie viel Information das 2D-Bild behält. <!-- .element: class="fragment" data-fragment-index="1" -->
++ Die Hauptkomponenten sind Mischungen der Originalmerkmale und unkorreliert. Vor der PCA die Merkmale standardisieren. <!-- .element: class="fragment" data-fragment-index="2" -->
 
 --
 
@@ -4717,7 +4743,7 @@ t-SNE (t-distributed Stochastic Neighbor Embedding) ordnet Punkte in 2D so an, d
 ```python
 from sklearn.manifold import TSNE
 
-tsne = TSNE(n_components=2, random_state=42)
+tsne = TSNE(n_components=2, random_state=1)
 X_tsne = tsne.fit_transform(X_scaled)
 
 plt.scatter(X_tsne[:, 0], X_tsne[:, 1], c=df["segment"], s=8, alpha=0.5)
@@ -4732,22 +4758,22 @@ plt.show()
 | Neue Daten | `transform` möglich | kein `transform` |
 | Rechenzeit | kurz | deutlich länger |
 
-+ t-SNE ist ein Werkzeug zum Ansehen von Daten, nicht zur Vorverarbeitung für Modelle
++ t-SNE ist ein Werkzeug zum Ansehen von Daten, nicht zur Vorverarbeitung für Modelle <!-- .element: class="fragment" data-fragment-index="1" -->
 
 --
 
 ## Zusammenfassung
 
-+ Unüberwachtes Lernen arbeitet ohne Zielgröße. Clustering liefert Gruppennummern, die Bedeutung ergänzen Sie.
-+ k-Means: Zentren wählen, zuordnen, neu berechnen, wiederholen. Vorher skalieren, `n_init` und `random_state` setzen.
-+ k wählen: Knick in der Ellbogen-Kurve (`inertia_`), höchster `silhouette_score`, fachliche Brauchbarkeit
-+ Segmente beschreiben: `groupby("segment")` auf den Originalwerten, mit dem Gesamtdurchschnitt vergleichen, beschreibend benennen
-+ k-Means findet runde Cluster und leidet unter Ausreißern, DBSCAN ist eine Alternative. PCA zeigt viele Merkmale in 2D, `explained_variance_ratio_` sagt, wie viel dabei erhalten bleibt.
++ Unüberwachtes Lernen arbeitet ohne Zielgröße. Clustering liefert Gruppennummern, die Bedeutung ergänzen Sie. <!-- .element: class="fragment" data-fragment-index="1" -->
++ k-Means: Zentren wählen, zuordnen, neu berechnen, wiederholen. Vorher skalieren, `n_init` und `random_state` setzen. <!-- .element: class="fragment" data-fragment-index="2" -->
++ k wählen: Knick in der Ellbogen-Kurve (`inertia_`), höchster `silhouette_score`, fachliche Brauchbarkeit <!-- .element: class="fragment" data-fragment-index="3" -->
++ Segmente beschreiben: `groupby("segment")` auf den Originalwerten, mit dem Gesamtdurchschnitt vergleichen, beschreibend benennen <!-- .element: class="fragment" data-fragment-index="4" -->
++ k-Means findet runde Cluster und leidet unter Ausreißern, DBSCAN ist eine Alternative. PCA zeigt viele Merkmale in 2D, `explained_variance_ratio_` sagt, wie viel dabei erhalten bleibt. <!-- .element: class="fragment" data-fragment-index="5" -->
 
 ---
 
-<!-- .slide: data-background-color="#1f3b4d" -->
-# Teil 9: Einführung in Deep Learning
+<!-- .slide: data-background-color="#183b66" -->
+# Teil 8: Einführung in Deep Learning
 
 Vom einzelnen Neuron zum trainierten Netz in PyTorch, das Kleidungsstücke auf Bildern erkennt.
 
@@ -4755,11 +4781,11 @@ Vom einzelnen Neuron zum trainierten Netz in PyTorch, das Kleidungsstücke auf B
 
 ## Was Sie in diesem Teil lernen
 
-+ Wie ein künstliches Neuron rechnet: Gewichte, Bias, Aktivierung
-+ Wie ein Netz trainiert wird: Vorwärtslauf, Verlust, Rückwärtslauf, Schritt des Optimierers
-+ Wie Sie in PyTorch Tensoren anlegen, ein `nn.Module` schreiben und es auf FashionMNIST trainieren
-+ Wie Sie die Genauigkeit (Accuracy) auf Testdaten messen und das Modell mit `state_dict` speichern
-+ Wann sich Deep Learning lohnt und wann ein klassisches Modell die bessere Wahl ist
++ Wie ein künstliches Neuron rechnet: Gewichte, Bias, Aktivierung <!-- .element: class="fragment" data-fragment-index="1" -->
++ Wie ein Netz trainiert wird: Vorwärtslauf, Verlust, Rückwärtslauf, Schritt des Optimierers <!-- .element: class="fragment" data-fragment-index="2" -->
++ Wie Sie in PyTorch Tensoren anlegen, ein `nn.Module` schreiben und es auf FashionMNIST trainieren <!-- .element: class="fragment" data-fragment-index="3" -->
++ Wie Sie die Genauigkeit (Accuracy) auf Testdaten messen und das Modell mit `state_dict` speichern <!-- .element: class="fragment" data-fragment-index="4" -->
++ Wann sich Deep Learning lohnt und wann ein klassisches Modell die bessere Wahl ist <!-- .element: class="fragment" data-fragment-index="5" -->
 
 --
 
@@ -4781,13 +4807,13 @@ Künstliche neuronale Netze sind vom Gehirn inspiriert: Milliarden von Neuronen 
 
 ![](figs/d_t09_neuron.png)
 
-+ **Eingaben** `x`: die Merkmale, zum Beispiel Pixelwerte oder Spalten einer Tabelle
-+ **Gewichte** `w`: wie stark eine Eingabe weitergegeben wird
-+ **Bias** `b`: verschiebt die Schwelle, ab der das Neuron anspricht
-+ **Summation**: `z` ist die gewichtete Summe plus Bias (Präaktivierung)
-+ **Aktivierung**: eine Funktion `f` macht aus `z` den Ausgabewert `a`
++ **Eingaben** `x`: die Merkmale, zum Beispiel Pixelwerte oder Spalten einer Tabelle <!-- .element: class="fragment" data-fragment-index="1" -->
++ **Gewichte** `w`: wie stark eine Eingabe weitergegeben wird <!-- .element: class="fragment" data-fragment-index="2" -->
++ **Bias** `b`: verschiebt die Schwelle, ab der das Neuron anspricht <!-- .element: class="fragment" data-fragment-index="3" -->
++ **Summation**: `z` ist die gewichtete Summe plus Bias (Präaktivierung) <!-- .element: class="fragment" data-fragment-index="4" -->
++ **Aktivierung**: eine Funktion `f` macht aus `z` den Ausgabewert `a` <!-- .element: class="fragment" data-fragment-index="5" -->
 
-<div class="fragment">
+<div class="fragment" data-fragment-index="6">
 
 > [!tip]
 > Gewichte und Bias sind die Parameter, die das Training anpasst. Die Eingaben kommen aus den Daten.
@@ -4801,31 +4827,23 @@ Künstliche neuronale Netze sind vom Gehirn inspiriert: Milliarden von Neuronen 
 
 ![](figs/d_t09_feed_forward.png)
 
-+ Eine **Schicht** nimmt Eingaben entgegen, verarbeitet sie und gibt das Ergebnis weiter
-+ **Feed Forward**: von der Eingabe über versteckte Schichten zur Ausgabe, ohne Rückkopplung
-+ **Vollständig verbunden**: jedes Neuron einer Schicht hängt an jedem Neuron der nächsten
-+ Eine ganze Schicht ist eine Matrixrechnung: `Z = W X + b`
-+ In den versteckten Schichten entstehen **Merkmale**, die das Netz selbst aus den Daten bildet
++ Eine **Schicht** nimmt Eingaben entgegen, verarbeitet sie und gibt das Ergebnis weiter <!-- .element: class="fragment" data-fragment-index="1" -->
++ **Feed Forward**: von der Eingabe über versteckte Schichten zur Ausgabe, ohne Rückkopplung <!-- .element: class="fragment" data-fragment-index="2" -->
++ **Vollständig verbunden**: jedes Neuron einer Schicht hängt an jedem Neuron der nächsten <!-- .element: class="fragment" data-fragment-index="3" -->
++ Eine ganze Schicht ist eine Matrixrechnung: `Z = W X + b` <!-- .element: class="fragment" data-fragment-index="4" -->
++ In den versteckten Schichten entstehen **Merkmale**, die das Netz selbst aus den Daten bildet <!-- .element: class="fragment" data-fragment-index="5" -->
 
 --
 
 <!-- .slide: class="smaller" -->
 ## Warum Nichtlinearität und Tiefe helfen: XOR
 
-```text
- x2                          x1  x2 | OR  XOR
-  1 |  (1)      (0)           0   0 |  0   0
-    |                         0   1 |  1   1
-  0 |  (0)      (1)           1   0 |  1   1
-    +---------------- x1      1   1 |  1   0
-        0        1
-      XOR: Klasse je Punkt
-```
+![](figs/xor_trennbarkeit.png)
 
-+ OR lässt sich mit einer einzigen Geraden trennen, XOR nicht
-+ Ein Netz aus nur linearen Schichten bleibt insgesamt eine lineare Funktion, egal wie viele Schichten es hat
-+ Erst die Aktivierungsfunktion zwischen den Schichten bringt Nichtlinearität ins Netz
-+ Mehr versteckte Schichten bedeuten mehr Tiefe: einfache Muster werden Schicht für Schicht zu komplexen kombiniert
++ OR lässt sich mit einer einzigen Geraden trennen, XOR nicht <!-- .element: class="fragment" data-fragment-index="1" -->
++ Ein Netz aus nur linearen Schichten bleibt insgesamt eine lineare Funktion, egal wie viele Schichten es hat <!-- .element: class="fragment" data-fragment-index="2" -->
++ Erst die Aktivierungsfunktion zwischen den Schichten bringt Nichtlinearität ins Netz <!-- .element: class="fragment" data-fragment-index="3" -->
++ Mehr versteckte Schichten bedeuten mehr Tiefe: einfache Muster werden Schicht für Schicht zu komplexen kombiniert <!-- .element: class="fragment" data-fragment-index="4" -->
 
 --
 
@@ -4839,10 +4857,10 @@ Künstliche neuronale Netze sind vom Gehirn inspiriert: Milliarden von Neuronen 
 | **Tanh**    | `tanh(z)`                         | -1 bis 1            | ähnlich wie Sigmoid, gut für Werte um 0                       |
 | **Softmax** | `exp(z_i) / Summe aller exp(z_j)` | 0 bis 1, Summe 1    | Ausgabe bei mehreren Klassen                                  |
 
-+ ReLU setzt negative Werte auf 0: schnell zu rechnen und gut zu trainieren
-+ Sigmoid in versteckten Schichten gilt als veraltet, weil die Funktion an den Rändern sättigt
++ ReLU setzt negative Werte auf 0: schnell zu rechnen und gut zu trainieren <!-- .element: class="fragment" data-fragment-index="1" -->
++ Sigmoid in versteckten Schichten gilt als veraltet, weil die Funktion an den Rändern sättigt <!-- .element: class="fragment" data-fragment-index="2" -->
 
-<div class="fragment">
+<div class="fragment" data-fragment-index="3">
 
 > [!warning]
 > `nn.CrossEntropyLoss` in PyTorch rechnet Softmax schon mit ein. Die letzte Schicht gibt deshalb rohe Werte (Logits) aus, ohne eigene Softmax-Schicht.
@@ -4877,10 +4895,10 @@ Die Verlustfunktion misst mit einer einzigen Zahl, wie schlecht die Vorhersagen 
 
 ![](figs/d_t09_training_schleife.png)
 
-+ **Vorwärtslauf**: Eingaben laufen durch das Netz, am Ende steht eine Vorhersage
-+ **Verlust**: Vergleich von Vorhersage und wahrem Wert
-+ **Rückwärtslauf** (Backpropagation): für jedes Gewicht ausrechnen, in welche Richtung es den Verlust verändert
-+ **Schritt des Optimierers**: jedes Gewicht ein kleines Stück in die Richtung verschieben, die den Verlust senkt
++ **Vorwärtslauf**: Eingaben laufen durch das Netz, am Ende steht eine Vorhersage <!-- .element: class="fragment" data-fragment-index="1" -->
++ **Verlust**: Vergleich von Vorhersage und wahrem Wert <!-- .element: class="fragment" data-fragment-index="2" -->
++ **Rückwärtslauf** (Backpropagation): für jedes Gewicht ausrechnen, in welche Richtung es den Verlust verändert <!-- .element: class="fragment" data-fragment-index="3" -->
++ **Schritt des Optimierers**: jedes Gewicht ein kleines Stück in die Richtung verschieben, die den Verlust senkt <!-- .element: class="fragment" data-fragment-index="4" -->
 
 --
 
@@ -4895,8 +4913,8 @@ Die Verlustfunktion misst mit einer einzigen Zahl, wie schlecht die Vorhersagen 
 | **SGD**      | Gradientenabstieg auf Batches mit fester Lernrate                                          | `optim.SGD(..., lr=1e-2)`     |
 | **Adam**     | Weiterentwicklung von SGD, passt die Schrittweite je Gewicht selbst an                     | `optim.Adam(..., lr=1e-3)`    |
 
-+ Zu große Lernrate: der Verlust springt oder steigt. Zu kleine Lernrate: das Training kommt kaum voran
-+ Übliche Startwerte: `1e-2` für SGD, `1e-3` für Adam
++ Zu große Lernrate: der Verlust springt oder steigt. Zu kleine Lernrate: das Training kommt kaum voran <!-- .element: class="fragment" data-fragment-index="1" -->
++ Übliche Startwerte: `1e-2` für SGD, `1e-3` für Adam <!-- .element: class="fragment" data-fragment-index="2" -->
 
 --
 
@@ -4998,10 +5016,10 @@ y.backward()                                # Ableitung berechnen
 print(x.grad)                               # -> tensor(7.)
 ```
 
-+ Von Hand: `f'(x) = 2*x + 3`, also `f'(2.0) = 7.0`
-+ `requires_grad=True`: PyTorch merkt sich jede Rechnung, an der `x` beteiligt ist
-+ `backward()` läuft diese Rechnungen rückwärts ab und legt die Ableitung in `x.grad`
-+ Genau das passiert im Rückwärtslauf für jedes Gewicht des Netzes
++ Von Hand: `f'(x) = 2*x + 3`, also `f'(2.0) = 7.0` <!-- .element: class="fragment" data-fragment-index="1" -->
++ `requires_grad=True`: PyTorch merkt sich jede Rechnung, an der `x` beteiligt ist <!-- .element: class="fragment" data-fragment-index="2" -->
++ `backward()` läuft diese Rechnungen rückwärts ab und legt die Ableitung in `x.grad` <!-- .element: class="fragment" data-fragment-index="3" -->
++ Genau das passiert im Rückwärtslauf für jedes Gewicht des Netzes <!-- .element: class="fragment" data-fragment-index="4" -->
 
 --
 
@@ -5052,10 +5070,10 @@ print(bilder.shape, labels.shape)
 # -> torch.Size([64, 1, 28, 28]) torch.Size([64])
 ```
 
-+ Graustufenbilder mit 28 x 28 Pixeln, zehn Produktkategorien (T-Shirt, Hose, Pullover, ...)
-+ 60000 Bilder zum Training, 10000 zum Testen
-+ `ToTensor()` macht aus jedem Bild einen Tensor mit Werten zwischen 0 und 1
-+ Der `DataLoader` liefert die Daten in Batches und mischt die Trainingsdaten in jeder Epoche neu
++ Graustufenbilder mit 28 x 28 Pixeln, zehn Produktkategorien (T-Shirt, Hose, Pullover, ...) <!-- .element: class="fragment" data-fragment-index="1" -->
++ 60000 Bilder zum Training, 10000 zum Testen <!-- .element: class="fragment" data-fragment-index="2" -->
++ `ToTensor()` macht aus jedem Bild einen Tensor mit Werten zwischen 0 und 1 <!-- .element: class="fragment" data-fragment-index="3" -->
++ Der `DataLoader` liefert die Daten in Batches und mischt die Trainingsdaten in jeder Epoche neu <!-- .element: class="fragment" data-fragment-index="4" -->
 
 --
 
@@ -5080,9 +5098,9 @@ model = Netz()
 print(sum(p.numel() for p in model.parameters()))    # -> 101770
 ```
 
-+ `__init__` legt die Schichten an, `forward` beschreibt den Vorwärtslauf
-+ Sie rufen `forward` nicht direkt auf, sondern `model(bilder)`
-+ 101770 Parameter: `784*128 + 128` in der ersten, `128*10 + 10` in der zweiten Schicht
++ `__init__` legt die Schichten an, `forward` beschreibt den Vorwärtslauf <!-- .element: class="fragment" data-fragment-index="1" -->
++ Sie rufen `forward` nicht direkt auf, sondern `model(bilder)` <!-- .element: class="fragment" data-fragment-index="2" -->
++ 101770 Parameter: `784*128 + 128` in der ersten, `128*10 + 10` in der zweiten Schicht <!-- .element: class="fragment" data-fragment-index="3" -->
 
 --
 
@@ -5129,8 +5147,8 @@ with torch.no_grad():                        # keine Gradienten nötig
 print(f"Genauigkeit: {correct / total * 100:.2f} %")
 ```
 
-+ `outputs` hat die Form `[64, 10]`: zehn Werte je Bild, der größte gewinnt
-+ Vergleichswert: ein untrainiertes Netz rät und liegt bei etwa 10 % (zehn Klassen)
++ `outputs` hat die Form `[64, 10]`: zehn Werte je Bild, der größte gewinnt <!-- .element: class="fragment" data-fragment-index="1" -->
++ Vergleichswert: ein untrainiertes Netz rät und liegt bei etwa 10 % (zehn Klassen) <!-- .element: class="fragment" data-fragment-index="2" -->
 
 --
 
@@ -5144,9 +5162,9 @@ model2.load_state_dict(torch.load("model.pth"))
 model2.eval()                                    # bereit für Vorhersagen
 ```
 
-+ `state_dict()` ist ein Wörterbuch: Name der Schicht, dazu der Tensor mit den Gewichten
-+ Gespeichert werden nur die Zahlen. Die Klasse `Netz` muss beim Laden als Code vorhanden sein
-+ `model2` liefert danach dieselben Vorhersagen wie `model`
++ `state_dict()` ist ein Wörterbuch: Name der Schicht, dazu der Tensor mit den Gewichten <!-- .element: class="fragment" data-fragment-index="1" -->
++ Gespeichert werden nur die Zahlen. Die Klasse `Netz` muss beim Laden als Code vorhanden sein <!-- .element: class="fragment" data-fragment-index="2" -->
++ `model2` liefert danach dieselben Vorhersagen wie `model` <!-- .element: class="fragment" data-fragment-index="3" -->
 
 --
 
@@ -5155,18 +5173,13 @@ model2.eval()                                    # bereit für Vorhersagen
 
 Ein kleiner Filter (zum Beispiel 3 x 3) wandert über das Bild. An jeder Stelle multipliziert er die Pixelwerte mit den Filterwerten und summiert die Produkte. Das Ergebnis ist eine **Feature Map**.
 
-```text
-Bildausschnitt (3x3)     Filter (3x3)       Rechnung
-   1  2  3                 0  1  0            0*1 + 1*2 + 0*3
-   4  5  6                 1 -1  1          + 1*4 - 1*5 + 1*6
-   7  8  9                 0  1  0          + 0*7 + 1*8 + 0*9  =  15
-```
+$$\underbrace{\begin{pmatrix} 1 & 2 & 3 \\ 4 & 5 & 6 \\ 7 & 8 & 9 \end{pmatrix}}_{\text{Bildausschnitt}} \odot \underbrace{\begin{pmatrix} 0 & 1 & 0 \\ 1 & -1 & 1 \\ 0 & 1 & 0 \end{pmatrix}}_{\text{Filter}} \;\Rightarrow\; 2 + 4 - 5 + 6 + 8 = 15$$
 
-+ Der Filter erkennt ein lokales Muster, zum Beispiel eine Kante
-+ Derselbe Filter gilt für das ganze Bild: das Muster wird an jeder Position gefunden
-+ Die Filterwerte sind die Gewichte. Das Netz lernt sie im Training selbst
++ Der Filter erkennt ein lokales Muster, zum Beispiel eine Kante <!-- .element: class="fragment" data-fragment-index="1" -->
++ Derselbe Filter gilt für das ganze Bild: das Muster wird an jeder Position gefunden <!-- .element: class="fragment" data-fragment-index="2" -->
++ Die Filterwerte sind die Gewichte. Das Netz lernt sie im Training selbst <!-- .element: class="fragment" data-fragment-index="3" -->
 
-<div class="fragment">
+<div class="fragment" data-fragment-index="4">
 
 ```python
 nn.Conv2d(1, 32, kernel_size=3, padding=1)    # 1x28x28 -> 32x28x28
@@ -5179,20 +5192,13 @@ nn.Conv2d(1, 32, kernel_size=3, padding=1)    # 1x28x28 -> 32x28x28
 <!-- .slide: class="smaller" -->
 ## CNN: Pooling und der Nutzen für Bilder
 
-```text
-Feature Map (4x4)          Max-Pooling 2x2, Schrittweite 2
-   1  3 | 2  1
-   4  6 | 5  7                    6  7
-   -----+-----          ->        8  9
-   8  6 | 9  4
-   3  2 | 4  8
-```
+$$\underbrace{\left(\begin{array}{cc|cc} 1 & 3 & 2 & 1 \\ 4 & 6 & 5 & 7 \\ \hline 8 & 6 & 9 & 4 \\ 3 & 2 & 4 & 8 \end{array}\right)}_{\text{Feature Map } 4 \times 4} \;\xrightarrow{\;\text{Max-Pooling } 2 \times 2\;}\; \begin{pmatrix} 6 & 7 \\ 8 & 9 \end{pmatrix}$$
 
-+ **Max-Pooling** übernimmt je Bereich den größten Wert: die Feature Map schrumpft, die stärksten Signale bleiben
-+ Das spart Rechenaufwand und macht Merkmale robust gegen kleine Verschiebungen
-+ **Nachbarschaft bleibt erhalten**: eine Linearschicht sieht 784 einzelne Zahlen, eine Faltung sieht Pixel mit ihren Nachbarn
-+ **Wenige Parameter**: `Conv2d(1, 32, 3)` hat 320 Gewichte, die erste Linearschicht des Netzes von vorhin 100480
-+ Typischer Aufbau: mehrmals Faltung, ReLU, Pooling, am Ende Linearschichten für die Klassen
++ **Max-Pooling** übernimmt je Bereich den größten Wert: die Feature Map schrumpft, die stärksten Signale bleiben <!-- .element: class="fragment" data-fragment-index="1" -->
++ Das spart Rechenaufwand und macht Merkmale robust gegen kleine Verschiebungen <!-- .element: class="fragment" data-fragment-index="2" -->
++ **Nachbarschaft bleibt erhalten**: eine Linearschicht sieht 784 einzelne Zahlen, eine Faltung sieht Pixel mit ihren Nachbarn <!-- .element: class="fragment" data-fragment-index="3" -->
++ **Wenige Parameter**: `Conv2d(1, 32, 3)` hat 320 Gewichte, die erste Linearschicht des Netzes von vorhin 100480 <!-- .element: class="fragment" data-fragment-index="4" -->
++ Typischer Aufbau: mehrmals Faltung, ReLU, Pooling, am Ende Linearschichten für die Klassen <!-- .element: class="fragment" data-fragment-index="5" -->
 
 --
 
@@ -5213,10 +5219,10 @@ print(beispiel["image"].shape, beispiel["label"])
 loader = DataLoader(train, batch_size=64, shuffle=True)
 ```
 
-+ Der Hugging Face Hub ist ein öffentlicher Katalog mit Datensätzen für Bild, Text und Audio
-+ `load_dataset("<name>")` lädt einen Datensatz einmal herunter und legt ihn im lokalen Cache ab
-+ `with_format("torch")` sorgt dafür, dass jeder Zugriff Tensoren liefert, die direkt in einen `DataLoader` passen
-+ Aufteilen geht ohne scikit-learn: `ds["train"].train_test_split(test_size=0.2, seed=42)`
++ Der Hugging Face Hub ist ein öffentlicher Katalog mit Datensätzen für Bild, Text und Audio <!-- .element: class="fragment" data-fragment-index="1" -->
++ `load_dataset("<name>")` lädt einen Datensatz einmal herunter und legt ihn im lokalen Cache ab <!-- .element: class="fragment" data-fragment-index="2" -->
++ `with_format("torch")` sorgt dafür, dass jeder Zugriff Tensoren liefert, die direkt in einen `DataLoader` passen <!-- .element: class="fragment" data-fragment-index="3" -->
++ Aufteilen geht ohne scikit-learn: `ds["train"].train_test_split(test_size=0.2, seed=42)` <!-- .element: class="fragment" data-fragment-index="4" -->
 
 --
 
@@ -5230,8 +5236,8 @@ loader = DataLoader(train, batch_size=64, shuffle=True)
 | **Zeitreihen**     | rekurrente Netze                     | Vorhersage von Kursen oder Wetter                                |
 | **Tabellendaten**  | Feed-Forward-Netze                   | Bewertung von Kreditrisiken                                      |
 
-+ Bei Bildern, Audio und Text haben tiefe Netze die großen Durchbrüche gebracht
-+ Bei Tabellendaten gewinnen Gradient Boosting und Random Forest auf mittelgroßen Datensätzen (rund 10000 Zeilen) meist gegen neuronale Netze, bei deutlich geringerem Rechenaufwand (Grinsztajn, Oyallon, Varoquaux, NeurIPS 2022)
++ Bei Bildern, Audio und Text haben tiefe Netze die großen Durchbrüche gebracht <!-- .element: class="fragment" data-fragment-index="1" -->
++ Bei Tabellendaten gewinnen Gradient Boosting und Random Forest auf mittelgroßen Datensätzen (rund 10000 Zeilen) meist gegen neuronale Netze, bei deutlich geringerem Rechenaufwand (Grinsztajn, Oyallon, Varoquaux, NeurIPS 2022) <!-- .element: class="fragment" data-fragment-index="2" -->
 
 --
 
@@ -5253,12 +5259,12 @@ loader = DataLoader(train, batch_size=64, shuffle=True)
 
 ## Ausblick: Transformer und Sprachmodelle
 
-+ Große Sprachmodelle (LLMs, zum Beispiel GPT und BERT) sind tiefe neuronale Netze
-+ Ihre Architektur heißt **Transformer**: der Attention-Mechanismus ersetzt die rekurrenten Schichten
-+ Trainiert werden sie mit derselben Schleife: Vorwärtslauf, Verlust, Rückwärtslauf, Schritt des Optimierers
-+ Anwendungen: Chatbots, Textassistenz, automatische Übersetzung
++ Große Sprachmodelle (LLMs, zum Beispiel GPT und BERT) sind tiefe neuronale Netze <!-- .element: class="fragment" data-fragment-index="1" -->
++ Ihre Architektur heißt **Transformer**: der Attention-Mechanismus ersetzt die rekurrenten Schichten <!-- .element: class="fragment" data-fragment-index="2" -->
++ Trainiert werden sie mit derselben Schleife: Vorwärtslauf, Verlust, Rückwärtslauf, Schritt des Optimierers <!-- .element: class="fragment" data-fragment-index="3" -->
++ Anwendungen: Chatbots, Textassistenz, automatische Übersetzung <!-- .element: class="fragment" data-fragment-index="4" -->
 
-<div class="fragment">
+<div class="fragment" data-fragment-index="5">
 
 Literatur: Vaswani et al.: Attention Is All You Need (2017). Goodfellow, Bengio, Courville: Deep Learning (MIT Press, 2016). Zhang, Lipton, Li, Smola: Dive into Deep Learning (d2l.ai).
 
@@ -5268,16 +5274,16 @@ Literatur: Vaswani et al.: Attention Is All You Need (2017). Goodfellow, Bengio,
 
 ## Zusammenfassung
 
-+ Ein Neuron rechnet `z = w*x + b` und wendet darauf eine Aktivierungsfunktion an. Ohne Aktivierung bliebe jedes Netz linear
-+ Training ist eine Schleife aus vier Schritten: `model(x)`, `loss_fn(...)`, `loss.backward()`, `optimizer.step()`, davor `optimizer.zero_grad()`
-+ Epochenzahl, Batchgröße und Lernrate steuern das Training. Dropout und Early Stopping bremsen Overfitting
-+ In PyTorch beschreiben Sie das Netz als `nn.Module`, laden Daten mit dem `DataLoader` und speichern die Gewichte mit `state_dict`
-+ Deep Learning spielt seine Stärke bei Bildern, Text und Audio aus. Für Tabellen bleiben die klassischen Modelle der Startpunkt
++ Ein Neuron rechnet `z = w*x + b` und wendet darauf eine Aktivierungsfunktion an. Ohne Aktivierung bliebe jedes Netz linear <!-- .element: class="fragment" data-fragment-index="1" -->
++ Training ist eine Schleife aus vier Schritten: `model(x)`, `loss_fn(...)`, `loss.backward()`, `optimizer.step()`, davor `optimizer.zero_grad()` <!-- .element: class="fragment" data-fragment-index="2" -->
++ Epochenzahl, Batchgröße und Lernrate steuern das Training. Dropout und Early Stopping bremsen Overfitting <!-- .element: class="fragment" data-fragment-index="3" -->
++ In PyTorch beschreiben Sie das Netz als `nn.Module`, laden Daten mit dem `DataLoader` und speichern die Gewichte mit `state_dict` <!-- .element: class="fragment" data-fragment-index="4" -->
++ Deep Learning spielt seine Stärke bei Bildern, Text und Audio aus. Für Tabellen bleiben die klassischen Modelle der Startpunkt <!-- .element: class="fragment" data-fragment-index="5" -->
 
 ---
 
-<!-- .slide: data-background-color="#1f3b4d" -->
-# Teil 10: Der ML-Workflow mit scikit-learn
+<!-- .slide: data-background-color="#183b66" -->
+# Teil 9: Der ML-Workflow mit scikit-learn
 
 Aufbereitung, Modell und Bewertung in einem einzigen Objekt zusammenbauen, prüfen, speichern.
 
@@ -5285,11 +5291,11 @@ Aufbereitung, Modell und Bewertung in einem einzigen Objekt zusammenbauen, prüf
 
 ## Was Sie in diesem Teil lernen
 
-+ Sie erkennen in scikit-learn-Klassen dieselben drei Methoden: `fit`, `transform`, `predict`
-+ Sie finden ein Datenleck im Code und schreiben die richtige Fassung
-+ Sie bauen aus Aufbereitung und Modell eine `Pipeline` und behandeln Zahlen- und Textspalten mit `ColumnTransformer` getrennt
-+ Sie prüfen die ganze Pipeline mit Cross-Validation und stellen sie mit `GridSearchCV` ein
-+ Sie speichern die fertige Pipeline und halten fest, womit sie entstanden ist
++ Sie erkennen in scikit-learn-Klassen dieselben drei Methoden: `fit`, `transform`, `predict` <!-- .element: class="fragment" data-fragment-index="1" -->
++ Sie finden ein Datenleck im Code und schreiben die richtige Fassung <!-- .element: class="fragment" data-fragment-index="2" -->
++ Sie bauen aus Aufbereitung und Modell eine `Pipeline` und behandeln Zahlen- und Textspalten mit `ColumnTransformer` getrennt <!-- .element: class="fragment" data-fragment-index="3" -->
++ Sie prüfen die ganze Pipeline mit Cross-Validation und stellen sie mit `GridSearchCV` ein <!-- .element: class="fragment" data-fragment-index="4" -->
++ Sie speichern die fertige Pipeline und halten fest, womit sie entstanden ist <!-- .element: class="fragment" data-fragment-index="5" -->
 
 --
 
@@ -5302,9 +5308,9 @@ Aufbereitung, Modell und Bewertung in einem einzigen Objekt zusammenbauen, prüf
 | **Transformer** | `fit`, `transform`, `fit_transform` | lernt Kennwerte und rechnet Daten damit um | `StandardScaler`, `OneHotEncoder`, `SimpleImputer`, `PCA` |
 | **Predictor** | `fit`, `predict`, `score` | lernt ein Modell und sagt damit vorher | `LogisticRegression`, `RandomForestClassifier`, `KMeans` |
 
-+ Gelernte Größen enden auf einen Unterstrich: `scaler.mean_`, `modell.coef_`, `kmeans.cluster_centers_`
-+ Einstellungen, die Sie selbst setzen, stehen im Konstruktor: `max_depth=5`, `strategy="median"`
-+ Weil diese Klassen dieselben Methoden haben, lassen sie sich hintereinanderstecken
++ Gelernte Größen enden auf einen Unterstrich: `scaler.mean_`, `modell.coef_`, `kmeans.cluster_centers_` <!-- .element: class="fragment" data-fragment-index="1" -->
++ Einstellungen, die Sie selbst setzen, stehen im Konstruktor: `max_depth=5`, `strategy="median"` <!-- .element: class="fragment" data-fragment-index="2" -->
++ Weil diese Klassen dieselben Methoden haben, lassen sie sich hintereinanderstecken <!-- .element: class="fragment" data-fragment-index="3" -->
 
 --
 
@@ -5318,7 +5324,7 @@ from sklearn.linear_model import LogisticRegression
 
 X, y = load_breast_cancer(return_X_y=True)
 X_train, X_test, y_train, y_test = train_test_split(
-    X, y, test_size=0.3, random_state=42, stratify=y)
+    X, y, test_size=0.3, random_state=1, stratify=y)
 
 scaler = StandardScaler()
 scaler.fit(X_train)                    # lernt Mittelwert und Streuung
@@ -5339,16 +5345,16 @@ scaler = StandardScaler()
 X_scaled = scaler.fit_transform(X)
 
 X_train, X_test, y_train, y_test = train_test_split(
-    X_scaled, y, test_size=0.3, random_state=42, stratify=y)
+    X_scaled, y, test_size=0.3, random_state=1, stratify=y)
 
 modell = LogisticRegression(max_iter=1000)
 modell.fit(X_train, y_train)
 print(modell.score(X_test, y_test))
 ```
 
-+ Der Code läuft ohne Fehlermeldung und liefert eine plausible Zahl
-+ Mittelwert und Streuung stammen aber auch aus den Testzeilen
-+ Die Testdaten sind damit nicht mehr ungesehen
++ Der Code läuft ohne Fehlermeldung und liefert eine plausible Zahl <!-- .element: class="fragment" data-fragment-index="1" -->
++ Mittelwert und Streuung stammen aber auch aus den Testzeilen <!-- .element: class="fragment" data-fragment-index="2" -->
++ Die Testdaten sind damit nicht mehr ungesehen <!-- .element: class="fragment" data-fragment-index="3" -->
 
 --
 
@@ -5360,9 +5366,9 @@ import pandas as pd
 df = pd.read_csv("data/titanic.csv")
 X_num = df[ ["Age", "Fare"] ].fillna(df[ ["Age", "Fare"] ].median())
 
-X_tr, X_te = train_test_split(X_num, test_size=0.2, random_state=42)
+X_tr, X_te = train_test_split(X_num, test_size=0.2, random_state=1)
 print(StandardScaler().fit(X_num).mean_)  # -> [29.36 32.20]  alle Zeilen
-print(StandardScaler().fit(X_tr).mean_)   # -> [29.20 32.59]  nur Training
+print(StandardScaler().fit(X_tr).mean_)   # -> [29.73 31.95]  nur Training
 ```
 
 | Schritt | Was aus den Testdaten ins Training gelangt |
@@ -5382,7 +5388,7 @@ print(StandardScaler().fit(X_tr).mean_)   # -> [29.20 32.59]  nur Training
 ```python
 # RICHTIG: erst teilen, dann nur auf den Trainingsdaten lernen
 X_train, X_test, y_train, y_test = train_test_split(
-    X, y, test_size=0.3, random_state=42, stratify=y)
+    X, y, test_size=0.3, random_state=1, stratify=y)
 
 scaler = StandardScaler()
 X_train_s = scaler.fit_transform(X_train)  # fit NUR auf Training
@@ -5400,12 +5406,12 @@ print(modell.score(X_test_s, y_test))
 
 ## Wo die Handarbeit an Grenzen stößt
 
-+ Jeder weitere Schritt (fehlende Werte füllen, Encoding, Skalierung) braucht wieder ein eigenes `fit` auf Training und `transform` auf Test
-+ Bei Cross-Validation müssten Sie das in jedem der fünf Durchgänge neu tun
-+ Für neue Daten im Einsatz müssen alle Schritte in derselben Reihenfolge noch einmal laufen
-+ Beim Speichern brauchen Sie Scaler, Encoder und Modell als getrennte Dateien
++ Jeder weitere Schritt (fehlende Werte füllen, Encoding, Skalierung) braucht wieder ein eigenes `fit` auf Training und `transform` auf Test <!-- .element: class="fragment" data-fragment-index="1" -->
++ Bei Cross-Validation müssten Sie das in jedem der fünf Durchgänge neu tun <!-- .element: class="fragment" data-fragment-index="2" -->
++ Für neue Daten im Einsatz müssen alle Schritte in derselben Reihenfolge noch einmal laufen <!-- .element: class="fragment" data-fragment-index="3" -->
++ Beim Speichern brauchen Sie Scaler, Encoder und Modell als getrennte Dateien <!-- .element: class="fragment" data-fragment-index="4" -->
 
-<div class="fragment">
+<div class="fragment" data-fragment-index="5">
 
 > [!important]
 > Eine `Pipeline` fasst alle Schritte in einem Objekt mit einem `fit` und einem `predict` zusammen.
@@ -5428,9 +5434,9 @@ pipe.fit(X_train, y_train)          # rohe Trainingsdaten hinein
 print(pipe.score(X_test, y_test))   # rohe Testdaten hinein
 ```
 
-+ Jeder Schritt ist ein Paar aus frei gewähltem Namen und Objekt
-+ Alle Schritte außer dem letzten müssen Transformer sein
-+ Der letzte Schritt ist meist ein Predictor
++ Jeder Schritt ist ein Paar aus frei gewähltem Namen und Objekt <!-- .element: class="fragment" data-fragment-index="1" -->
++ Alle Schritte außer dem letzten müssen Transformer sein <!-- .element: class="fragment" data-fragment-index="2" -->
++ Der letzte Schritt ist meist ein Predictor <!-- .element: class="fragment" data-fragment-index="3" -->
 
 --
 
@@ -5447,9 +5453,9 @@ pipe.predict(X_test)
     modell.predict(X_test_s)        ->  y_pred
 ```
 
-+ Bei `fit` ruft die Pipeline für jeden Transformer `fit_transform` auf und reicht das Ergebnis weiter
-+ Bei `predict` und `score` ruft sie nur `transform` auf
-+ Die Merkregel von eben ist damit fest eingebaut
++ Bei `fit` ruft die Pipeline für jeden Transformer `fit_transform` auf und reicht das Ergebnis weiter <!-- .element: class="fragment" data-fragment-index="1" -->
++ Bei `predict` und `score` ruft sie nur `transform` auf <!-- .element: class="fragment" data-fragment-index="2" -->
++ Die Merkregel von eben ist damit fest eingebaut <!-- .element: class="fragment" data-fragment-index="3" -->
 
 --
 
@@ -5500,15 +5506,15 @@ print(X.isna().sum())   # -> Age 177, Embarked 2, sonst 0
 from sklearn.model_selection import train_test_split
 
 X_train, X_test, y_train, y_test = train_test_split(
-    X, y, test_size=0.2, random_state=42, stratify=y)
+    X, y, test_size=0.2, random_state=1, stratify=y)
 
 print(X_train.shape, X_test.shape)   # -> (712, 7) (179, 7)
 print(y_train.mean(), y_test.mean()) # -> 0.383 0.385
 ```
 
-+ `stratify=y` hält den Anteil der Überlebenden in beiden Teilen gleich
-+ `random_state=42` liefert bei jedem Lauf dieselbe Aufteilung
-+ Die Testdaten legen Sie jetzt zur Seite, bis das Modell fertig eingestellt ist
++ `stratify=y` hält den Anteil der Überlebenden in beiden Teilen gleich <!-- .element: class="fragment" data-fragment-index="1" -->
++ `random_state=1` liefert bei jedem Lauf dieselbe Aufteilung <!-- .element: class="fragment" data-fragment-index="2" -->
++ Die Testdaten legen Sie jetzt zur Seite, bis das Modell fertig eingestellt ist <!-- .element: class="fragment" data-fragment-index="3" -->
 
 --
 
@@ -5516,8 +5522,8 @@ print(y_train.mean(), y_test.mean()) # -> 0.383 0.385
 
 ![](figs/d_t10_column_transformer.png)
 
-+ Zahlen und Kategorien brauchen verschiedene Aufbereitung
-+ `ColumnTransformer` wendet auf jede Spaltengruppe einen eigenen Transformer an und klebt die Ergebnisse nebeneinander
++ Zahlen und Kategorien brauchen verschiedene Aufbereitung <!-- .element: class="fragment" data-fragment-index="1" -->
++ `ColumnTransformer` wendet auf jede Spaltengruppe einen eigenen Transformer an und klebt die Ergebnisse nebeneinander <!-- .element: class="fragment" data-fragment-index="2" -->
 
 --
 
@@ -5539,8 +5545,8 @@ categorical_pipe = Pipeline([
 ])
 ```
 
-+ Zahlen: fehlende Werte mit dem Median füllen, danach standardisieren
-+ Kategorien: fehlende Werte mit dem häufigsten Wert füllen, danach One-Hot-Encoding
++ Zahlen: fehlende Werte mit dem Median füllen, danach standardisieren <!-- .element: class="fragment" data-fragment-index="1" -->
++ Kategorien: fehlende Werte mit dem häufigsten Wert füllen, danach One-Hot-Encoding <!-- .element: class="fragment" data-fragment-index="2" -->
 
 --
 
@@ -5583,9 +5589,9 @@ tolerant.fit(hafen)
 print(tolerant.transform(neu).toarray())  # -> [ [0. 0. 0.] ]
 ```
 
-+ Im Einsatz tauchen Kategorien auf, die das Training nie gesehen hat
-+ Mit `"ignore"` bekommt eine solche Zeile in allen Spalten dieser Kategorie eine 0
-+ Das Modell rechnet weiter, statt mit einer Fehlermeldung abzubrechen
++ Im Einsatz tauchen Kategorien auf, die das Training nie gesehen hat <!-- .element: class="fragment" data-fragment-index="1" -->
++ Mit `"ignore"` bekommt eine solche Zeile in allen Spalten dieser Kategorie eine 0 <!-- .element: class="fragment" data-fragment-index="2" -->
++ Das Modell rechnet weiter, statt mit einer Fehlermeldung abzubrechen <!-- .element: class="fragment" data-fragment-index="3" -->
 
 --
 
@@ -5602,9 +5608,9 @@ clf = Pipeline([
 clf.fit(X_train, y_train)
 ```
 
-+ `X_train` geht als DataFrame mit fehlenden Werten und Text hinein
-+ `prep` füllt, skaliert und kodiert, `modell` lernt auf dem Ergebnis
-+ Ein einziges Objekt `clf` enthält jetzt die gesamte Verarbeitung
++ `X_train` geht als DataFrame mit fehlenden Werten und Text hinein <!-- .element: class="fragment" data-fragment-index="1" -->
++ `prep` füllt, skaliert und kodiert, `modell` lernt auf dem Ergebnis <!-- .element: class="fragment" data-fragment-index="2" -->
++ Ein einziges Objekt `clf` enthält jetzt die gesamte Verarbeitung <!-- .element: class="fragment" data-fragment-index="3" -->
 
 --
 
@@ -5615,15 +5621,15 @@ from sklearn.ensemble import RandomForestClassifier
 
 rf = Pipeline([
     ("prep", preprocess),
-    ("modell", RandomForestClassifier(n_estimators=200, random_state=42)),
+    ("modell", RandomForestClassifier(n_estimators=200, random_state=1)),
 ])
 
 rf.fit(X_train, y_train)
 ```
 
-+ Die Aufbereitung bleibt unverändert, nur der letzte Schritt wechselt
-+ Bäume brauchen keine Skalierung, sie schadet ihnen aber auch nicht
-+ `random_state=42` im Modell, weil der Random Forest selbst Zufall benutzt
++ Die Aufbereitung bleibt unverändert, nur der letzte Schritt wechselt <!-- .element: class="fragment" data-fragment-index="1" -->
++ Bäume brauchen keine Skalierung, sie schadet ihnen aber auch nicht <!-- .element: class="fragment" data-fragment-index="2" -->
++ `random_state=1` im Modell, weil der Random Forest selbst Zufall benutzt <!-- .element: class="fragment" data-fragment-index="3" -->
 
 --
 
@@ -5637,8 +5643,8 @@ for name, pipe in [("LogReg", clf), ("RandomForest", rf)]:
                              cv=5, scoring="accuracy")
     print(f"{name}: {scores.mean():.3f} +/- {scores.std():.3f}")
 
-# -> LogReg: 0.798 +/- 0.019
-# -> RandomForest: 0.791 +/- 0.055
+# -> LogReg: 0.795 +/- 0.018
+# -> RandomForest: 0.780 +/- 0.031
 ```
 
 > [!important]
@@ -5662,11 +5668,11 @@ search.fit(X_train, y_train)
 
 print(search.best_params_)
 # -> {'modell__max_depth': 5, 'modell__min_samples_leaf': 1}
-print(round(search.best_score_, 3))   # -> 0.826
+print(round(search.best_score_, 3))   # -> 0.81
 ```
 
-+ `modell__max_depth` heißt: Parameter `max_depth` im Schritt `modell`
-+ 4 mal 3 Kombinationen mal 5 Durchgänge ergeben 60 Trainingsläufe
++ `modell__max_depth` heißt: Parameter `max_depth` im Schritt `modell` <!-- .element: class="fragment" data-fragment-index="1" -->
++ 4 mal 3 Kombinationen mal 5 Durchgänge ergeben 60 Trainingsläufe <!-- .element: class="fragment" data-fragment-index="2" -->
 
 --
 
@@ -5681,9 +5687,9 @@ print(ergebnis[spalten].sort_values("rank_test_score").head())
 best = search.best_estimator_     # fertige, neu trainierte Pipeline
 ```
 
-+ `mean_test_score` ist der Mittelwert über die fünf Validierungsteile, nicht das Testset
-+ Liegen die besten Zeilen enger beieinander als `std_test_score`, wählen Sie das einfachere Modell
-+ `best_estimator_` ist die Pipeline mit den besten Einstellungen, trainiert auf allen Trainingsdaten
++ `mean_test_score` ist der Mittelwert über die fünf Validierungsteile, nicht das Testset <!-- .element: class="fragment" data-fragment-index="1" -->
++ Liegen die besten Zeilen enger beieinander als `std_test_score`, wählen Sie das einfachere Modell <!-- .element: class="fragment" data-fragment-index="2" -->
++ `best_estimator_` ist die Pipeline mit den besten Einstellungen, trainiert auf allen Trainingsdaten <!-- .element: class="fragment" data-fragment-index="3" -->
 
 --
 
@@ -5699,12 +5705,12 @@ print(classification_report(y_test, y_pred, digits=2))
 ```
 
 ```text
-[ [104   6]
-  [ 27  42] ]
+[ [101   9]
+  [ 19  50] ]
               precision    recall  f1-score   support
-           0       0.79      0.95      0.86       110
-           1       0.88      0.61      0.72        69
-    accuracy                           0.82       179
+           0       0.84      0.92      0.88       110
+           1       0.85      0.72      0.78        69
+    accuracy                           0.84       179
 ```
 
 > [!warning]
@@ -5721,14 +5727,14 @@ import joblib
 joblib.dump(best, "titanic_pipeline.joblib")
 
 geladen = joblib.load("titanic_pipeline.joblib")
-print(geladen.score(X_test, y_test))   # -> 0.82, wie vorher
+print(geladen.score(X_test, y_test))   # -> 0.84, wie vorher
 ```
 
-+ Eine Datei enthält Imputer, Scaler, Encoder und Modell mit allen gelernten Größen
-+ Aufbereitung und Modell können im Einsatz nicht mehr auseinanderlaufen
-+ Zum Laden brauchen Sie dieselbe scikit-learn-Version wie beim Speichern: Laden mit einer anderen Version wird nicht unterstützt
++ Eine Datei enthält Imputer, Scaler, Encoder und Modell mit allen gelernten Größen <!-- .element: class="fragment" data-fragment-index="1" -->
++ Aufbereitung und Modell können im Einsatz nicht mehr auseinanderlaufen <!-- .element: class="fragment" data-fragment-index="2" -->
++ Zum Laden brauchen Sie dieselbe scikit-learn-Version wie beim Speichern: Laden mit einer anderen Version wird nicht unterstützt <!-- .element: class="fragment" data-fragment-index="3" -->
 
-<div class="fragment">
+<div class="fragment" data-fragment-index="4">
 
 > [!warning]
 > Laden Sie `.joblib`-Dateien nur aus vertrauenswürdiger Quelle: Beim Laden kann beliebiger Code ausgeführt werden.
@@ -5746,12 +5752,12 @@ neu = pd.DataFrame([{
 }])
 
 print(geladen.predict(neu))                  # -> [1]
-print(geladen.predict_proba(neu).round(2))   # -> [ [0.1 0.9] ]
+print(geladen.predict_proba(neu).round(2))   # -> [ [0.06 0.94] ]
 ```
 
-+ Neue Daten kommen als DataFrame mit denselben Spaltennamen wie im Training
-+ Fehlende Werte dürfen vorkommen, die Pipeline füllt sie mit den gelernten Werten
-+ Die Reihenfolge der Spalten ist egal, `ColumnTransformer` wählt nach Namen aus
++ Neue Daten kommen als DataFrame mit denselben Spaltennamen wie im Training <!-- .element: class="fragment" data-fragment-index="1" -->
++ Fehlende Werte dürfen vorkommen, die Pipeline füllt sie mit den gelernten Werten <!-- .element: class="fragment" data-fragment-index="2" -->
++ Die Reihenfolge der Spalten ist egal, `ColumnTransformer` wählt nach Namen aus <!-- .element: class="fragment" data-fragment-index="3" -->
 
 --
 
@@ -5764,12 +5770,12 @@ print(sys.version.split()[0], sklearn.__version__,
       pandas.__version__, numpy.__version__)
 ```
 
-+ `random_state=42` an jeder Stelle mit Zufall: `train_test_split`, `RandomForestClassifier`, `KMeans`, `KFold(shuffle=True)`
-+ Versionen von Python, scikit-learn, pandas und numpy zusammen mit dem Modell notieren
-+ Rohdaten unverändert lassen und die Datei benennen, mit der trainiert wurde (Name, Datum, Zeilenzahl)
-+ Das ganze Notebook von oben nach unten durchlaufen lassen, bevor Sie Ergebnisse weitergeben
++ `random_state=1` an jeder Stelle mit Zufall: `train_test_split`, `RandomForestClassifier`, `KMeans`, `KFold(shuffle=True)` <!-- .element: class="fragment" data-fragment-index="1" -->
++ Versionen von Python, scikit-learn, pandas und numpy zusammen mit dem Modell notieren <!-- .element: class="fragment" data-fragment-index="2" -->
++ Rohdaten unverändert lassen und die Datei benennen, mit der trainiert wurde (Name, Datum, Zeilenzahl) <!-- .element: class="fragment" data-fragment-index="3" -->
++ Das ganze Notebook von oben nach unten durchlaufen lassen, bevor Sie Ergebnisse weitergeben <!-- .element: class="fragment" data-fragment-index="4" -->
 
-<div class="fragment">
+<div class="fragment" data-fragment-index="5">
 
 > [!tip]
 > Test für Reproduzierbarkeit: Kernel neu starten, alles ausführen, dieselben Zahlen erhalten.
@@ -5782,22 +5788,22 @@ print(sys.version.split()[0], sklearn.__version__,
 
 ![](figs/d_t10_workflow_ueberblick.png)
 
-+ Alles zwischen Split und Testset läuft nur auf den Trainingsdaten
-+ Die Pipeline ist das Objekt, das durch alle Schritte wandert
++ Alles zwischen Split und Testset läuft nur auf den Trainingsdaten <!-- .element: class="fragment" data-fragment-index="1" -->
++ Die Pipeline ist das Objekt, das durch alle Schritte wandert <!-- .element: class="fragment" data-fragment-index="2" -->
 
 --
 
 <!-- .slide: class="smaller" -->
 ## Checkliste: minimaler reproduzierbarer Workflow
 
-+ Zielgröße und Merkmalsspalten ausdrücklich benennen, Kennungen weglassen
-+ `train_test_split` mit `random_state` und bei Klassifikation mit `stratify=y`, vor jeder Aufbereitung
-+ Imputation, Skalierung und Encoding stehen in der Pipeline, nicht davor
-+ `OneHotEncoder(handle_unknown="ignore")` für Kategorien
-+ Modellvergleich und Einstellung nur über Cross-Validation auf den Trainingsdaten
-+ Kennzahl passend zur Fragestellung wählen, bei ungleichen Klassen nicht Accuracy
-+ Testset genau einmal auswerten
-+ Pipeline mit `joblib.dump` speichern, Versionen und Datenstand dazuschreiben
++ Zielgröße und Merkmalsspalten ausdrücklich benennen, Kennungen weglassen <!-- .element: class="fragment" data-fragment-index="1" -->
++ `train_test_split` mit `random_state` und bei Klassifikation mit `stratify=y`, vor jeder Aufbereitung <!-- .element: class="fragment" data-fragment-index="2" -->
++ Imputation, Skalierung und Encoding stehen in der Pipeline, nicht davor <!-- .element: class="fragment" data-fragment-index="3" -->
++ `OneHotEncoder(handle_unknown="ignore")` für Kategorien <!-- .element: class="fragment" data-fragment-index="4" -->
++ Modellvergleich und Einstellung nur über Cross-Validation auf den Trainingsdaten <!-- .element: class="fragment" data-fragment-index="5" -->
++ Kennzahl passend zur Fragestellung wählen, bei ungleichen Klassen nicht Accuracy <!-- .element: class="fragment" data-fragment-index="6" -->
++ Testset genau einmal auswerten <!-- .element: class="fragment" data-fragment-index="7" -->
++ Pipeline mit `joblib.dump` speichern, Versionen und Datenstand dazuschreiben <!-- .element: class="fragment" data-fragment-index="8" -->
 
 --
 
@@ -5818,16 +5824,16 @@ print(sys.version.split()[0], sklearn.__version__,
 
 ## Zusammenfassung
 
-+ Transformer und Modelle teilen sich `fit`, `transform` und `predict`, deshalb lassen sie sich zu einer `Pipeline` verketten
-+ Ein Datenleck entsteht, sobald `fit` Testdaten sieht. Die Pipeline verhindert das, auch in jedem Durchgang der Cross-Validation
-+ `ColumnTransformer` gibt Zahlen- und Kategoriespalten getrennte Aufbereitung, `handle_unknown="ignore"` fängt neue Kategorien ab
-+ `GridSearchCV` stellt Pipeline-Parameter über `schritt__parameter` ein, das Testset kommt genau einmal am Ende
-+ Eine `.joblib`-Datei mit notierten Versionen und `random_state` macht das Ergebnis wiederholbar
++ Transformer und Modelle teilen sich `fit`, `transform` und `predict`, deshalb lassen sie sich zu einer `Pipeline` verketten <!-- .element: class="fragment" data-fragment-index="1" -->
++ Ein Datenleck entsteht, sobald `fit` Testdaten sieht. Die Pipeline verhindert das, auch in jedem Durchgang der Cross-Validation <!-- .element: class="fragment" data-fragment-index="2" -->
++ `ColumnTransformer` gibt Zahlen- und Kategoriespalten getrennte Aufbereitung, `handle_unknown="ignore"` fängt neue Kategorien ab <!-- .element: class="fragment" data-fragment-index="3" -->
++ `GridSearchCV` stellt Pipeline-Parameter über `schritt__parameter` ein, das Testset kommt genau einmal am Ende <!-- .element: class="fragment" data-fragment-index="4" -->
++ Eine `.joblib`-Datei mit notierten Versionen und `random_state` macht das Ergebnis wiederholbar <!-- .element: class="fragment" data-fragment-index="5" -->
 
 ---
 
-<!-- .slide: data-background-color="#1f3b4d" -->
-# Teil 11: Praxisbeispiele und Interpretation von Modellen
+<!-- .slide: data-background-color="#183b66" -->
+# Teil 10: Praxisbeispiele und Interpretation von Modellen
 
 Drei Fragestellungen mit demselben Workflow lösen und danach prüfen, was die Modelle gelernt haben.
 
@@ -5835,11 +5841,11 @@ Drei Fragestellungen mit demselben Workflow lösen und danach prüfen, was die M
 
 ## Was Sie in diesem Teil lernen
 
-+ Sie übertragen den Pipeline-Workflow auf Klassifikation, Regression und Clustering
-+ Sie bewerten ein Modell bei stark ungleichen Klassen mit Recall und Precision statt Accuracy
-+ Sie lesen Koeffizienten, einen Entscheidungsbaum und Merkmalswichtigkeiten
-+ Sie kennen die Schwächen von `feature_importances_` und setzen `permutation_importance` ein
-+ Sie wissen, was eine Interpretation aussagt, was nicht, und was in einen Ergebnisbericht gehört
++ Sie übertragen den Pipeline-Workflow auf Klassifikation, Regression und Clustering <!-- .element: class="fragment" data-fragment-index="1" -->
++ Sie bewerten ein Modell bei stark ungleichen Klassen mit Recall und Precision statt Accuracy <!-- .element: class="fragment" data-fragment-index="2" -->
++ Sie lesen Koeffizienten, einen Entscheidungsbaum und Merkmalswichtigkeiten <!-- .element: class="fragment" data-fragment-index="3" -->
++ Sie kennen die Schwächen von `feature_importances_` und setzen `permutation_importance` ein <!-- .element: class="fragment" data-fragment-index="4" -->
++ Sie wissen, was eine Interpretation aussagt, was nicht, und was in einen Ergebnisbericht gehört <!-- .element: class="fragment" data-fragment-index="5" -->
 
 --
 
@@ -5894,7 +5900,7 @@ X = df[num_cols + cat_cols]        # ohne UDI, Product ID, TWF ... RNF
 y = df["Machine failure"]
 
 X_train, X_test, y_train, y_test = train_test_split(
-    X, y, test_size=0.2, random_state=42, stratify=y)
+    X, y, test_size=0.2, random_state=1, stratify=y)
 
 prep = ColumnTransformer([
     ("num", StandardScaler(), num_cols),
@@ -5926,11 +5932,11 @@ def bewerte(modell):
 print(bewerte(DummyClassifier(strategy="most_frequent")))
 # -> {'accuracy': 0.97, 'recall': 0.0, 'precision': 0.0}
 print(bewerte(LogisticRegression(max_iter=1000)))
-# -> {'accuracy': 0.97, 'recall': 0.19, 'precision': 0.76}
+# -> {'accuracy': 0.97, 'recall': 0.18, 'precision': 0.74}
 ```
 
-+ Das Modell, das nie einen Ausfall meldet, erreicht 97 % Accuracy
-+ Die logistische Regression findet nur 19 von 100 Ausfällen
++ Das Modell, das nie einen Ausfall meldet, erreicht 97 % Accuracy <!-- .element: class="fragment" data-fragment-index="1" -->
++ Die logistische Regression findet nur 18 von 100 Ausfällen <!-- .element: class="fragment" data-fragment-index="2" -->
 
 --
 
@@ -5941,22 +5947,22 @@ print(bewerte(LogisticRegression(max_iter=1000)))
 from sklearn.ensemble import RandomForestClassifier
 
 print(bewerte(LogisticRegression(max_iter=1000, class_weight="balanced")))
-print(bewerte(RandomForestClassifier(n_estimators=200, random_state=42)))
+print(bewerte(RandomForestClassifier(n_estimators=200, random_state=1)))
 print(bewerte(RandomForestClassifier(n_estimators=200, min_samples_leaf=5,
                                      class_weight="balanced",
-                                     random_state=42)))
+                                     random_state=1)))
 ```
 
 | Modell | Accuracy | Recall | Precision |
 |---|---|---|---|
 | immer „kein Ausfall" | 0,97 | 0,00 | 0,00 |
-| LogisticRegression | 0,97 | 0,19 | 0,76 |
-| LogisticRegression, `balanced` | 0,82 | 0,80 | 0,14 |
-| RandomForest | 0,98 | 0,52 | 0,91 |
-| RandomForest, `balanced`, `min_samples_leaf=5` | 0,95 | 0,85 | 0,41 |
+| LogisticRegression | 0,97 | 0,18 | 0,74 |
+| LogisticRegression, `balanced` | 0,81 | 0,80 | 0,13 |
+| RandomForest | 0,98 | 0,53 | 0,90 |
+| RandomForest, `balanced`, `min_samples_leaf=5` | 0,96 | 0,85 | 0,43 |
 
-+ `balanced` gewichtet Fehler auf der seltenen Klasse umgekehrt zu ihrer Häufigkeit
-+ Recall steigt, Precision sinkt: mehr gefundene Ausfälle, mehr Fehlalarme
++ `balanced` gewichtet Fehler auf der seltenen Klasse umgekehrt zu ihrer Häufigkeit <!-- .element: class="fragment" data-fragment-index="1" -->
++ Recall steigt, Precision sinkt: mehr gefundene Ausfälle, mehr Fehlalarme <!-- .element: class="fragment" data-fragment-index="2" -->
 
 --
 
@@ -5969,21 +5975,21 @@ from sklearn.metrics import classification_report, confusion_matrix
 
 rf = Pipeline([("prep", prep), ("modell", RandomForestClassifier(
     n_estimators=200, min_samples_leaf=5, class_weight="balanced",
-    random_state=42))])
+    random_state=1))])
 
 proba = cross_val_predict(rf, X_train, y_train, cv=5,
                           method="predict_proba")[:, 1]
-# Schwelle 0.5: Recall 0.85, Precision 0.41
-# Schwelle 0.3: Recall 0.93, Precision 0.27
-# Schwelle 0.2: Recall 0.96, Precision 0.23
+# Schwelle 0.5: Recall 0.85, Precision 0.43
+# Schwelle 0.3: Recall 0.92, Precision 0.27
+# Schwelle 0.2: Recall 0.93, Precision 0.22
 
 rf.fit(X_train, y_train)
 y_pred = (rf.predict_proba(X_test)[:, 1] >= 0.3).astype(int)
-print(confusion_matrix(y_test, y_pred))   # -> [ [1763 169] [4 64] ]
+print(confusion_matrix(y_test, y_pred))   # -> [ [1792 140] [3 65] ]
 ```
 
-+ Testset mit Schwelle 0,3: 64 von 68 Ausfällen gefunden, dafür 169 Fehlalarme auf 2 000 Zeilen
-+ Welche Schwelle richtig ist, entscheidet die Fachseite: Was kostet ein übersehener Ausfall, was eine unnötige Wartung?
++ Testset mit Schwelle 0,3: 65 von 68 Ausfällen gefunden, dafür 140 Fehlalarme auf 2 000 Zeilen <!-- .element: class="fragment" data-fragment-index="1" -->
++ Welche Schwelle richtig ist, entscheidet die Fachseite: Was kostet ein übersehener Ausfall, was eine unnötige Wartung? <!-- .element: class="fragment" data-fragment-index="2" -->
 
 --
 
@@ -5997,7 +6003,7 @@ X = df.drop(columns="MedHouseVal")
 y = df["MedHouseVal"]              # Median-Hauswert in 100.000 USD
 
 X_train, X_test, y_train, y_test = train_test_split(
-    X, y, test_size=0.2, random_state=42)
+    X, y, test_size=0.2, random_state=1)
 
 reg = Pipeline([
     ("scaler", StandardScaler()),
@@ -6006,8 +6012,8 @@ reg = Pipeline([
 reg.fit(X_train, y_train)
 ```
 
-+ Alle acht Merkmale sind Zahlen ohne Lücken: Ein `StandardScaler` genügt als Aufbereitung
-+ Kein `stratify`, weil die Zielgröße stetig ist
++ Alle acht Merkmale sind Zahlen ohne Lücken: Ein `StandardScaler` genügt als Aufbereitung <!-- .element: class="fragment" data-fragment-index="1" -->
++ Kein `stratify`, weil die Zielgröße stetig ist <!-- .element: class="fragment" data-fragment-index="2" -->
 
 --
 
@@ -6022,16 +6028,16 @@ from sklearn.model_selection import cross_val_score
 
 rmse_cv = -cross_val_score(reg, X_train, y_train, cv=5,
                            scoring="neg_root_mean_squared_error")
-print(rmse_cv.mean().round(3))                # -> 0.721
+print(rmse_cv.mean().round(3))                # -> 0.727
 
 y_pred = reg.predict(X_test)
-print(round(np.sqrt(mean_squared_error(y_test, y_pred)), 3))  # -> 0.746
+print(round(np.sqrt(mean_squared_error(y_test, y_pred)), 3))  # -> 0.727
 print(round(mean_absolute_error(y_test, y_pred), 3))          # -> 0.533
-print(round(r2_score(y_test, y_pred), 3))                     # -> 0.576
+print(round(r2_score(y_test, y_pred), 3))                     # -> 0.597
 ```
 
-+ RMSE 0,75 heißt: Die Vorhersage liegt typischerweise um rund 75.000 USD daneben
-+ scikit-learn gibt Fehlermaße negativ zurück, damit „größer ist besser" überall gilt
++ RMSE 0,73 heißt: Die Vorhersage liegt typischerweise um rund 73.000 USD daneben <!-- .element: class="fragment" data-fragment-index="1" -->
++ scikit-learn gibt Fehlermaße negativ zurück, damit „größer ist besser" überall gilt <!-- .element: class="fragment" data-fragment-index="2" -->
 
 --
 
@@ -6050,8 +6056,8 @@ ax.set_ylabel("Residuum = tatsächlich minus Vorhersage")
 plt.show()
 ```
 
-+ Ein gutes Modell zeigt eine strukturlose Punktwolke um die Nulllinie
-+ Muster im Residuenplot zeigen, was das Modell systematisch falsch macht
++ Ein gutes Modell zeigt eine strukturlose Punktwolke um die Nulllinie <!-- .element: class="fragment" data-fragment-index="1" -->
++ Muster im Residuenplot zeigen, was das Modell systematisch falsch macht <!-- .element: class="fragment" data-fragment-index="2" -->
 
 --
 
@@ -6074,15 +6080,15 @@ merkmale = ["alter", "bmi", "arztbesuche_jahr", "leistungsausgaben_eur"]
 segmentierung = Pipeline([
     ("imputer", SimpleImputer(strategy="median")),
     ("scaler", StandardScaler()),
-    ("kmeans", KMeans(n_clusters=4, n_init=10, random_state=42)),
+    ("kmeans", KMeans(n_clusters=4, n_init=10, random_state=1)),
 ])
 
 df = df.assign(segment=segmentierung.fit_predict(df[merkmale]))
 print(df["segment"].value_counts().sort_index())
 ```
 
-+ `bmi` hat Lücken, `KMeans` bricht bei fehlenden Werten ab: Der Imputer gehört in die Pipeline
-+ Ohne Skalierung bestimmt allein `leistungsausgaben_eur` die Segmente, weil die Spalte die größten Zahlen hat
++ `bmi` hat Lücken, `KMeans` bricht bei fehlenden Werten ab: Der Imputer gehört in die Pipeline <!-- .element: class="fragment" data-fragment-index="1" -->
++ Ohne Skalierung bestimmt allein `leistungsausgaben_eur` die Segmente, weil die Spalte die größten Zahlen hat <!-- .element: class="fragment" data-fragment-index="2" -->
 
 --
 
@@ -6101,14 +6107,14 @@ print(df.groupby("segment")[ ["raucher", "zusatzversicherung"] ].mean()
 ```text
          alter   bmi  arztbesuche_jahr  leistungsausgaben_eur  anzahl
 segment
-0         65.2  27.2               8.7                34385.1      86
-1         36.9  23.7               3.9                 1337.6    2367
-2         62.4  29.0               4.6                 2892.8    1962
-3         70.2  27.2              17.3                 6477.3     585
+0         36.8  23.7               3.9                 1339.6    2367
+1         62.4  29.0               4.6                 2905.3    1969
+2         70.4  27.2              17.4                 6491.9     579
+3         65.0  27.1               8.7                34563.5      85
 ```
 
-+ Das Profil entsteht auf den Originalwerten, nicht auf den skalierten
-+ Merkmale, die nicht im Clustering waren (`raucher`, `zusatzversicherung`), helfen beim Beschreiben
++ Das Profil entsteht auf den Originalwerten, nicht auf den skalierten <!-- .element: class="fragment" data-fragment-index="1" -->
++ Merkmale, die nicht im Clustering waren (`raucher`, `zusatzversicherung`), helfen beim Beschreiben <!-- .element: class="fragment" data-fragment-index="2" -->
 
 --
 
@@ -6132,17 +6138,17 @@ print(tabelle.loc[ ["MedInc", "AveBedrms", "Latitude", "Population"] ])
 
 ```text
               roh  skaliert
-MedInc      0.449     0.854
-AveBedrms   0.783     0.339
-Latitude   -0.420    -0.897
-Population -0.000    -0.002
+MedInc      0.439     0.830
+AveBedrms   0.632     0.321
+Latitude   -0.426    -0.910
+Population -0.000    -0.004
 ```
 
-+ Roh: Änderung der Vorhersage je Einheit des Merkmals. `AveBedrms` wirkt am größten, weil die Spalte nur in einem engen Bereich um 1 schwankt
-+ Skaliert: Änderung je Standardabweichung. Erst jetzt lassen sich die Beträge vergleichen
-+ Das Vorzeichen gibt die Richtung an, jeweils bei festgehaltenen übrigen Merkmalen
++ Roh: Änderung der Vorhersage je Einheit des Merkmals. `AveBedrms` wirkt am größten, weil die Spalte nur in einem engen Bereich um 1 schwankt <!-- .element: class="fragment" data-fragment-index="1" -->
++ Skaliert: Änderung je Standardabweichung. Erst jetzt lassen sich die Beträge vergleichen <!-- .element: class="fragment" data-fragment-index="2" -->
++ Das Vorzeichen gibt die Richtung an, jeweils bei festgehaltenen übrigen Merkmalen <!-- .element: class="fragment" data-fragment-index="3" -->
 
-<div class="fragment">
+<div class="fragment" data-fragment-index="4">
 
 > [!tip]
 > Koeffizienten vergleichen Sie nur nach Skalierung.
@@ -6166,7 +6172,7 @@ from sklearn.tree import DecisionTreeClassifier, plot_tree
 baum = Pipeline([             # preprocess, X_train, y_train: Titanic
     ("prep", preprocess),
     ("modell", DecisionTreeClassifier(max_depth=3, min_samples_leaf=20,
-                                      random_state=42)),
+                                      random_state=1)),
 ]).fit(X_train, y_train)
 
 namen = (pd.Index(baum.named_steps["prep"].get_feature_names_out())
@@ -6194,7 +6200,7 @@ plt.show()
 ```python
 rf = Pipeline([
     ("prep", preprocess),
-    ("modell", RandomForestClassifier(n_estimators=200, random_state=42)),
+    ("modell", RandomForestClassifier(n_estimators=200, random_state=1)),
 ])
 rf.fit(X_train, y_train)
 
@@ -6205,20 +6211,20 @@ wichtigkeit = pd.Series(
 print(wichtigkeit.head(5).round(3))
 ```
 
-+ Misst, wie stark ein Merkmal über alle Bäume hinweg die Unreinheit der Knoten verringert
-+ Die Werte summieren sich zu 1 und fallen beim Training ohne Mehraufwand an
-+ Sie sagen nichts über die Richtung: ob ein hoher Wert die Klasse wahrscheinlicher oder unwahrscheinlicher macht, bleibt offen
++ Misst, wie stark ein Merkmal über alle Bäume hinweg die Unreinheit der Knoten verringert <!-- .element: class="fragment" data-fragment-index="1" -->
++ Die Werte summieren sich zu 1 und fallen beim Training ohne Mehraufwand an <!-- .element: class="fragment" data-fragment-index="2" -->
++ Sie sagen nichts über die Richtung: ob ein hoher Wert die Klasse wahrscheinlicher oder unwahrscheinlicher macht, bleibt offen <!-- .element: class="fragment" data-fragment-index="3" -->
 
 --
 
 ## Schwächen von `feature_importances_`
 
-+ Sie werden aus den Trainingsdaten berechnet: Ein Merkmal, mit dem der Wald nur auswendig lernt, erscheint trotzdem wichtig
-+ Merkmale mit vielen verschiedenen Werten (stetige Zahlen, Kennungen) werden bevorzugt, weil sie mehr Möglichkeiten zum Teilen bieten
-+ Bei stark zusammenhängenden Merkmalen kann jedes einzelne unbedeutend wirken, obwohl die gemeinsame Information wichtig ist
-+ One-Hot-Spalten einer Kategorie werden einzeln bewertet
++ Sie werden aus den Trainingsdaten berechnet: Ein Merkmal, mit dem der Wald nur auswendig lernt, erscheint trotzdem wichtig <!-- .element: class="fragment" data-fragment-index="1" -->
++ Merkmale mit vielen verschiedenen Werten (stetige Zahlen, Kennungen) werden bevorzugt, weil sie mehr Möglichkeiten zum Teilen bieten <!-- .element: class="fragment" data-fragment-index="2" -->
++ Bei stark zusammenhängenden Merkmalen kann jedes einzelne unbedeutend wirken, obwohl die gemeinsame Information wichtig ist <!-- .element: class="fragment" data-fragment-index="3" -->
++ One-Hot-Spalten einer Kategorie werden einzeln bewertet <!-- .element: class="fragment" data-fragment-index="4" -->
 
-<div class="fragment">
+<div class="fragment" data-fragment-index="5">
 
 > [!warning]
 > scikit-learn warnt in der eigenen Dokumentation: Wichtigkeiten aus der Unreinheit können bei Merkmalen mit vielen Ausprägungen irreführen.
@@ -6234,7 +6240,7 @@ print(wichtigkeit.head(5).round(3))
 from sklearn.inspection import permutation_importance
 
 result = permutation_importance(rf, X_test, y_test,
-                                n_repeats=20, random_state=42)
+                                n_repeats=20, random_state=1)
 
 perm = pd.DataFrame({
     "mittel": result.importances_mean,
@@ -6243,10 +6249,10 @@ perm = pd.DataFrame({
 print(perm.round(3))
 ```
 
-+ Idee: die Werte einer Spalte zufällig durchmischen und messen, wie stark die Kennzahl auf den Testdaten fällt
-+ Arbeitet mit der ganzen Pipeline und den Originalspalten: `Sex` ist ein Merkmal, nicht zwei
-+ Funktioniert für jedes Modell, nicht nur für Bäume
-+ `n_repeats=20` wiederholt das Mischen und liefert eine Streuung dazu
++ Idee: die Werte einer Spalte zufällig durchmischen und messen, wie stark die Kennzahl auf den Testdaten fällt <!-- .element: class="fragment" data-fragment-index="1" -->
++ Arbeitet mit der ganzen Pipeline und den Originalspalten: `Sex` ist ein Merkmal, nicht zwei <!-- .element: class="fragment" data-fragment-index="2" -->
++ Funktioniert für jedes Modell, nicht nur für Bäume <!-- .element: class="fragment" data-fragment-index="3" -->
++ `n_repeats=20` wiederholt das Mischen und liefert eine Streuung dazu <!-- .element: class="fragment" data-fragment-index="4" -->
 
 --
 
@@ -6272,12 +6278,12 @@ from sklearn.inspection import (
 wald = RandomForestRegressor(
     n_estimators=100,
     min_samples_leaf=5,
-    random_state=42, n_jobs=-1)
+    random_state=1, n_jobs=-1)
 wald.fit(X_train, y_train)
 
 PartialDependenceDisplay.from_estimator(
     wald, X_test.sample(1000,
-                        random_state=42),
+                        random_state=1),
     features=["MedInc", "HouseAge"])
 plt.show()
 ```
@@ -6287,8 +6293,8 @@ plt.show()
 
 ![](figs/t11_partial_dependence.png)
 
-+ Zeigt die mittlere Vorhersage, wenn ein Merkmal variiert und alle anderen bleiben, wie sie sind
-+ Beantwortet die Frage nach der Richtung, die Wichtigkeiten offenlassen
++ Zeigt die mittlere Vorhersage, wenn ein Merkmal variiert und alle anderen bleiben, wie sie sind <!-- .element: class="fragment" data-fragment-index="1" -->
++ Beantwortet die Frage nach der Richtung, die Wichtigkeiten offenlassen <!-- .element: class="fragment" data-fragment-index="2" -->
 
 </div>
 </div>
@@ -6298,12 +6304,12 @@ plt.show()
 <!-- .slide: class="smaller" -->
 ## Grenzen der Interpretation
 
-+ **Zusammenhang ist keine Ursache.** Das Modell nutzt, was mit der Zielgröße zusammen auftritt. Ob eine Änderung des Merkmals die Zielgröße ändert, beantwortet es nicht
-+ **Zusammenhängende Merkmale wirken einzeln unwichtig.** Zwei fast gleiche Spalten können beide unbedeutend erscheinen, obwohl die Information dahinter entscheidend ist
-+ **Die Interpretation gilt für das Modell, nicht für die Welt.** Ein anderes Modell mit gleicher Güte kann andere Merkmale bevorzugen
-+ **Ein schlechtes Modell hat nichts zu erklären.** Erst die Güte auf Testdaten prüfen, dann interpretieren
++ **Zusammenhang ist keine Ursache.** Das Modell nutzt, was mit der Zielgröße zusammen auftritt. Ob eine Änderung des Merkmals die Zielgröße ändert, beantwortet es nicht <!-- .element: class="fragment" data-fragment-index="1" -->
++ **Zusammenhängende Merkmale wirken einzeln unwichtig.** Zwei fast gleiche Spalten können beide unbedeutend erscheinen, obwohl die Information dahinter entscheidend ist <!-- .element: class="fragment" data-fragment-index="2" -->
++ **Die Interpretation gilt für das Modell, nicht für die Welt.** Ein anderes Modell mit gleicher Güte kann andere Merkmale bevorzugen <!-- .element: class="fragment" data-fragment-index="3" -->
++ **Ein schlechtes Modell hat nichts zu erklären.** Erst die Güte auf Testdaten prüfen, dann interpretieren <!-- .element: class="fragment" data-fragment-index="4" -->
 
-<div class="fragment">
+<div class="fragment" data-fragment-index="5">
 
 > [!important]
 > Formulieren Sie „das Modell stützt sich vor allem auf X", nicht „X verursacht Y".
@@ -6322,9 +6328,9 @@ plt.show()
 | **Ergebnis** | Beitrag je Merkmal und Zeile, über viele Zeilen auch eine globale Übersicht | Gewichte je Merkmal für eine einzelne Zeile |
 | **Aufwand** | eigenes Paket, bei großen Daten rechenintensiv | eigenes Paket, Ergebnis schwankt mit der Zufallsstichprobe |
 
-+ Beide erklären **einzelne** Vorhersagen, das können Permutation Importance und Partial Dependence nicht
-+ Beide Pakete gehören nicht zur Kursumgebung und werden hier nicht installiert
-+ Die Grenzen der vorigen Folie gelten unverändert
++ Beide erklären **einzelne** Vorhersagen, das können Permutation Importance und Partial Dependence nicht <!-- .element: class="fragment" data-fragment-index="1" -->
++ Beide Pakete gehören nicht zur Kursumgebung und werden hier nicht installiert <!-- .element: class="fragment" data-fragment-index="2" -->
++ Die Grenzen der vorigen Folie gelten unverändert <!-- .element: class="fragment" data-fragment-index="3" -->
 
 --
 
@@ -6343,22 +6349,22 @@ plt.show()
 | **Wiederholbarkeit** | Datenstand, Versionen, `random_state`, Ablageort der Pipeline |
 
 > [!tip]
-> Übersetzen Sie Kennzahlen in Fälle: „Von 68 Ausfällen findet das Modell 64 und meldet 169 Mal falschen Alarm" statt „Recall 0,94".
+> Übersetzen Sie Kennzahlen in Fälle: „Von 68 Ausfällen findet das Modell 65 und meldet 140 Mal falschen Alarm" statt „Recall 0,96".
 
 --
 
 ## Zusammenfassung
 
-+ Derselbe Ablauf aus Spaltenwahl, Split, Pipeline, Cross-Validation und einmaligem Testset trägt Klassifikation, Regression und Clustering
-+ Bei 3,4 % Ausfällen erreicht ein nutzloses Modell 97 % Accuracy: Recall, Precision, `class_weight="balanced"` und eine bewusst gewählte Schwelle sind die Werkzeuge
-+ Koeffizienten vergleichen Sie nur nach Skalierung, Lasso setzt entbehrliche auf null, ein Baum der Tiefe 3 lässt sich als Regeln vorlesen
-+ `feature_importances_` bevorzugt Spalten mit vielen Werten, `permutation_importance` auf Testdaten ist die robustere Wahl
-+ Jede Interpretation beschreibt das Modell, nicht die Ursachen in der Welt, und gehört mit Baseline und Grenzen in den Bericht
++ Derselbe Ablauf aus Spaltenwahl, Split, Pipeline, Cross-Validation und einmaligem Testset trägt Klassifikation, Regression und Clustering <!-- .element: class="fragment" data-fragment-index="1" -->
++ Bei 3,4 % Ausfällen erreicht ein nutzloses Modell 97 % Accuracy: Recall, Precision, `class_weight="balanced"` und eine bewusst gewählte Schwelle sind die Werkzeuge <!-- .element: class="fragment" data-fragment-index="2" -->
++ Koeffizienten vergleichen Sie nur nach Skalierung, Lasso setzt entbehrliche auf null, ein Baum der Tiefe 3 lässt sich als Regeln vorlesen <!-- .element: class="fragment" data-fragment-index="3" -->
++ `feature_importances_` bevorzugt Spalten mit vielen Werten, `permutation_importance` auf Testdaten ist die robustere Wahl <!-- .element: class="fragment" data-fragment-index="4" -->
++ Jede Interpretation beschreibt das Modell, nicht die Ursachen in der Welt, und gehört mit Baseline und Grenzen in den Bericht <!-- .element: class="fragment" data-fragment-index="5" -->
 
 ---
 
-<!-- .slide: data-background-color="#1f3b4d" -->
-# Teil 12: Transfer in die Praxis
+<!-- .slide: data-background-color="#183b66" -->
+# Teil 11: Transfer in die Praxis
 
 Vom Kursbeispiel zum ersten eigenen Modell mit eigenen Daten.
 
@@ -6366,11 +6372,11 @@ Vom Kursbeispiel zum ersten eigenen Modell mit eigenen Daten.
 
 ## Was Sie in diesem Teil lernen
 
-+ Sie ordnen die Themen des Kurses auf einer Landkarte ein.
-+ Sie prüfen mit einer Checkliste, ob ein Vorhaben reif für ein erstes Modell ist.
-+ Sie erkennen die typischen Fehler beim Einstieg und wissen, wie Sie sie vermeiden.
-+ Sie machen aus einem Notebook ein Skript, das morgen dasselbe Ergebnis liefert wie heute.
-+ Sie wissen, was nach dem Kurs auf Ihrem Gerät bleibt und womit Sie weiterlernen.
++ Sie ordnen die Themen des Kurses auf einer Landkarte ein. <!-- .element: class="fragment" data-fragment-index="1" -->
++ Sie prüfen mit einer Checkliste, ob ein Vorhaben reif für ein erstes Modell ist. <!-- .element: class="fragment" data-fragment-index="2" -->
++ Sie erkennen die typischen Fehler beim Einstieg und wissen, wie Sie sie vermeiden. <!-- .element: class="fragment" data-fragment-index="3" -->
++ Sie machen aus einem Notebook ein Skript, das morgen dasselbe Ergebnis liefert wie heute. <!-- .element: class="fragment" data-fragment-index="4" -->
++ Sie wissen, was nach dem Kurs auf Ihrem Gerät bleibt und womit Sie weiterlernen. <!-- .element: class="fragment" data-fragment-index="5" -->
 
 --
 
@@ -6379,9 +6385,9 @@ Vom Kursbeispiel zum ersten eigenen Modell mit eigenen Daten.
 
 ![](figs/d_t12_landkarte.png)
 
-+ Jeder Kasten baut auf dem vorigen auf: ohne saubere Tabelle kein brauchbares Modell.
-+ Die meiste Arbeitszeit steckt in der linken Hälfte (Daten lesen, prüfen, aufbereiten).
-+ Deep Learning folgt demselben Ablauf, nur mit einem anderen Modelltyp im Kasten „Modelle“.
++ Jeder Kasten baut auf dem vorigen auf: ohne saubere Tabelle kein brauchbares Modell. <!-- .element: class="fragment" data-fragment-index="1" -->
++ Die meiste Arbeitszeit steckt in der linken Hälfte (Daten lesen, prüfen, aufbereiten). <!-- .element: class="fragment" data-fragment-index="2" -->
++ Deep Learning folgt demselben Ablauf, nur mit einem anderen Modelltyp im Kasten „Modelle“. <!-- .element: class="fragment" data-fragment-index="3" -->
 
 --
 
@@ -6410,24 +6416,24 @@ Vom Kursbeispiel zum ersten eigenen Modell mit eigenen Daten.
 
 **ML lohnt sich, wenn**
 
-+ ausreichend historische Daten vorliegen,
-+ eine wiederkehrende Vorhersage oder Einordnung einen messbaren Nutzen hat,
-+ sich die Zusammenhänge nicht mehr mit einfachen Regeln beschreiben lassen,
-+ Sie Fehlentscheidungen bewerten können (was kostet ein Fehlalarm, was ein übersehener Fall?).
++ ausreichend historische Daten vorliegen, <!-- .element: class="fragment" data-fragment-index="1" -->
++ eine wiederkehrende Vorhersage oder Einordnung einen messbaren Nutzen hat, <!-- .element: class="fragment" data-fragment-index="2" -->
++ sich die Zusammenhänge nicht mehr mit einfachen Regeln beschreiben lassen, <!-- .element: class="fragment" data-fragment-index="3" -->
++ Sie Fehlentscheidungen bewerten können (was kostet ein Fehlalarm, was ein übersehener Fall?). <!-- .element: class="fragment" data-fragment-index="4" -->
 
 </div>
 <div style="flex: 50">
 
-<div class="fragment">
+<div class="fragment" data-fragment-index="5">
 
 **ML lohnt sich eher nicht, wenn**
 
 </div>
 
-+ es kaum Daten, aber viele Ausnahmen und Sonderfälle gibt,
-+ die eigentliche Entscheidung fachlich noch nicht klar formuliert ist,
-+ eine bekannte Regel das Problem schon zuverlässig löst,
-+ sich weder Nutzen noch Fehlerkosten bewerten lassen.
++ es kaum Daten, aber viele Ausnahmen und Sonderfälle gibt, <!-- .element: class="fragment" data-fragment-index="6" -->
++ die eigentliche Entscheidung fachlich noch nicht klar formuliert ist, <!-- .element: class="fragment" data-fragment-index="7" -->
++ eine bekannte Regel das Problem schon zuverlässig löst, <!-- .element: class="fragment" data-fragment-index="8" -->
++ sich weder Nutzen noch Fehlerkosten bewerten lassen. <!-- .element: class="fragment" data-fragment-index="9" -->
 
 </div>
 </div>
@@ -6436,12 +6442,12 @@ Vom Kursbeispiel zum ersten eigenen Modell mit eigenen Daten.
 
 ## Voraussetzungen für ein brauchbares Modell
 
-+ Ein gutes Modell ist Teil eines größeren Ablaufs: Daten beschaffen, prüfen, aufbereiten, bewerten, betreiben.
-+ Datenzugang, Datenqualität und eine saubere Zielgröße sind genauso wichtig wie der Algorithmus.
-+ Viele Vorhaben scheitern nicht am Modell, sondern an unreifen Daten oder einer unklaren Fragestellung.
-+ Ein Modell wird höchstens so gut wie seine Zielgröße: uneinheitlich oder verspätet erfasste Werte begrenzen jedes Ergebnis.
++ Ein gutes Modell ist Teil eines größeren Ablaufs: Daten beschaffen, prüfen, aufbereiten, bewerten, betreiben. <!-- .element: class="fragment" data-fragment-index="1" -->
++ Datenzugang, Datenqualität und eine saubere Zielgröße sind genauso wichtig wie der Algorithmus. <!-- .element: class="fragment" data-fragment-index="2" -->
++ Viele Vorhaben scheitern nicht am Modell, sondern an unreifen Daten oder einer unklaren Fragestellung. <!-- .element: class="fragment" data-fragment-index="3" -->
++ Ein Modell wird höchstens so gut wie seine Zielgröße: uneinheitlich oder verspätet erfasste Werte begrenzen jedes Ergebnis. <!-- .element: class="fragment" data-fragment-index="4" -->
 
-<div class="fragment">
+<div class="fragment" data-fragment-index="5">
 
 > [!important]
 > Bevor Sie das Modell wechseln, prüfen Sie die Daten: `df.info()`, `df.describe()`, `df.isna().sum()`, `df.duplicated().sum()`.
@@ -6459,7 +6465,7 @@ Vom Kursbeispiel zum ersten eigenen Modell mit eigenen Daten.
 | **Nur Accuracy** | 95 % Accuracy, aber die seltene Klasse wird nie erkannt | Konfusionsmatrix, Precision, Recall, F1 |
 | **Kein Baseline-Vergleich** | Niemand weiß, ob 0,80 gut ist | `DummyClassifier` oder `DummyRegressor` zuerst |
 | **Zellen in falscher Reihenfolge** | Notebook läuft nach Neustart nicht mehr durch | „Restart Kernel and Run All“ vor dem Weitergeben |
-| **Keine festen Zufallswerte** | Jeder Lauf liefert andere Zahlen | `random_state=42` bei Split, Modell und CV |
+| **Keine festen Zufallswerte** | Jeder Lauf liefert andere Zahlen | `random_state=1` bei Split, Modell und CV |
 | **Datentypen ungeprüft** | Datum oder Zahl steht als Text (`object` oder `str`) in `df.dtypes` | `pd.to_datetime`, `pd.to_numeric`, `astype` |
 | **Zufälliger Split bei Zeitbezug** | Modell lernt aus der Zukunft | Nach Datum trennen: ältere Daten trainieren, neuere testen |
 
@@ -6468,18 +6474,11 @@ Vom Kursbeispiel zum ersten eigenen Modell mit eigenen Daten.
 <!-- .slide: class="smaller" -->
 ## Personenbezogene und besonders schützenswerte Daten
 
-+ Sobald sich Daten auf eine identifizierbare Person beziehen, gilt die **DSGVO**, auch für Auswertungen und Modelle im Notebook.
-+ **Gesundheitsdaten** sind besondere Kategorien personenbezogener Daten nach **Art. 9 DSGVO**: Die Verarbeitung ist grundsätzlich untersagt, Ausnahmen regelt Art. 9 Abs. 2.
-+ Arbeiten Sie nur mit den Spalten, die Sie für die Frage brauchen (Datenminimierung), und nur für den festgelegten Zweck (Zweckbindung).
-+ **Ohne Namen ist nicht anonym:** Geschlecht, Geburtsdatum und Postleitzahl können einen Datensatz eindeutig machen. Auch pseudonymisierte Daten bleiben personenbezogen (Art. 4 Nr. 5 DSGVO).
-+ Zum Lernen und Ausprobieren: **synthetische oder anonymisierte Daten**, so wie die Versichertentabelle in diesem Kurs. Synthetische Daten sind aber nicht automatisch anonym.
-
-<div class="fragment">
-
-> [!warning]
-> Das ist ein Merkpunkt, keine Rechtsberatung. Bevor Sie echte Daten in ein Notebook laden, klären Sie das mit Ihrer oder Ihrem Datenschutzbeauftragten.
-
-</div>
++ Sobald sich Daten auf eine identifizierbare Person beziehen, gilt die **DSGVO**, auch für Auswertungen und Modelle im Notebook. <!-- .element: class="fragment" data-fragment-index="1" -->
++ **Gesundheitsdaten** sind besondere Kategorien personenbezogener Daten nach **Art. 9 DSGVO**: Die Verarbeitung ist grundsätzlich untersagt, Ausnahmen regelt Art. 9 Abs. 2. <!-- .element: class="fragment" data-fragment-index="2" -->
++ Arbeiten Sie nur mit den Spalten, die Sie für die Frage brauchen (Datenminimierung), und nur für den festgelegten Zweck (Zweckbindung). <!-- .element: class="fragment" data-fragment-index="3" -->
++ **Ohne Namen ist nicht anonym:** Geschlecht, Geburtsdatum und Postleitzahl können einen Datensatz eindeutig machen. Auch pseudonymisierte Daten bleiben personenbezogen (Art. 4 Nr. 5 DSGVO). <!-- .element: class="fragment" data-fragment-index="4" -->
++ Zum Lernen und Ausprobieren: **synthetische oder anonymisierte Daten**, so wie die Versichertentabelle in diesem Kurs. Synthetische Daten sind aber nicht automatisch anonym. <!-- .element: class="fragment" data-fragment-index="5" -->
 
 --
 
@@ -6499,17 +6498,17 @@ def lade_daten(pfad):
 
 def trainiere(X, y):
     X_tr, X_te, y_tr, y_te = train_test_split(
-        X, y, test_size=0.2, random_state=42, stratify=y)
-    modell = RandomForestClassifier(random_state=42).fit(X_tr, y_tr)
+        X, y, test_size=0.2, random_state=1, stratify=y)
+    modell = RandomForestClassifier(random_state=1).fit(X_tr, y_tr)
     return modell, modell.score(X_te, y_te)
 
 if __name__ == "__main__":
     modell, acc = trainiere(*lade_daten("data/titanic.csv"))
-    print(f"Accuracy Test: {acc:.3f}")   # -> Accuracy Test: 0.749
+    print(f"Accuracy Test: {acc:.3f}")   # -> Accuracy Test: 0.810
 ```
 
-+ Jeder Schritt ist eine **Funktion** mit Eingabe und Rückgabe, nichts hängt von der Reihenfolge einzelner Zellen ab.
-+ Start aus dem Terminal ab Repo-Wurzel: `python train.py`
++ Jeder Schritt ist eine **Funktion** mit Eingabe und Rückgabe, nichts hängt von der Reihenfolge einzelner Zellen ab. <!-- .element: class="fragment" data-fragment-index="1" -->
++ Start aus dem Terminal ab Repo-Wurzel: `python train.py` <!-- .element: class="fragment" data-fragment-index="2" -->
 
 --
 
@@ -6554,13 +6553,13 @@ git commit -m "Erstes Modell: Baseline + Random Forest"
 <!-- .slide: class="smaller" -->
 ## Ein erstes eigenes Projekt zuschneiden
 
-+ **Klein anfangen:** eine Tabelle, eine Frage, ein Notebook. Kein Datenbankanschluss, kein Dashboard.
-+ **Vorhandene Tabelle nehmen:** eine Auswertung, die Sie heute schon in Excel pflegen und deren Spalten Sie fachlich kennen.
-+ **Eine Frage formulieren:** „Welche Merkmale hängen mit X zusammen?“ oder „Lässt sich Y aus den übrigen Spalten vorhersagen?“
-+ **Erst beschreiben, dann modellieren:** `describe`, `groupby`, zwei bis drei Diagramme. Oft ist die Frage damit schon beantwortet.
-+ **Dann der Kursablauf:** Baseline, einfaches Modell, Kennzahl auf zurückgehaltenen Testdaten, Interpretation.
++ **Klein anfangen:** eine Tabelle, eine Frage, ein Notebook. Kein Datenbankanschluss, kein Dashboard. <!-- .element: class="fragment" data-fragment-index="1" -->
++ **Vorhandene Tabelle nehmen:** eine Auswertung, die Sie heute schon in Excel pflegen und deren Spalten Sie fachlich kennen. <!-- .element: class="fragment" data-fragment-index="2" -->
++ **Eine Frage formulieren:** „Welche Merkmale hängen mit X zusammen?“ oder „Lässt sich Y aus den übrigen Spalten vorhersagen?“ <!-- .element: class="fragment" data-fragment-index="3" -->
++ **Erst beschreiben, dann modellieren:** `describe`, `groupby`, zwei bis drei Diagramme. Oft ist die Frage damit schon beantwortet. <!-- .element: class="fragment" data-fragment-index="4" -->
++ **Dann der Kursablauf:** Baseline, einfaches Modell, Kennzahl auf zurückgehaltenen Testdaten, Interpretation. <!-- .element: class="fragment" data-fragment-index="5" -->
 
-<div class="fragment">
+<div class="fragment" data-fragment-index="6">
 
 > [!tip]
 > Legen Sie das erste eigene Notebook in den nächsten Tagen an. Training wirkt vor allem dann, wenn Anwendung und Follow-up folgen (Salas et al. 2012).
@@ -6579,10 +6578,10 @@ git commit -m "Erstes Modell: Baseline + Random Forest"
 | Kursrepo mit Folien, Notebooks, Lösungen und Daten | ja | Liegt lokal vollständig vor, läuft ohne Netz |
 | Netzfreigaben für Paketquellen (Anaconda, PyPI, PyTorch, Hugging Face) | **nein** | Werden nach der Schulung zurückgesetzt |
 
-+ Die Notebooks des Kurses laufen weiter, weil Pakete und Datensätze bereits lokal liegen.
-+ `conda install` und `pip install` erreichen ihre Quellen danach nicht mehr.
++ Die Notebooks des Kurses laufen weiter, weil Pakete und Datensätze bereits lokal liegen. <!-- .element: class="fragment" data-fragment-index="1" -->
++ `conda install` und `pip install` erreichen ihre Quellen danach nicht mehr. <!-- .element: class="fragment" data-fragment-index="2" -->
 
-<div class="fragment">
+<div class="fragment" data-fragment-index="3">
 
 > [!important]
 > Neue Pakete oder Updates fordern Sie über Ihre eigene IT an. Nennen Sie dabei Paketname, Version und Quelle (conda-Kanal oder PyPI).
@@ -6610,24 +6609,24 @@ git commit -m "Erstes Modell: Baseline + Random Forest"
 
 ## Fragen für Ihren Arbeitsalltag
 
-+ Welche Tabelle aus Ihrem Alltag eignet sich für ein erstes kleines Projekt, und welche eine Frage stellen Sie an sie?
-+ Wo reicht eine saubere Auswertung mit pandas aus, und wo würde ein Modell wirklich etwas hinzufügen?
-+ Welcher Fehler wäre in Ihrem Anwendungsfall teurer: ein falscher Alarm oder ein übersehener Fall?
-+ Was müssen Sie intern klären, bevor Sie mit echten Daten arbeiten (Datenschutz, Zugriff, Pakete)?
++ Welche Tabelle aus Ihrem Alltag eignet sich für ein erstes kleines Projekt, und welche eine Frage stellen Sie an sie? <!-- .element: class="fragment" data-fragment-index="1" -->
++ Wo reicht eine saubere Auswertung mit pandas aus, und wo würde ein Modell wirklich etwas hinzufügen? <!-- .element: class="fragment" data-fragment-index="2" -->
++ Welcher Fehler wäre in Ihrem Anwendungsfall teurer: ein falscher Alarm oder ein übersehener Fall? <!-- .element: class="fragment" data-fragment-index="3" -->
++ Was müssen Sie intern klären, bevor Sie mit echten Daten arbeiten (Datenschutz, Zugriff, Pakete)? <!-- .element: class="fragment" data-fragment-index="4" -->
 
 --
 
 ## Zusammenfassung
 
-+ Der Ablauf bleibt gleich: Daten prüfen, Baseline, einfaches Modell, passende Kennzahl, zurückgehaltene Testdaten, Interpretation.
-+ Datenqualität und eine klare Fragestellung entscheiden mehr als die Wahl des Algorithmus.
-+ Fünf Gewohnheiten schützen vor den häufigsten Fehlern: zuerst trennen, `Pipeline` nutzen, mehr als Accuracy ansehen, `random_state=42` setzen, Notebook komplett neu durchlaufen lassen.
-+ Gesundheitsdaten sind besondere Kategorien nach Art. 9 DSGVO: üben Sie mit synthetischen oder anonymisierten Daten und klären Sie echte Daten vorab.
-+ Umgebung und Kursrepo bleiben auf Ihrem Gerät, neue Pakete kommen über Ihre IT.
++ Der Ablauf bleibt gleich: Daten prüfen, Baseline, einfaches Modell, passende Kennzahl, zurückgehaltene Testdaten, Interpretation. <!-- .element: class="fragment" data-fragment-index="1" -->
++ Datenqualität und eine klare Fragestellung entscheiden mehr als die Wahl des Algorithmus. <!-- .element: class="fragment" data-fragment-index="2" -->
++ Fünf Gewohnheiten schützen vor den häufigsten Fehlern: zuerst trennen, `Pipeline` nutzen, mehr als Accuracy ansehen, `random_state=1` setzen, Notebook komplett neu durchlaufen lassen. <!-- .element: class="fragment" data-fragment-index="3" -->
++ Gesundheitsdaten sind besondere Kategorien nach Art. 9 DSGVO: üben Sie mit synthetischen oder anonymisierten Daten und klären Sie echte Daten vorab. <!-- .element: class="fragment" data-fragment-index="4" -->
++ Umgebung und Kursrepo bleiben auf Ihrem Gerät, neue Pakete kommen über Ihre IT. <!-- .element: class="fragment" data-fragment-index="5" -->
 
 --
 
-<!-- .slide: data-background-color="#1f3b4d" -->
+<!-- .slide: data-background-color="#183b66" -->
 ## Vielen Dank
 
 Dr.-Ing. Grigory Devadze
