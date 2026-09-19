@@ -49,9 +49,9 @@ Dr.-Ing. Grigory Devadze
 
 ## Kursmaterial
 
-+ Alles liegt in einem öffentlichen Repository: Folien, Daten, Umgebungsdateien
++ Ein öffentliches Repository enthält Folien, Notebooks, Daten und Umgebungsdateien
 + `https://github.com/grigory-consulting/python-ml-grundlagen`
-+ Die Daten im Ordner `data/` reichen für alle Beispiele, es wird nichts nachgeladen
++ Die Daten im Ordner `data/` reichen für fast alle Beispiele, ohne Download
 + Das Repository bleibt nach dem Kurs erreichbar
 
 ---
@@ -101,7 +101,7 @@ Startmenü → **Anaconda Prompt**. Vor dem Pfad steht die aktive Umgebung: `(ba
 ```
 
 + Jeder der drei Befehle antwortet mit einer Versionsnummer
-+ Meldet ein Befehl „nicht gefunden", fehlt das Werkzeug im Suchpfad: bitte jetzt melden
++ Heißt es „nicht gefunden", fehlt das Werkzeug im Suchpfad: bitte jetzt melden
 + `(base)` ist die Grundumgebung von Anaconda. Dort installieren wir nichts.
 
 --
@@ -190,7 +190,7 @@ cd python-ml-grundlagen
 git status
 ```
 
-+ Danach liegt der Ordner `python-ml-grundlagen` mit Notebooks, Daten und Installationsdateien auf Ihrem Gerät
++ Danach liegt der Ordner `python-ml-grundlagen` mit Notebooks, Daten und Umgebungsdateien auf Ihrem Gerät
 + Mehr Git brauchen Sie in diesem Kurs nicht
 
 --
@@ -198,7 +198,7 @@ git status
 <!-- .slide: class="smaller" -->
 ## Pakete aus einer Datei installieren
 
-Das Kursrepo enthält die Paketliste als Datei. Zwei gleichwertige Wege zum selben Ergebnis:
+Das Kursrepo enthält die Paketliste als Datei. Zwei Wege zum selben Ergebnis:
 
 <div class="two-col">
 <div style="flex: 50">
@@ -247,7 +247,7 @@ conda activate pyml
 <div class="fragment">
 
 > [!tip]
-> Öffnen Sie immer den ganzen Repo-Ordner, nicht einzelne Dateien. Nur dann stimmen relative Pfade wie `data/titanic.csv`.
+> Öffnen Sie den Repo-Ordner, nicht einzelne Dateien. Ein Pfad wie `data/titanic.csv` gilt ab dem Ordner des Notebooks.
 
 </div>
 
@@ -295,7 +295,7 @@ Ein Notebook besteht aus Zellen. **Code-Zellen** enthalten Python und zeigen ihr
 <!-- .slide: class="smaller" -->
 ## Stolperfalle: Reihenfolge der Ausführung
 
-Der Kernel merkt sich alle Variablen, und zwar in der Reihenfolge, in der Sie Zellen **ausgeführt** haben, nicht in der Reihenfolge auf dem Bildschirm.
+Der Kernel merkt sich alle Variablen. Ihren Wert bestimmt die Reihenfolge, in der Sie Zellen **ausgeführt** haben, nicht die auf dem Bildschirm.
 
 ```python
 # Zelle 1
@@ -333,7 +333,7 @@ print(print.__doc__)   # der Docstring als Text
 
 + `help()` funktioniert für jedes Python-Objekt: Module, Funktionen, Klassen
 + `name?` ist die Kurzform in Jupyter
-+ In VS Code zeigt die Maus über einem Namen dieselbe Beschreibung an
++ VS Code blendet die Beschreibung ein, wenn die Maus auf einem Namen steht
 + `Tab` nach einem Punkt listet die verfügbaren Methoden auf, zum Beispiel nach `math.`
 
 --
@@ -557,7 +557,7 @@ print("Erika" + " " + "Muster")     # -> Erika Muster
 
 + Strings stehen in einfachen oder doppelten Anführungszeichen
 + Methoden lassen sich verketten: `stadt.strip().lower().startswith("dr")`
-+ Strings sind unveränderlich: jede Methode liefert einen **neuen** String zurück
++ Strings sind unveränderlich: `upper` und `strip` liefern einen **neuen** String
 
 --
 
@@ -840,7 +840,7 @@ print(matrix[1][2])        # -> 6
 
 + Eine Liste ist eine geordnete, veränderbare Sammlung in eckigen Klammern
 + Die Reihenfolge bleibt erhalten, Duplikate sind erlaubt
-+ Listen sind die am häufigsten verwendete Datenstruktur in Python
++ Listen gehören zu den meistverwendeten Datenstrukturen in Python
 + Eine Spalte einer Tabelle können Sie sich vorerst als Liste vorstellen
 
 --
@@ -968,7 +968,7 @@ versicherter[1] = 46
 + Ein Tupel ist eine unveränderliche Liste: runde Klammern, Elemente durch Kommas getrennt
 + Indexing und Slicing funktionieren wie bei Listen
 + Ändern, Anfügen und Entfernen sind nicht möglich
-+ Einsatz: feste Wertegruppen wie Koordinaten, ein Datensatz, mehrere Rückgabewerte einer Funktion
++ Einsatz: feste Wertegruppen wie Koordinaten, eine Tabellenzeile, mehrere Rückgabewerte
 
 --
 
@@ -1066,7 +1066,7 @@ print(versicherter)
 
 + Ein Dictionary (Dict) speichert Schlüssel-Wert-Paare: Zugriff über den Schlüssel, nicht über eine Position
 + Schlüssel sind eindeutig und unveränderlich (meist Strings), Werte dürfen alles sein
-+ Einsatz: schnelles Nachschlagen, Konfigurationen, Zählungen, ein Datensatz mit benannten Feldern
++ Einsatz: Nachschlagen, Konfigurationen, Zählungen, eine Tabellenzeile mit benannten Feldern
 
 --
 
@@ -1190,6 +1190,7 @@ print(summe)                       # -> 9726.0
 
 --
 
+<!-- .slide: class="smaller" -->
 ## Defaultwerte und Keyword-Argumente
 
 ```python
@@ -1203,7 +1204,7 @@ print(beitrag(zuschlag=25.0, einkommen=3000, satz=0.16))   # -> 505.0
 ```
 
 + Ein Parameter mit Defaultwert darf beim Aufruf fehlen
-+ Parameter ohne Default stehen in der Definition immer vor denen mit Default
++ Parameter ohne Default stehen in der Definition vor denen mit Default
 + Keyword-Argumente (`name=wert`) sind unabhängig von der Reihenfolge und machen Aufrufe lesbar
 
 <div class="fragment">
@@ -1287,7 +1288,7 @@ TypeError: unsupported operand type(s) for +: 'float' and 'str'
 ```
 
 + Von **unten nach oben** lesen: Die letzte Zeile nennt Fehlertyp und Ursache
-+ Darüber steht die Zeile, in der es geknallt hat: Zeile 4, in `jahresbeitrag`
++ Darüber steht die Zeile mit dem Fehler: Zeile 4, in `jahresbeitrag`
 + Weiter oben folgt die Aufrufkette bis zu Ihrer eigenen Zelle
 
 --
@@ -1407,7 +1408,7 @@ df.shape                       # Attribut ohne Klammern: (Zeilen, Spalten)
 <!-- .slide: data-background-color="#1f3b4d" -->
 # Teil 3: NumPy und pandas
 
-Mit Arrays rechnen und Tabellen auswerten: die beiden Bibliotheken, auf denen jede Datenanalyse in Python aufbaut.
+Mit Arrays rechnen und Tabellen auswerten: die beiden Bibliotheken, auf denen Datenanalyse in Python meist aufbaut.
 
 --
 
@@ -1434,7 +1435,7 @@ import numpy as np
 import pandas as pd
 ```
 
-Die Kürzel `np` und `pd` sind Konvention. Sie finden sie in jeder Dokumentation und in jedem Beispiel.
+Die Kürzel `np` und `pd` sind Konvention: Die Dokumentation und fast alle Beispiele verwenden sie.
 
 --
 
@@ -1559,7 +1560,7 @@ data[1:3, :2]    # -> [[4 5]
                  #     [7 8]]     Zeilen 1 bis 2, Spalten 0 bis 1
 ```
 
-+ Schreibweise immer `[Zeile, Spalte]`, Zählung ab 0
++ Schreibweise bei zwei Dimensionen: `[Zeile, Spalte]`, Zählung ab 0
 + `:` allein heißt „alles in dieser Richtung"
 + Wie bei Listen: Der Endindex eines Slice gehört nicht mehr dazu
 
@@ -1582,7 +1583,7 @@ alter[(alter >= 18) & (alter < 65)]    # -> [34 19 45]
 ```
 
 > [!warning]
-> Bedingungen verknüpfen Sie mit `&` (und), `|` (oder), `~` (nicht) und jede Bedingung steht in Klammern. `and` und `or` funktionieren mit Arrays nicht.
+> Bedingungen verknüpfen Sie mit `&` (und), `|` (oder), `~` (nicht). Jede Bedingung steht in Klammern. `and` und `or` funktionieren mit Arrays nicht.
 
 --
 
@@ -1689,7 +1690,7 @@ df = pd.DataFrame({
 + Links steht der **Index** (Zeilenbeschriftung)
 + Jede Spalte hat **einen** Datentyp
 + `df["alter"]` ist eine Series, `df["alter"].to_numpy()` ein NumPy-Array
-+ Alles von den NumPy-Folien gilt weiter: Rechnen, Masken, `mean`, `sum`
++ Von den NumPy-Folien gilt weiter: Rechnen, Masken, `mean`, `sum`
 
 </div>
 </div>
@@ -1703,7 +1704,7 @@ import pandas as pd
 
 df = pd.read_csv("data/versicherte.csv")
 
-df.shape        # -> (5000, 18)
+df.shape        # -> (5025, 18)
 df.head()       # die ersten 5 Zeilen
 df.tail(10)     # die letzten 10 Zeilen
 df.sample(5, random_state=42)   # 5 zufällige Zeilen
@@ -1711,7 +1712,7 @@ df.sample(5, random_state=42)   # 5 zufällige Zeilen
 
 + Der Pfad ist relativ zum aktuellen Arbeitsverzeichnis
 + `head()` und `tail()` nach jedem Einlesen: Stimmen Spaltennamen und Werte?
-+ Der Datensatz ist **synthetisch**: 5000 erfundene Versicherte, keine echten Personen
++ Der Datensatz ist **synthetisch**: rund 5000 erfundene Versicherte, keine echten Personen
 
 --
 
@@ -1723,11 +1724,11 @@ df.info()
 ```
 
 ```text
-RangeIndex: 5000 entries, 0 to 4999
+RangeIndex: 5025 entries, 0 to 5024
 Data columns (total 18 columns):
  #   Column                 Non-Null Count  Dtype
- 0   versicherten_nr        5000 non-null   ...
- 4   alter                  5000 non-null   int64
+ 0   versicherten_nr        5025 non-null   ...
+ 4   alter                  5025 non-null   int64
  ...
 ```
 
@@ -1754,8 +1755,8 @@ df["bmi"].max()
 klein = df[ ["vorname", "nachname", "geburtsdatum"] ].copy()
 ```
 
-+ Einfache Klammer mit Name: **Series**. Doppelte Klammer mit Liste: **DataFrame**
-+ `df.bmi` funktioniert auch, aber nicht bei Leerzeichen im Namen und nicht beim Anlegen neuer Spalten. Bleiben Sie bei `df["bmi"]`
++ Einfache Klammer mit Name: **Series**. Doppelte Klammer mit Liste: **DataFrame**.
++ `df.bmi` funktioniert auch, aber nicht bei Leerzeichen im Namen und nicht beim Anlegen neuer Spalten. Bleiben Sie bei `df["bmi"]`.
 + `.copy()` erzeugt eine unabhängige Kopie, die Sie gefahrlos verändern können
 
 --
@@ -1873,7 +1874,7 @@ df["ausgaben_je_besuch"] = (
 df["senior"] = df["alter"] >= 65
 ```
 
-+ Die Rechnung läuft vektorisiert über alle 5000 Zeilen, ohne Schleife
++ Die Rechnung läuft vektorisiert über alle 5025 Zeilen, ohne Schleife
 + Zuweisung an einen neuen Spaltennamen legt die Spalte an, an einen vorhandenen überschreibt sie
 
 --
@@ -1892,7 +1893,7 @@ df["altersgruppe"].value_counts()
 ```
 
 + `bins` sind die Grenzen, `labels` die Namen der Klassen dazwischen (eine weniger als Grenzen)
-+ `right=False`: Die linke Grenze gehört dazu, die rechte nicht. Ein Alter von 18 fällt in „Erwachsen", 65 in „Senior"
++ `right=False`: Die linke Grenze gehört dazu, die rechte nicht. Ein Alter von 18 fällt in „Erwachsen", 65 in „Senior".
 + Das Ergebnis hat den Typ `category` mit fester Reihenfolge
 
 --
@@ -1902,6 +1903,8 @@ df["altersgruppe"].value_counts()
 
 ```python
 def bmi_klasse(bmi):
+    if pd.isna(bmi):            # fehlender Wert bleibt fehlend
+        return None
     if bmi < 18.5:
         return "Untergewicht"
     elif bmi < 25:
@@ -1944,7 +1947,7 @@ df["blutgruppe"].value_counts(normalize=True).round(3)   # Anteile
 df["beruf"].nunique()                       # Anzahl verschiedener Werte
 ```
 
-+ `sort_values` gibt eine **neue**, sortierte Tabelle zurück. `df` selbst bleibt unverändert
++ `sort_values` gibt eine **neue**, sortierte Tabelle zurück. `df` selbst bleibt unverändert.
 + `value_counts` ist die schnellste Antwort auf „Welche Werte kommen wie oft vor?"
 
 --
@@ -1969,7 +1972,7 @@ df.groupby(["geschlecht", "raucher"]).agg({
 })
 ```
 
-Das Muster ist immer dasselbe: **aufteilen** (`groupby`), **Spalte wählen**, **zusammenfassen** (`mean`, `sum`, `agg`).
+Das Muster hat drei Schritte: **aufteilen** (`groupby`), **Spalte wählen**, **zusammenfassen** (`mean`, `sum`, `agg`).
 
 --
 
@@ -2003,13 +2006,13 @@ je_land[je_land > 3000]
 ```python
 # zweite Tabelle: 20 % der Versicherten nehmen an einem Programm teil
 teilnahme = (
-    df[ ["versicherten_nr"] ]
+    df[ ["versicherten_nr"] ].drop_duplicates()
     .sample(frac=0.2, random_state=42)
     .assign(programm=True)
 )
 
 gesamt = pd.merge(df, teilnahme, on="versicherten_nr", how="left")
-gesamt["programm"].isna().sum()      # -> 4000 ohne Teilnahme
+gesamt["programm"].isna().sum()      # -> 4020 ohne Teilnahme
 ```
 
 | `how=` | Ergebnis |
@@ -2041,7 +2044,7 @@ df["alter_neu"] = heute.year - df["geburtsjahr"]
 (heute - df["geburtsdatum"]).dt.days
 ```
 
-+ Nach `read_csv` ist ein Datum zunächst Text. Erst `pd.to_datetime` macht daraus ein Datum
++ Nach `read_csv` ist ein Datum zunächst Text. Erst `pd.to_datetime` macht daraus ein Datum.
 + Über `.dt` erreichen Sie Jahr, Monat, Tag, Wochentag
 
 --
@@ -2073,7 +2076,7 @@ auswertung.to_csv("auswertung_excel.csv", index=False,
 <!-- .slide: class="smaller" -->
 ## Zusammenfassung
 
-- NumPy rechnet elementweise mit ganzen Arrays. Schleifen über Daten brauchen Sie fast nie
+- NumPy rechnet elementweise mit ganzen Arrays. Schleifen über Daten brauchen Sie fast nie.
 - Boolean-Masken mit `&`, `|`, `~` filtern Arrays und DataFrames auf dieselbe Weise
 - `axis=0` fasst je Spalte zusammen, `axis=1` je Zeile
 - pandas-Grundrezept: `read_csv`, `head`/`info`/`describe`, filtern, Spalten ableiten, `groupby` + `agg`
@@ -2183,8 +2186,8 @@ versicherte = pd.read_csv(
 
 ```python
 wein_falsch = pd.read_csv("data/winequality-red.csv")
-wein_falsch.shape     # -> (1454, 1)    alles in einer Spalte
-wein.shape            # -> (1454, 12)   mit sep=";"
+wein_falsch.shape     # -> (1599, 1)    alles in einer Spalte
+wein.shape            # -> (1599, 12)   mit sep=";"
 ```
 
 --
@@ -2339,7 +2342,7 @@ feat_df.isna().sum().sum()               # -> 0
 ```
 
 > [!tip]
-> Ergebnis immer wieder **zuweisen** (`feat_df = feat_df.dropna(...)`). pandas-Methoden geben eine neue Tabelle zurück und lassen das Original unverändert.
+> Ergebnis immer wieder **zuweisen** (`feat_df = feat_df.dropna(...)`). `dropna` und `fillna` geben eine neue Tabelle zurück, das Original bleibt unverändert.
 
 --
 
@@ -2364,7 +2367,7 @@ df["PassengerId"].is_unique                  # -> True
 ```
 
 + Exakte Duplikate können Sie entfernen. Bei `subset` entscheiden **Sie**, welche Spalten eine Zeile eindeutig machen
-+ Dubletten schönen Kennzahlen und verzerren Modelle
++ Duplikate verzerren Kennzahlen und Modelle
 
 --
 
@@ -2421,7 +2424,7 @@ df.groupby("Pclass")["Survived"].mean().round(2)
 
 + **Box:** vom 25-%-Quantil (Q1) bis zum 75-%-Quantil (Q3), darin liegt die mittlere Hälfte der Werte
 + **Strich in der Box:** Median
-+ **Whisker:** reichen bis zum letzten Wert innerhalb von 1,5 Interquartilsabständen
++ **Whisker:** bis zum letzten Wert innerhalb von 1,5 Interquartilsabständen ab der Box
 + **Einzelne Punkte:** Werte jenseits der Whisker, Kandidaten für Ausreißer
 
 ```python
@@ -2456,7 +2459,7 @@ df[maske].sort_values("Fare", ascending=False).head()
 ```
 
 + Die Regel markiert 116 von 891 Tickets, also 13 %
-+ Das sind keine Messfehler, sondern teure Tickets der ersten Klasse
++ 104 davon sind teure Tickets der ersten Klasse, keine Messfehler
 
 <div class="fragment">
 
@@ -2520,7 +2523,7 @@ Fare           0.26
 + Korrelation misst einen Zusammenhang, keine Ursache
 + Zwei Größen können gemeinsam schwanken, weil beide von einer **dritten** Größe abhängen
 + Titanic: `Fare` und `Survived` korrelieren mit +0,26. Der Ticketpreis hat aber niemanden gerettet. Dahinter steht die Passagierklasse: `Fare` und `Pclass` korrelieren mit -0,55
-+ Klassisches Beispiel: Im Winter gehen mehr Handschuhe verloren und der Dieselpreis steigt. Beide Kurven laufen parallel, die gemeinsame Ursache ist die Jahreszeit
++ Gedankenbeispiel: Gehen im Winter mehr Handschuhe verloren und steigt zugleich der Dieselpreis, laufen beide Kurven parallel. Die gemeinsame Ursache ist die Jahreszeit
 
 <div class="fragment">
 
@@ -2536,7 +2539,6 @@ Fare           0.26
 
 + Ein Diagramm macht sichtbar, was eine Tabelle mit 891 Zeilen versteckt: Trends, Ausreißer, Gruppenunterschiede
 + Kennzahlen allein können täuschen: Derselbe Mittelwert passt zu völlig verschiedenen Verteilungen
-+ Diagramme stützen Entscheidungen und prüfen Hypothesen
 + Ein gutes Diagramm verhindert falsche Schlüsse, ein schlechtes erzeugt sie
 
 | Frage | Diagramm |
@@ -2694,7 +2696,7 @@ ax.set_ylabel("Fare")
 
 + `x=` Kategorie, `y=` Zahlenspalte: ein Boxplot je Gruppe
 + Median, Streuung und Ausreißer aller Gruppen stehen direkt nebeneinander
-+ Die Ausreißer der IQR-Regel gehören fast alle zur ersten Klasse
++ 104 der 116 IQR-Ausreißer gehören zur ersten Klasse
 
 </div>
 <div style="flex: 56">
@@ -2770,7 +2772,7 @@ ax.set_title("Korrelationsmatrix")
 --
 
 <!-- .slide: class="smaller" -->
-## Alles auf einmal: `pairplot`
+## Überblick mit `pairplot`
 
 <div class="two-col">
 <div style="flex: 40">
@@ -2822,7 +2824,7 @@ sns.pairplot(
 - Nach jedem Einlesen prüfen: `shape`, `head()`, `info()`. Falsches Trennzeichen, falsche Kodierung und Dezimalkomma fallen dort sofort auf
 - Fehlende Werte erst zählen (`isna().sum()`, Anteil mit `isna().mean()`), dann je Spalte entscheiden: löschen, mit dem Median füllen, markieren
 - Ausreißer liefert die IQR-Regel als Kandidaten. Entfernen nur bei nachweislichen Fehlern, sonst begrenzen (`clip`) oder behalten
-- Jedes Diagramm folgt dem Gerüst `fig, ax = plt.subplots()`, seaborn zeichnet mit `data=`, `x=`, `y=`, `hue=`, `ax=` hinein
+- Diagramme bauen Sie auf dem Gerüst `fig, ax = plt.subplots()`, seaborn zeichnet mit `data=`, `x=`, `y=`, `hue=`, `ax=` hinein
 - Korrelation zeigt Zusammenhänge, keine Ursachen
 
 ---
@@ -2839,7 +2841,7 @@ Was KI und Machine Learning sind, wie ein Modell aus Daten lernt und wie Sie Ihr
 - KI, Machine Learning und Deep Learning voneinander abgrenzen
 - Die drei Lernarten mit je einem Beispiel benennen
 - Entscheiden, wann sich ML gegenüber festen Regeln lohnt
-- Die Begriffe Feature, Zielgröße, Trainings- und Testdaten sicher verwenden
+- Die Begriffe Merkmal, Zielgröße, Trainings- und Testdaten sicher verwenden
 - Ein erstes Modell mit scikit-learn trainieren: `fit`, `predict`, `score`
 
 --
@@ -2882,12 +2884,12 @@ Künstliche Intelligenz (KI) bezeichnet Systeme oder Maschinen, die Aufgaben aus
 
 | Zeit | Was passiert |
 |---|---|
-| 1956 | Dartmouth Conference (John McCarthy u. a.): der Begriff „Artificial Intelligence" wird erstmals verwendet |
+| 1956 | Dartmouth Conference (John McCarthy u. a.) prägt den Begriff „Artificial Intelligence" |
 | 1950er bis 1970er | Erste KI-Programme: Schachprogramme, Theorembeweiser. Viel Optimismus, dann Rückschläge („KI-Winter") |
-| 1980er | Expertensysteme wie MYCIN unterstützen medizinische Diagnosen. Grenze: Wissen muss von Hand eingepflegt werden |
+| 1980er | Expertensysteme (Vorbild: MYCIN, 1970er, medizinische Diagnosen). Grenze: Wissen muss von Hand eingepflegt werden |
 | 2000er | Durchbrüche im Machine Learning: mehr Daten, bessere Algorithmen, leistungsfähige Hardware |
 | 2010er bis heute | KI im Alltag: Sprachassistenten, Bildanalyse, Produktempfehlungen. Deep Learning spielt die zentrale Rolle |
-| heute | Große Sprachmodelle (LLMs, z. B. GPT, BERT) verstehen und erzeugen natürliche Sprache |
+| heute | Große Sprachmodelle (LLMs, z. B. GPT, BERT) verarbeiten und erzeugen natürliche Sprache |
 
 --
 
@@ -2995,7 +2997,7 @@ Ein ML-Modell sortiert unerwünschte E-Mails aus, indem es Muster in den Nachric
 | **Veränderung** | „Free" war ein typisches Spam-Wort, heute steht dort „Fr33" oder „F.r.e.e.". Jede Variante braucht eine neue Regel | lernt neue Schreibweisen aus neuen Beispielen |
 | **Versteckte Muster** | prüft nur offensichtliche Kriterien („enthält das Wort casino?") | nutzt auch Satzstruktur, Absenderverhalten, Ähnlichkeit zu bekanntem Spam |
 | **Kontext** | Hotelbestätigung mit „Free WiFi" landet im Spam (False Positive) | lernt, den Kontext mit auszuwerten |
-| **Menge** | Experten schreiben und testen laufend neue Regeln | skaliert mit den Daten, braucht nach dem Training weniger Pflege |
+| **Menge** | Experten schreiben und testen laufend neue Regeln | skaliert mit den Daten: Nachtrainieren statt neuer Regeln von Hand |
 
 --
 
@@ -3029,32 +3031,32 @@ Ein ML-Modell sortiert unerwünschte E-Mails aus, indem es Muster in den Nachric
 <!-- .slide: class="smaller" -->
 ## Grenzen von ML
 
-+ **Die Vergangenheit sagt die Zukunft nicht immer voraus.** Historische Daten setzen stabile Bedingungen voraus. Sind Menschen Teil des Systems, gilt das fast nie. Beispiel: Finanzkrisen lassen sich nicht allein aus historischen Daten vorhersagen.
++ **Die Vergangenheit sagt die Zukunft nicht immer voraus.** Historische Daten setzen stabile Bedingungen voraus. Sind Menschen Teil des Systems, gilt das oft nicht. Beispiel: Finanzkrisen lassen sich nicht allein aus historischen Daten vorhersagen.
 + **Unbekannte Merkmale.** Wer Daten erhebt, legt vorher fest, welche Variablen gesammelt werden. Kritische Größen können fehlen. Beispiel Medizin: unbekannte genetische Faktoren oder Umweltbedingungen beeinflussen den Behandlungserfolg, stehen aber nicht in den Daten.
 + **Ein bekanntes Verfahren wird ausgenutzt.** Wird ein Algorithmus zum Standard, können Beteiligte die Eingaben gezielt manipulieren. Beispiel: CDO-Ratings vor der Finanzkrise 2008.
 
 --
 
-## Features und Zielgröße
+## Merkmale und Zielgröße
 
-+ **Feature (Merkmal):** eine Eingabespalte, aus der das Modell lernt. Alle Features zusammen bilden `X`
++ **Merkmal (engl. Feature):** eine Eingabespalte, aus der das Modell lernt. Alle Merkmale zusammen bilden `X`
 + **Zielgröße (Target, Label):** die Spalte, die das Modell vorhersagen soll. Sie heißt `y`
-+ Jede Zeile ist ein Beispiel: Features plus bekannte Lösung
++ Jede Zeile ist ein Beispiel: Merkmale plus bekannte Lösung
 
 | | Pclass | Sex | Age | Fare | Survived |
 |---|---|---|---|---|---|
-| Rolle | Feature | Feature | Feature | Feature | **Zielgröße** |
+| Rolle | Merkmal | Merkmal | Merkmal | Merkmal | **Zielgröße** |
 
 <div class="fragment">
 
 > [!important]
-> Ohne klar definierte Zielgröße gibt es kein sauberes ML-Problem. Ein unscharfes Label erzeugt fast immer ein unscharfes Modell.
+> Ohne klar definierte Zielgröße gibt es kein sauberes ML-Problem. Eine unscharfe Zielgröße ergibt meist ein unscharfes Modell.
 
 </div>
 
 --
 
-## Was ein gutes Feature ausmacht
+## Was ein gutes Merkmal ausmacht
 
 + fachlich plausibel
 + zum Zeitpunkt der Vorhersage **rechtzeitig verfügbar**
@@ -3092,14 +3094,14 @@ X_train, X_test, y_train, y_test = train_test_split(
 
 Ein Datenleck liegt vor, wenn das Modell Informationen sieht, die im echten Einsatz zum Zeitpunkt der Vorhersage nicht verfügbar sind.
 
-+ Beispiel: Ein Modell soll einen Geräteausfall vorhersagen und bekommt als Feature den Reparaturcode, der erst nach dem Ausfall vergeben wird
++ Beispiel: Ein Modell soll einen Geräteausfall vorhersagen und bekommt als Merkmal den Reparaturcode, der erst nach dem Ausfall vergeben wird
 + Zweites Beispiel: Die Skalierung wird auf allen Daten berechnet, bevor Trainings- und Testdaten getrennt werden
 + Folge: unrealistisch gute Ergebnisse im Test, schlechtes Modell im Einsatz
 
 <div class="fragment">
 
 > [!tip]
-> Bewerten Sie jedes Feature aus Sicht des Einsatzzeitpunkts: Liegt dieser Wert dann schon vor?
+> Bewerten Sie jedes Merkmal aus Sicht des Einsatzzeitpunkts: Liegt dieser Wert dann schon vor?
 
 </div>
 
@@ -3134,7 +3136,7 @@ Der Ablauf ist iterativ und führt oft wieder zur Datenphase zurück.
 | **6 Einsatz** | Modell bereitstellen, überwachen, bei Bedarf neu trainieren | Modell speichern und laden |
 
 > [!tip]
-> Gute Features verbessern ein Modell meist mehr als ein Wechsel des Verfahrens.
+> Gute Merkmale verbessern ein Modell meist mehr als ein Wechsel des Verfahrens.
 
 --
 
@@ -3160,7 +3162,7 @@ print(model.score(X_test, y_test))         # -> 1.0
 
 ## Estimator-Schnittstelle: `fit`, `predict`, `score`
 
-Jedes Modell in scikit-learn folgt demselben Muster:
+Die Modelle für überwachtes Lernen folgen demselben Muster:
 
 | Methode | Aufgabe |
 |---|---|
@@ -3197,8 +3199,8 @@ print(model.score(X_test, y_test))         # -> 1.0
 - KI ist der Oberbegriff, ML lernt aus Daten, Deep Learning nutzt neuronale Netze
 - Überwachtes Lernen braucht gelabelte Beispiele, unüberwachtes Lernen sucht Strukturen ohne Lösung
 - ML lohnt sich bei genug Daten, wiederkehrenden Entscheidungen und messbaren Fehlerkosten
-- Features bilden `X`, die Zielgröße ist `y`. Testdaten bleiben beim Training unter Verschluss
-- Jedes scikit-learn-Modell folgt dem Muster `fit`, `predict`, `score`
+- Merkmale bilden `X`, die Zielgröße ist `y`. Testdaten bleiben beim Training unter Verschluss
+- Modelle für überwachtes Lernen folgen dem Muster `fit`, `predict`, `score`
 
 ---
 
@@ -3245,7 +3247,7 @@ Eine Gerade durch die Datenpunkte, die den Zusammenhang möglichst gut beschreib
  |         o   . '    o        Gerade: y = m * x + b
  |      . '  o
  |  . '   o
- +---------------------------------------> x (Feature)
+ +---------------------------------------> x (Merkmal)
 ```
 
 + einfach und gut interpretierbar
@@ -3257,7 +3259,7 @@ Eine Gerade durch die Datenpunkte, die den Zusammenhang möglichst gut beschreib
 <!-- .slide: class="smaller" -->
 ## Modellgleichung
 
-Ein Feature:
+Ein Merkmal:
 
 $$y = m \cdot x + b$$
 
@@ -3266,7 +3268,7 @@ $$y = m \cdot x + b$$
 + $m$: Steigung der Geraden, zeigt den Einfluss von $x$ auf $y$
 + $b$: Achsenabschnitt, der Wert von $y$ bei $x = 0$
 
-Mehrere Features (multiple lineare Regression):
+Mehrere Merkmale (multiple lineare Regression):
 
 $$y = b + m_1 x_1 + m_2 x_2 + \dots + m_n x_n$$
 
@@ -3417,13 +3419,13 @@ Latitude     -0.420
 Longitude    -0.434
 ```
 
-+ `MedInc` = 0.449: Steigt das mittlere Einkommen um eine Einheit (10.000 USD), steigt der vorhergesagte Hauswert um 0.449 Einheiten (rund 45.000 USD), wenn alle anderen Features gleich bleiben
-+ Das Vorzeichen zeigt die Richtung, der Betrag die Stärke pro Einheit des Features
++ `MedInc` = 0.449: Steigt das mittlere Einkommen um eine Einheit (10.000 USD), steigt der vorhergesagte Hauswert um 0.449 Einheiten (rund 45.000 USD), wenn alle anderen Merkmale gleich bleiben
++ Das Vorzeichen zeigt die Richtung, der Betrag die Stärke pro Einheit des Merkmals
 
 <div class="fragment">
 
 > [!warning]
-> Koeffizienten verschiedener Features sind nur vergleichbar, wenn die Features dieselbe Skala haben. `Population` (Tausende) und `AveBedrms` (um 1) haben sie nicht.
+> Koeffizienten verschiedener Merkmale sind nur vergleichbar, wenn die Merkmale dieselbe Skala haben. `Population` (Tausende) und `AveBedrms` (um 1) haben sie nicht.
 
 </div>
 
@@ -3431,11 +3433,11 @@ Longitude    -0.434
 
 ## Regularisierung als Idee
 
-+ Ein Modell mit vielen Features kann sich zu stark an die Trainingsdaten anpassen
++ Ein Modell mit vielen Merkmalen kann sich zu stark an die Trainingsdaten anpassen
 + **Regularisierung** bestraft große Koeffizienten: Das Training minimiert den MSE plus eine Strafe
 + **Lasso:** Strafe = `alpha` mal die Summe der Beträge aller Koeffizienten
-+ Wirkung: Koeffizienten unwichtiger Features werden **genau null**. Lasso wählt damit Features aus
-+ `alpha` ist ein Hyperparameter: `alpha = 0` ist die normale lineare Regression, großes `alpha` lässt kaum Features übrig
++ Wirkung: Koeffizienten unwichtiger Merkmale werden **genau null**. Lasso wählt damit Merkmale aus
++ `alpha` ist ein Hyperparameter: `alpha = 0` ist die normale lineare Regression, großes `alpha` lässt kaum Merkmale übrig
 
 --
 
@@ -3531,7 +3533,7 @@ X_train_s = scaler.fit_transform(X_train)   # lernt Mittelwert und Streuung
 X_test_s = scaler.transform(X_test)         # wendet sie nur an
 ```
 
-+ `StandardScaler` bringt jedes Feature auf Mittelwert 0 und Standardabweichung 1
++ `StandardScaler` bringt jedes Merkmal auf Mittelwert 0 und Standardabweichung 1
 + Logistische Regression, SVM und k-nächste Nachbarn reagieren empfindlich auf unterschiedliche Skalen
 
 <div class="fragment">
@@ -3553,7 +3555,7 @@ X_test_s = scaler.transform(X_test)         # wendet sie nur an
 
 ```mermaid
 flowchart LR
-    A[Features x] --> B[Score z]
+    A[Merkmale x] --> B[Score z]
     B --> C["Sigmoid: P zwischen 0 und 1"]
     C --> D{"P >= 0,5?"}
     D -- ja --> E[Klasse 1]
@@ -3619,8 +3621,8 @@ print(proba[:4].round(3))              # -> [0.886 0.    0.003 0.999]
 
 y_streng = (proba >= 0.7).astype(int)           # gutartig erst ab 70 %
 print(confusion_matrix(y_test, y_streng))
-# -> [[42  1]
-#     [ 4 67]]
+# -> [ [42  1]
+#      [ 4 67] ]
 ```
 
 | Schwelle für „gutartig" | bösartig übersehen | gutartig fälschlich als bösartig |
@@ -3635,7 +3637,7 @@ print(confusion_matrix(y_test, y_streng))
 
 --
 
-## Entscheidungsbaum: wie ein Baum fragt
+## Entscheidungsbaum: Idee
 
 ```mermaid
 flowchart LR
@@ -3646,7 +3648,7 @@ flowchart LR
 ```
 
 + **Wurzelknoten:** Startpunkt mit allen Daten
-+ **Entscheidungsknoten:** stellt eine Bedingung, z. B. „Feature > 5?"
++ **Entscheidungsknoten:** stellt eine Bedingung, z. B. „Merkmal > 5?"
 + **Blatt:** Endpunkt, gibt eine Klasse aus
 + Training: am besten Split-Punkt teilen, dann für jede Teilmenge wiederholen
 
@@ -3704,7 +3706,7 @@ print(round(baum.score(X_test, y_test), 3))   # -> 0.93
 --
 
 <!-- .slide: class="smaller" -->
-## Random Forest: viele Bäume
+## Random Forest: Idee
 
 + **Ensemble-Verfahren:** kombiniert viele Entscheidungsbäume
 + **Bootstrapping:** jeder Baum bekommt eine eigene Zufallsstichprobe der Trainingsdaten, gezogen mit Zurücklegen
@@ -3744,9 +3746,9 @@ print(wichtig.sort_values(ascending=False).head(3).round(3))
 
 **Vorteile**
 
-- sehr genau dank Ensemble
-- robust gegenüber Overfitting
-- bewertet die Wichtigkeit der Features
+- meist genauer als ein Einzelbaum
+- weniger anfällig für Overfitting
+- bewertet die Wichtigkeit der Merkmale
 
 </div>
 <div style="flex: 50">
@@ -3780,8 +3782,8 @@ print(wichtig.sort_values(ascending=False).head(3).round(3))
 
 + Eine Support Vector Machine sucht die Trennlinie mit dem **größten Abstand** (Margin) zu beiden Klassen
 + Nur die Punkte am Rand bestimmen die Linie: die **Stützvektoren** (Support Vectors)
-+ Bei mehr als zwei Features wird aus der Linie eine Hyperebene
-+ Arbeitet gut mit kleinen Datensätzen und vielen Features
++ Bei mehr als zwei Merkmalen wird aus der Linie eine Hyperebene
++ Eignet sich auch für kleine Datensätze mit vielen Merkmalen
 
 --
 
@@ -3837,7 +3839,7 @@ print(round(knn.score(X_test_s, y_test), 3))
 
 + kNN sucht zu einem neuen Punkt die `k` ähnlichsten Trainingspunkte und nimmt deren häufigste Klasse
 + kNN lernt beim `fit` nichts: Es merkt sich die Trainingsdaten und rechnet erst bei `predict`
-+ Beide Verfahren rechnen mit Abständen. Ohne Skalierung dominiert das Feature mit den größten Zahlen
++ Beide Verfahren rechnen mit Abständen. Ohne Skalierung dominiert das Merkmal mit den größten Zahlen
 
 --
 
@@ -3872,12 +3874,12 @@ for name, modell in modelle.items():
 |---|---|---|---|---|---|
 | Logistische Regression | 0.987 | 0.974 | ja | gut (Koeffizienten) | `C` |
 | Entscheidungsbaum (Tiefe 3) | 0.978 | 0.947 | nein | sehr gut (vorlesbar) | `max_depth` |
-| Random Forest (100 Bäume) | 1.000 | 0.965 | nein | mittel (Feature-Wichtigkeit) | `n_estimators`, `max_depth` |
+| Random Forest (100 Bäume) | 1.000 | 0.965 | nein | mittel (Merkmalswichtigkeit) | `n_estimators`, `max_depth` |
 | SVM (RBF) | 0.989 | 0.982 | ja | gering | `C`, `gamma`, `kernel` |
 | kNN (k = 5) | 0.980 | 0.947 | ja | mittel (Nachbarn zeigen) | `n_neighbors` |
 
 > [!important]
-> 114 Testfälle: Ein Prozentpunkt Unterschied entspricht einem einzigen Fall. Aus dieser Tabelle folgt keine Rangliste.
+> 114 Testfälle: Ein einziger Fall macht knapp einen Prozentpunkt aus. Aus dieser Tabelle folgt keine Rangliste.
 
 --
 
@@ -3885,7 +3887,7 @@ for name, modell in modelle.items():
 
 - Lineare Regression legt eine Gerade (oder Ebene) durch die Daten. Training heißt: den MSE minimieren
 - Gradientenabstieg geht schrittweise bergab, die Lernrate bestimmt die Schrittweite
-- Lasso bestraft große Koeffizienten und setzt unwichtige Features auf null
+- Lasso bestraft große Koeffizienten und setzt unwichtige Merkmale auf null
 - Logistische Regression liefert Wahrscheinlichkeiten. Die Schwelle ist eine fachliche Entscheidung
 - Erst teilen, dann skalieren. Bäume und Random Forest kommen ohne Skalierung aus, SVM und kNN nicht
 
@@ -3929,11 +3931,11 @@ Feature Engineering heißt: aus Rohdaten Merkmale machen, mit denen ein Modell g
 <!-- .slide: class="smaller" -->
 ## Skalierung: wann sie nötig ist
 
-`Age` liegt zwischen 0 und 80, `Fare` zwischen 0 und 512. Ohne Skalierung dominiert das Merkmal mit den größeren Zahlen.
+`Age` liegt zwischen 0 und 80, `Fare` zwischen 0 und 512. Ohne Skalierung dominiert bei vielen Verfahren das Merkmal mit den größeren Zahlen.
 
 | Verfahren | Skalierung nötig? | Grund |
 |-----------|-------------------|-------|
-| Lineare und logistische Regression, Lasso | ja | Strafterm und Gradientenabstieg hängen von der Größenordnung ab |
+| Lasso und logistische Regression | ja | Strafterm und Gradientenabstieg hängen von der Größenordnung ab |
 | k-NN, SVM, k-Means | ja | rechnen mit Abständen |
 | PCA | ja | sucht Richtungen mit großer Varianz |
 | Neuronale Netze | ja | Training läuft stabiler und schneller |
@@ -4173,7 +4175,7 @@ Durchlauf 5:  [ train ] [ train ] [ train ] [ train ] [PRÜFEN]  -> Score 5
 Ergebnis: Mittelwert und Streuung der 5 Scores
 ```
 
-+ Jede Zeile wird genau einmal zum Prüfen benutzt, alle Daten werden genutzt
++ Jede Datenzeile wird genau einmal zum Prüfen benutzt, alle Daten werden genutzt
 + Die Streuung zeigt, wie stabil das Ergebnis ist
 + Preis: k Trainingsläufe statt einem
 
@@ -4291,7 +4293,7 @@ print(search.best_params_, round(search.best_score_, 3))
 # -> {'n_estimators': 200, 'max_depth': 20} 0.97
 ```
 
-+ 8 statt 21 Kombinationen, fast derselbe Wert: in diesem Beispiel reicht die Zufallssuche
++ 8 statt 21 Kombinationen, derselbe Wert: in diesem Beispiel reicht die Zufallssuche
 
 --
 
@@ -4304,7 +4306,7 @@ $MAE = \frac{1}{m} \sum_{i=1}^{m} \lvert y_i - \hat{y}_i \rvert$
 
 + Durchschnittlicher Abstand zwischen Vorhersage $\hat{y}$ und wahrem Wert $y$, in der Einheit der Zielgröße
 + Je kleiner, desto besser. MAE = 1000 bei Kosten in Euro heißt: Die Vorhersage liegt im Mittel 1000 Euro daneben.
-+ Jeder Fehler zählt gleich, einzelne Ausreißer fallen wenig ins Gewicht
++ Jeder Fehler zählt mit seinem Betrag, einzelne Ausreißer fallen wenig ins Gewicht
 
 ```python
 from sklearn.metrics import mean_absolute_error
@@ -4383,7 +4385,7 @@ print(f"R²:   {r2_score(y_test, y_pred):.2f}")  # -> 0.58
 ```
 
 + Zielgröße `MedHouseVal` zählt in 100.000 Dollar: MAE 0.53 heißt rund 53.000 Dollar mittlerer Fehler
-+ Immer mehrere Kennzahlen nebeneinander lesen: MAE für den typischen Fehler, RMSE für Ausreißer, R² für den Vergleich mit dem Mittelwert
++ Lesen Sie mehrere Kennzahlen nebeneinander: MAE für den typischen Fehler, RMSE für Ausreißer, R² für den Vergleich mit dem Mittelwert
 + Ein sehr hohes R² im Training und ein niedriges auf neuen Daten zeigt Overfitting
 
 --
@@ -4434,8 +4436,8 @@ from sklearn.metrics import (accuracy_score, confusion_matrix, f1_score,
 
 cm = confusion_matrix(y_true, y_pred)
 print(cm)
-# -> [[3 2]
-#     [1 4]]
+# -> [ [3 2]
+#      [1 4] ]
 tn, fp, fn, tp = cm.ravel()          # Reihenfolge: TN, FP, FN, TP
 
 print(accuracy_score(y_true, y_pred))              # -> 0.7
@@ -4459,7 +4461,7 @@ print(round(f1_score(y_true, y_pred), 2))          # -> 0.73
 | **Spamfilter** | wichtige Mail landet im Spamordner | Spam landet im Posteingang | meist FP |
 
 + FN teuer: auf **Recall** achten. FP teuer: auf **Precision** achten.
-+ Beide Fehler lassen sich nicht gleichzeitig auf null bringen. Wer mehr findet, löst mehr Fehlalarme aus.
++ Beide Fehler lassen sich kaum gleichzeitig auf null bringen. Wer mehr findet, löst mehr Fehlalarme aus.
 + Die Gewichtung ist eine fachliche Entscheidung, keine technische
 
 --
@@ -4482,8 +4484,8 @@ for schwelle in [0.5, 0.3]:
 
 | Schwelle | Wirkung | Precision | Recall |
 |----------|---------|-----------|--------|
-| niedriger (0.3) | mehr Fälle gelten als positiv | sinkt | steigt |
-| höher (0.7) | nur sehr sichere Fälle gelten als positiv | steigt | sinkt |
+| niedriger (0.3) | mehr Fälle gelten als positiv | sinkt meist | steigt |
+| höher (0.7) | nur sehr sichere Fälle gelten als positiv | steigt meist | sinkt |
 
 > [!tip]
 > Die Schwelle auf Validierungsdaten wählen, nicht auf dem Testteil.
@@ -4586,7 +4588,6 @@ print(roc_auc_score(y, p))   # -> 0.5
 from sklearn.datasets import make_classification
 from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import classification_report
-
 X, y = make_classification(n_samples=2000, weights=[0.95, 0.05],
                            random_state=42)
 # 1. stratifizieren
@@ -4604,7 +4605,7 @@ print(classification_report(y_test, model.predict(X_test)))
 | ohne `class_weight` | 0.97 | 0.48 |
 | mit `class_weight="balanced"` | 0.89 | 0.86 |
 
-+ `class_weight="balanced"` gewichtet Fehler auf der seltenen Klasse stärker. Die Accuracy sinkt, aber das Modell findet fast doppelt so viele positive Fälle.
++ `class_weight="balanced"` gewichtet Fehler der seltenen Klasse stärker: Accuracy sinkt, Recall verdoppelt sich fast
 + Dazu: Schwelle anpassen und mit Recall, F1 oder ROC-AUC statt Accuracy vergleichen
 
 --
@@ -4656,7 +4657,7 @@ Eine gute Kennzahl reicht im Betrieb nicht. Ein Modell muss auch diese Fragen be
 + Erst teilen, dann `fit` nur auf den Trainingsdaten. Der Testteil wird genau einmal benutzt.
 + Overfitting zeigt sich am Abstand zwischen Trainings- und Validierungswert. `cross_val_score` mit `StratifiedKFold` liefert Mittelwert und Streuung.
 + `GridSearchCV` probiert jede Kombination per Cross-Validation, `RandomizedSearchCV` nur eine Stichprobe
-+ Regression: MAE, RMSE und R² zusammen lesen. Klassifikation: Konfusionsmatrix zuerst, dann Precision, Recall, F1 und AUC. Accuracy immer mit dem Anteil der häufigsten Klasse vergleichen.
++ Regression: MAE, RMSE und R² zusammen lesen. Klassifikation: Konfusionsmatrix zuerst, dann Precision, Recall, F1 und AUC. Accuracy mit dem Anteil der häufigsten Klasse vergleichen.
 
 ---
 
@@ -4679,7 +4680,7 @@ Gruppen in Daten finden, wenn es keine Zielgröße gibt, und diese Gruppen fachl
 
 ## Unüberwachtes Lernen: wofür
 
-+ Es gibt keine Labels $y$, nur Eingabedaten $X$. Das Verfahren sucht selbst nach Struktur.
++ Es gibt keine Zielgröße $y$, nur Eingabedaten $X$. Das Verfahren sucht selbst nach Struktur.
 + **Clustering:** ähnliche Datenpunkte zu Gruppen zusammenfassen
 + **Dimensionsreduktion:** viele Merkmale auf wenige verdichten, zum Beispiel für ein Diagramm
 + **Anomalieerkennung:** Punkte finden, die zu keiner Gruppe passen
@@ -4737,7 +4738,7 @@ A, B: Startzentren       jeder Punkt geht zum     jedes Zentrum rückt in
                          <----- wiederholen, bis nichts mehr wandert ---->
 ```
 
-+ Nach wenigen Runden stehen die Zentren still: Das Verfahren ist konvergiert
++ Meist stehen die Zentren nach wenigen Runden still: Das Verfahren ist konvergiert
 + Ein anderer Start kann zu einem anderen Ergebnis führen. `n_init=10` startet zehnmal und behält den Lauf mit der kleinsten `inertia_`.
 
 --
@@ -4838,7 +4839,7 @@ for k in range(2, 7):
 <!-- .slide: class="smaller" -->
 ## Skalieren vor dem Clustern
 
-k-Means rechnet mit Abständen. Das Merkmal mit den größten Zahlen bestimmt dann allein das Ergebnis.
+k-Means rechnet mit Abständen. Ohne Skalierung bestimmt das Merkmal mit den größten Zahlen fast allein das Ergebnis.
 
 ```python
 import pandas as pd
@@ -5002,7 +5003,7 @@ plt.show()
 ```
 
 + `explained_variance_ratio_`: Anteil der Gesamtstreuung je Hauptkomponente. Die Summe sagt, wie viel Information das 2D-Bild behält.
-+ Die Hauptkomponenten sind Mischungen der Originalmerkmale und unkorreliert. Vor PCA immer standardisieren.
++ Die Hauptkomponenten sind Mischungen der Originalmerkmale und unkorreliert. Vor der PCA die Merkmale standardisieren.
 
 --
 
@@ -5042,7 +5043,7 @@ plt.show()
 ## Zusammenfassung
 
 + Unüberwachtes Lernen arbeitet ohne Zielgröße. Clustering liefert Gruppennummern, die Bedeutung ergänzen Sie.
-+ k-Means: Zentren wählen, zuordnen, neu berechnen, wiederholen. Immer vorher skalieren, `n_init` und `random_state` setzen.
++ k-Means: Zentren wählen, zuordnen, neu berechnen, wiederholen. Vorher skalieren, `n_init` und `random_state` setzen.
 + k wählen: Knick in der Ellbogen-Kurve (`inertia_`), höchster `silhouette_score`, fachliche Brauchbarkeit
 + Segmente beschreiben: `groupby("segment")` auf den Originalwerten, mit dem Gesamtdurchschnitt vergleichen, beschreibend benennen
 + k-Means findet runde Cluster und leidet unter Ausreißern, DBSCAN ist eine Alternative. PCA zeigt viele Merkmale in 2D, `explained_variance_ratio_` sagt, wie viel dabei erhalten bleibt.
@@ -5061,7 +5062,7 @@ Vom einzelnen Neuron zum trainierten Netz in PyTorch, das Kleidungsstücke auf B
 + Wie ein künstliches Neuron rechnet: Gewichte, Bias, Aktivierung
 + Wie ein Netz trainiert wird: Vorwärtslauf, Verlust, Rückwärtslauf, Schritt des Optimierers
 + Wie Sie in PyTorch Tensoren anlegen, ein `nn.Module` schreiben und es auf FashionMNIST trainieren
-+ Wie Sie die Genauigkeit auf Testdaten messen und das Modell mit `state_dict` speichern
++ Wie Sie die Genauigkeit (Accuracy) auf Testdaten messen und das Modell mit `state_dict` speichern
 + Wann sich Deep Learning lohnt und wann ein klassisches Modell die bessere Wahl ist
 
 --
@@ -5079,6 +5080,7 @@ Künstliche neuronale Netze sind vom Gehirn inspiriert: Milliarden von Neuronen 
 
 --
 
+<!-- .slide: class="smaller" -->
 ## Das künstliche Neuron: Gewichte, Bias, Aktivierung
 
 ```text
@@ -5264,12 +5266,12 @@ print(zufall.shape, zufall.dtype)    # -> torch.Size([2, 3]) torch.float32
 
 ones = torch.ones(2, 3)
 print(x + ones)                      # Broadcasting wie in NumPy
-# -> tensor([[2., 3., 4.], [2., 3., 4.]])
+# -> tensor([ [2., 3., 4.], [2., 3., 4.] ])
 
-a = torch.tensor([[1., 2], [3, 4]])
-b = torch.tensor([[5., 6], [7, 8]])
-print(a @ b)      # Matrizenmultiplikation -> [[19., 22.], [43., 50.]]
-print(a * b)      # elementweise           -> [[ 5., 12.], [21., 32.]]
+a = torch.tensor([ [1., 2], [3, 4] ])
+b = torch.tensor([ [5., 6], [7, 8] ])
+print(a @ b)      # Matrizenmultiplikation -> [ [19., 22.], [43., 50.] ]
+print(a * b)      # elementweise           -> [ [ 5., 12.], [21., 32.] ]
 print(a.sum(), b.mean())             # -> tensor(10.) tensor(6.5000)
 ```
 
@@ -5283,7 +5285,7 @@ Ein Tensor verhält sich wie ein NumPy-Array. Zusätzlich kann er Gradienten mit
 ```python
 import numpy as np
 
-arr = np.array([[1.0, 2.0], [3.0, 4.0]])
+arr = np.array([ [1.0, 2.0], [3.0, 4.0] ])
 t = torch.from_numpy(arr)            # NumPy -> Tensor, teilt den Speicher
 print(t.dtype)                       # -> torch.float64
 t = t.float()                        # float32, wie es nn.Linear erwartet
@@ -5338,10 +5340,10 @@ x = torch.rand(10)                          # Eingabevektor
 y = torch.ones(1)                           # Ziel: das Netz soll 1 ausgeben
 
 loss = loss_fn(netz(x), y)                  # Vorwärtslauf und Verlust
-print(f"Verlust vorher:  {loss.item():.2f}")
+print(f"Verlust vorher:  {loss.item():.4f}")
 loss.backward()                             # Rückwärtslauf
 optimizer.step()                            # Gewichte anpassen
-print(f"Verlust nachher: {loss_fn(netz(x), y).item():.2f}")
+print(f"Verlust nachher: {loss_fn(netz(x), y).item():.4f}")
 ```
 
 Nach einem einzigen Schritt ist der Verlust kleiner als vorher. Training heißt, diesen Schritt viele tausend Mal zu wiederholen.
@@ -5398,7 +5400,7 @@ print(sum(p.numel() for p in model.parameters()))    # -> 101770
 ```
 
 + `__init__` legt die Schichten an, `forward` beschreibt den Vorwärtslauf
-+ Sie rufen nie `forward` direkt auf, stattdessen `model(bilder)`
++ Sie rufen `forward` nicht direkt auf, sondern `model(bilder)`
 + 101770 Parameter: `784*128 + 128` in der ersten, `128*10 + 10` in der zweiten Schicht
 
 --
@@ -5557,7 +5559,7 @@ loader = DataLoader(train, batch_size=64, shuffle=True)
 | Wer bildet die Merkmale?                | Sie selbst, aus Fachwissen                          | das Netz, in den versteckten Schichten              |
 | Wie viele Beispiele gibt es?            | reicht schon bei eher wenigen Beispielen            | zeigt seine Stärke erst bei sehr vielen Beispielen  |
 | Muss das Modell erklärbar sein?         | Koeffizienten und Bäume lassen sich lesen           | 101770 Gewichte lassen sich nicht einzeln deuten    |
-| Wie viel Rechenzeit ist vorhanden?      | Training auf dem Laptop                             | große Netze brauchen eine Grafikkarte |
+| Wie viel Rechenzeit ist vorhanden?      | Training auf dem Laptop                             | große Netze brauchen eine Grafikkarte               |
 
 > [!tip]
 > Beginnen Sie mit einem einfachen Modell aus scikit-learn als Vergleichswert. Ein Netz muss diesen Wert erst schlagen, bevor sich der Mehraufwand lohnt.
@@ -5579,7 +5581,7 @@ Literatur: Vaswani et al.: Attention Is All You Need (2017). Goodfellow, Bengio,
 
 + Ein Neuron rechnet `z = w*x + b` und wendet darauf eine Aktivierungsfunktion an. Ohne Aktivierung bliebe jedes Netz linear
 + Training ist eine Schleife aus vier Schritten: `model(x)`, `loss_fn(...)`, `loss.backward()`, `optimizer.step()`, davor `optimizer.zero_grad()`
-+ Epoche, Batchgröße und Lernrate steuern das Training. Dropout und Early Stopping bremsen Overfitting
++ Epochenzahl, Batchgröße und Lernrate steuern das Training. Dropout und Early Stopping bremsen Overfitting
 + In PyTorch beschreiben Sie das Netz als `nn.Module`, laden Daten mit dem `DataLoader` und speichern die Gewichte mit `state_dict`
 + Deep Learning spielt seine Stärke bei Bildern, Text und Audio aus. Für Tabellen bleiben die klassischen Modelle der Startpunkt
 
@@ -5594,7 +5596,7 @@ Aufbereitung, Modell und Bewertung in einem einzigen Objekt zusammenbauen, prüf
 
 ## Was Sie in diesem Teil lernen
 
-+ Sie erkennen in jeder scikit-learn-Klasse dieselben drei Methoden: `fit`, `transform`, `predict`
++ Sie erkennen in scikit-learn-Klassen dieselben drei Methoden: `fit`, `transform`, `predict`
 + Sie finden ein Datenleck im Code und schreiben die richtige Fassung
 + Sie bauen aus Aufbereitung und Modell eine `Pipeline` und behandeln Zahlen- und Textspalten mit `ColumnTransformer` getrennt
 + Sie prüfen die ganze Pipeline mit Cross-Validation und stellen sie mit `GridSearchCV` ein
@@ -5607,13 +5609,13 @@ Aufbereitung, Modell und Bewertung in einem einzigen Objekt zusammenbauen, prüf
 
 | Rolle | Methoden | Was passiert | Beispiele |
 |---|---|---|---|
-| **Estimator** | `fit(X, y)` | lernt etwas aus Daten und merkt es sich | jede scikit-learn-Klasse |
+| **Estimator** | `fit(X, y)` | lernt etwas aus Daten und merkt es sich | jede Klasse, die aus Daten lernt |
 | **Transformer** | `fit`, `transform`, `fit_transform` | lernt Kennwerte und rechnet Daten damit um | `StandardScaler`, `OneHotEncoder`, `SimpleImputer`, `PCA` |
 | **Predictor** | `fit`, `predict`, `score` | lernt ein Modell und sagt damit vorher | `LogisticRegression`, `RandomForestClassifier`, `KMeans` |
 
 + Gelernte Größen enden auf einen Unterstrich: `scaler.mean_`, `modell.coef_`, `kmeans.cluster_centers_`
 + Einstellungen, die Sie selbst setzen, stehen im Konstruktor: `max_depth=5`, `strategy="median"`
-+ Weil alle Klassen dieselben Methoden haben, lassen sie sich hintereinanderstecken
++ Weil diese Klassen dieselben Methoden haben, lassen sie sich hintereinanderstecken
 
 --
 
@@ -5821,7 +5823,7 @@ print(y_train.mean(), y_test.mean()) # -> 0.383 0.385
 
 --
 
-## `ColumnTransformer`: jede Spaltengruppe bekommt ihren Weg
+## Aufbereitung je Spaltengruppe mit `ColumnTransformer`
 
 ```mermaid
 flowchart LR
@@ -6018,8 +6020,8 @@ print(classification_report(y_test, y_pred, digits=2))
 ```
 
 ```text
-[[104   6]
- [ 27  42]]
+[ [104   6]
+  [ 27  42] ]
               precision    recall  f1-score   support
            0       0.79      0.95      0.86       110
            1       0.88      0.61      0.72        69
@@ -6121,7 +6123,7 @@ flowchart LR
 
 + Zielgröße und Merkmalsspalten ausdrücklich benennen, Kennungen weglassen
 + `train_test_split` mit `random_state` und bei Klassifikation mit `stratify=y`, vor jeder Aufbereitung
-+ Imputation, Skalierung und Encoding stehen in der Pipeline, nie davor
++ Imputation, Skalierung und Encoding stehen in der Pipeline, nicht davor
 + `OneHotEncoder(handle_unknown="ignore")` für Kategorien
 + Modellvergleich und Einstellung nur über Cross-Validation auf den Trainingsdaten
 + Kennzahl passend zur Fragestellung wählen, bei ungleichen Klassen nicht Accuracy
@@ -6147,7 +6149,7 @@ flowchart LR
 
 ## Zusammenfassung
 
-+ Alle scikit-learn-Klassen teilen sich `fit`, `transform` und `predict`, deshalb lassen sie sich zu einer `Pipeline` verketten
++ Transformer und Modelle teilen sich `fit`, `transform` und `predict`, deshalb lassen sie sich zu einer `Pipeline` verketten
 + Ein Datenleck entsteht, sobald `fit` Testdaten sieht. Die Pipeline verhindert das, auch in jedem Durchgang der Cross-Validation
 + `ColumnTransformer` gibt Zahlen- und Kategoriespalten getrennte Aufbereitung, `handle_unknown="ignore"` fängt neue Kategorien ab
 + `GridSearchCV` stellt Pipeline-Parameter über `schritt__parameter` ein, das Testset kommt genau einmal am Ende
@@ -6166,7 +6168,7 @@ Drei Fragestellungen mit demselben Workflow lösen und danach prüfen, was die M
 
 + Sie übertragen den Pipeline-Workflow auf Klassifikation, Regression und Clustering
 + Sie bewerten ein Modell bei stark ungleichen Klassen mit Recall und Precision statt Accuracy
-+ Sie lesen Koeffizienten, einen Entscheidungsbaum und Feature-Wichtigkeiten
++ Sie lesen Koeffizienten, einen Entscheidungsbaum und Merkmalswichtigkeiten
 + Sie kennen die Schwächen von `feature_importances_` und setzen `permutation_importance` ein
 + Sie wissen, was eine Interpretation aussagt, was nicht, und was in einen Ergebnisbericht gehört
 
@@ -6237,7 +6239,7 @@ prep = ColumnTransformer([
 --
 
 <!-- .slide: class="smaller" -->
-## Basislinie: hohe Accuracy, kaum Recall
+## Baseline: hohe Accuracy, kaum Recall
 
 ```python
 from sklearn.pipeline import Pipeline
@@ -6282,7 +6284,7 @@ print(bewerte(RandomForestClassifier(n_estimators=200, min_samples_leaf=5,
 | LogisticRegression | 0,97 | 0,19 | 0,76 |
 | LogisticRegression, `balanced` | 0,82 | 0,80 | 0,14 |
 | RandomForest | 0,98 | 0,52 | 0,91 |
-| RandomForest, `balanced`, `min_samples_leaf=5` | 0,97 | 0,74 | 0,58 |
+| RandomForest, `balanced`, `min_samples_leaf=5` | 0,95 | 0,85 | 0,41 |
 
 + `balanced` gewichtet Fehler auf der seltenen Klasse umgekehrt zu ihrer Häufigkeit
 + Recall steigt, Precision sinkt: mehr gefundene Ausfälle, mehr Fehlalarme
@@ -6302,16 +6304,16 @@ rf = Pipeline([("prep", prep), ("modell", RandomForestClassifier(
 
 proba = cross_val_predict(rf, X_train, y_train, cv=5,
                           method="predict_proba")[:, 1]
-# Schwelle 0.5: Recall 0.74, Precision 0.58
-# Schwelle 0.3: Recall 0.88, Precision 0.37
-# Schwelle 0.2: Recall 0.91, Precision 0.29
+# Schwelle 0.5: Recall 0.85, Precision 0.41
+# Schwelle 0.3: Recall 0.93, Precision 0.27
+# Schwelle 0.2: Recall 0.96, Precision 0.23
 
 rf.fit(X_train, y_train)
 y_pred = (rf.predict_proba(X_test)[:, 1] >= 0.3).astype(int)
-print(confusion_matrix(y_test, y_pred))   # -> [[1838 94] [8 60]]
+print(confusion_matrix(y_test, y_pred))   # -> [ [1763 169] [4 64] ]
 ```
 
-+ Testset mit Schwelle 0,3: 60 von 68 Ausfällen gefunden, dafür 94 Fehlalarme auf 2 000 Zeilen
++ Testset mit Schwelle 0,3: 64 von 68 Ausfällen gefunden, dafür 169 Fehlalarme auf 2 000 Zeilen
 + Welche Schwelle richtig ist, entscheidet die Fachseite: Was kostet ein übersehener Ausfall, was eine unnötige Wartung?
 
 --
@@ -6340,6 +6342,7 @@ reg.fit(X_train, y_train)
 
 --
 
+<!-- .slide: class="smaller" -->
 ## RMSE, MAE und R² auf dem Testset
 
 ```python
@@ -6429,10 +6432,10 @@ print(df.groupby("segment")[ ["raucher", "zusatzversicherung"] ].mean()
 ```text
          alter   bmi  arztbesuche_jahr  leistungsausgaben_eur  anzahl
 segment
-0         49.4  27.5               7.9                 3444.4    1436
-1         28.6  25.4               3.4                 1272.4    1374
-2         72.4  28.1              16.6                 9947.7     940
-3         33.7  21.1               4.4                 1592.9    1250
+0         65.2  27.2               8.7                34385.1      86
+1         36.9  23.7               3.9                 1337.6    2367
+2         62.4  29.0               4.6                 2892.8    1962
+3         70.2  27.2              17.3                 6477.3     585
 ```
 
 + Das Profil entsteht auf den Originalwerten, nicht auf den skalierten
@@ -6486,7 +6489,7 @@ Population -0.000    -0.002
 --
 
 <!-- .slide: class="smaller" -->
-## `plot_tree` mit Feature-Namen
+## `plot_tree` mit Merkmalsnamen
 
 ```python
 from sklearn.tree import DecisionTreeClassifier, plot_tree
@@ -6664,14 +6667,14 @@ plt.show()
 | **Frage und Nutzen** | Welche Entscheidung soll das Modell unterstützen? |
 | **Daten** | Quelle, Zeitraum, Zeilenzahl, weggelassene Spalten und warum |
 | **Vorgehen** | Aufteilung, Pipeline, Art der Prüfung, in zwei bis drei Sätzen |
-| **Güte** | eine zur Fragestellung passende Kennzahl, daneben die einfache Basislinie |
+| **Güte** | eine zur Fragestellung passende Kennzahl, daneben die einfache Baseline |
 | **Fehlerbild** | Konfusionsmatrix oder Residuenplot in Worten: Was wird übersehen, was fälschlich gemeldet? |
 | **Wichtigste Merkmale** | Permutation Importance als Balkendiagramm, Richtung aus Partial Dependence oder Koeffizienten |
 | **Grenzen** | für welche Fälle das Modell nicht gilt, bekannte Schwächen der Daten |
 | **Wiederholbarkeit** | Datenstand, Versionen, `random_state`, Ablageort der Pipeline |
 
 > [!tip]
-> Übersetzen Sie Kennzahlen in Fälle: „Von 68 Ausfällen findet das Modell 60 und meldet 94 Mal falschen Alarm" statt „Recall 0,88".
+> Übersetzen Sie Kennzahlen in Fälle: „Von 68 Ausfällen findet das Modell 64 und meldet 169 Mal falschen Alarm" statt „Recall 0,94".
 
 --
 
@@ -6681,7 +6684,7 @@ plt.show()
 + Bei 3,4 % Ausfällen erreicht ein nutzloses Modell 97 % Accuracy: Recall, Precision, `class_weight="balanced"` und eine bewusst gewählte Schwelle sind die Werkzeuge
 + Koeffizienten vergleichen Sie nur nach Skalierung, Lasso setzt entbehrliche auf null, ein Baum der Tiefe 3 lässt sich als Regeln vorlesen
 + `feature_importances_` bevorzugt Spalten mit vielen Werten, `permutation_importance` auf Testdaten ist die robustere Wahl
-+ Jede Interpretation beschreibt das Modell, nicht die Ursachen in der Welt, und gehört mit Basislinie und Grenzen in den Bericht
++ Jede Interpretation beschreibt das Modell, nicht die Ursachen in der Welt, und gehört mit Baseline und Grenzen in den Bericht
 
 ---
 
@@ -6767,12 +6770,12 @@ flowchart LR
 
 --
 
-## ML-Systeme sind keine Magie
+## Voraussetzungen für ein brauchbares Modell
 
-+ Ein gutes Modell ist immer Teil eines größeren Ablaufs: Daten beschaffen, prüfen, aufbereiten, bewerten, betreiben.
++ Ein gutes Modell ist Teil eines größeren Ablaufs: Daten beschaffen, prüfen, aufbereiten, bewerten, betreiben.
 + Datenzugang, Datenqualität und eine saubere Zielgröße sind genauso wichtig wie der Algorithmus.
 + Viele Vorhaben scheitern nicht am Modell, sondern an unreifen Daten oder einer unklaren Fragestellung.
-+ Ein Modell wird höchstens so gut wie seine Zielgröße: uneinheitliche oder verspätet erfasste Labels begrenzen jedes Ergebnis.
++ Ein Modell wird höchstens so gut wie seine Zielgröße: uneinheitlich oder verspätet erfasste Werte begrenzen jedes Ergebnis.
 
 <div class="fragment">
 
@@ -6791,7 +6794,7 @@ flowchart LR
 | **Datenleck** | Testergebnis unrealistisch gut | Erst `train_test_split`, dann alles Weitere in einer `Pipeline` |
 | **Nur Accuracy** | 95 % Accuracy, aber die seltene Klasse wird nie erkannt | Konfusionsmatrix, Precision, Recall, F1 |
 | **Kein Baseline-Vergleich** | Niemand weiß, ob 0,80 gut ist | `DummyClassifier` oder `DummyRegressor` zuerst |
-| **Zellen in falscher Reihenfolge** | Notebook läuft nach Neustart nicht mehr durch | „Restart Kernel and Run All“ vor jedem Speichern |
+| **Zellen in falscher Reihenfolge** | Notebook läuft nach Neustart nicht mehr durch | „Restart Kernel and Run All“ vor dem Weitergeben |
 | **Keine festen Zufallswerte** | Jeder Lauf liefert andere Zahlen | `random_state=42` bei Split, Modell und CV |
 | **Datentypen ungeprüft** | Datum oder Zahl steht als Text (`object` oder `str`) in `df.dtypes` | `pd.to_datetime`, `pd.to_numeric`, `astype` |
 | **Zufälliger Split bei Zeitbezug** | Modell lernt aus der Zukunft | Nach Datum trennen: ältere Daten trainieren, neuere testen |
@@ -6912,7 +6915,7 @@ git commit -m "Erstes Modell: Baseline + Random Forest"
 | Kursrepo mit Folien, Notebooks, Lösungen und Daten | ja | Liegt lokal vollständig vor, läuft ohne Netz |
 | Netzfreigaben für Paketquellen (Anaconda, PyPI, PyTorch, Hugging Face) | **nein** | Werden nach der Schulung zurückgesetzt |
 
-+ Alle Notebooks des Kurses laufen weiter, weil Pakete und Datensätze bereits lokal liegen.
++ Die Notebooks des Kurses laufen weiter, weil Pakete und Datensätze bereits lokal liegen.
 + `conda install` und `pip install` erreichen ihre Quellen danach nicht mehr.
 
 <div class="fragment">
@@ -6952,7 +6955,7 @@ git commit -m "Erstes Modell: Baseline + Random Forest"
 
 ## Zusammenfassung
 
-+ Der Ablauf bleibt immer gleich: Daten prüfen, Baseline, einfaches Modell, passende Kennzahl, zurückgehaltene Testdaten, Interpretation.
++ Der Ablauf bleibt gleich: Daten prüfen, Baseline, einfaches Modell, passende Kennzahl, zurückgehaltene Testdaten, Interpretation.
 + Datenqualität und eine klare Fragestellung entscheiden mehr als die Wahl des Algorithmus.
 + Fünf Gewohnheiten schützen vor den häufigsten Fehlern: zuerst trennen, `Pipeline` nutzen, mehr als Accuracy ansehen, `random_state=42` setzen, Notebook komplett neu durchlaufen lassen.
 + Gesundheitsdaten sind besondere Kategorien nach Art. 9 DSGVO: üben Sie mit synthetischen oder anonymisierten Daten und klären Sie echte Daten vorab.
