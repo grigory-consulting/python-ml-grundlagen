@@ -1,0 +1,7 @@
+data/FashionMNIST/raw/*-ubyte
+.DS_Store
+__pycache__/
+.ipynb_checkpoints/
+*.joblib
+# Trainerfassung mit Speaker-Notes bleibt lokal
+slides/*_trainer.md

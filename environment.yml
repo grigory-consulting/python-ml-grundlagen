@@ -1,0 +1,10 @@
+# Anlegen:    conda env create -f environment.yml
+# Aktivieren: conda activate pyml
+name: pyml
+channels:
+  - conda-forge
+dependencies:
+  - python=3.12
+  - pip
+  - pip:
+      - -r requirements.txt
