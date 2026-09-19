@@ -5544,7 +5544,7 @@ loader = DataLoader(train, batch_size=64, shuffle=True)
 | **Tabellendaten**  | Feed-Forward-Netze                   | Bewertung von Kreditrisiken                                      |
 
 + Bei Bildern, Audio und Text haben tiefe Netze die großen Durchbrüche gebracht
-+ Bei Tabellendaten sind baumbasierte Modelle (Random Forest, Gradient Boosting) oft gleich gut oder besser und deutlich schneller trainiert
++ Bei Tabellendaten gewinnen Gradient Boosting und Random Forest auf mittelgroßen Datensätzen (rund 10000 Zeilen) meist gegen neuronale Netze, bei deutlich geringerem Rechenaufwand (Grinsztajn, Oyallon, Varoquaux, NeurIPS 2022)
 
 --
 
@@ -5555,7 +5555,7 @@ loader = DataLoader(train, batch_size=64, shuffle=True)
 |-----------------------------------------|-----------------------------------------------------|-----------------------------------------------------|
 | Welche Daten liegen vor?                | Tabellen mit benannten Spalten                      | Bilder, Audio, freier Text                          |
 | Wer bildet die Merkmale?                | Sie selbst, aus Fachwissen                          | das Netz, in den versteckten Schichten              |
-| Wie viele Beispiele gibt es?            | eher wenige                                         | sehr viele                                          |
+| Wie viele Beispiele gibt es?            | reicht schon bei eher wenigen Beispielen            | zeigt seine Stärke erst bei sehr vielen Beispielen  |
 | Muss das Modell erklärbar sein?         | Koeffizienten und Bäume lassen sich lesen           | 101770 Gewichte lassen sich nicht einzeln deuten    |
 | Wie viel Rechenzeit ist vorhanden?      | Training auf dem Laptop                             | große Netze brauchen eine Grafikkarte |
 
@@ -6031,6 +6031,7 @@ print(classification_report(y_test, y_pred, digits=2))
 
 --
 
+<!-- .slide: class="smaller" -->
 ## Pipeline speichern und laden
 
 ```python
@@ -6044,7 +6045,7 @@ print(geladen.score(X_test, y_test))   # -> 0.82, wie vorher
 
 + Eine Datei enthält Imputer, Scaler, Encoder und Modell mit allen gelernten Größen
 + Aufbereitung und Modell können im Einsatz nicht mehr auseinanderlaufen
-+ Zum Laden brauchen Sie dieselben Pakete in möglichst derselben Version
++ Zum Laden brauchen Sie dieselbe scikit-learn-Version wie beim Speichern: Laden mit einer anderen Version wird nicht unterstützt
 
 <div class="fragment">
 
@@ -6542,7 +6543,7 @@ print(wichtigkeit.head(5).round(3))
 
 + Sie werden aus den Trainingsdaten berechnet: Ein Merkmal, mit dem der Wald nur auswendig lernt, erscheint trotzdem wichtig
 + Merkmale mit vielen verschiedenen Werten (stetige Zahlen, Kennungen) werden bevorzugt, weil sie mehr Möglichkeiten zum Teilen bieten
-+ Zusammenhängende Merkmale teilen sich die Wichtigkeit, jedes einzelne wirkt dann unbedeutend
++ Bei stark zusammenhängenden Merkmalen kann jedes einzelne unbedeutend wirken, obwohl die gemeinsame Information wichtig ist
 + One-Hot-Spalten einer Kategorie werden einzeln bewertet
 
 <div class="fragment">
@@ -6626,7 +6627,7 @@ plt.show()
 ## Grenzen der Interpretation
 
 + **Zusammenhang ist keine Ursache.** Das Modell nutzt, was mit der Zielgröße zusammen auftritt. Ob eine Änderung des Merkmals die Zielgröße ändert, beantwortet es nicht
-+ **Zusammenhängende Merkmale teilen sich die Wichtigkeit.** Zwei fast gleiche Spalten können beide unwichtig wirken, obwohl die Information dahinter entscheidend ist
++ **Zusammenhängende Merkmale wirken einzeln unwichtig.** Zwei fast gleiche Spalten können beide unbedeutend erscheinen, obwohl die Information dahinter entscheidend ist
 + **Die Interpretation gilt für das Modell, nicht für die Welt.** Ein anderes Modell mit gleicher Güte kann andere Merkmale bevorzugen
 + **Ein schlechtes Modell hat nichts zu erklären.** Erst die Güte auf Testdaten prüfen, dann interpretieren
 
@@ -6801,10 +6802,10 @@ flowchart LR
 ## Personenbezogene und besonders schützenswerte Daten
 
 + Sobald sich Daten auf eine identifizierbare Person beziehen, gilt die **DSGVO**, auch für Auswertungen und Modelle im Notebook.
-+ **Gesundheitsdaten** gehören zu den besonderen Kategorien personenbezogener Daten nach **Art. 9 DSGVO**. Für sie gelten strengere Voraussetzungen als für andere personenbezogene Daten.
++ **Gesundheitsdaten** sind besondere Kategorien personenbezogener Daten nach **Art. 9 DSGVO**: Die Verarbeitung ist grundsätzlich untersagt, Ausnahmen regelt Art. 9 Abs. 2.
 + Arbeiten Sie nur mit den Spalten, die Sie für die Frage brauchen (Datenminimierung), und nur für den festgelegten Zweck (Zweckbindung).
-+ Eine Tabelle ohne Namen ist nicht automatisch anonym: Kombinationen wie Geburtsdatum, PLZ und Geschlecht können eine Person eindeutig machen.
-+ Zum Lernen und Ausprobieren: **synthetische oder anonymisierte Daten**, so wie die Versichertentabelle in diesem Kurs.
++ **Ohne Namen ist nicht anonym:** Geschlecht, Geburtsdatum und Postleitzahl können einen Datensatz eindeutig machen. Auch pseudonymisierte Daten bleiben personenbezogen (Art. 4 Nr. 5 DSGVO).
++ Zum Lernen und Ausprobieren: **synthetische oder anonymisierte Daten**, so wie die Versichertentabelle in diesem Kurs. Synthetische Daten sind aber nicht automatisch anonym.
 
 <div class="fragment">
 
