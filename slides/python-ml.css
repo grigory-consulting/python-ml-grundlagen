@@ -4,6 +4,7 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@300;400;500;600;700&family=Geist+Mono:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap');
 
 :root {
   --gf-text: #1e293b;
@@ -329,3 +330,19 @@
 .reveal .callout[data-type="warning"] { border-left-color:#b45309 !important; }
 .reveal .callout[data-type="tip"] { border-left-color:#2459a6 !important; }
 .reveal .slides section div[absolute="true"] img { box-shadow:none !important; border-radius:8px; }
+
+/* Titel poliert: Haarlinie über die ganze Breite, Akzentstück links darauf, Code im Titel ohne Kasten */
+.reveal .slides section h2 { position:relative; padding-bottom:0.28em; margin-bottom:0.5em; border-bottom:1px solid #b9c6d8; color:#183b66; }
+.reveal .slides section h2::after { content:""; position:absolute; left:0; bottom:-2px; width:96px; height:3px; margin:0; background:#2459a6; border-radius:0; }
+.reveal .slides section[data-background-color] h1, .reveal .slides section[data-background-color] h2 { border-bottom:none; }
+.reveal .slides section[data-background-color] h2::after { display:none; }
+.reveal h2 code, .reveal h3 code { background:transparent !important; padding:0 !important; color:#2459a6; font-size:0.74em; }
+
+/* Fließtext: Source Serif 4 (seriöser als die Groteske), Titel überall gleich groß, auch auf kompakten Folien */
+.reveal { font-family:'Source Serif 4',Georgia,serif; font-size:33px; }
+.reveal strong { font-weight:600; }
+.reveal .slides section h2 { font-size:1.6em; }
+.reveal .slides section.smaller h2 { font-size:2.13em; }
+.reveal table, .reveal .callout, .reveal blockquote { font-family:inherit; }
+.reveal blockquote { font-style:normal; }
+
