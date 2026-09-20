@@ -49,8 +49,7 @@ Dr.-Ing. Grigory Devadze
 
 + Ein öffentliches Repository enthält Folien, Notebooks, Daten und Umgebungsdateien <!-- .element: class="fragment" data-fragment-index="1" -->
 + `https://github.com/grigory-consulting/python-ml-grundlagen` <!-- .element: class="fragment" data-fragment-index="2" -->
-+ Die Daten im Ordner `data/` reichen für fast alle Beispiele, ohne Download <!-- .element: class="fragment" data-fragment-index="3" -->
-+ Das Repository bleibt nach dem Kurs erreichbar <!-- .element: class="fragment" data-fragment-index="4" -->
++ Das Repository bleibt nach dem Kurs erreichbar <!-- .element: class="fragment" data-fragment-index="3" -->
 
 ---
 
