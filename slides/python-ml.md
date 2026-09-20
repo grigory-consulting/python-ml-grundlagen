@@ -1778,7 +1778,7 @@ Von der Rohdatei zum geprüften, bereinigten Datensatz und zu Diagrammen, die Mu
 
 ## Was Sie in diesem Teil lernen
 
-- Sie lesen CSV-Dateien mit den passenden Parametern ein und erkennen typische Einlesefehler
+- Sie lesen CSV-Dateien mit den passenden Parametern ein, erkennen typische Einlesefehler und holen Daten per SQL aus einer Datenbank
 - Sie prüfen einen neuen Datensatz systematisch: Größe, Typen, Kennzahlen, fehlende Werte
 - Sie behandeln fehlende Werte, Duplikate, falsche Datentypen und Ausreißer nachvollziehbar
 - Sie bauen Diagramme mit matplotlib und seaborn: Histogramm, Countplot, Boxplot, Scatterplot, Heatmap
@@ -1867,6 +1867,37 @@ wein_falsch = pd.read_csv("data/winequality-red.csv")
 wein_falsch.shape     # -> (1599, 1)    alles in einer Spalte
 wein.shape            # -> (1599, 12)   mit sep=";"
 ```
+
+--
+
+<!-- .slide: class="smaller" -->
+## Daten aus einer Datenbank: `read_sql`
+
+```python
+import sqlite3
+
+con = sqlite3.connect("data/versicherte.db")     # Verbindung öffnen
+sql = """
+    SELECT bundesland, COUNT(*) AS anzahl,
+           AVG(leistungsausgaben_eur) AS ausgaben_mittel
+    FROM versicherte
+    WHERE arztbesuche_jahr >= 10
+    GROUP BY bundesland
+    ORDER BY anzahl DESC
+"""
+df = pd.read_sql(sql, con)                       # Ergebnis ist ein DataFrame
+con.close()
+print(df.head(2).round(2))
+```
+
+```text
+            bundesland  anzahl  ausgaben_mittel
+0               Berlin     221          5526.41
+1  Nordrhein-Westfalen     151          6054.46
+```
+
++ Die Datenbank filtert und gruppiert. In pandas kommt nur das Ergebnis an, hier 16 Zeilen statt 5 025 <!-- .element: class="fragment" data-fragment-index="1" -->
++ Bei einer anderen Datenbank ändert sich nur die Verbindung, `read_sql` und alles danach bleiben gleich <!-- .element: class="fragment" data-fragment-index="2" -->
 
 --
 
@@ -2794,6 +2825,16 @@ Ein ML-Modell sortiert unerwünschte E-Mails aus, indem es Muster in den Nachric
 
 <div class="fragment" data-fragment-index="4">
 
+![](figs/d_t05_train_test_split.png)
+
+</div>
+
+--
+
+## Aufteilen mit `train_test_split`
+
+<div class="fragment" data-fragment-index="1">
+
 ```python
 from sklearn.datasets import load_iris
 from sklearn.model_selection import train_test_split
@@ -2807,7 +2848,7 @@ X_train, X_test, y_train, y_test = train_test_split(
 
 </div>
 
-<div class="fragment" data-fragment-index="5">
+<div class="fragment" data-fragment-index="2">
 
 > [!warning]
 > Wer auf den Trainingsdaten bewertet, misst Auswendiglernen. Nur die Testdaten zeigen, ob das Modell generalisiert.
@@ -2932,7 +2973,7 @@ Zahlen vorhersagen mit linearer Regression, Klassen vorhersagen mit logistischer
 ## Was Sie in diesem Teil lernen
 
 - Eine lineare Regression trainieren und ihre Koeffizienten lesen
-- Erklären, was Verlust, Gradientenabstieg und Regularisierung bedeuten
+- Erklären, was Verlust und Gradientenabstieg bedeuten
 - Fünf Klassifikationsverfahren in ihrer Grundidee unterscheiden
 - Daten korrekt skalieren: erst teilen, dann `StandardScaler`
 - Modelle mit `classification_report` nebeneinanderstellen
@@ -2946,7 +2987,7 @@ Zahlen vorhersagen mit linearer Regression, Klassen vorhersagen mit logistischer
 | **Zielgröße** | eine Zahl | eine Klasse |
 | **Beispiel im Kurs** | mittlerer Hauswert eines Bezirks | Tumor gutartig oder bösartig |
 | **Einfachstes Verfahren** | lineare Regression | logistische Regression |
-| **scikit-learn** | `LinearRegression`, `Lasso` | `LogisticRegression`, `DecisionTreeClassifier`, `RandomForestClassifier`, `SVC`, `KNeighborsClassifier` |
+| **scikit-learn** | `LinearRegression` | `LogisticRegression`, `DecisionTreeClassifier`, `RandomForestClassifier`, `SVC`, `KNeighborsClassifier` |
 
 Beides ist überwachtes Lernen: Für jedes Trainingsbeispiel ist die richtige Antwort bekannt.
 
@@ -3178,58 +3219,10 @@ Longitude    -0.441
 
 --
 
-## Regularisierung als Idee
-
-+ Ein Modell mit vielen Merkmalen kann sich zu stark an die Trainingsdaten anpassen <!-- .element: class="fragment" data-fragment-index="1" -->
-+ **Regularisierung** bestraft große Koeffizienten: Das Training minimiert den MSE plus eine Strafe <!-- .element: class="fragment" data-fragment-index="2" -->
-+ **Lasso:** Strafe = `alpha` mal die Summe der Beträge aller Koeffizienten <!-- .element: class="fragment" data-fragment-index="3" -->
-+ Wirkung: Koeffizienten unwichtiger Merkmale werden **genau null**. Lasso wählt damit Merkmale aus <!-- .element: class="fragment" data-fragment-index="4" -->
-+ `alpha` ist ein Hyperparameter: `alpha = 0` ist die normale lineare Regression, großes `alpha` lässt kaum Merkmale übrig <!-- .element: class="fragment" data-fragment-index="5" -->
-
---
-
 <!-- .slide: class="smaller" -->
-## Lasso in scikit-learn
-
-<div class="two-col">
-<div style="flex: 58">
-
-```python
-from sklearn.linear_model import Lasso
-
-lasso = Lasso(alpha=0.1)
-lasso.fit(X_train, y_train)
-
-koef = pd.Series(lasso.coef_, index=X.columns)
-print(koef.round(3))
-print((koef != 0).sum())      # -> 6
-print(round(lasso.score(X_test, y_test), 3))
-# -> 0.542
-```
-
-</div>
-<div style="flex: 42">
-
-```text
-MedInc        0.394
-HouseAge      0.015
-AveRooms     -0.000
-AveBedrms     0.000
-Population    0.000
-AveOccup     -0.003
-Latitude     -0.114
-Longitude    -0.101
-```
-
-</div>
-</div>
-
-+ `AveRooms` und `AveBedrms` sind genau null und fallen heraus. `Population` ist nur gerundet null (0.000018) <!-- .element: class="fragment" data-fragment-index="1" -->
-+ R² sinkt leicht von 0.597 auf 0.542, dafür ist das Modell einfacher <!-- .element: class="fragment" data-fragment-index="2" -->
-
---
-
 ## Klassifikation: Problemstellung
+
+![](figs/d_t06_klassifikation_problem.png)
 
 + Gegeben: Trainingsbeispiele mit Merkmalsvektor $\mathbf{x}$ und bekannter Klasse $y$ <!-- .element: class="fragment" data-fragment-index="1" -->
 + Gesucht: eine Funktion, die neue Eingaben einer von $k$ vordefinierten Klassen zuordnet <!-- .element: class="fragment" data-fragment-index="2" -->
@@ -3407,6 +3400,16 @@ print(round(baum.score(X_test, y_test), 3))   # -> 0.886
 |   |--- worst texture >  20.65
 |   |   |--- class: 0
 ```
+
+--
+
+## Derselbe Baum als Diagramm
+
+![](figs/d_t06_baum_brustkrebs.png)
+
++ Jeder Knoten prüft ein Merkmal gegen eine Schwelle: bei „ja" nach links, bei „nein" nach rechts <!-- .element: class="fragment" data-fragment-index="1" -->
++ Ein Fall wandert von der Wurzel bis zu einem Blatt. Das Blatt gibt die Klasse aus, die dort im Training die Mehrheit hatte <!-- .element: class="fragment" data-fragment-index="2" -->
++ Die Blätter sind nicht rein: Im Blatt ganz rechts liegen 9 gutartige Fälle unter 165 <!-- .element: class="fragment" data-fragment-index="3" -->
 
 --
 
@@ -3605,7 +3608,6 @@ for name, modell in modelle.items():
 
 - Lineare Regression legt eine Gerade (oder Ebene) durch die Daten. Training heißt: den MSE minimieren
 - Gradientenabstieg geht schrittweise bergab, die Lernrate bestimmt die Schrittweite
-- Lasso bestraft große Koeffizienten und setzt unwichtige Merkmale auf null
 - Logistische Regression liefert Wahrscheinlichkeiten. Die Schwelle ist eine fachliche Entscheidung
 - Erst teilen, dann skalieren. Bäume und Random Forest kommen ohne Skalierung aus, SVM und kNN nicht
 
@@ -3639,7 +3641,7 @@ Feature Engineering heißt: aus Rohdaten Merkmale machen, mit denen ein Modell g
 | **Kodieren** | Kategorien in Zahlen umwandeln | `Sex`, `Embarked` als 0/1-Spalten |
 | **Transformieren** | schiefe Verteilungen glätten | `log(1 + Fare)` |
 | **Neu bilden** | Merkmale kombinieren oder gruppieren | Familiengröße, Altersgruppe |
-| **Auswählen** | überflüssige Merkmale weglassen | Korrelation prüfen, Lasso |
+| **Auswählen** | überflüssige Merkmale weglassen | Korrelation prüfen |
 
 > [!tip]
 > Ein gut gebautes Merkmal bringt oft mehr als der Wechsel auf ein komplizierteres Modell.
@@ -3653,7 +3655,7 @@ Feature Engineering heißt: aus Rohdaten Merkmale machen, mit denen ein Modell g
 
 | Verfahren | Skalierung nötig? | Grund |
 |-----------|-------------------|-------|
-| Lasso und logistische Regression | ja | Strafterm und Gradientenabstieg hängen von der Größenordnung ab |
+| Logistische Regression | ja | Gradientenabstieg hängt von der Größenordnung ab |
 | k-NN, SVM, k-Means | ja | rechnen mit Abständen |
 | PCA | ja | sucht Richtungen mit großer Varianz |
 | Neuronale Netze | ja | Training läuft stabiler und schneller |
@@ -3822,7 +3824,7 @@ X_train, X_val, y_train, y_val = train_test_split(
 + **Underfitting:** Das Modell ist zu einfach und verpasst das Muster. Schlecht auf Trainings- und auf neuen Daten. <!-- .element: class="fragment" data-fragment-index="1" -->
 + **Overfitting:** Das Modell ist zu flexibel und lernt das Rauschen der Trainingsdaten auswendig. Sehr gut im Training, schlecht auf neuen Daten. <!-- .element: class="fragment" data-fragment-index="2" -->
 + **Generalisierung:** Ziel ist ein niedriger Fehler auf Daten, die das Modell nie gesehen hat. <!-- .element: class="fragment" data-fragment-index="3" -->
-+ Stellschrauben: Modellkomplexität (Kapazität), mehr Daten, bessere Merkmale, Regularisierung <!-- .element: class="fragment" data-fragment-index="4" -->
++ Stellschrauben: Modellkomplexität (Kapazität), mehr Daten, bessere Merkmale <!-- .element: class="fragment" data-fragment-index="4" -->
 
 --
 
@@ -3871,7 +3873,7 @@ Grad 11: Training 0.000, neu 0.111
 | Trainingsfehler | hoch | sehr niedrig |
 | Fehler auf neuen Daten | hoch | deutlich höher als im Training |
 | Im Polynombeispiel | Grad 1 | Grad 11 |
-| Abhilfe | flexibleres Modell, bessere Merkmale | einfacheres Modell, mehr Daten, Regularisierung |
+| Abhilfe | flexibleres Modell, bessere Merkmale | einfacheres Modell, mehr Daten |
 
 + Mehr Komplexität senkt den Bias und erhöht die Varianz. Gesucht ist die Mitte. <!-- .element: class="fragment" data-fragment-index="1" -->
 + Diagnose: Trainings- und Validierungswert nebeneinander über die Modellkomplexität auftragen (zum Beispiel über `max_depth`) <!-- .element: class="fragment" data-fragment-index="2" -->
@@ -3925,7 +3927,7 @@ print(f"Mittel: {scores.mean():.3f}, Streuung: {scores.std():.3f}")
 |---|-----------|----------------|
 | Wer legt sie fest? | das Training (`fit`) | Sie, vor dem Training |
 | Woraus? | aus den Daten gelernt | ausprobiert und verglichen |
-| Beispiele | Koeffizienten `coef_` und `intercept_` der Regression, Schwellen im Baum | `alpha` bei Lasso, `max_depth` beim Baum, `n_estimators` beim Random Forest, `k` bei k-NN |
+| Beispiele | Koeffizienten `coef_` und `intercept_` der Regression, Schwellen im Baum | `max_depth` beim Baum, `n_estimators` beim Random Forest, `k` bei k-NN |
 | Wo im Code? | Attribute mit Unterstrich nach `fit` | Argumente im Konstruktor |
 
 + Schlecht gewählte Hyperparameter führen zu Underfitting oder Overfitting <!-- .element: class="fragment" data-fragment-index="1" -->
@@ -3934,29 +3936,31 @@ print(f"Mittel: {scores.mean():.3f}, Streuung: {scores.std():.3f}")
 --
 
 <!-- .slide: class="smaller" -->
-## GridSearchCV: bestes `alpha` für Lasso
+## GridSearchCV: beste Tiefe für einen Baum
 
 ```python
-import numpy as np
 import pandas as pd
-from sklearn.linear_model import Lasso
 from sklearn.model_selection import GridSearchCV, train_test_split
+from sklearn.tree import DecisionTreeRegressor
 
 df = pd.read_csv("data/california_housing.csv")
 X, y = df.drop(columns="MedHouseVal"), df["MedHouseVal"]
 X_train, X_test, y_train, y_test = train_test_split(
     X, y, test_size=0.2, random_state=1)
 
-alphas = np.logspace(-4, 1, 10)          # 10 Werte von 0.0001 bis 10
-search = GridSearchCV(Lasso(), {"alpha": alphas}, cv=5, scoring="r2")
+depths = [2, 4, 6, 8, 10, 12, 16, 20]
+search = GridSearchCV(DecisionTreeRegressor(random_state=1),
+                      {"max_depth": depths}, cv=5, scoring="r2")
 search.fit(X_train, y_train)
 
 print(search.best_params_, round(search.best_score_, 3))
-print(f"R² auf dem Testteil: {search.score(X_test, y_test):.2f}")
+# -> {'max_depth': 8} 0.682
+print(f"R² auf dem Testteil: {search.score(X_test, y_test):.2f}")   # -> 0.71
 ```
 
-+ `np.logspace(-4, 1, 10)`: Werte gleichmäßig über Zehnerpotenzen verteilt, passend für Regularisierungsstärken <!-- .element: class="fragment" data-fragment-index="1" -->
-+ 10 Kandidaten mal 5 Folds: 50 Trainingsläufe. Danach trainiert `GridSearchCV` das beste Modell auf allen Trainingsdaten neu. <!-- .element: class="fragment" data-fragment-index="2" -->
++ `DecisionTreeRegressor`: derselbe Baum wie bei der Klassifikation, nur sagt jedes Blatt eine Zahl voraus <!-- .element: class="fragment" data-fragment-index="1" -->
++ Tiefe 2 ist zu grob (R² 0.44), Tiefe 20 lernt auswendig (R² 0.60). Die Cross-Validation findet die Mitte bei Tiefe 8 <!-- .element: class="fragment" data-fragment-index="2" -->
++ 8 Kandidaten mal 5 Folds: 40 Trainingsläufe. Danach trainiert `GridSearchCV` das beste Modell auf allen Trainingsdaten neu. <!-- .element: class="fragment" data-fragment-index="3" -->
 
 --
 
@@ -4360,7 +4364,7 @@ weighted avg       0.71      0.70      0.70        10
 --
 
 <!-- .slide: class="smaller" -->
-## Betriebliche Bewertungskriterien für Modelle
+## Bewertungskriterien für Modelle
 
 Eine gute Kennzahl reicht im Betrieb nicht. Ein Modell muss auch diese Fragen bestehen:
 
@@ -4819,6 +4823,17 @@ Künstliche neuronale Netze sind vom Gehirn inspiriert: Milliarden von Neuronen 
 > Gewichte und Bias sind die Parameter, die das Training anpasst. Die Eingaben kommen aus den Daten.
 
 </div>
+
+--
+
+<!-- .slide: class="smaller" -->
+## Vom Neuron zum Netz
+
+![](figs/d_t09_netz_klassisch.png) <!-- .element: style="max-height: 400px" -->
+
++ Die klassische Darstellung: jeder Kreis ist ein Neuron, jede Linie ein Gewicht <!-- .element: class="fragment" data-fragment-index="1" -->
++ Das blau markierte Neuron ist das von der vorigen Folie: drei Eingaben, drei Gewichte, ein Bias, eine Aktivierung <!-- .element: class="fragment" data-fragment-index="2" -->
++ Schon dieses kleine Netz hat 3·4 + 4·4 + 4·2 = 36 Gewichte und 10 Bias-Werte <!-- .element: class="fragment" data-fragment-index="3" -->
 
 --
 
@@ -5292,7 +5307,7 @@ Aufbereitung, Modell und Bewertung in einem einzigen Objekt zusammenbauen, prüf
 ## Was Sie in diesem Teil lernen
 
 + Sie erkennen in scikit-learn-Klassen dieselben drei Methoden: `fit`, `transform`, `predict` <!-- .element: class="fragment" data-fragment-index="1" -->
-+ Sie finden ein Datenleck im Code und schreiben die richtige Fassung <!-- .element: class="fragment" data-fragment-index="2" -->
++ Sie wissen, bei welchen Schritten der Aufbereitung ein Datenleck entsteht <!-- .element: class="fragment" data-fragment-index="2" -->
 + Sie bauen aus Aufbereitung und Modell eine `Pipeline` und behandeln Zahlen- und Textspalten mit `ColumnTransformer` getrennt <!-- .element: class="fragment" data-fragment-index="3" -->
 + Sie prüfen die ganze Pipeline mit Cross-Validation und stellen sie mit `GridSearchCV` ein <!-- .element: class="fragment" data-fragment-index="4" -->
 + Sie speichern die fertige Pipeline und halten fest, womit sie entstanden ist <!-- .element: class="fragment" data-fragment-index="5" -->
@@ -5314,7 +5329,8 @@ Aufbereitung, Modell und Bewertung in einem einzigen Objekt zusammenbauen, prüf
 
 --
 
-## `fit`, `transform`, `predict` im Code
+<!-- .slide: class="smaller" -->
+## Bekannt aus Teil 5: teilen, dann skalieren
 
 ```python
 from sklearn.datasets import load_breast_cancer
@@ -5327,34 +5343,16 @@ X_train, X_test, y_train, y_test = train_test_split(
     X, y, test_size=0.3, random_state=1, stratify=y)
 
 scaler = StandardScaler()
-scaler.fit(X_train)                    # lernt Mittelwert und Streuung
-X_train_s = scaler.transform(X_train)  # rechnet um
-print(scaler.mean_[:2])                # gelernte Größe, mit Unterstrich
+X_train_s = scaler.fit_transform(X_train)  # fit NUR auf Training
+X_test_s = scaler.transform(X_test)        # Testdaten nur umrechnen
 
 modell = LogisticRegression(max_iter=1000)
-modell.fit(X_train_s, y_train)         # lernt die Koeffizienten
+modell.fit(X_train_s, y_train)
+print(modell.score(X_test_s, y_test))
 ```
 
---
-
-## Das Datenleck am falschen Beispiel
-
-```python
-# FALSCH: der Scaler sieht alle Daten, auch die späteren Testdaten
-scaler = StandardScaler()
-X_scaled = scaler.fit_transform(X)
-
-X_train, X_test, y_train, y_test = train_test_split(
-    X_scaled, y, test_size=0.3, random_state=1, stratify=y)
-
-modell = LogisticRegression(max_iter=1000)
-modell.fit(X_train, y_train)
-print(modell.score(X_test, y_test))
-```
-
-+ Der Code läuft ohne Fehlermeldung und liefert eine plausible Zahl <!-- .element: class="fragment" data-fragment-index="1" -->
-+ Mittelwert und Streuung stammen aber auch aus den Testzeilen <!-- .element: class="fragment" data-fragment-index="2" -->
-+ Die Testdaten sind damit nicht mehr ungesehen <!-- .element: class="fragment" data-fragment-index="3" -->
+> [!tip]
+> Merkregel: `fit` und `fit_transform` sehen nur Trainingsdaten. Testdaten bekommen ausschließlich `transform` und `predict`.
 
 --
 
@@ -5380,27 +5378,6 @@ print(StandardScaler().fit(X_tr).mean_)   # -> [29.73 31.95]  nur Training
 
 > [!warning]
 > Auch `fillna(df.median())` in Zeile 3 ist ein Leck: Der Median stammt aus allen Zeilen.
-
---
-
-## Die richtige Fassung von Hand
-
-```python
-# RICHTIG: erst teilen, dann nur auf den Trainingsdaten lernen
-X_train, X_test, y_train, y_test = train_test_split(
-    X, y, test_size=0.3, random_state=1, stratify=y)
-
-scaler = StandardScaler()
-X_train_s = scaler.fit_transform(X_train)  # fit NUR auf Training
-X_test_s = scaler.transform(X_test)        # Testdaten nur umrechnen
-
-modell = LogisticRegression(max_iter=1000)
-modell.fit(X_train_s, y_train)
-print(modell.score(X_test_s, y_test))
-```
-
-> [!tip]
-> Merkregel: `fit` und `fit_transform` sehen nur Trainingsdaten. Testdaten bekommen ausschließlich `transform` und `predict`.
 
 --
 
@@ -6157,12 +6134,6 @@ Population -0.000    -0.004
 
 --
 
-## Lasso setzt Koeffizienten auf null
-
-![](figs/t11_lasso_koeffizienten.png)
-
---
-
 <!-- .slide: class="smaller" -->
 ## `plot_tree` mit Merkmalsnamen
 
@@ -6329,8 +6300,7 @@ plt.show()
 | **Aufwand** | eigenes Paket, bei großen Daten rechenintensiv | eigenes Paket, Ergebnis schwankt mit der Zufallsstichprobe |
 
 + Beide erklären **einzelne** Vorhersagen, das können Permutation Importance und Partial Dependence nicht <!-- .element: class="fragment" data-fragment-index="1" -->
-+ Beide Pakete gehören nicht zur Kursumgebung und werden hier nicht installiert <!-- .element: class="fragment" data-fragment-index="2" -->
-+ Die Grenzen der vorigen Folie gelten unverändert <!-- .element: class="fragment" data-fragment-index="3" -->
++ Die Grenzen der vorigen Folie gelten unverändert <!-- .element: class="fragment" data-fragment-index="2" -->
 
 --
 
@@ -6357,7 +6327,7 @@ plt.show()
 
 + Derselbe Ablauf aus Spaltenwahl, Split, Pipeline, Cross-Validation und einmaligem Testset trägt Klassifikation, Regression und Clustering <!-- .element: class="fragment" data-fragment-index="1" -->
 + Bei 3,4 % Ausfällen erreicht ein nutzloses Modell 97 % Accuracy: Recall, Precision, `class_weight="balanced"` und eine bewusst gewählte Schwelle sind die Werkzeuge <!-- .element: class="fragment" data-fragment-index="2" -->
-+ Koeffizienten vergleichen Sie nur nach Skalierung, Lasso setzt entbehrliche auf null, ein Baum der Tiefe 3 lässt sich als Regeln vorlesen <!-- .element: class="fragment" data-fragment-index="3" -->
++ Koeffizienten vergleichen Sie nur nach Skalierung, ein Baum der Tiefe 3 lässt sich als Regeln vorlesen <!-- .element: class="fragment" data-fragment-index="3" -->
 + `feature_importances_` bevorzugt Spalten mit vielen Werten, `permutation_importance` auf Testdaten ist die robustere Wahl <!-- .element: class="fragment" data-fragment-index="4" -->
 + Jede Interpretation beschreibt das Modell, nicht die Ursachen in der Welt, und gehört mit Baseline und Grenzen in den Bericht <!-- .element: class="fragment" data-fragment-index="5" -->
 
@@ -6376,7 +6346,7 @@ Vom Kursbeispiel zum ersten eigenen Modell mit eigenen Daten.
 + Sie prüfen mit einer Checkliste, ob ein Vorhaben reif für ein erstes Modell ist. <!-- .element: class="fragment" data-fragment-index="2" -->
 + Sie erkennen die typischen Fehler beim Einstieg und wissen, wie Sie sie vermeiden. <!-- .element: class="fragment" data-fragment-index="3" -->
 + Sie machen aus einem Notebook ein Skript, das morgen dasselbe Ergebnis liefert wie heute. <!-- .element: class="fragment" data-fragment-index="4" -->
-+ Sie wissen, was nach dem Kurs auf Ihrem Gerät bleibt und womit Sie weiterlernen. <!-- .element: class="fragment" data-fragment-index="5" -->
++ Sie wissen, womit Sie nach dem Kurs weiterlernen. <!-- .element: class="fragment" data-fragment-index="5" -->
 
 --
 
@@ -6569,28 +6539,6 @@ git commit -m "Erstes Modell: Baseline + Random Forest"
 --
 
 <!-- .slide: class="smaller" -->
-## Ihre Umgebung nach dem Kurs
-
-| Was | Bleibt es? | Hinweis |
-|---|---|---|
-| conda-Umgebung mit allen Kurspaketen | ja | Aktivieren wie im Kurs mit `conda activate` und dem Namen Ihrer Kursumgebung |
-| VS Code mit Python- und Jupyter-Erweiterung | ja | Kernel der Kursumgebung auswählen |
-| Kursrepo mit Folien, Notebooks, Lösungen und Daten | ja | Liegt lokal vollständig vor, läuft ohne Netz |
-| Netzfreigaben für Paketquellen (Anaconda, PyPI, PyTorch, Hugging Face) | **nein** | Werden nach der Schulung zurückgesetzt |
-
-+ Die Notebooks des Kurses laufen weiter, weil Pakete und Datensätze bereits lokal liegen. <!-- .element: class="fragment" data-fragment-index="1" -->
-+ `conda install` und `pip install` erreichen ihre Quellen danach nicht mehr. <!-- .element: class="fragment" data-fragment-index="2" -->
-
-<div class="fragment" data-fragment-index="3">
-
-> [!important]
-> Neue Pakete oder Updates fordern Sie über Ihre eigene IT an. Nennen Sie dabei Paketname, Version und Quelle (conda-Kanal oder PyPI).
-
-</div>
-
---
-
-<!-- .slide: class="smaller" -->
 ## Literatur und Lernpfad
 
 | Schritt | Titel | Wofür |
@@ -6602,18 +6550,6 @@ git commit -m "Erstes Modell: Baseline + Random Forest"
 | 3. Machine Learning | scikit-learn User Guide (scikit-learn.org) | Nachschlagen: jedes Verfahren mit Beispiel |
 | 4. Deep Learning | Zhang, Lipton, Li, Smola: *Dive into Deep Learning* (frei: d2l.ai) | Neuronale Netze mit PyTorch-Code |
 
-> [!tip]
-> Ein Buch, ein eigener Datensatz. Jedes Kapitel sofort an der eigenen Tabelle nachvollziehen.
-
---
-
-## Fragen für Ihren Arbeitsalltag
-
-+ Welche Tabelle aus Ihrem Alltag eignet sich für ein erstes kleines Projekt, und welche eine Frage stellen Sie an sie? <!-- .element: class="fragment" data-fragment-index="1" -->
-+ Wo reicht eine saubere Auswertung mit pandas aus, und wo würde ein Modell wirklich etwas hinzufügen? <!-- .element: class="fragment" data-fragment-index="2" -->
-+ Welcher Fehler wäre in Ihrem Anwendungsfall teurer: ein falscher Alarm oder ein übersehener Fall? <!-- .element: class="fragment" data-fragment-index="3" -->
-+ Was müssen Sie intern klären, bevor Sie mit echten Daten arbeiten (Datenschutz, Zugriff, Pakete)? <!-- .element: class="fragment" data-fragment-index="4" -->
-
 --
 
 ## Zusammenfassung
@@ -6622,7 +6558,6 @@ git commit -m "Erstes Modell: Baseline + Random Forest"
 + Datenqualität und eine klare Fragestellung entscheiden mehr als die Wahl des Algorithmus. <!-- .element: class="fragment" data-fragment-index="2" -->
 + Fünf Gewohnheiten schützen vor den häufigsten Fehlern: zuerst trennen, `Pipeline` nutzen, mehr als Accuracy ansehen, `random_state=1` setzen, Notebook komplett neu durchlaufen lassen. <!-- .element: class="fragment" data-fragment-index="3" -->
 + Gesundheitsdaten sind besondere Kategorien nach Art. 9 DSGVO: üben Sie mit synthetischen oder anonymisierten Daten und klären Sie echte Daten vorab. <!-- .element: class="fragment" data-fragment-index="4" -->
-+ Umgebung und Kursrepo bleiben auf Ihrem Gerät, neue Pakete kommen über Ihre IT. <!-- .element: class="fragment" data-fragment-index="5" -->
 
 --
 
