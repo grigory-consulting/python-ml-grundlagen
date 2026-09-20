@@ -104,7 +104,7 @@ print("Prüfung beendet")         # steht außerhalb, läuft immer
 <div class="fragment" data-fragment-index="6">
 
 > [!warning]
-> Falsche Einrückung ist kein Schönheitsfehler. Python meldet `IndentationError` oder führt den falschen Block aus.
+> Die Einrückung gehört zur Syntax. Ist sie falsch, meldet Python `IndentationError` oder führt den falschen Block aus.
 
 </div>
 
