@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<title>Entscheidungsbaum Brustkrebs</title>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  html, body { margin: 0; padding: 0; background: #f4f7fb; }
+  svg { display: block; width: 1200px; height: 336px; }
+</style>
+</head>
+<body>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 336" role="img"
+     aria-labelledby="baum-brustkrebs-title baum-brustkrebs-desc">
+  <title id="baum-brustkrebs-title">Entscheidungsbaum der Tiefe 2 auf den Brustkrebsdaten</title>
+  <desc id="baum-brustkrebs-desc">Die Wurzel prüft worst perimeter gegen 106.05. Links folgt worst concave points gegen 0.16, rechts worst texture gegen 20.65. Die vier Blätter geben gutartig oder bösartig aus, mit der Zahl der Trainingsfälle je Blatt.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#5a6b82"/>
+    </marker>
+  </defs>
+  <rect width="100%" height="100%" fill="#f4f7fb"/>
+  <g stroke="#5a6b82" stroke-width="1.2" fill="none">
+  <path d="M560,80 V100 Q560,108 552,108 H320 Q312,108 312,116 V135" marker-end="url(#arrow)"/>
+  <path d="M640,80 V100 Q640,108 648,108 H880 Q888,108 888,116 V135" marker-end="url(#arrow)"/>
+  <path d="M272,200 V220 Q272,228 264,228 H176 Q168,228 168,236 V255" marker-end="url(#arrow)"/>
+  <path d="M352,200 V220 Q352,228 360,228 H448 Q456,228 456,236 V255" marker-end="url(#arrow)"/>
+  <path d="M848,200 V220 Q848,228 840,228 H752 Q744,228 744,236 V255" marker-end="url(#arrow)"/>
+  <path d="M928,200 V220 Q928,228 936,228 H1024 Q1032,228 1032,236 V255" marker-end="url(#arrow)"/>
+  </g>
+  <rect x="356" y="84" width="32" height="16" rx="2" fill="#f4f7fb"/>
+  <text x="372" y="97" font-family="'Geist Mono', monospace" font-size="14" fill="#5a6b82" text-anchor="middle" letter-spacing="0.06em">JA</text>
+  <rect x="800" y="84" width="56" height="16" rx="2" fill="#f4f7fb"/>
+  <text x="828" y="97" font-family="'Geist Mono', monospace" font-size="14" fill="#5a6b82" text-anchor="middle" letter-spacing="0.06em">NEIN</text>
+  <rect x="204" y="204" width="32" height="16" rx="2" fill="#f4f7fb"/>
+  <text x="220" y="217" font-family="'Geist Mono', monospace" font-size="14" fill="#5a6b82" text-anchor="middle" letter-spacing="0.06em">JA</text>
+  <rect x="376" y="204" width="56" height="16" rx="2" fill="#f4f7fb"/>
+  <text x="404" y="217" font-family="'Geist Mono', monospace" font-size="14" fill="#5a6b82" text-anchor="middle" letter-spacing="0.06em">NEIN</text>
+  <rect x="780" y="204" width="32" height="16" rx="2" fill="#f4f7fb"/>
+  <text x="796" y="217" font-family="'Geist Mono', monospace" font-size="14" fill="#5a6b82" text-anchor="middle" letter-spacing="0.06em">JA</text>
+  <rect x="952" y="204" width="56" height="16" rx="2" fill="#f4f7fb"/>
+  <text x="980" y="217" font-family="'Geist Mono', monospace" font-size="14" fill="#5a6b82" text-anchor="middle" letter-spacing="0.06em">NEIN</text>
+  <rect x="428" y="16" width="344" height="64" rx="6" fill="#f4f7fb"/>
+  <rect x="428" y="16" width="344" height="64" rx="6" fill="#ffffff" stroke="#183b66" stroke-width="1"/>
+  <text x="600" y="44" font-family="'Geist', sans-serif" font-size="20" font-weight="600" fill="#183b66" text-anchor="middle">worst perimeter ≤ 106.05</text>
+  <text x="600" y="68" font-family="'Geist Mono', monospace" font-size="14" fill="#5a6b82" text-anchor="middle">455 Trainingsfälle</text>
+  <rect x="140" y="136" width="344" height="64" rx="6" fill="#f4f7fb"/>
+  <rect x="140" y="136" width="344" height="64" rx="6" fill="#ffffff" stroke="#183b66" stroke-width="1"/>
+  <text x="312" y="164" font-family="'Geist', sans-serif" font-size="20" font-weight="600" fill="#183b66" text-anchor="middle">worst concave points ≤ 0.16</text>
+  <text x="312" y="188" font-family="'Geist Mono', monospace" font-size="14" fill="#5a6b82" text-anchor="middle">271 Fälle</text>
+  <rect x="716" y="136" width="344" height="64" rx="6" fill="#f4f7fb"/>
+  <rect x="716" y="136" width="344" height="64" rx="6" fill="#ffffff" stroke="#183b66" stroke-width="1"/>
+  <text x="888" y="164" font-family="'Geist', sans-serif" font-size="20" font-weight="600" fill="#183b66" text-anchor="middle">worst texture ≤ 20.65</text>
+  <text x="888" y="188" font-family="'Geist Mono', monospace" font-size="14" fill="#5a6b82" text-anchor="middle">184 Fälle</text>
+  <rect x="56" y="256" width="224" height="64" rx="6" fill="#f4f7fb"/>
+  <rect x="56" y="256" width="224" height="64" rx="6" fill="rgba(36,89,166,0.08)" stroke="#2459a6" stroke-width="1"/>
+  <text x="168" y="284" font-family="'Geist', sans-serif" font-size="20" font-weight="600" fill="#183b66" text-anchor="middle">gutartig</text>
+  <text x="168" y="308" font-family="'Geist Mono', monospace" font-size="14" fill="#5a6b82" text-anchor="middle">class: 1 · 261 von 265</text>
+  <rect x="344" y="256" width="224" height="64" rx="6" fill="#f4f7fb"/>
+  <rect x="344" y="256" width="224" height="64" rx="6" fill="rgba(24,59,102,0.05)" stroke="#5a6b82" stroke-width="1"/>
+  <text x="456" y="284" font-family="'Geist', sans-serif" font-size="20" font-weight="600" fill="#183b66" text-anchor="middle">bösartig</text>
+  <text x="456" y="308" font-family="'Geist Mono', monospace" font-size="14" fill="#5a6b82" text-anchor="middle">class: 0 · 5 von 6</text>
+  <rect x="632" y="256" width="224" height="64" rx="6" fill="#f4f7fb"/>
+  <rect x="632" y="256" width="224" height="64" rx="6" fill="rgba(36,89,166,0.08)" stroke="#2459a6" stroke-width="1"/>
+  <text x="744" y="284" font-family="'Geist', sans-serif" font-size="20" font-weight="600" fill="#183b66" text-anchor="middle">gutartig</text>
+  <text x="744" y="308" font-family="'Geist Mono', monospace" font-size="14" fill="#5a6b82" text-anchor="middle">class: 1 · 14 von 19</text>
+  <rect x="920" y="256" width="224" height="64" rx="6" fill="#f4f7fb"/>
+  <rect x="920" y="256" width="224" height="64" rx="6" fill="rgba(24,59,102,0.05)" stroke="#5a6b82" stroke-width="1"/>
+  <text x="1032" y="284" font-family="'Geist', sans-serif" font-size="20" font-weight="600" fill="#183b66" text-anchor="middle">bösartig</text>
+  <text x="1032" y="308" font-family="'Geist Mono', monospace" font-size="14" fill="#5a6b82" text-anchor="middle">class: 0 · 156 von 165</text>
+</svg>
+</body>
+</html>

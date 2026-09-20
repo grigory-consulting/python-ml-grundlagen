@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<title>Trainings- und Testdaten</title>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  html, body { margin: 0; padding: 0; background: #f4f7fb; }
+  svg { display: block; width: 1200px; height: 336px; }
+</style>
+</head>
+<body>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 336" role="img"
+     aria-labelledby="train-test-split-title train-test-split-desc">
+  <title id="train-test-split-title">Aufteilung in Trainings- und Testdaten</title>
+  <desc id="train-test-split-desc">150 Beispiele werden in 80 Prozent Trainingsdaten und 20 Prozent Testdaten geteilt. Das Modell lernt nur auf den Trainingsdaten und wird danach auf den Testdaten geprüft.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#5a6b82"/>
+    </marker>
+    <marker id="arrow-accent" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#2459a6"/>
+    </marker>
+  </defs>
+
+  <rect width="100%" height="100%" fill="#f4f7fb"/>
+
+  <!-- Zeilenbeschriftung links -->
+  <g font-family="'Geist', sans-serif" font-size="20" font-weight="600" fill="#183b66">
+    <text x="24" y="55">Alle Daten</text>
+    <text x="24" y="160">Aufteilung</text>
+    <text x="24" y="279">Verwendung</text>
+  </g>
+  <text x="24" y="182" font-family="'Geist Mono', monospace" font-size="12" fill="#5a6b82">120 / 30 Beispiele</text>
+
+  <!-- Pfeile (vor den Boxen) -->
+  <g stroke="#5a6b82" stroke-width="1.2" fill="none">
+    <line x1="560" y1="72" x2="560" y2="135" marker-end="url(#arrow)"/>
+    <line x1="1068" y1="72" x2="1068" y2="135" marker-end="url(#arrow)"/>
+    <line x1="560" y1="184" x2="560" y2="239" marker-end="url(#arrow)"/>
+    <line x1="1068" y1="184" x2="1068" y2="239" marker-end="url(#arrow)"/>
+  </g>
+  <line x1="720" y1="272" x2="959" y2="272" stroke="#2459a6" stroke-width="1.2" marker-end="url(#arrow-accent)"/>
+  <rect x="764" y="240" width="152" height="20" rx="2" fill="#f4f7fb"/>
+  <text x="840" y="255" font-family="'Geist Mono', monospace" font-size="14" fill="#2459a6"
+        text-anchor="middle" letter-spacing="0.06em">FERTIGES MODELL</text>
+
+  <!-- Zeile 1: alle Daten -->
+  <rect x="176" y="24" width="1000" height="48" rx="6" fill="#ffffff" stroke="#183b66" stroke-width="1"/>
+  <text x="676" y="55" font-family="'Geist', sans-serif" font-size="20" font-weight="600" fill="#183b66"
+        text-anchor="middle">150 Beispiele mit bekannter Lösung (X, y)</text>
+
+  <!-- Zeile 2: Aufteilung 80 / 20 -->
+  <rect x="176" y="136" width="768" height="48" rx="6" fill="#f4f7fb"/>
+  <rect x="176" y="136" width="768" height="48" rx="6" fill="rgba(24,59,102,0.05)" stroke="#5a6b82" stroke-width="1"/>
+  <text x="560" y="167" font-family="'Geist', sans-serif" font-size="20" font-weight="600" fill="#183b66"
+        text-anchor="middle">Trainingsdaten · 80 %</text>
+
+  <rect x="960" y="136" width="216" height="48" rx="6" fill="#2459a6" stroke="#2459a6" stroke-width="1"/>
+  <text x="1068" y="167" font-family="'Geist', sans-serif" font-size="20" font-weight="600" fill="#ffffff"
+        text-anchor="middle">Testdaten · 20 %</text>
+
+  <!-- Zeile 3: Verwendung -->
+  <rect x="400" y="240" width="320" height="64" rx="6" fill="#ffffff" stroke="#183b66" stroke-width="1"/>
+  <text x="560" y="268" font-family="'Geist', sans-serif" font-size="20" font-weight="600" fill="#183b66"
+        text-anchor="middle">Modell lernt</text>
+  <text x="560" y="290" font-family="'Geist Mono', monospace" font-size="14" fill="#5a6b82"
+        text-anchor="middle">fit(X_train, y_train)</text>
+
+  <rect x="960" y="240" width="216" height="64" rx="6" fill="#f4f7fb"/>
+  <rect x="960" y="240" width="216" height="64" rx="6" fill="rgba(36,89,166,0.08)" stroke="#2459a6" stroke-width="1"/>
+  <text x="1068" y="268" font-family="'Geist', sans-serif" font-size="20" font-weight="600" fill="#183b66"
+        text-anchor="middle">Modell wird geprüft</text>
+  <text x="1068" y="290" font-family="'Geist Mono', monospace" font-size="14" fill="#5a6b82"
+        text-anchor="middle">score(X_test, y_test)</text>
+</svg>
+</body>
+</html>
