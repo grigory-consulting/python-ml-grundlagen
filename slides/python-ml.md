@@ -616,20 +616,25 @@ print(alter)               # -> [27, 27, 34, 51, 68]
 ## Listen kopieren
 
 ```python
-a = [[1, 2], [3, 4]]
-b = a.copy()              # flache Kopie: die inneren Listen werden geteilt
-
 import copy
-c = copy.deepcopy(a)      # tiefe Kopie: alles wird dupliziert
 
-a[0][0] = 99
-print(b)     # -> [[99, 2], [3, 4]]   Änderung schlägt durch
-print(c)     # -> [[1, 2], [3, 4]]    unabhängig
+a = [[1, 2], [3, 4]]
+b = a                     # keine Kopie: zweiter Name für dieselbe Liste
+c = a.copy()              # flache Kopie: neue äußere Liste, innere geteilt
+d = copy.deepcopy(a)      # tiefe Kopie: alles wird dupliziert
+
+a.append([5, 6])          # Änderung an der äußeren Liste
+print(b)     # -> [[1, 2], [3, 4], [5, 6]]   b ist a
+print(c)     # -> [[1, 2], [3, 4]]           c bleibt
+
+a[0][0] = 99              # Änderung in einer inneren Liste
+print(c)     # -> [[99, 2], [3, 4]]          schlägt durch
+print(d)     # -> [[1, 2], [3, 4]]           unabhängig
 ```
 
-+ `copy()` kopiert nur die äußere Liste, die inneren Objekte bleiben gemeinsam <!-- .element: class="fragment" data-fragment-index="1" -->
-+ `copy.deepcopy()` dupliziert auch alle inneren Objekte <!-- .element: class="fragment" data-fragment-index="2" -->
-+ Eine Zuweisung `b = a` kopiert gar nichts: beide Namen zeigen auf dieselbe Liste <!-- .element: class="fragment" data-fragment-index="3" -->
++ `b = a` kopiert nichts: beide Namen zeigen auf dieselbe Liste <!-- .element: class="fragment" data-fragment-index="1" -->
++ `copy()` legt eine neue äußere Liste an, die inneren Objekte bleiben gemeinsam <!-- .element: class="fragment" data-fragment-index="2" -->
++ `copy.deepcopy()` dupliziert auch alle inneren Objekte <!-- .element: class="fragment" data-fragment-index="3" -->
 
 --
 
