@@ -11,3 +11,22 @@ ax.set_ylabel("Anzahl")
 fig.tight_layout()
 fig.savefig("alter_histogramm.png", dpi=150)
 plt.show()
+
+
+
+fig, axes = plt.subplots(
+    1, 2, figsize=(11, 6.2))
+
+axes[0].hist(df["Age"].dropna(),
+             bins=30)
+axes[0].set_title("Alter")
+axes[0].set_xlabel("Jahre")
+axes[0].set_ylabel("Anzahl")
+
+axes[1].hist(df["Fare"], bins=30,
+             color="#ff7f0e")
+axes[1].set_title("Ticketpreis")
+axes[1].set_xlabel("Fare")
+
+fig.suptitle("Zwei Verteilungen")
+fig.tight_layout()
