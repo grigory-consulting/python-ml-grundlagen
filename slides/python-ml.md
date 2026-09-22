@@ -3403,22 +3403,12 @@ print(export_text(baum, feature_names=list(X.columns)))
 print(round(baum.score(X_test, y_test), 3))   # -> 0.886
 ```
 
-```text
-|--- worst perimeter <= 106.05
-|   |--- worst concave points <= 0.16
-|   |   |--- class: 1
-|   |--- worst concave points >  0.16
-|   |   |--- class: 0
-|--- worst perimeter >  106.05
-|   |--- worst texture <= 20.65
-|   |   |--- class: 1
-|   |--- worst texture >  20.65
-|   |   |--- class: 0
-```
++ `export_text` gibt den Baum als eingerückten Text aus, die nächste Folie zeigt ihn als Diagramm <!-- .element: class="fragment" data-fragment-index="1" -->
++ Drei Fragen reichen für 89 % richtige Vorhersagen auf den Testdaten <!-- .element: class="fragment" data-fragment-index="2" -->
 
 --
 
-## Derselbe Baum als Diagramm
+## Der Baum als Diagramm
 
 ![](figs/d_t06_baum_brustkrebs.png)
 
