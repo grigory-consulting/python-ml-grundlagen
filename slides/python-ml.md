@@ -2923,6 +2923,17 @@ print(model.score(X_test, y_test))         # -> 1.0
 
 --
 
+<!-- .slide: class="smaller" -->
+## Was k-nächste Nachbarn dabei tut
+
+![](figs/knn_nachbarn.png) <!-- .element: style="max-height: 400px" -->
+
++ Für eine neue Blüte sucht das Modell die `k = 5` Trainingsblüten mit dem kleinsten Abstand <!-- .element: class="fragment" data-fragment-index="1" -->
++ Die Nachbarn stimmen ab: hier 3 mal versicolor, 2 mal virginica, also versicolor <!-- .element: class="fragment" data-fragment-index="2" -->
++ Rechts dieselbe Abstimmung für jeden Punkt der Fläche: so entstehen die Entscheidungsgebiete <!-- .element: class="fragment" data-fragment-index="3" -->
+
+--
+
 ## Estimator-Schnittstelle: `fit`, `predict`, `score`
 
 Die Modelle für überwachtes Lernen folgen demselben Muster:
