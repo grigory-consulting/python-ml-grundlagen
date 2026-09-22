@@ -42,3 +42,15 @@ sns.histplot(data=df, x="Age",
 ax.set_title("Altersverteilung")
 ax.set_xlabel("Alter in Jahren")
 ax.set_ylabel("Anzahl")
+
+
+spalten = ["Survived", "Pclass", "Age",
+           "SibSp", "Parch", "Fare"]
+corr = df[spalten].corr()
+
+fig, ax = plt.subplots()
+sns.heatmap(corr, annot=True,
+            fmt=".2f",
+            cmap="coolwarm",
+            vmin=-1, vmax=1, ax=ax)
+ax.set_title("Korrelationsmatrix")
