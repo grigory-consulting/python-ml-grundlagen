@@ -30,3 +30,15 @@ axes[1].set_xlabel("Fare")
 
 fig.suptitle("Zwei Verteilungen")
 fig.tight_layout()
+
+
+
+import seaborn as sns
+
+fig, ax = plt.subplots()
+sns.histplot(data=df, x="Age",
+             bins=30, kde=True,
+             ax=ax)
+ax.set_title("Altersverteilung")
+ax.set_xlabel("Alter in Jahren")
+ax.set_ylabel("Anzahl")
