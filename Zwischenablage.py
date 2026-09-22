@@ -1,68 +1,9 @@
-import matplotlib.pyplot as plt
+from sklearn.datasets import load_iris
+from sklearn.model_selection import train_test_split
+from sklearn.neighbors import KNeighborsClassifier
 
-fig, ax = plt.subplots(figsize=(8, 5))   # Figure = Blatt, Axes = Diagramm
-
-ax.hist(df["Age"].dropna(), bins=30)
-
-ax.set_title("Altersverteilung der Passagiere")
-ax.set_xlabel("Alter in Jahren")
-ax.set_ylabel("Anzahl")
-
-fig.tight_layout()
-fig.savefig("alter_histogramm.png", dpi=150)
-plt.show()
-
-
-
-fig, axes = plt.subplots(
-    1, 2, figsize=(11, 6.2))
-
-axes[0].hist(df["Age"].dropna(),
-             bins=30)
-axes[0].set_title("Alter")
-axes[0].set_xlabel("Jahre")
-axes[0].set_ylabel("Anzahl")
-
-axes[1].hist(df["Fare"], bins=30,
-             color="#ff7f0e")
-axes[1].set_title("Ticketpreis")
-axes[1].set_xlabel("Fare")
-
-fig.suptitle("Zwei Verteilungen")
-fig.tight_layout()
-
-
-
-import seaborn as sns
-
-fig, ax = plt.subplots()
-sns.histplot(data=df, x="Age",
-             bins=30, kde=True,
-             ax=ax)
-ax.set_title("Altersverteilung")
-ax.set_xlabel("Alter in Jahren")
-ax.set_ylabel("Anzahl")
-
-
-spalten = ["Survived", "Pclass", "Age",
-           "SibSp", "Parch", "Fare"]
-corr = df[spalten].corr()
-
-fig, ax = plt.subplots()
-sns.heatmap(corr, annot=True,
-            fmt=".2f",
-            cmap="coolwarm",
-            vmin=-1, vmax=1, ax=ax)
-ax.set_title("Korrelationsmatrix")
-
-
-df["Überlebt"] = df["Survived"].map(
-    {0: "nein", 1: "ja"})
-sns.pairplot(
-    df,
-    vars=["Age", "Fare", "SibSp"],
-    hue="Überlebt",
+X, y = load_iris(return_X_y=True)          # 150 Blüten, 4 Merkmale
+X_train, X_test, y_train, y_test = train_test_split(
+    X, y, test_size=0.2, random_state=1
 )
-
-
-
+model = KNeighborsClassifier(n_neighbors=5)
