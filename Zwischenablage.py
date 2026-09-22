@@ -54,3 +54,15 @@ sns.heatmap(corr, annot=True,
             cmap="coolwarm",
             vmin=-1, vmax=1, ax=ax)
 ax.set_title("Korrelationsmatrix")
+
+
+df["Überlebt"] = df["Survived"].map(
+    {0: "nein", 1: "ja"})
+sns.pairplot(
+    df,
+    vars=["Age", "Fare", "SibSp"],
+    hue="Überlebt",
+)
+
+
+
