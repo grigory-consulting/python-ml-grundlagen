@@ -19,3 +19,11 @@ def train_model(model, optimizer, n_epochs=10):
 model = NN()
 optimizer = torch.optim.SGD(model.parameters(), lr = 1e-2)
 verluste = train_model(model, optimizer, n_epochs=20)
+
+
+# Confusion-Matrix 
+import pandas as pd
+wahr_name = pd.Series(true.numpy(), name="wahr").map(lambda i: klassen[i])
+pred_name = pd.Series(pred.numpy(), name="vorhergesagt").map(lambda i: klassen[i])
+tabelle = pd.crosstab(wahr_name, pred_name).reindex(index=klassen, columns=klassen, fill_value=0)
+tabelle
