@@ -1,3 +1,17 @@
+import matplotlib.pyplot as plt
+klassen = ["T-Shirt/Top", "Hose", "Pullover", "Kleid", "Mantel","Sandale", "Hemd", "Sneaker", "Tasche", "Stiefelette"]
+fig, axes = plt.subplots(2, 5, figsize=(10, 4.5))
+for nummer, ax in enumerate(axes.flat):
+    index = int((train_data.targets == nummer).nonzero()[0])
+    ax.imshow(train_data[index][0][0], cmap="gray")
+    ax.set_title(f"{nummer}: {klassen[nummer]}")
+    ax.axis("off")
+plt.show()
+
+
+
+
+
 def train_model(model, optimizer, n_epochs=10):
     loss_fn = nn.CrossEntropyLoss() # weil mehrere Klassen 
     verluste = [] 
