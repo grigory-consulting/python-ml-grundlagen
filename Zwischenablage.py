@@ -54,3 +54,19 @@ class NN(nn.Module): #
 
     def forward(self,x):
         return self.model(x)
+
+
+
+# ein Batch durch das untrainierte Netz 
+bilder, labels = next(iter(train_loader))
+with torch.no_grad():                        # nur ansehen, keine Gradienten nötig
+    outputs = model(bilder)
+
+print("vorhergesagt:", outputs.argmax(dim=1)[:8].tolist())
+print("wahr:        ", labels[:8].tolist())
+
+
+
+
+
+
