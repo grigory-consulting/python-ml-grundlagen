@@ -1,9 +1,14 @@
-from sklearn.datasets import load_iris
-from sklearn.model_selection import train_test_split
-from sklearn.neighbors import KNeighborsClassifier
+from torchvision import datasets, transforms 
 
-X, y = load_iris(return_X_y=True)          # 150 Blüten, 4 Merkmale
-X_train, X_test, y_train, y_test = train_test_split(
-    X, y, test_size=0.2, random_state=1
+transform = transforms.Compose([
+    transforms.ToTensor(), # Konvertiert Bilder zu Tensoren
+    transforms.Normalize((0.5,), (0.5, ))
+ ] # Normalierung der Daten  
 )
-model = KNeighborsClassifier(n_neighbors=5)
+
+train_data = datasets.FashionMNIST(root="./data", train=True, download=True, transform=transform) # Trainingsdaten
+test_data = datasets.FashionMNIST(root="./data", train=False, download=True, transform=transform) # Testdaten 
+
+train_loader = torch.utils.data.DataLoader(train_data, batch_size= 64, shuffle=True) # shuffle = Randomisieren, 
+test_loader = torch.utils.data.DataLoader(test_data, batch_size = 64, shuffle=False) #
+
